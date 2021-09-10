@@ -1,0 +1,43 @@
+<ng-template #formModal>
+
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">{{ data.headlineText || 'Confirm' }} </h4>
+    <button type="button" class="close pull-right" aria-label="Close" 
+            (click)="modalRef.hide()" *ngIf='!(membersConfirm || teamsConfirm)'>
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div *ngIf="data" class="modal-body">
+    <div class="confirm-text" [innerHTML]="data.text"></div>
+    <div *ngIf="data.showInput">
+      <label *ngIf="isDescriptionValid" class="confirm-label">{{data.inputTitleText || 'Please describe'}}</label>
+      <label *ngIf="!isDescriptionValid" class="confirm-label text-error">{{ descriptionErrorMessage }}</label>
+        <div class="textarea-wrap textarea-wrap--contained"
+             [class.input-wrap--error]="!isDescriptionValid">
+            <textarea class="textarea-wrap__textarea"
+                      [(ngModel)]="description" rows="6"
+                      (ngModelChange)="resetErrorState()"></textarea>
+          </div>
+    </div>
+  </div>
+  <div  class="creator_modal_footer"
+        [class.flex-row-reverse]="membersConfirm || teamsConfirm"
+        [class.justify-content-between]="membersConfirm || teamsConfirm">
+    <button *ngIf="showCancel"
+            [class.d-none]="data.hideNoButton"
+            class="button button--ghost button--medium"
+            [class.mr-3]="!(membersConfirm || teamsConfirm)"
+            (click)="cancel()">
+      {{ data.cancelText || 'No'}}
+    </button>
+    <button class="button button--medium"
+            [class.button--contained]="!(membersConfirm || teamsConfirm)"
+            [class.button--error]="membersConfirm || teamsConfirm"
+            [class.button--ghost]="membersConfirm || teamsConfirm"
+            (click)="onConfirm()"
+            type="button"
+            [disabled]="data.showInput && !description">
+      {{ data.confirmText || 'Yes'}}
+    </button>
+  </div>
+</ng-template>

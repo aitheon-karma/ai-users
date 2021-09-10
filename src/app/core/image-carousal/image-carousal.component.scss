@@ -1,0 +1,94 @@
+.btn:focus, .btn:active, button:focus, button:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+  
+#image-gallery .modal-footer {
+    display: block;
+}
+  
+.thumb {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.dropdown_menu {
+    margin: 0;
+    padding: 0px;
+    background: #fff;
+    border: 1px solid #ccc;
+    position: absolute;
+    right: 10px;
+    z-index: 999;
+}
+
+
+.settings_box{
+    float: right;
+    margin: 10px;
+    cursor: pointer;
+}
+.settings_box .fa-cog {
+    cursor: pointer;
+}
+
+
+.icon_border{
+    border: 1px dashed #a7a6a6;
+    cursor: pointer;
+}
+
+.icon_border a{
+    text-decoration: none;
+    color: #a7a6a6
+}
+.icon_border a :hover{
+    text-decoration: none;
+    color: #a7a6a6
+}
+
+.carousel-control-prev-icon,.carousel-control-next-icon {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+}
+
+.carousel-control-next {
+    right: -20%;
+}
+
+.carousel-control-prev {
+    left: -20%;
+}
+
+.carousel-control-next-icon {
+    background: #000;
+    border-radius: 50px;
+}
+.carousel-control-prev-icon {
+    background: #000;
+    border-radius: 50px;
+}
+.carousel-control-next-icon::after {
+    font-family: FontAwesome;
+    content: "\f054";
+    position: absolute;
+    color: #fff;
+    top: 9px;
+    left: 16px;
+    font-size: 15px;
+}
+.carousel-control-prev-icon::after {
+    font-family: FontAwesome;
+    content: "\f053";
+    position: absolute;
+    color: #fff;
+    top: 9px;
+    left: 14px;
+    font-size: 15px;
+}
+
+::ng-deep .carousel-caption {
+    position: absolute;
+    top: 500px;
+}

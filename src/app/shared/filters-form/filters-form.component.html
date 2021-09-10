@@ -1,0 +1,24 @@
+<div class="filters d-flex justify-content-between" [formGroup]="filtersForm">
+  <ng-select class="dropdown dropdown--contained dropdown--outlined ngx-select-custom-width"
+             [items]="teams"
+             bindLabel="name"
+             bindValue="name"
+             placeholder="Team"
+             [searchable]="false"
+             formControlName="team"
+             #teamFilter></ng-select>
+
+  <ng-select class="dropdown dropdown--contained dropdown--outlined ngx-select-custom-width"
+             [items]="roles"
+             placeholder="Organization Role"
+             [searchable]="false"
+             formControlName="organizationRole"
+             #roleFilter></ng-select>
+
+  <ng-select class="dropdown dropdown--contained dropdown--outlined ngx-select-custom-width"
+             [items]="statuses"
+             placeholder="Status"
+             [searchable]="false"
+             formControlName="status"
+             #statusFilter></ng-select>
+</div>

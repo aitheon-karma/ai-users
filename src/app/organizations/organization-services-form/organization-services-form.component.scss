@@ -1,0 +1,158 @@
+:host {
+  display: block;
+}
+
+.org-services {
+  max-width: 470px;
+  min-width: 470px;
+
+    &__boxes {
+
+    }
+
+    &__box {
+        padding: 0.625rem 1.25rem;
+        background-color: #222222;
+        align-items: center;
+        border-radius: 2px;
+        &:hover {
+          cursor: pointer;
+        }
+
+        &--active {
+          background-color: #363636;
+        }
+    }
+
+    &__box-text {
+        font-size: 0.875rem;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    &__box-left {
+      display: flex;
+      align-items: center;
+    }
+
+    &__img {
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+      background-size: cover;
+      margin-right: 15px;
+    }
+
+    &__question {
+        border: 1px solid #979797;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #979797;
+        border-radius: 100%;
+        font-size: 0.875rem;
+
+        &:hover {
+            color: #dcbc65;
+            border: 1px solid #dcbc65;
+        }
+
+    }
+
+    &__footer {
+        height: 55px;
+        background-color: #222222;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1.25rem;
+        margin-left: -1rem;
+        margin-right: -1rem;
+
+        &--inModal {
+          width: 949px;
+          height: 60px;
+          position: fixed;
+          top: 710px;
+          background: #2b2b2b;
+          border-top: 1px solid #454545;
+        }
+    }
+
+    &__footer-text {
+        font-size: 0.75rem;
+        letter-spacing: 0.2px;
+        color: #8c8c8c;
+        margin: 0;
+    }
+
+    &__dependency-item {
+        border-radius: 100px;
+        border: 1px solid #424242;
+        display: block;
+        padding: .25rem .4rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.2px;
+    }
+
+    &__dependency-header {
+        font-size: 0.75rem;
+        letter-spacing: 0.2px;
+        color: #8c8c8c;
+    }
+
+    &__footer-submit {
+        width: 120px;
+        height: 32px;
+        padding-top: 0.5rem;
+    }
+
+    &__enabled-default {
+      font-size: 12px;
+      color: #8c8c8c;
+      white-space: nowrap;
+    }
+}
+
+.service-description {
+  width: 400px;
+  position: sticky;
+  top: 6rem;
+  margin-left: 1.25rem;
+
+  &--inModal {
+    top: 20px;
+  }
+
+  &__img {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+  }
+
+  &__name {
+    font-family: ProximaNova;
+    font-size: 1rem;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    color: #ffff;
+  }
+
+  &__text {
+    line-height: 1.5;
+    letter-spacing: normal;
+    margin-top: 1.25rem;
+    font-size: 0.875rem;
+    color: #8c8c8c;
+  }
+}
+
+.mb-60 {
+  margin-bottom: 60px;
+}

@@ -1,0 +1,29 @@
+.btn-primary {
+    background: #DCBC65;
+}
+
+.hide {
+	visibility: hidden;
+	pointer-events: none;
+}
+
+.modal-body--modified {
+	height: 600px;
+	max-height: 600px;
+	overflow-y: scroll;
+	padding: 0;
+
+	&::-webkit-scrollbar-track {
+		background-color: #2b2b2b;
+	}
+
+	&::-webkit-scrollbar {
+		width: 3px !important;
+		background-color: #2b2b2b;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		width: 3px !important;
+		background-color: #454545;
+	}
+}

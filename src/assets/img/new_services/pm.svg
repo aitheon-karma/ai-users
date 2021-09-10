@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>project-management</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="10.1139323%" y1="0%" x2="91.7578125%" y2="104.358724%" id="linearGradient-1">
+            <stop stop-color="#E64C4C" offset="0%"></stop>
+            <stop stop-color="#FFA237" offset="100%"></stop>
+        </linearGradient>
+        <path d="M6,0 L34,0 C37.3137085,-6.08718376e-16 40,2.6862915 40,6 L40,34 C40,37.3137085 37.3137085,40 34,40 L6,40 C2.6862915,40 4.05812251e-16,37.3137085 0,34 L0,6 C-4.05812251e-16,2.6862915 2.6862915,6.08718376e-16 6,0 Z" id="path-2"></path>
+        <path d="M8,4 L32,4 C34.209139,4 36,5.790861 36,8 L36,32 C36,34.209139 34.209139,36 32,36 L8,36 C5.790861,36 4,34.209139 4,32 L4,8 C4,5.790861 5.790861,4 8,4 Z" id="path-4"></path>
+        <linearGradient x1="-195.675223%" y1="-9.48423217%" x2="50%" y2="93.1122449%" id="linearGradient-6">
+            <stop stop-color="#F47A41" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <path d="M21.3333333,8 C25.2354049,8.53169734 28.6101695,10.7648262 30.6666667,13.9550102 L24.9717514,16.6666667 C24.0753296,15.5501022 22.8097928,14.6993865 21.3333333,14.3271984 L21.3333333,8 Z" id="path-7"></path>
+        <filter x="-21.4%" y="-23.1%" width="142.9%" height="146.2%" filterUnits="objectBoundingBox" id="filter-8">
+            <feGaussianBlur stdDeviation="1.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.968627451   0 0 0 0 0.525490196   0 0 0 0 0.243137255  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <circle id="path-9" cx="20" cy="20" r="4.66666667"></circle>
+        <filter x="-75.0%" y="-53.6%" width="250.0%" height="250.0%" filterUnits="objectBoundingBox" id="filter-10">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="30.6978576%" y1="0%" x2="70.2079395%" y2="104.358724%" id="linearGradient-11">
+            <stop stop-color="#E64C4C" offset="0%"></stop>
+            <stop stop-color="#FFA237" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="42.1212706%" y1="0%" x2="58.2484568%" y2="104.358724%" id="linearGradient-12">
+            <stop stop-color="#E64C4C" offset="0%"></stop>
+            <stop stop-color="#FFA237" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="01-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01-Desktop-/-01-HomePage-/-01_01_Home-1440" transform="translate(-656.000000, -2190.000000)">
+            <g id="project-management" transform="translate(656.000000, 2190.000000)">
+                <mask id="mask-3" fill="white">
+                    <use xlink:href="#path-2"></use>
+                </mask>
+                <use id="Mask-Copy" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                <mask id="mask-5" fill="white">
+                    <use xlink:href="#path-4"></use>
+                </mask>
+                <use id="Mask-Copy-3" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-4"></use>
+                <g id="Path">
+                    <use fill="url(#linearGradient-6)" fill-rule="evenodd" xlink:href="#path-7"></use>
+                    <use fill="black" fill-opacity="1" filter="url(#filter-8)" xlink:href="#path-7"></use>
+                </g>
+                <g id="Oval-Copy-7">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-10)" xlink:href="#path-9"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-9"></use>
+                </g>
+                <path d="M21.3824885,26.3209877 C24.1843318,25.6584362 26.2488479,23.1975309 26.2488479,20.3106996 C26.2488479,19.8847737 26.1996928,19.5061728 26.1013825,19.0802469 L31.4101382,16.6666667 C31.8033794,17.8024691 32,19.0329218 32,20.3106996 C32,26.2736626 27.3794163,31.2427984 21.3333333,32 L21.3333333,26.3209877 L21.3824885,26.3209877 Z" id="Path" fill="url(#linearGradient-11)"></path>
+                <path d="M18.6666667,8 L18.6666667,13.8299595 C15.8648233,14.5101215 13.8003072,17.0364372 13.8003072,20 C13.8003072,22.9635628 15.8648233,25.4898785 18.6666667,26.1700405 L18.6666667,32 C12.6697389,31.2226721 8,26.1700405 8,20 C8,13.8299595 12.6697389,8.77732794 18.6666667,8 Z" id="Path" fill="url(#linearGradient-12)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,69 @@
+<div class="container-fluid media">
+  <nav aria-label="breadcrumb" class="media__breadcrumb-contianer">
+    <ol class="media__breadcrumb">
+      <li class="media__breadcrumb-item">Media</li>
+    </ol>
+  </nav>
+  <h3 class="media__title" [class.media__title--reverse-icon]="!welcomeVidOpen" (click)='toggleWelcomeVid()'>Welcome</h3>
+  <div class="row media__upload-section upload-files" *ngIf='welcomeVidOpen'>
+    <div class="upload-files__file-row" *ngIf="welcomeVideoFile">
+      <div class="upload-files__head">
+        <div class="upload-files__title">How to use our platform</div>
+        <div class="upload-files__upload-text upload-files__upload-text--hide mt-0" (click)="welcome.click()">Upload</div>
+        <input type="file" #welcome [accept]="allowedMimeType.toString()" ng2FileSelect [uploader]="driveWelcomeUploader?.uploader" />
+      </div>
+      <div class="upload-files__drop-file-container" (click)='openVid(welcomeVideoFile.url)'>
+        <div class="upload-files__drop-file-overlay"></div>
+          <video class="upload-files__video" src="{{ welcomeVideoFile.url }}"></video>
+          <span class="upload-files__file-name">{{ welcomeVideoFile.filename }}</span>        
+      </div>
+    </div>
+    <div class="upload-files__upload-button-section">
+      <div ng2FileDrop
+          [uploader]="driveUploader?.uploader" class="upload-files__drop-zone" *ngIf="!welcomeVideoFile">
+        <div class="upload-files__upload-button-wrapper">
+          <div class="upload-files__file-container" (click)="welcome.click()">
+            <div class="upload-files__upload">
+              <span class="upload-files__upload-icon"></span>
+              <span class="upload-files__upload-text">Upload</span>
+            </div>
+            <input type="file" #welcome [accept]="allowedMimeType.toString()" ng2FileSelect [uploader]="driveWelcomeUploader?.uploader" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="media__title" [class.media__title--reverse-icon]="!orgVidOpen" (click)="toggleOrganizationVid()">Organization</h3>
+  <div class="row media__upload-section upload-files" *ngIf='orgVidOpen'>
+    <div class="upload-files__file-row" *ngIf="organizationVideoFile">
+      <div class="upload-files__head">
+        <div class="upload-files__title">How to use organization</div>
+        <div class="upload-files__upload-text upload-files__upload-text--hide mt-0" (click)="organization.click()">Upload</div>
+        <input type="file" #organization [accept]="allowedMimeType.toString()" ng2FileSelect [uploader]="driveOrganizationUploader?.uploader" />
+      </div>
+      <div class="upload-files__drop-file-container" (click)='openVid(organizationVideoFile.url)'>
+      <div class="upload-files__drop-file-overlay"></div>
+        <video class="upload-files__video" src="{{ organizationVideoFile.url }}"></video>
+        <span class="upload-files__file-name">{{ organizationVideoFile.filename }}</span>        
+      </div>
+    </div>
+    <div class="upload-files__upload-button-section">
+      <div ng2FileDrop
+          [uploader]="driveUploader?.uploader" class="upload-files__drop-zone" *ngIf="!organizationVideoFile">
+        <div class="upload-files__upload-button-wrapper">
+          <div class="upload-files__file-container" (click)="organization.click()">
+            <div class="upload-files__upload">
+              <span class="upload-files__upload-icon"></span>
+              <span class="upload-files__upload-text">Upload</span>
+            </div>
+            <input type="file" #organization [accept]="allowedMimeType.toString()" ng2FileSelect [uploader]="driveOrganizationUploader?.uploader" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ai-drive-uploader [autoUpload]="true" #driveWelcomeUploader (success)="onSuccessUpload($event, false)" [oganizationId]="activeOrganization?._id" [service]="serviceKey"></ai-drive-uploader>
+<ai-drive-uploader [autoUpload]="true" #driveOrganizationUploader (success)="onSuccessUpload($event, true)" [oganizationId]="activeOrganization?._id" [service]="serviceKey"></ai-drive-uploader>

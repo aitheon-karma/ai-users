@@ -1,0 +1,139 @@
+<main class="org-setup pb-5 ml-5 ">
+  <h2 class="org-setup__heading">New Organization</h2>
+  <div *ngIf="!isExternal" class="row org-setup__content mt-5">
+
+    <!-- steps for inernal  -->
+        <div class="col-3" [ngStyle]="{'visibility': isExternal ? 'hidden' : 'none'}">
+            <!-- <div class="org-setup__step d-flex" [class.mb-3]="currentStep === 1">
+              <div class="org-setup__progress d-flex flex-column align-items-center">
+                <div [class.org-setup__progress-circle--active]="currentStep === 1" class="org-setup__progress-circle">
+                  <span *ngIf="currentStep === 1" class="org-setup__step-number">1</span>
+                  <span *ngIf="currentStep > 1" class="org-setup__step-done"> &#10004; </span>
+                </div>
+              </div>
+              <h6 class="org-setup__sub-heading ml-4" [class.org-setup__sub-heading--active]="currentStep === 1">General
+                information</h6>
+            </div>
+            <div class="org-setup__line my-2">
+            </div>
+
+            <div class="org-setup__step d-flex" [class.mt-3]="currentStep === 2">
+              <div class="org-setup__progress d-flex flex-column align-items-center">
+                <div [class.org-setup__progress-circle--active]="currentStep === 2" class="org-setup__progress-circle">
+                  <span class="org-setup__step-number">2</span>
+                </div>
+              </div>
+              <h6 class="org-setup__sub-heading ml-4" [class.org-setup__sub-heading--active]="currentStep === 2">Service
+                configuration</h6>
+            </div>
+            <div class="org-setup__line my-2">
+            </div>
+
+            <div class="org-setup__step d-flex" [class.my-3]="currentStep === 3">
+              <div class="org-setup__progress d-flex flex-column align-items-center">
+                <div [class.org-setup__progress-circle--active]="currentStep === 3" class="org-setup__progress-circle">
+                  <span *ngIf="currentStep <= 3" class="org-setup__step-number">3</span>
+                  <span *ngIf="currentStep > 3" class="org-setup__step-done"> &#10004; </span>
+                </div>
+
+              </div>
+              <h6 class="org-setup__sub-heading ml-4" [class.org-setup__sub-heading--active]="currentStep === 3">Questionnaire
+              </h6>
+            </div> -->
+
+          </div>
+
+    <!-- internal  sub-components-->
+        <div class="d-flex" [ngClass]="{'col-9': currentStep === 2, 'col-5' : currentStep !== 2 }">
+
+            <div class="card org-setup__card address mx-auto" *ngIf="currentStep === 1">
+              <div class="card-body org-setup__container px-4 pt-4 pb-0">
+                <fl-organization-form *ngIf="currentStep === 1 && generalEditMode"
+                                      (canceled)="onFormCanceled()"
+                                      (saved)="onGeneralFormSaved($event)"
+                                      [organization]="organization"
+                                      [isExternal]="isExternal"></fl-organization-form>
+
+              </div>
+            </div>
+
+            <div *ngIf="currentStep === 2 && allServices.length > 0" class="">
+              <h4 class="org-setup__services-heading">We turn on recommended services
+                <!-- by <br> analyzing your answers. -->
+              </h4>
+              <p class="org-setup__services-sub-heading">You always can turn off services which you not need</p>
+              <div class="">
+
+                <div class=" pb-0">
+                  <fl-organization-services-form [enabledServices]="enabledServices"
+                  [allServices]="allServices"
+                  [totalServices]="totalServices"
+                    (saved)="onServicesSaved($event)">
+                  </fl-organization-services-form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+  </div>
+
+  <div *ngIf="isExternal" class="row org-setup__content mt-5">
+
+     <!-- steps for external supplier -->
+        <div class="col-3" [ngStyle]="{'visibility': isExternal ? 'display' : 'none'}">
+            <div class="org-setup__step d-flex" [class.mb-3]="currentStep === 4">
+              <div class="org-setup__progress d-flex flex-column align-items-center">
+                <div [class.org-setup__progress-circle--active]="currentStep === 4" class="org-setup__progress-circle">
+                  <span *ngIf="currentStep === 4" class="org-setup__step-number">1</span>
+                  <span *ngIf="currentStep > 4" class="org-setup__step-done"> &#10004; </span>
+                </div>
+              </div>
+              <div>
+                <h6 style="width: 131px;" class="org-setup__sub-heading ml-4" [class.org-setup__sub-heading--active]="currentStep === 4">General
+                  information</h6>
+              </div>
+            </div>
+            <div class="org-setup__line my-2">
+            </div>
+
+            <div class="org-setup__step d-flex" [class.my-3]="currentStep === 5">
+              <div class="org-setup__progress d-flex flex-column align-items-center">
+                <div [class.org-setup__progress-circle--active]="currentStep === 5" class="org-setup__progress-circle">
+                  <span *ngIf="currentStep <= 5" class="org-setup__step-number">2</span>
+                  <span *ngIf="currentStep > 5" class="org-setup__step-done"> &#10004; </span>
+                </div>
+
+              </div>
+              <div>
+                <h6 style="width: 131px;" class="org-setup__sub-heading ml-4" [class.org-setup__sub-heading--active]="currentStep === 5">Upload Documents
+                </h6>
+              </div>
+
+
+            </div>
+          </div>
+
+      <!-- external supplier sub-components -->
+      <div class="d-flex" [ngClass]="{'col-9': currentStep === 5, 'col-6' : currentStep !== 5 }">
+          <div class="card org-setup__card address mx-auto" *ngIf="currentStep === 4">
+            <div class="card-body org-setup__container pb-0">
+              <fl-organization-form *ngIf="currentStep === 4 && generalEditMode" (canceled)="onFormCanceled()"
+                (saved)="onGeneralFormSaved($event)" [organization]="organization" [isExternal]="isExternal"></fl-organization-form>
+            </div>
+          </div>
+          <div *ngIf="currentStep === 5">
+            <div style="margin-top: -17px;">
+                <fl-organization-documents-one [orgId]="newOrgId" (onFinish)="onFinish()"></fl-organization-documents-one>
+
+            </div>
+          </div>
+        </div>
+  </div>
+</main>
+
+
+<ng-template #questionsTemplate>
+  <fl-questions-modal-v2 [target]="questionTarget" [isSetup]="true" [services]="enabledServices" (questionsSubmit)="onQuestionsSubmit($event)"></fl-questions-modal-v2>
+</ng-template>

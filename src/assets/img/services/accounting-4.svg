@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 60 60">
+    <defs>
+        <linearGradient id="b" x1="12.227%" x2="83.257%" y1="-31.593%" y2="132.324%">
+            <stop offset="0%" stop-color="#EF33F2"/>
+            <stop offset="100%" stop-color="#3544DC"/>
+        </linearGradient>
+        <path id="a" d="M10 0h40c5.523 0 10 4.477 10 10v40c0 5.523-4.477 10-10 10H10C4.477 60 0 55.523 0 50V10C0 4.477 4.477 0 10 0z"/>
+        <path id="d" d="M6 13h48v29a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V13z"/>
+        <filter id="c" width="129.2%" height="142.4%" x="-14.6%" y="-15.2%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+        </filter>
+        <linearGradient id="g" x1="12.227%" x2="83.257%" y1="21.153%" y2="79.105%">
+            <stop offset="0%" stop-color="#EF33F2"/>
+            <stop offset="100%" stop-color="#3544DC"/>
+        </linearGradient>
+        <path id="f" d="M48.685 17.349c-.22-.23-.555-.349-.98-.349h-.122c-2.159.096-4.31.2-6.469.297-.289.014-.684.03-.996.333a1.104 1.104 0 0 0-.235.341c-.32.675.129 1.113.342 1.32l.54.534c.372.37.752.742 1.132 1.105L28.853 33.66l-5.861-5.717a1.887 1.887 0 0 0-1.323-.533c-.502 0-.965.192-1.315.533l-7.807 7.608a1.786 1.786 0 0 0 0 2.573l.35.341c.35.341.821.534 1.323.534.501 0 .965-.193 1.315-.534l6.134-5.984L27.53 38.2c.35.341.821.534 1.323.534a1.9 1.9 0 0 0 1.322-.534l14.717-14.355 1.665 1.616c.197.193.471.46.89.46.174 0 .349-.044.531-.14.122-.067.228-.142.32-.23.326-.32.387-.727.402-1.046.061-1.364.13-2.729.198-4.1l.099-2.054c.023-.43-.076-.764-.312-1.001z"/>
+        <filter id="e" width="137.8%" height="163.6%" x="-18.9%" y="-22.7%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+        </filter>
+        <path id="i" d="M8 10h44a2 2 0 0 1 2 2v1H6v-1a2 2 0 0 1 2-2z"/>
+        <filter id="h" width="125%" height="500%" x="-12.5%" y="-200%" filterUnits="objectBoundingBox">
+            <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <use fill="url(#b)" xlink:href="#a"/>
+        <g fill="#FFF" opacity=".6">
+            <path d="M27.037 38L30 39.158 24.967 54H22zM33.963 38L31 39.158 36.033 54H39z"/>
+        </g>
+        <use fill="#000" filter="url(#c)" xlink:href="#d"/>
+        <use fill="#FFF" xlink:href="#d"/>
+        <use fill="#000" filter="url(#e)" xlink:href="#f"/>
+        <use fill="url(#g)" xlink:href="#f"/>
+        <g>
+            <use fill="#000" filter="url(#h)" xlink:href="#i"/>
+            <use fill="#FFF" xlink:href="#i"/>
+        </g>
+    </g>
+</svg>

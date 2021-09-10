@@ -1,0 +1,68 @@
+<div>
+  <div class="btn pull-right mb-3" [class.btn-primary]="!editMode" [class.btn-secondary]="editMode" (click)="toggleEditMode()">{{ editMode ? 'Return' : 'Edit' }}</div>
+  <div class="clearfix" *ngIf="editMode"></div>
+  <div ng2FileDrop
+    [ngClass]="{'file-over': hasBaseDropZoneOver}"
+    (fileOver)="fileOverBase($event)"
+    [uploader]="uploader"
+    *ngIf="editMode"
+    class="drop-zone">
+    <h1>Drag & Drop</h1>
+    <div class="upload-button-wrapper">
+      <div class="fileContainer btn btn-primary ripple-effect">
+        <input type="file" ng2FileSelect [uploader]="uploader" multiple />
+        Browse
+      </div>
+    </div>
+  </div>
+  <div class="files-list" >
+    <span class="no-value" *ngIf="files.length === 0 && !editMode">No files</span>
+    <!-- Upload files-->
+    <div class="file-item" *ngFor="let file of files">
+      <div class="file-name" (click)="showFileDetails(file)">
+        <i class="fa pr-2 " [flFileIcon]="file.contentType"></i><br>
+        {{ file.name }}
+      </div>
+      <div class="file-action" *ngIf="editMode">
+        <button type="button" class="btn btn-danger btn-sm ripple-effect" [swal]="{ title: 'Delete &ldquo;' + file.name + '&rdquo; file?', text: 'This cannot be undone.', type: 'warning', showCancelButton: true, confirmButtonText: 'Yes, delete it'}"
+        (confirm)="delete(file)">
+          <span class="fa fa-trash"></span>
+        </button>
+      </div>
+    </div>
+    <!---->
+  </div>
+</div>
+
+<div>
+  <div bsModal #fileDetailModal="bs-modal" (onHidden)="onHiddenFileDetails()" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="fileDetailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">{{ selectedFile?.name }}</h4>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="hideFileDetails()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" *ngIf="previewFormat && selectedFile && previewUrl">
+          <div class="file-preview" [ngSwitch]="previewFormat">
+            <div *ngSwitchCase="'image'">
+              <div class="item-file-preview__wrapper">
+                <img [src]="previewUrl" class="item-file-preview" alt="">
+              </div>
+            </div>
+            <div *ngSwitchCase="'txtPDF'">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" [src]="previewUrl | safe" frameborder="0"></iframe>
+              </div>
+            </div>
+            <div *ngSwitchCase="'noSupport'">
+              <span>File View not supported. Please download it and view manually.</span><br/><br/>
+              <a class="btn btn-primary download-btn" [href]="previewUrl + '&download=true'" target="_blank">Download</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

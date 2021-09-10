@@ -1,0 +1,100 @@
+.service-modal-background {
+  position: fixed;
+  top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+  background: rgba(#1f1f1f, 90%);
+  z-index: 1000;
+}
+
+.service-modal-container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 424px;
+	width: 558px;
+	background: url('~/assets/img/pop-bg-image-pm.png') center center no-repeat;
+	background-size: cover;
+	border-radius: 10px;
+}
+
+.service-modal {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	height: 100%;
+	width: 100%;
+	padding-top: 100px;
+	padding-bottom: 16px;
+	background: linear-gradient(135deg, #e64e4b, rgba(#fe9e39, 0.59));
+	border-radius: 10px;
+
+
+	&__close-icon {
+		position: absolute;
+		top: 16px;
+		right: 16px;
+		cursor: pointer;
+	}
+
+	&__icon-container {
+		position: absolute;
+		top: -45px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 90px;
+		height: 90px;
+		border-radius: 14px;
+		box-shadow: 0 2px 2px 0 rgba(#000, .5);
+	}
+
+	&__icon {
+		width: 100%;
+		height: 102%;
+		background: url('~/assets/img/new_services/pm.svg') center center no-repeat;
+    background-size: contain;
+	}
+
+	&__title {
+		font-size: 32px;
+		color: #fff;
+		font-weight: bold;
+		letter-spacing: 0px;
+		line-height: 40px;
+	}
+
+	&__description {
+		font-size: 16px;
+		color: #fff;
+		font-weight: bold;
+		letter-spacing: 0.1px;
+		line-height: 24px;
+		text-align: center;
+	}
+
+	&__success-button {
+		display: flex;
+    justify-content: center;
+		height: 48px;
+		margin-top: 48px;
+		margin-bottom: 72px;
+		background: #fff;
+		width: 300px;
+
+		&:hover {
+			background: #f1f1f1;
+		}
+	}
+
+	&__cancel-button {
+		color: #fff;
+		font-size: 14px;
+
+		&:hover {
+			background: rgba(#fff, 0.2);
+		}
+	}
+}

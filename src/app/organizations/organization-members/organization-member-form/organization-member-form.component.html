@@ -1,0 +1,211 @@
+<div class="form-container">
+  <form class="member-form w-100"
+        *ngIf="membersForm; else loadingView"
+        [formGroup]="membersForm"
+        (ngSubmit)="onSubmit()">
+    <div class="member-form__container">
+      <div class="member-form__info" *ngIf="!platformInvite">
+        <div class="member-form__profile-container">
+          <div class="member-form__profile-image">
+            <ngx-avatar size="32" src="{{member?.profile?.avatarUrl}}" name="{{ displayName }}"></ngx-avatar>
+          </div>
+          <div class="member-form__profile-info">
+            <div class="member-form__profile-name">
+              {{ displayName }}
+            </div>
+            <div class="member-form__profile-email lignt-gray-text">
+              {{membersForm.value.email}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="!platformInvite">
+        <div class="form-group">
+          <label>Role</label>
+          <ng-select class="dropdown dropdown--contained w-100"
+                     [class.dropdown--disabled]="membersForm.get('role').disabled"
+                     [multiple]="false"
+                     [items]="rolesSelectOptions"
+                     bindValue="name"
+                     bindLabel="name"
+                     [searchable]="false"
+                     [clearable]="false"
+                     formControlName="role">
+            <ng-template ng-option-tmp let-item="item" let-index="index" let-search="searchTerm">
+              <div class="d-flex align-items-center justify-content-start">
+              <span class="icon icon--info mr--8"
+                    placement="right"
+                    tooltip="{{ item.tooltip }}"
+                    container="body"></span>
+                <span>{{ item.name }}</span>
+              </div>
+            </ng-template>
+          </ng-select>
+        </div>
+
+        <div class="form-group">
+          <label>Team (optional)</label>
+          <ng-select class="dropdown dropdown--contained w-100"
+                     [class.dropdown--disabled]="membersForm.get('teams').disabled"
+                     [multiple]="false"
+                     [items]="teams"
+                     bindLabel="name"
+                     bindValue='_id'
+                     [searchable]="false"
+                     [clearable]="true"
+                     formControlName="teams">
+            <ng-template ng-option-tmp let-item="item" let-index="index" let-search="searchTerm">
+              <div class="d-flex align-items-center justify-content-start">
+                {{ item.name }}
+              </div>
+            </ng-template>
+          </ng-select>
+        </div>
+      </div>
+
+      <div class="member-form__new-user-container" *ngIf="platformInvite">
+          <div class="form-group mb-1">
+            <label>Email</label>
+            <div class="input-wrap input-wrap--contained input-wrap--small">
+              <input type="email" class="input-wrap__input" formControlName="email" disabled>
+            </div>
+          </div>
+
+        <div class="row">
+          <div class="form-group col-6 mb-1">
+            <label [hidden]="!validationState.firstName.isValid">First name</label>
+            <label class="text-error" *ngIf="!validationState.firstName.isValid">
+              {{ validationState.firstName.message }}
+            </label>
+            <div class="input-wrap input-wrap--contained input-wrap--small"
+                 [class.input-wrap--error]="!validationState.firstName.isValid">
+              <input type="text" class="input-wrap__input" formControlName="firstName">
+            </div>
+          </div>
+
+          <div class="form-group col-6 mb-1">
+            <label [hidden]="!validationState.lastName.isValid">Last name</label>
+            <label class="text-error" *ngIf="!validationState.lastName.isValid">
+              {{ validationState.lastName.message }}
+            </label>
+            <div class="input-wrap input-wrap--contained input-wrap--small"
+                 [class.input-wrap--error]="!validationState.lastName.isValid">
+              <input type="text" class="input-wrap__input" formControlName="lastName">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-6 mb-1">
+            <label>Role</label>
+            <ng-select class="dropdown dropdown--contained w-100"
+                       [class.dropdown--disabled]="membersForm.get('role').disabled"
+                       [multiple]="false"
+                       [items]="rolesSelectOptions"
+                       bindValue="name"
+                       bindLabel="name"
+                       [searchable]="false"
+                       [clearable]="false"
+                       formControlName="role">
+              <ng-template ng-option-tmp let-item="item" let-index="index" let-search="searchTerm">
+                <div class="d-flex align-items-center justify-content-start">
+              <span class="icon icon--info mr--8"
+                    placement="right"
+                    tooltip="{{ item.tooltip }}"
+                    container="body"></span>
+                  <span>{{ item.name }}</span>
+                </div>
+              </ng-template>
+            </ng-select>
+          </div>
+
+          <div class="form-group col-6 mb-1">
+            <label>Team (optional)</label>
+            <ng-select class="dropdown dropdown--contained w-100"
+                       [class.dropdown--disabled]="membersForm.get('teams').disabled"
+                       [multiple]="false"
+                       [items]="teams"
+                       bindLabel="name"
+                       bindValue='_id'
+                       [searchable]="false"
+                       [clearable]="true"
+                       formControlName="teams">
+              <ng-template ng-option-tmp let-item="item" let-index="index" let-search="searchTerm">
+                <div class="d-flex align-items-center justify-content-start">
+                  {{ item.name }}
+                </div>
+              </ng-template>
+            </ng-select>
+          </div>
+        </div>
+      </div>
+
+      <hr class="mb-2">
+      <div class="services">
+        <label>Services</label>
+        <div class="services__list" formArrayName="memberServices">
+          <div class="services__service"
+              *ngFor="let serviceGroup of membersServicesFormArray.controls; let i = index;"
+              [formGroup]="serviceGroup"
+          >
+            <div class="services__top d-flex flex-wrap align-items-center">
+              <span class="{{ 'service-icon ' + serviceGroup.value.serviceId | serviceIcon }}"></span>
+
+              <h6 class="services__name">
+                {{ serviceGroup.value.name === 'ai-job-site' ? 'Job Site' : serviceGroup.value.name | titlecase }}
+              </h6>
+
+              <span class="icon icon--info icon--size-16px" [tooltip]="serviceGroup.value.description"></span>
+
+              <div class="ml-auto d-flex align-items-center"
+                    *ngIf="!serviceGroup.value.core && !serviceGroup.value.enabledByTeam">
+
+                <label class="switch mb--0" [class.dropdown--disabled]="membersForm.get('role').disabled">
+                  <input class="switch__input"
+                        [id]="serviceGroup.value.serviceId"
+                        formControlName="enabled"
+                        type="checkbox">
+                  <span class="switch__toggle"></span>
+                </label>
+                <label class="mb--0" [for]="serviceGroup.value.serviceId"></label>
+              </div>
+              <span class="lignt-gray-text d-block ml-auto mr-3 pl-3"
+                *ngIf="serviceGroup.value.core && !serviceGroup.value.enabledByTeam">
+                Enabled by default
+              </span>
+              <span class="lignt-gray-text d-block ml-auto mr-3 pl-3"
+                *ngIf="!serviceGroup.value.core && serviceGroup.value.enabledByTeam">
+                Enabled by Team</span>
+            </div>
+
+            <div class="services__bottom mt--16" *ngIf="serviceGroup.value.enabled">
+              <div class="service__role-selection">
+                <ng-select  class="dropdown dropdown--contained"
+                            [class.dropdown--disabled]="membersForm.get('role').disabled"
+                            [searchable]="false"
+                            formControlName="role"
+                            [clearable]="false"
+                            placeholder="Choose role">
+                  <ng-option *ngFor="let role of availableServiceRoles" [value]="role">{{ role }}</ng-option>
+                </ng-select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="action-footer d-flex align-items-center justify-content-end">
+      <button class="button button--ghost button--medium mr-2" type="button" (click)="canceled.emit()">
+        Cancel
+      </button>
+      <button class="button button--contained button--medium" type="submit" [disabled]="memberInvite && !membersForm.dirty">
+        {{ (platformInvite || memberInvite) ? 'Invite Member': 'Save' }}
+      </button>
+    </div>
+  </form>
+
+  <ng-template #loadingView>
+    <ai-loading class="mx-auto my-5"></ai-loading>
+  </ng-template>
+</div>

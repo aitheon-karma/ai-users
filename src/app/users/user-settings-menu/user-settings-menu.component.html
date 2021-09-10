@@ -1,0 +1,64 @@
+<ul class="nav nav-pills my-profile" >
+  <li class="nav-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }">
+    <a class="nav-link pl-0" [routerLink]="['/settings']">
+    My Profile
+    </a>
+  </li>
+  <li class="nav-item"
+      routerLinkActive="active">
+    <a  class="nav-link"
+        [routerLink]="['/settings/payments']">
+      My Payments
+    </a>
+  </li>
+  <li class="nav-item"
+      routerLinkActive="active">
+    <a  class="nav-link"
+        [routerLink]="['/settings/referral']">
+      Referral Program
+    </a>
+  </li>
+  <li class="nav-item"
+      routerLinkActive="active">
+    <a  class="nav-link"
+        [routerLink]="['/settings/services']">
+      Services
+    </a>
+  </li>
+  <li class="nav-item"
+      routerLinkActive="active">
+    <a  class="nav-link"
+        [routerLink]="['/settings/notifications']">
+      Notifications
+    </a>
+  </li>
+  <li class="nav-item"
+      routerLinkActive="active">
+    <a  class="nav-link"
+        [routerLink]="['/settings/security']">
+      Security
+    </a>
+  </li>
+  <li class="nav-item"
+      routerLinkActive="active">
+    <a  class="nav-link"
+        [routerLink]="['/settings/change-password']">
+      Change Password
+    </a>
+  </li>
+</ul>
+
+<!-- <div class="mobile-menu" dropdown>
+  <button class="btn btn-outline btn-sm pull-right" dropdownToggle>Menu</button>
+  <ul *dropdownMenu class="dropdown-menu" role="menu">
+      <li class="nav-item" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" role="menuitem"><a class="dropdown-item" [routerLink]="['/settings']"><span>My Profile</span></a></li>
+      <li class="nav-item" routerLinkActive="active" role="menuitem"><a class="dropdown-item" [routerLink]="['/settings/payments']"><span>My Payments</span></a></li>
+      <li class="nav-item" routerLinkActive="active" role="menuitem"><a class="dropdown-item" [routerLink]="['/settings/referral']"><span>Referral program</span></a></li>
+      <li class="nav-item" routerLinkActive="active" role="menuitem"><a class="dropdown-item" [routerLink]="['/settings/services']"><span>Services</span></a></li>
+      <li class="nav-item" routerLinkActive="active" role="menuitem"><a class="dropdown-item" [routerLink]="['/settings/notifications']"><span>Notifications</span></a></li>
+      <li class="nav-item" routerLinkActive="active" role="menuitem"><a class="dropdown-item" [routerLink]="['/settings/security']">Security</a></li>
+      <li class="nav-item" routerLinkActive="active" role="menuitem"><a class="dropdown-item" [routerLink]="['/settings/change-password']">Change Password</a></li>
+  </ul>
+</div> -->

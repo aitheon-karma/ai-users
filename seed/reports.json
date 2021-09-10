@@ -1,0 +1,2532 @@
+[
+  {
+    "wallet": "0x84932867e06c939ac27771329526fedffe5403cc",
+    "purchasedDate": "2018-02-03T19:01:25.000Z",
+    "ethAmount": "1",
+    "ethRate": "982.93",
+    "ethRateDelta": "107.92999999999995 USD",
+    "tokensTransation": "5000",
+    "tokensCredit": "616.742857142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xe03a8fb8a65967255fb009c1a89166a95b03974b",
+    "purchasedDate": "2018-02-03T19:01:25.000Z",
+    "ethAmount": "2",
+    "ethRate": "982.93",
+    "ethRateDelta": "107.92999999999995 USD",
+    "tokensTransation": "10000",
+    "tokensCredit": "1233.48571428571",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x0b34d2ea2206c9f6faa40e73eb3e010ee9359483",
+    "purchasedDate": "2018-02-03T19:01:25.000Z",
+    "ethAmount": "3",
+    "ethRate": "982.93",
+    "ethRateDelta": "107.92999999999995 USD",
+    "tokensTransation": "15000",
+    "tokensCredit": "1850.22857142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xac4a9d03ab1c3ba5bd814646368ff3b2e3451af7",
+    "purchasedDate": "2018-02-03T19:01:25.000Z",
+    "ethAmount": "0.35783199",
+    "ethRate": "982.93",
+    "ethRateDelta": "107.92999999999995 USD",
+    "tokensTransation": "1789.15995",
+    "tokensCredit": "220.690323889714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xa80dca33b9ec74a5a42294ad989542bf1b501c28",
+    "purchasedDate": "2018-02-03T19:01:25.000Z",
+    "ethAmount": "1",
+    "ethRate": "982.93",
+    "ethRateDelta": "107.92999999999995 USD",
+    "tokensTransation": "5000",
+    "tokensCredit": "616.742857142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x0208a1663abc46a4075eb6503390ae83d532113d",
+    "purchasedDate": "2018-02-03T19:01:33.000Z",
+    "ethAmount": "0.379302116",
+    "ethRate": "982.93",
+    "ethRateDelta": "107.92999999999995 USD",
+    "tokensTransation": "1896.5105800000001",
+    "tokensCredit": "233.931870742171",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x14e67c2897827a526ffa29d96115d6070f422379",
+    "purchasedDate": "2018-02-03T19:01:57.000Z",
+    "ethAmount": "9.4",
+    "ethRate": "982.93",
+    "ethRateDelta": "107.92999999999995 USD",
+    "tokensTransation": "47000",
+    "tokensCredit": "5797.38285714285",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xcd96a42c8c7bc7269d45dd4f2dfd0e434dedb8ff",
+    "purchasedDate": "2018-02-03T19:01:57.000Z",
+    "ethAmount": "1",
+    "ethRate": "982.93",
+    "ethRateDelta": "107.92999999999995 USD",
+    "tokensTransation": "5000",
+    "tokensCredit": "616.742857142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x610c9ffb2460dddda4a8196b6baeabb8d3849c7d",
+    "purchasedDate": "2018-02-03T19:01:57.000Z",
+    "ethAmount": "0.35",
+    "ethRate": "982.93",
+    "ethRateDelta": "107.92999999999995 USD",
+    "tokensTransation": "1750",
+    "tokensCredit": "215.86",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x923f001eab6eaad4057b984b1d878e6bab6565ea",
+    "purchasedDate": "2018-02-03T19:01:57.000Z",
+    "ethAmount": "0.15",
+    "ethRate": "982.93",
+    "ethRateDelta": "107.92999999999995 USD",
+    "tokensTransation": "750",
+    "tokensCredit": "92.5114285714285",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x94f38cbc33b3b48e4c10da16af3e9f9a78f50a37",
+    "purchasedDate": "2018-02-03T19:01:57.000Z",
+    "ethAmount": "2",
+    "ethRate": "982.93",
+    "ethRateDelta": "107.92999999999995 USD",
+    "tokensTransation": "10000",
+    "tokensCredit": "1233.48571428571",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x406cd9b0b56f3d9c9c70ca542f0968ddfbf93c4b",
+    "purchasedDate": "2018-02-03T19:01:57.000Z",
+    "ethAmount": "0.95",
+    "ethRate": "982.93",
+    "ethRateDelta": "107.92999999999995 USD",
+    "tokensTransation": "4749.999999999999",
+    "tokensCredit": "585.905714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x5f19a8f65ba0005c777865972ceb9a4880b4e1ad",
+    "purchasedDate": "2018-02-03T19:02:28.000Z",
+    "ethAmount": "20.2",
+    "ethRate": "980.23",
+    "ethRateDelta": "105.23000000000002 USD",
+    "tokensTransation": "101000",
+    "tokensCredit": "12146.5485714286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x041304b82fe9e0983248896e4e39626268583842",
+    "purchasedDate": "2018-02-03T19:02:28.000Z",
+    "ethAmount": "0.6",
+    "ethRate": "980.23",
+    "ethRateDelta": "105.23000000000002 USD",
+    "tokensTransation": "3000",
+    "tokensCredit": "360.788571428571",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xff4d19251c1cf74c7eec3b683c5ba9f032894691",
+    "purchasedDate": "2018-02-03T19:02:28.000Z",
+    "ethAmount": "1",
+    "ethRate": "980.23",
+    "ethRateDelta": "105.23000000000002 USD",
+    "tokensTransation": "5000",
+    "tokensCredit": "601.314285714286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x54db850a932f70a631a0b1d8b444e532d9f574d0",
+    "purchasedDate": "2018-02-03T19:02:28.000Z",
+    "ethAmount": "2",
+    "ethRate": "980.23",
+    "ethRateDelta": "105.23000000000002 USD",
+    "tokensTransation": "10000",
+    "tokensCredit": "1202.62857142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x3f167411caf4bfc610c9a7dc8d0e8b9feaf46eba",
+    "purchasedDate": "2018-02-03T19:02:28.000Z",
+    "ethAmount": "0.02",
+    "ethRate": "980.23",
+    "ethRateDelta": "105.23000000000002 USD",
+    "tokensTransation": "100",
+    "tokensCredit": "12.0262857142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xeeb777ab4b04498412f435890b1be0bf13fe02d3",
+    "purchasedDate": "2018-02-03T19:02:39.000Z",
+    "ethAmount": "1",
+    "ethRate": "980.23",
+    "ethRateDelta": "105.23000000000002 USD",
+    "tokensTransation": "5000",
+    "tokensCredit": "601.314285714286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x0c5f1891581c2ab02c2caf8f7b9852e7e631992e",
+    "purchasedDate": "2018-02-03T19:02:49.000Z",
+    "ethAmount": "0.485",
+    "ethRate": "980.23",
+    "ethRateDelta": "105.23000000000002 USD",
+    "tokensTransation": "2425.0000000000005",
+    "tokensCredit": "291.637428571429",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x89a0b556c596bae6c58ed2a1ca529058cc5c8749",
+    "purchasedDate": "2018-02-03T19:03:07.000Z",
+    "ethAmount": "0.08035",
+    "ethRate": "982.16",
+    "ethRateDelta": "107.15999999999997 USD",
+    "tokensTransation": "401.75",
+    "tokensCredit": "49.2017485714286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xbefc3ca5d3132fa8bd86dc3833b7af2a8315f3c0",
+    "purchasedDate": "2018-02-03T19:03:07.000Z",
+    "ethAmount": "1.46",
+    "ethRate": "982.16",
+    "ethRateDelta": "107.15999999999997 USD",
+    "tokensTransation": "7300.000000000001",
+    "tokensCredit": "894.020571428571",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x2a53f024ebf0bf8014851280c555d35d31387f53",
+    "purchasedDate": "2018-02-03T19:03:10.000Z",
+    "ethAmount": "4.819077882",
+    "ethRate": "982.16",
+    "ethRateDelta": "107.15999999999997 USD",
+    "tokensTransation": "24095.389410000003",
+    "tokensCredit": "2950.92791905783",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xe4ee3ac19f5a7ab2a29152c6d4cf0088d8e3f17f",
+    "purchasedDate": "2018-02-03T19:03:10.000Z",
+    "ethAmount": "0.316",
+    "ethRate": "982.16",
+    "ethRateDelta": "107.15999999999997 USD",
+    "tokensTransation": "1580",
+    "tokensCredit": "193.500342857143",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xbf1fb2877070ef173ab2362d005db8ebcbafbd7d",
+    "purchasedDate": "2018-02-03T19:03:10.000Z",
+    "ethAmount": "2.252",
+    "ethRate": "982.16",
+    "ethRateDelta": "107.15999999999997 USD",
+    "tokensTransation": "11259.999999999998",
+    "tokensCredit": "1378.99611428571",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x16c96155328d9f22973502c2ab2cbea06fb3d1a4",
+    "purchasedDate": "2018-02-03T19:03:26.000Z",
+    "ethAmount": "3",
+    "ethRate": "982.16",
+    "ethRateDelta": "107.15999999999997 USD",
+    "tokensTransation": "15000",
+    "tokensCredit": "1837.02857142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x248df99a995e90c7625304a3732b56e743159a37",
+    "purchasedDate": "2018-02-03T19:03:45.000Z",
+    "ethAmount": "0.408715528",
+    "ethRate": "982.16",
+    "ethRateDelta": "107.15999999999997 USD",
+    "tokensTransation": "2043.5776399999997",
+    "tokensCredit": "250.274034174171",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x2bc7c9886c6719fecb1bc97bf998e410e0793c19",
+    "purchasedDate": "2018-02-03T19:04:10.000Z",
+    "ethAmount": "1.9",
+    "ethRate": "982.25",
+    "ethRateDelta": "107.25 USD",
+    "tokensTransation": "9499.999999999998",
+    "tokensCredit": "1164.42857142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x5de2a3ced3e79ab1917f3bf458929fea6b13bd15",
+    "purchasedDate": "2018-02-03T19:04:10.000Z",
+    "ethAmount": "3.55836",
+    "ethRate": "982.25",
+    "ethRateDelta": "107.25 USD",
+    "tokensTransation": "17791.800000000003",
+    "tokensCredit": "2180.76634285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xd73dc932aa7e8462fe22cfc7e648a301cc56a7d5",
+    "purchasedDate": "2018-02-03T19:04:21.000Z",
+    "ethAmount": "0.92475",
+    "ethRate": "982.25",
+    "ethRateDelta": "107.25 USD",
+    "tokensTransation": "4623.750000000001",
+    "tokensCredit": "566.739642857143",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x6090e86c4f85212a37cd204a1995a29079c9534f",
+    "purchasedDate": "2018-02-03T19:04:24.000Z",
+    "ethAmount": "0.262",
+    "ethRate": "982.25",
+    "ethRateDelta": "107.25 USD",
+    "tokensTransation": "1310",
+    "tokensCredit": "160.568571428571",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xafc365ec1ef6f5350ee773bf25ab8ee2bddd8b10",
+    "purchasedDate": "2018-02-03T19:05:00.000Z",
+    "ethAmount": "0.25728",
+    "ethRate": "982.02",
+    "ethRateDelta": "107.01999999999998 USD",
+    "tokensTransation": "1286.4",
+    "tokensCredit": "157.337746285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xedda904f7588e258dc3afde263256c16b1a55fa8",
+    "purchasedDate": "2018-02-03T19:05:00.000Z",
+    "ethAmount": "1.3",
+    "ethRate": "982.02",
+    "ethRateDelta": "107.01999999999998 USD",
+    "tokensTransation": "6500",
+    "tokensCredit": "795.005714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xb65247f236ee7854edfdd1bbcc5db63514a47a02",
+    "purchasedDate": "2018-02-03T19:05:00.000Z",
+    "ethAmount": "0.14",
+    "ethRate": "982.02",
+    "ethRateDelta": "107.01999999999998 USD",
+    "tokensTransation": "700",
+    "tokensCredit": "85.616",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xf4d85f5e4784f41526c8ad597e4468ee829de4c5",
+    "purchasedDate": "2018-02-03T19:05:00.000Z",
+    "ethAmount": "0.306101378",
+    "ethRate": "982.02",
+    "ethRateDelta": "107.01999999999998 USD",
+    "tokensTransation": "1530.50689",
+    "tokensCredit": "187.194111277486",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x153742fc7dc3ec40ee22d432fe6b041b3e21e402",
+    "purchasedDate": "2018-02-03T19:05:00.000Z",
+    "ethAmount": "1",
+    "ethRate": "982.02",
+    "ethRateDelta": "107.01999999999998 USD",
+    "tokensTransation": "5000",
+    "tokensCredit": "611.542857142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x60b00d7b7acf54634e3c7dc9b9c69d657bbf2bae",
+    "purchasedDate": "2018-02-03T19:05:00.000Z",
+    "ethAmount": "0.0514536690582332",
+    "ethRate": "982.02",
+    "ethRateDelta": "107.01999999999998 USD",
+    "tokensTransation": "257.26834529116604",
+    "tokensCredit": "31.466123786355",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xca86490abf420d625113ada810a05e1977daf11e",
+    "purchasedDate": "2018-02-03T19:05:08.000Z",
+    "ethAmount": "0.13",
+    "ethRate": "982.02",
+    "ethRateDelta": "107.01999999999998 USD",
+    "tokensTransation": "650",
+    "tokensCredit": "79.5005714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x5cebf6144c09191749e943b2d5cce1b4b290ce71",
+    "purchasedDate": "2018-02-03T19:05:22.000Z",
+    "ethAmount": "0.98",
+    "ethRate": "982.02",
+    "ethRateDelta": "107.01999999999998 USD",
+    "tokensTransation": "4900",
+    "tokensCredit": "599.312",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x1362e0b0da1a9ad90bd5c0a71401fa9a61d80dee",
+    "purchasedDate": "2018-02-03T19:05:27.000Z",
+    "ethAmount": "5.2",
+    "ethRate": "982.02",
+    "ethRateDelta": "107.01999999999998 USD",
+    "tokensTransation": "26000",
+    "tokensCredit": "3180.02285714286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x1a766bc2ec805a5762ffc9dec5427f3b1362c275",
+    "purchasedDate": "2018-02-03T19:05:35.000Z",
+    "ethAmount": "8.118",
+    "ethRate": "982.02",
+    "ethRateDelta": "107.01999999999998 USD",
+    "tokensTransation": "40590",
+    "tokensCredit": "4964.50491428571",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xdc2ce3871d7862086b6362af88dc7ccc890e7d66",
+    "purchasedDate": "2018-02-03T19:06:06.000Z",
+    "ethAmount": "0.99",
+    "ethRate": "981.38",
+    "ethRateDelta": "106.38 USD",
+    "tokensTransation": "4949.999999999999",
+    "tokensCredit": "601.806857142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x85e597cecd5159940159b3129633eec4e597db6a",
+    "purchasedDate": "2018-02-03T19:06:15.000Z",
+    "ethAmount": "0.1",
+    "ethRate": "981.38",
+    "ethRateDelta": "106.38 USD",
+    "tokensTransation": "500",
+    "tokensCredit": "60.7885714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x29b1dd3e306131492b09f85f09678816a954b472",
+    "purchasedDate": "2018-02-03T19:06:57.000Z",
+    "ethAmount": "1",
+    "ethRate": "981.38",
+    "ethRateDelta": "106.38 USD",
+    "tokensTransation": "5000",
+    "tokensCredit": "607.885714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x26f4d788d068fab43e5dba62d4c9a91c916e6696",
+    "purchasedDate": "2018-02-03T19:06:57.000Z",
+    "ethAmount": "0.05084",
+    "ethRate": "981.38",
+    "ethRateDelta": "106.38 USD",
+    "tokensTransation": "254.2",
+    "tokensCredit": "30.9049097142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x0d72f622e8db4cdaf1ea9ff1f9cc993c97a3b245",
+    "purchasedDate": "2018-02-03T19:07:10.000Z",
+    "ethAmount": "0.09",
+    "ethRate": "981.83",
+    "ethRateDelta": "106.83000000000004 USD",
+    "tokensTransation": "450",
+    "tokensCredit": "54.9411428571429",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x0bda046968c97347c6154f59013f059ca88bb03a",
+    "purchasedDate": "2018-02-03T19:07:10.000Z",
+    "ethAmount": "1.1",
+    "ethRate": "981.83",
+    "ethRateDelta": "106.83000000000004 USD",
+    "tokensTransation": "5500",
+    "tokensCredit": "671.502857142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xfe4a01bdc4059e5b2587b9aab15631490563f611",
+    "purchasedDate": "2018-02-03T19:07:43.000Z",
+    "ethAmount": "0.1",
+    "ethRate": "981.83",
+    "ethRateDelta": "106.83000000000004 USD",
+    "tokensTransation": "500",
+    "tokensCredit": "61.0457142857143",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xbefc3ca5d3132fa8bd86dc3833b7af2a8315f3c0",
+    "purchasedDate": "2018-02-03T19:07:43.000Z",
+    "ethAmount": "0.11",
+    "ethRate": "981.83",
+    "ethRateDelta": "106.83000000000004 USD",
+    "tokensTransation": "550.0000000000001",
+    "tokensCredit": "67.1502857142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x7603514a5e355a62ca4daac2a6684d65b0fe3501",
+    "purchasedDate": "2018-02-03T19:08:18.000Z",
+    "ethAmount": "0.3",
+    "ethRate": "982.49",
+    "ethRateDelta": "107.49000000000001 USD",
+    "tokensTransation": "1500",
+    "tokensCredit": "184.268571428571",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xb643738caac85c18616886fb43c7008b50de7b99",
+    "purchasedDate": "2018-02-03T19:08:18.000Z",
+    "ethAmount": "5",
+    "ethRate": "982.49",
+    "ethRateDelta": "107.49000000000001 USD",
+    "tokensTransation": "25000.000000000004",
+    "tokensCredit": "3071.14285714286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xaec1797edd91c5a6ceb51180e29639c5b4d26fb3",
+    "purchasedDate": "2018-02-03T19:09:06.000Z",
+    "ethAmount": "0.20986",
+    "ethRate": "981.08",
+    "ethRateDelta": "106.08000000000004 USD",
+    "tokensTransation": "1049.3000000000002",
+    "tokensCredit": "127.211136",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xbcc0f2fd68bfcc2a4b00bf8421b45cb4d02008ae",
+    "purchasedDate": "2018-02-03T19:09:43.000Z",
+    "ethAmount": "0.22",
+    "ethRate": "981.08",
+    "ethRateDelta": "106.08000000000004 USD",
+    "tokensTransation": "1100.0000000000002",
+    "tokensCredit": "133.357714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xd53b6f40d48a3cb3651d376b56c481fd4d1455ed",
+    "purchasedDate": "2018-02-03T19:10:18.000Z",
+    "ethAmount": "0.027287608",
+    "ethRate": "982.29",
+    "ethRateDelta": "107.28999999999996 USD",
+    "tokensTransation": "136.43804000000003",
+    "tokensCredit": "16.7296426418286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x8df4713ce59bfc78981cc564a161a50e118c2170",
+    "purchasedDate": "2018-02-03T19:10:52.000Z",
+    "ethAmount": "4.497",
+    "ethRate": "982.29",
+    "ethRateDelta": "107.28999999999996 USD",
+    "tokensTransation": "22485",
+    "tokensCredit": "2757.04645714286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x1f1e015b9a6d10ad1fbbc308751a210cdd4892f2",
+    "purchasedDate": "2018-02-03T19:10:56.000Z",
+    "ethAmount": "0.12224",
+    "ethRate": "982.29",
+    "ethRateDelta": "107.28999999999996 USD",
+    "tokensTransation": "611.2",
+    "tokensCredit": "74.9435977142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x2a53f024ebf0bf8014851280c555d35d31387f53",
+    "purchasedDate": "2018-02-03T19:12:32.000Z",
+    "ethAmount": "0.0040821",
+    "ethRate": "981.85",
+    "ethRateDelta": "106.85000000000002 USD",
+    "tokensTransation": "20.4105",
+    "tokensCredit": "2.49241362857143",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x4828011c2afbf06f5d590d4d5d2903192a26c0a4",
+    "purchasedDate": "2018-02-03T19:13:11.000Z",
+    "ethAmount": "0.06",
+    "ethRate": "981.58",
+    "ethRateDelta": "106.58000000000004 USD",
+    "tokensTransation": "300",
+    "tokensCredit": "36.5417142857143",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xbda26558e81dc9cca0643680dccbf3422939322a",
+    "purchasedDate": "2018-02-03T19:13:47.000Z",
+    "ethAmount": "0.25",
+    "ethRate": "981.58",
+    "ethRateDelta": "106.58000000000004 USD",
+    "tokensTransation": "1250",
+    "tokensCredit": "152.257142857143",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x87c9164eadade3f9f8681239bd42cd00decd5827",
+    "purchasedDate": "2018-02-03T19:13:47.000Z",
+    "ethAmount": "1.001",
+    "ethRate": "981.58",
+    "ethRateDelta": "106.58000000000004 USD",
+    "tokensTransation": "5005.000000000001",
+    "tokensCredit": "609.6376",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x1baad48e53a979c2566624ade4f1b5fd9119ed5a",
+    "purchasedDate": "2018-02-03T19:14:54.000Z",
+    "ethAmount": "5",
+    "ethRate": "981.29",
+    "ethRateDelta": "106.28999999999996 USD",
+    "tokensTransation": "25000.000000000004",
+    "tokensCredit": "3036.85714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xf5c74dae9557c34323764348de412aa87b964870",
+    "purchasedDate": "2018-02-03T19:15:12.000Z",
+    "ethAmount": "0.5",
+    "ethRate": "982.02",
+    "ethRateDelta": "107.01999999999998 USD",
+    "tokensTransation": "2500",
+    "tokensCredit": "305.771428571429",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x20bf1275e0c1d2fa83ada523083acc63266b4796",
+    "purchasedDate": "2018-02-03T19:16:02.000Z",
+    "ethAmount": "0.08792821",
+    "ethRate": "980",
+    "ethRateDelta": "105 USD",
+    "tokensTransation": "439.64105",
+    "tokensCredit": "52.756926",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xb12a919aa822e6d49d551c75e5ed54e03b29d416",
+    "purchasedDate": "2018-02-03T19:18:08.000Z",
+    "ethAmount": "3.9",
+    "ethRate": "975.12",
+    "ethRateDelta": "100.12 USD",
+    "tokensTransation": "19500",
+    "tokensCredit": "2231.24571428571",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x1baad48e53a979c2566624ade4f1b5fd9119ed5a",
+    "purchasedDate": "2018-02-03T19:18:08.000Z",
+    "ethAmount": "1",
+    "ethRate": "975.12",
+    "ethRateDelta": "100.12 USD",
+    "tokensTransation": "5000",
+    "tokensCredit": "572.114285714286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x77d2bba401a160cc5acaa987ec91a4a2ecc9d889",
+    "purchasedDate": "2018-02-03T19:18:27.000Z",
+    "ethAmount": "0.34375206",
+    "ethRate": "975.12",
+    "ethRateDelta": "100.12 USD",
+    "tokensTransation": "1718.7603000000001",
+    "tokensCredit": "196.665464269714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x5cebf6144c09191749e943b2d5cce1b4b290ce71",
+    "purchasedDate": "2018-02-03T19:18:27.000Z",
+    "ethAmount": "0.01",
+    "ethRate": "975.12",
+    "ethRateDelta": "100.12 USD",
+    "tokensTransation": "50",
+    "tokensCredit": "5.72114285714286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xc11d123420b8c83b9a85638569ca0f4dfbb6538e",
+    "purchasedDate": "2018-02-03T19:18:36.000Z",
+    "ethAmount": "6.413557827000001",
+    "ethRate": "975.12",
+    "ethRateDelta": "100.12 USD",
+    "tokensTransation": "32067.789135000003",
+    "tokensCredit": "3669.28805508137",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x40717ad471c4a32b55e01243fcbd1b739e5ff4f3",
+    "purchasedDate": "2018-02-03T19:19:10.000Z",
+    "ethAmount": "0.7",
+    "ethRate": "975.05",
+    "ethRateDelta": "100.04999999999995 USD",
+    "tokensTransation": "3500",
+    "tokensCredit": "400.2",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x0051eb221c7d5e822e55cf8e48812b133f9385a2",
+    "purchasedDate": "2018-02-03T19:20:44.000Z",
+    "ethAmount": "0.1",
+    "ethRate": "974.85",
+    "ethRateDelta": "99.85000000000002 USD",
+    "tokensTransation": "500",
+    "tokensCredit": "57.0571428571429",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x1baad48e53a979c2566624ade4f1b5fd9119ed5a",
+    "purchasedDate": "2018-02-03T19:23:26.000Z",
+    "ethAmount": "0.2",
+    "ethRate": "979.22",
+    "ethRateDelta": "104.22000000000003 USD",
+    "tokensTransation": "1000",
+    "tokensCredit": "119.108571428571",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x55c9405fe81f894c1ddbd74a02cefb378d8cc316",
+    "purchasedDate": "2018-02-03T19:24:35.000Z",
+    "ethAmount": "12",
+    "ethRate": "979.61",
+    "ethRateDelta": "104.61000000000001 USD",
+    "tokensTransation": "60000",
+    "tokensCredit": "7173.25714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xb840b43cd28f2b5cb8f4cf9b5eff5e0c295c7744",
+    "purchasedDate": "2018-02-03T19:26:44.000Z",
+    "ethAmount": "2",
+    "ethRate": "976.65",
+    "ethRateDelta": "101.64999999999998 USD",
+    "tokensTransation": "10000",
+    "tokensCredit": "1161.71428571429",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xb12a919aa822e6d49d551c75e5ed54e03b29d416",
+    "purchasedDate": "2018-02-03T19:26:54.000Z",
+    "ethAmount": "0.09",
+    "ethRate": "976.65",
+    "ethRateDelta": "101.64999999999998 USD",
+    "tokensTransation": "450",
+    "tokensCredit": "52.2771428571428",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x55c9405fe81f894c1ddbd74a02cefb378d8cc316",
+    "purchasedDate": "2018-02-03T19:31:17.000Z",
+    "ethAmount": "24",
+    "ethRate": "980.61",
+    "ethRateDelta": "105.61000000000001 USD",
+    "tokensTransation": "120000",
+    "tokensCredit": "14483.6571428571",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x5bf73fa3359fa343fed27d78d8827a6af39373d6",
+    "purchasedDate": "2018-02-03T19:32:43.000Z",
+    "ethAmount": "0.22",
+    "ethRate": "979.9",
+    "ethRateDelta": "104.89999999999998 USD",
+    "tokensTransation": "1100.0000000000002",
+    "tokensCredit": "131.874285714286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x903699fe759c0c2dac59a90f462fd82ed3485f4b",
+    "purchasedDate": "2018-02-03T19:33:59.000Z",
+    "ethAmount": "0.396860491",
+    "ethRate": "979.52",
+    "ethRateDelta": "104.51999999999998 USD",
+    "tokensTransation": "1984.302455",
+    "tokensCredit": "237.027762967543",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xb332e18ef0a28491ec61abfe367966bd8e5df7fa",
+    "purchasedDate": "2018-02-03T19:35:25.000Z",
+    "ethAmount": "0.8",
+    "ethRate": "978.7",
+    "ethRateDelta": "103.70000000000005 USD",
+    "tokensTransation": "4000",
+    "tokensCredit": "474.057142857143",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xe6d0f529adcfd864658742000d08c6e82446f10c",
+    "purchasedDate": "2018-02-03T19:35:31.000Z",
+    "ethAmount": "2.5",
+    "ethRate": "978.7",
+    "ethRateDelta": "103.70000000000005 USD",
+    "tokensTransation": "12500.000000000002",
+    "tokensCredit": "1481.42857142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x9a157a24b8f04be8995aa784d34b0cc957836dfb",
+    "purchasedDate": "2018-02-03T19:43:37.000Z",
+    "ethAmount": "0.24",
+    "ethRate": "978.01",
+    "ethRateDelta": "103.00999999999999 USD",
+    "tokensTransation": "1200",
+    "tokensCredit": "141.270857142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x1a7ecec710f41d1b31e2ea75f1c05306f861df08",
+    "purchasedDate": "2018-02-03T19:45:44.000Z",
+    "ethAmount": "3.44988717",
+    "ethRate": "977.08",
+    "ethRateDelta": "102.08000000000004 USD",
+    "tokensTransation": "17249.43585",
+    "tokensCredit": "2012.36847036343",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xa30612650e381c2834694714b2213c43d909cf98",
+    "purchasedDate": "2018-02-03T19:47:09.000Z",
+    "ethAmount": "0.175",
+    "ethRate": "976.88",
+    "ethRateDelta": "101.88 USD",
+    "tokensTransation": "875",
+    "tokensCredit": "101.88",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xb15a9d93e52bcadddea17241defcce8992ddcba4",
+    "purchasedDate": "2018-02-03T19:49:02.000Z",
+    "ethAmount": "0.09",
+    "ethRate": "977.73",
+    "ethRateDelta": "102.73000000000002 USD",
+    "tokensTransation": "450",
+    "tokensCredit": "52.8325714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xb750597ef67de1ee31451878383a860cb08aca9f",
+    "purchasedDate": "2018-02-03T19:49:56.000Z",
+    "ethAmount": "0.2",
+    "ethRate": "977.73",
+    "ethRateDelta": "102.73000000000002 USD",
+    "tokensTransation": "1000",
+    "tokensCredit": "117.405714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x4fdcfbe25892b7df475d23877e22b37ca4b1f4d1",
+    "purchasedDate": "2018-02-03T19:52:38.000Z",
+    "ethAmount": "1",
+    "ethRate": "978.49",
+    "ethRateDelta": "103.49000000000001 USD",
+    "tokensTransation": "5000",
+    "tokensCredit": "591.371428571429",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x696083e56a4aad92d41d385fe58fd3a7cfe008ff",
+    "purchasedDate": "2018-02-03T19:53:53.000Z",
+    "ethAmount": "0.990215864",
+    "ethRate": "979.15",
+    "ethRateDelta": "104.14999999999998 USD",
+    "tokensTransation": "4951.079320000001",
+    "tokensCredit": "589.319898489143",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x8d8a89f2de419fc5c83c4a7a50bc215e4866453f",
+    "purchasedDate": "2018-02-03T19:57:02.000Z",
+    "ethAmount": "0.56951404",
+    "ethRate": "976.39",
+    "ethRateDelta": "101.38999999999999 USD",
+    "tokensTransation": "2847.5702",
+    "tokensCredit": "329.960162946286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xb93b6e8816091ceb78cca35f7022b477e44c490a",
+    "purchasedDate": "2018-02-03T20:02:24.000Z",
+    "ethAmount": "0.16",
+    "ethRate": "980.71",
+    "ethRateDelta": "105.71000000000004 USD",
+    "tokensTransation": "800",
+    "tokensCredit": "96.6491428571429",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x15382f009bd87ae433b285b90c00f850baac3a4f",
+    "purchasedDate": "2018-02-03T20:06:05.000Z",
+    "ethAmount": "1.895",
+    "ethRate": "983.48",
+    "ethRateDelta": "108.48000000000002 USD",
+    "tokensTransation": "9475.000000000002",
+    "tokensCredit": "1174.68342857143",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xa80ae72b3909857ef60d443156a1ce3f23a3c385",
+    "purchasedDate": "2018-02-03T20:13:16.000Z",
+    "ethAmount": "0.1",
+    "ethRate": "982.77",
+    "ethRateDelta": "107.76999999999998 USD",
+    "tokensTransation": "500",
+    "tokensCredit": "61.5828571428571",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x9a157a24b8f04be8995aa784d34b0cc957836dfb",
+    "purchasedDate": "2018-02-03T20:15:52.000Z",
+    "ethAmount": "0.15946227",
+    "ethRate": "984.15",
+    "ethRateDelta": "109.14999999999998 USD",
+    "tokensTransation": "797.3113500000001",
+    "tokensCredit": "99.4588958314285",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x3d84b13e4677d77f293962920c1872f525787dd8",
+    "purchasedDate": "2018-02-03T20:29:03.000Z",
+    "ethAmount": "22",
+    "ethRate": "980.97",
+    "ethRateDelta": "105.97000000000003 USD",
+    "tokensTransation": "110000",
+    "tokensCredit": "13321.9428571429",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xbf217cd4d46b89c374232bd70736adbc48739e88",
+    "purchasedDate": "2018-02-03T20:38:11.000Z",
+    "ethAmount": "0.8",
+    "ethRate": "980.19",
+    "ethRateDelta": "105.19000000000005 USD",
+    "tokensTransation": "4000",
+    "tokensCredit": "480.868571428572",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x2854c955f62cbbe7946f2f7ff5e749c4dfef0f95",
+    "purchasedDate": "2018-02-03T20:38:15.000Z",
+    "ethAmount": "0.265",
+    "ethRate": "980.19",
+    "ethRateDelta": "105.19000000000005 USD",
+    "tokensTransation": "1325",
+    "tokensCredit": "159.287714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x1c8e548353421364b1bccc5f0c412d40fe291941",
+    "purchasedDate": "2018-02-03T20:39:41.000Z",
+    "ethAmount": "0.23",
+    "ethRate": "982.34",
+    "ethRateDelta": "107.34000000000003 USD",
+    "tokensTransation": "1150.0000000000002",
+    "tokensCredit": "141.075428571429",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x68d78cbab080a6d6c20437fd7f83c41c2c41a16a",
+    "purchasedDate": "2018-02-03T20:58:45.000Z",
+    "ethAmount": "4.1",
+    "ethRate": "971.62",
+    "ethRateDelta": "96.62 USD",
+    "tokensTransation": "20500.000000000004",
+    "tokensCredit": "2263.66857142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x4ff97181a5df00ac8bdce3b33a95d1cfa5e3072c",
+    "purchasedDate": "2018-02-03T20:58:53.000Z",
+    "ethAmount": "0.5",
+    "ethRate": "971.62",
+    "ethRateDelta": "96.62 USD",
+    "tokensTransation": "2500",
+    "tokensCredit": "276.057142857143",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x9c848b4df8d22cab9750f03a9a16b3841b4556d5",
+    "purchasedDate": "2018-02-03T21:06:25.000Z",
+    "ethAmount": "1.4",
+    "ethRate": "968.56",
+    "ethRateDelta": "93.55999999999995 USD",
+    "tokensTransation": "7000",
+    "tokensCredit": "748.48",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x5b12453c6fc35db1ae3f3a2a5314593fdaeac098",
+    "purchasedDate": "2018-02-03T21:08:58.000Z",
+    "ethAmount": "2",
+    "ethRate": "965.41",
+    "ethRateDelta": "90.40999999999997 USD",
+    "tokensTransation": "10000",
+    "tokensCredit": "1033.25714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x6f8769abf7667b7eb6b18bb50f58fb7f69f343c6",
+    "purchasedDate": "2018-02-03T21:09:23.000Z",
+    "ethAmount": "0.223",
+    "ethRate": "962.49",
+    "ethRateDelta": "87.49000000000001 USD",
+    "tokensTransation": "1115.0000000000002",
+    "tokensCredit": "111.487257142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xe9aeee9fa3e9312b12505c7c0b205f3dba1fccd1",
+    "purchasedDate": "2018-02-03T21:22:32.000Z",
+    "ethAmount": "6",
+    "ethRate": "962",
+    "ethRateDelta": "87 USD",
+    "tokensTransation": "30000",
+    "tokensCredit": "2982.85714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x8bf21e16a9c00c5ecfa7f9594299f46216e28d70",
+    "purchasedDate": "2018-02-03T21:23:08.000Z",
+    "ethAmount": "0.025",
+    "ethRate": "961.42",
+    "ethRateDelta": "86.41999999999996 USD",
+    "tokensTransation": "125",
+    "tokensCredit": "12.3457142857143",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x5ee810eba77695eb03200fc88f3ca0f300bf4afb",
+    "purchasedDate": "2018-02-03T21:28:15.000Z",
+    "ethAmount": "0.125",
+    "ethRate": "968.63",
+    "ethRateDelta": "93.63 USD",
+    "tokensTransation": "625",
+    "tokensCredit": "66.8785714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x3275f548bb7128670a47916a2e2d9297801e85fb",
+    "purchasedDate": "2018-02-03T21:31:51.000Z",
+    "ethAmount": "0.001",
+    "ethRate": "969.07",
+    "ethRateDelta": "94.07000000000005 USD",
+    "tokensTransation": "5",
+    "tokensCredit": "0.537542857142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xa344987a9bd5207df824296016cc50a8be11eacd",
+    "purchasedDate": "2018-02-03T21:35:15.000Z",
+    "ethAmount": "1",
+    "ethRate": "971.33",
+    "ethRateDelta": "96.33000000000004 USD",
+    "tokensTransation": "5000",
+    "tokensCredit": "550.457142857143",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x3275f548bb7128670a47916a2e2d9297801e85fb",
+    "purchasedDate": "2018-02-03T21:37:39.000Z",
+    "ethAmount": "0.408",
+    "ethRate": "972.11",
+    "ethRateDelta": "97.11000000000001 USD",
+    "tokensTransation": "2040",
+    "tokensCredit": "226.405028571429",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x8d8a89f2de419fc5c83c4a7a50bc215e4866453f",
+    "purchasedDate": "2018-02-03T21:39:57.000Z",
+    "ethAmount": "0.15577",
+    "ethRate": "972.16",
+    "ethRateDelta": "97.15999999999997 USD",
+    "tokensTransation": "778.85",
+    "tokensCredit": "86.483504",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x8c1c2349a8fbf0fb8f04600a27c88aa0129dbaae",
+    "purchasedDate": "2018-02-03T21:42:49.000Z",
+    "ethAmount": "0.2",
+    "ethRate": "972.64",
+    "ethRateDelta": "97.63999999999999 USD",
+    "tokensTransation": "1000",
+    "tokensCredit": "111.588571428571",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x3275f548bb7128670a47916a2e2d9297801e85fb",
+    "purchasedDate": "2018-02-03T21:43:58.000Z",
+    "ethAmount": "0.01126857",
+    "ethRate": "971.32",
+    "ethRateDelta": "96.32000000000005 USD",
+    "tokensTransation": "56.342850000000006",
+    "tokensCredit": "6.202220928",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x5b3c6e2bc4c28cdd2df26780f32d19d1b7651db8",
+    "purchasedDate": "2018-02-03T21:45:31.000Z",
+    "ethAmount": "0.47",
+    "ethRate": "966.55",
+    "ethRateDelta": "91.54999999999995 USD",
+    "tokensTransation": "2350.0000000000005",
+    "tokensCredit": "245.877142857143",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xd351998050be70d5d04e26fbce54674cd0f98e28",
+    "purchasedDate": "2018-02-03T21:48:31.000Z",
+    "ethAmount": "0.6",
+    "ethRate": "968.01",
+    "ethRateDelta": "93.00999999999999 USD",
+    "tokensTransation": "3000",
+    "tokensCredit": "318.891428571429",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x80c6dab92aeb21c765719241cf009931496883e9",
+    "purchasedDate": "2018-02-03T21:49:17.000Z",
+    "ethAmount": "0.4",
+    "ethRate": "965.07",
+    "ethRateDelta": "90.07000000000005 USD",
+    "tokensTransation": "2000",
+    "tokensCredit": "205.874285714286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x61589192afe6f9dc7d750dc57087a481c850accb",
+    "purchasedDate": "2018-02-03T21:50:11.000Z",
+    "ethAmount": "0.35",
+    "ethRate": "964.47",
+    "ethRateDelta": "89.47000000000003 USD",
+    "tokensTransation": "1750",
+    "tokensCredit": "178.94",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xc05837af1391f6b8b1f27c51334f5a3892d04ba9",
+    "purchasedDate": "2018-02-03T21:51:28.000Z",
+    "ethAmount": "0.2",
+    "ethRate": "964.31",
+    "ethRateDelta": "89.30999999999995 USD",
+    "tokensTransation": "1000",
+    "tokensCredit": "102.068571428571",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x890dedea0a0a8495215374526ce5383def5db9e8",
+    "purchasedDate": "2018-02-03T21:53:43.000Z",
+    "ethAmount": "0.15",
+    "ethRate": "963.41",
+    "ethRateDelta": "88.40999999999997 USD",
+    "tokensTransation": "750",
+    "tokensCredit": "75.78",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xb006c38bf59b6c963bf26686e3f03aa4d5b46d97",
+    "purchasedDate": "2018-02-03T21:57:53.000Z",
+    "ethAmount": "0.35",
+    "ethRate": "961.75",
+    "ethRateDelta": "86.75 USD",
+    "tokensTransation": "1750",
+    "tokensCredit": "173.5",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x53c0aa271d2301cd0a69cb136b191e78b1376a98",
+    "purchasedDate": "2018-02-03T22:00:47.000Z",
+    "ethAmount": "0.92",
+    "ethRate": "958.24",
+    "ethRateDelta": "83.24000000000001 USD",
+    "tokensTransation": "4600.000000000001",
+    "tokensCredit": "437.604571428572",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x017434ccad123a8e878bc1579f47c234fa9cf3b2",
+    "purchasedDate": "2018-02-03T22:01:01.000Z",
+    "ethAmount": "0.37988947",
+    "ethRate": "957.8",
+    "ethRateDelta": "82.79999999999995 USD",
+    "tokensTransation": "1899.4473500000001",
+    "tokensCredit": "179.741989234286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xab4a87ab5ab19df795782024f19b54adb1b48a09",
+    "purchasedDate": "2018-02-03T22:01:31.000Z",
+    "ethAmount": "0.002",
+    "ethRate": "957.8",
+    "ethRateDelta": "82.79999999999995 USD",
+    "tokensTransation": "10",
+    "tokensCredit": "0.946285714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x9293cef086c4a511194436b777464eeea10ad659",
+    "purchasedDate": "2018-02-03T22:04:40.000Z",
+    "ethAmount": "0.21",
+    "ethRate": "960.64",
+    "ethRateDelta": "85.63999999999999 USD",
+    "tokensTransation": "1050.0000000000002",
+    "tokensCredit": "102.768",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x075a5b64b003ea31de66195c90ef9db586c26de5",
+    "purchasedDate": "2018-02-03T22:06:57.000Z",
+    "ethAmount": "0.091",
+    "ethRate": "959.49",
+    "ethRateDelta": "84.49000000000001 USD",
+    "tokensTransation": "455",
+    "tokensCredit": "43.9348",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xb4b8ce33f0656c76033b656a1c93e94aa0b51dfa",
+    "purchasedDate": "2018-02-03T22:09:26.000Z",
+    "ethAmount": "0.2",
+    "ethRate": "959.47",
+    "ethRateDelta": "84.47000000000003 USD",
+    "tokensTransation": "1000",
+    "tokensCredit": "96.5371428571429",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xaa4b6bf2cb41e22912148745a513ffbf6542a0b3",
+    "purchasedDate": "2018-02-03T22:11:44.000Z",
+    "ethAmount": "1.7",
+    "ethRate": "960.6",
+    "ethRateDelta": "85.60000000000002 USD",
+    "tokensTransation": "8500.000000000002",
+    "tokensCredit": "831.542857142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x8d8a89f2de419fc5c83c4a7a50bc215e4866453f",
+    "purchasedDate": "2018-02-03T22:11:44.000Z",
+    "ethAmount": "0.336",
+    "ethRate": "960.6",
+    "ethRateDelta": "85.60000000000002 USD",
+    "tokensTransation": "1680",
+    "tokensCredit": "164.352",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x56dd2f4868507757ff00e86996ff1dcf10381a59",
+    "purchasedDate": "2018-02-03T22:17:39.000Z",
+    "ethAmount": "0.037",
+    "ethRate": "956.55",
+    "ethRateDelta": "81.54999999999995 USD",
+    "tokensTransation": "185",
+    "tokensCredit": "17.242",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x262722fb591eb427241adf476266c6614afb35ef",
+    "purchasedDate": "2018-02-03T22:21:44.000Z",
+    "ethAmount": "0.17",
+    "ethRate": "959.81",
+    "ethRateDelta": "84.80999999999995 USD",
+    "tokensTransation": "850",
+    "tokensCredit": "82.3868571428571",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xa65fa6dda18d2a73b3e48edd0ac06000dd5c3f97",
+    "purchasedDate": "2018-02-03T22:25:35.000Z",
+    "ethAmount": "7",
+    "ethRate": "960.85",
+    "ethRateDelta": "85.85000000000002 USD",
+    "tokensTransation": "35000",
+    "tokensCredit": "3434",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x416656df5cba2dfccaf2287dabebd2b90636adc0",
+    "purchasedDate": "2018-02-03T22:30:18.000Z",
+    "ethAmount": "0.1",
+    "ethRate": "963.34",
+    "ethRateDelta": "88.34000000000003 USD",
+    "tokensTransation": "500",
+    "tokensCredit": "50.48",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x84929fb209ce67b209a7c5d8ce88952feab88883",
+    "purchasedDate": "2018-02-03T22:30:42.000Z",
+    "ethAmount": "1",
+    "ethRate": "963.34",
+    "ethRateDelta": "88.34000000000003 USD",
+    "tokensTransation": "5000",
+    "tokensCredit": "504.8",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xecd7747a947cf23d36e7b7a1ca8d6809f1ffc48f",
+    "purchasedDate": "2018-02-03T22:31:33.000Z",
+    "ethAmount": "0.017816",
+    "ethRate": "963.7",
+    "ethRateDelta": "88.70000000000005 USD",
+    "tokensTransation": "89.08",
+    "tokensCredit": "9.03016685714286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x763c7fd6c7951d465164879a94167fd2c1141b36",
+    "purchasedDate": "2018-02-03T22:32:20.000Z",
+    "ethAmount": "0.3200302",
+    "ethRate": "963.75",
+    "ethRateDelta": "88.75 USD",
+    "tokensTransation": "1600.151",
+    "tokensCredit": "162.30103",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x05384c7658a18ec7f6793a036fe2bb3142108435",
+    "purchasedDate": "2018-02-03T22:32:42.000Z",
+    "ethAmount": "1.9",
+    "ethRate": "963.75",
+    "ethRateDelta": "88.75 USD",
+    "tokensTransation": "9499.999999999998",
+    "tokensCredit": "963.571428571429",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x9d56fa1be239d03b479fb644824d0753b34b3c1b",
+    "purchasedDate": "2018-02-03T22:35:48.000Z",
+    "ethAmount": "2",
+    "ethRate": "965.08",
+    "ethRateDelta": "90.08000000000004 USD",
+    "tokensTransation": "10000",
+    "tokensCredit": "1029.48571428571",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x2a53f024ebf0bf8014851280c555d35d31387f53",
+    "purchasedDate": "2018-02-03T22:42:08.000Z",
+    "ethAmount": "1.00433841",
+    "ethRate": "966.45",
+    "ethRateDelta": "91.45000000000005 USD",
+    "tokensTransation": "5021.69205",
+    "tokensCredit": "524.838557682857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x2a53f024ebf0bf8014851280c555d35d31387f53",
+    "purchasedDate": "2018-02-03T22:43:23.000Z",
+    "ethAmount": "0.0067967",
+    "ethRate": "966.6",
+    "ethRateDelta": "91.60000000000002 USD",
+    "tokensTransation": "33.98350000000001",
+    "tokensCredit": "3.55758697142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xb775230ed7a380309004d851164b5a6039d754f2",
+    "purchasedDate": "2018-02-03T22:49:27.000Z",
+    "ethAmount": "25",
+    "ethRate": "959.32",
+    "ethRateDelta": "84.32000000000005 USD",
+    "tokensTransation": "125000.00000000001",
+    "tokensCredit": "12045.7142857143",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xcffb2c0c4907f8ca06b962bfabb7e63f9551593c",
+    "purchasedDate": "2018-02-03T22:54:58.000Z",
+    "ethAmount": "0.4",
+    "ethRate": "959.74",
+    "ethRateDelta": "84.74000000000001 USD",
+    "tokensTransation": "2000",
+    "tokensCredit": "193.691428571429",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x5f1088110edcba27fc206cdcc326b413b5867361",
+    "purchasedDate": "2018-02-03T22:59:19.000Z",
+    "ethAmount": "0.5",
+    "ethRate": "960.32",
+    "ethRateDelta": "85.32000000000005 USD",
+    "tokensTransation": "2500",
+    "tokensCredit": "243.771428571429",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x0d640b738f9bde4db6263c10d42aae506a1c9ff0",
+    "purchasedDate": "2018-02-03T23:06:57.000Z",
+    "ethAmount": "1",
+    "ethRate": "955.7",
+    "ethRateDelta": "80.70000000000005 USD",
+    "tokensTransation": "5000",
+    "tokensCredit": "461.142857142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x49a4a190b8d69c38800b68d37ec911712f531246",
+    "purchasedDate": "2018-02-03T23:08:39.000Z",
+    "ethAmount": "0.1",
+    "ethRate": "954.1",
+    "ethRateDelta": "79.10000000000002 USD",
+    "tokensTransation": "500",
+    "tokensCredit": "45.2",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x1509f23126c9ce5798b8a6b104c35f81f7f0b212",
+    "purchasedDate": "2018-02-03T23:12:38.000Z",
+    "ethAmount": "1",
+    "ethRate": "954.27",
+    "ethRateDelta": "79.26999999999998 USD",
+    "tokensTransation": "5000",
+    "tokensCredit": "452.971428571428",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x5a8f53e76710cb8e272f741e2b5773f7a62b04f7",
+    "purchasedDate": "2018-02-03T23:13:35.000Z",
+    "ethAmount": "1.4",
+    "ethRate": "954.41",
+    "ethRateDelta": "79.40999999999997 USD",
+    "tokensTransation": "7000",
+    "tokensCredit": "635.28",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x663df150733e85e2a1d504cd47d1b18772d64b62",
+    "purchasedDate": "2018-02-03T23:13:35.000Z",
+    "ethAmount": "0.19914242",
+    "ethRate": "954.41",
+    "ethRateDelta": "79.40999999999997 USD",
+    "tokensTransation": "995.7121",
+    "tokensCredit": "90.3651404125714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xe44d7a9665dff533bd7632d7f137e70893d2384a",
+    "purchasedDate": "2018-02-03T23:14:38.000Z",
+    "ethAmount": "1.2",
+    "ethRate": "955.83",
+    "ethRateDelta": "80.83000000000004 USD",
+    "tokensTransation": "6000",
+    "tokensCredit": "554.262857142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x85702851c3cf5d1bd2b1363fdef3d04de3bdbf33",
+    "purchasedDate": "2018-02-03T23:25:42.000Z",
+    "ethAmount": "1",
+    "ethRate": "958.62",
+    "ethRateDelta": "83.62 USD",
+    "tokensTransation": "5000",
+    "tokensCredit": "477.828571428571",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xa3b4817245ce62dc062672110d873f70325c26cb",
+    "purchasedDate": "2018-02-03T23:27:16.000Z",
+    "ethAmount": "1",
+    "ethRate": "959.58",
+    "ethRateDelta": "84.58000000000004 USD",
+    "tokensTransation": "5000",
+    "tokensCredit": "483.314285714286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x2b0c588e474b9fd4f7e787d9ecc6cb4daa8ee3ef",
+    "purchasedDate": "2018-02-03T23:33:14.000Z",
+    "ethAmount": "1.01",
+    "ethRate": "959.29",
+    "ethRateDelta": "84.28999999999996 USD",
+    "tokensTransation": "5050.000000000001",
+    "tokensCredit": "486.473714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xe6d0f529adcfd864658742000d08c6e82446f10c",
+    "purchasedDate": "2018-02-03T23:37:25.000Z",
+    "ethAmount": "1.15",
+    "ethRate": "960.52",
+    "ethRateDelta": "85.51999999999998 USD",
+    "tokensTransation": "5749.999999999999",
+    "tokensCredit": "561.988571428571",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xe1623e09e9593ae5eedf334e8e6cd786364cbd2d",
+    "purchasedDate": "2018-02-03T23:42:19.000Z",
+    "ethAmount": "0.35",
+    "ethRate": "960.77",
+    "ethRateDelta": "85.76999999999998 USD",
+    "tokensTransation": "1750",
+    "tokensCredit": "171.54",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x80f5ad96207e8fa0383e02a129bf037cf38c5eb1",
+    "purchasedDate": "2018-02-03T23:45:00.000Z",
+    "ethAmount": "0.1",
+    "ethRate": "960.56",
+    "ethRateDelta": "85.55999999999995 USD",
+    "tokensTransation": "500",
+    "tokensCredit": "48.8914285714285",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x1feef2f4171c2e7d03aa359807aca4d8dd9a92c9",
+    "purchasedDate": "2018-02-03T23:56:04.000Z",
+    "ethAmount": "0.2",
+    "ethRate": "970.43",
+    "ethRateDelta": "95.42999999999995 USD",
+    "tokensTransation": "1000",
+    "tokensCredit": "109.062857142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xca9deda84304311e71560562a6af7d5c6b60edd7",
+    "purchasedDate": "2018-02-03T23:56:49.000Z",
+    "ethAmount": "0.26",
+    "ethRate": "970.43",
+    "ethRateDelta": "95.42999999999995 USD",
+    "tokensTransation": "1300",
+    "tokensCredit": "141.781714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xda1bdb55969eac47f664d66fd16d6119abb564a1",
+    "purchasedDate": "2018-02-03T23:58:20.000Z",
+    "ethAmount": "1.5",
+    "ethRate": "970.52",
+    "ethRateDelta": "95.51999999999998 USD",
+    "tokensTransation": "7500",
+    "tokensCredit": "818.742857142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x17ecfb8f94d301406b3f28b4c2803e75b23fe959",
+    "purchasedDate": "2018-02-04T00:00:21.000Z",
+    "ethAmount": "0.15",
+    "ethRate": "967.42",
+    "ethRateDelta": "92.41999999999996 USD",
+    "tokensTransation": "750",
+    "tokensCredit": "79.2171428571428",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xed034b287ea77a14970f1c0c8682a80a9468dbb3",
+    "purchasedDate": "2018-02-04T00:04:40.000Z",
+    "ethAmount": "2",
+    "ethRate": "966.75",
+    "ethRateDelta": "91.75 USD",
+    "tokensTransation": "10000",
+    "tokensCredit": "1048.57142857143",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x0049c50adfdd6093d45f50b0102126a303aff226",
+    "purchasedDate": "2018-02-04T00:12:14.000Z",
+    "ethAmount": "0.04185085",
+    "ethRate": "968.48",
+    "ethRateDelta": "93.48000000000002 USD",
+    "tokensTransation": "209.25425",
+    "tokensCredit": "22.3555283314286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x8f4b8ac76169ac9e62be43dcb4bb9e9ada6419dc",
+    "purchasedDate": "2018-02-04T00:17:56.000Z",
+    "ethAmount": "0.17",
+    "ethRate": "970.08",
+    "ethRateDelta": "95.08000000000004 USD",
+    "tokensTransation": "850",
+    "tokensCredit": "92.3634285714286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x4ee492c9fdea0e65a865dd8862ddae66576b2668",
+    "purchasedDate": "2018-02-04T00:34:13.000Z",
+    "ethAmount": "2.2",
+    "ethRate": "965.22",
+    "ethRateDelta": "90.22000000000003 USD",
+    "tokensTransation": "11000",
+    "tokensCredit": "1134.19428571429",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xf79815b8b2c0c595515b2681143b39118c6f4d65",
+    "purchasedDate": "2018-02-04T00:38:31.000Z",
+    "ethAmount": "0.1",
+    "ethRate": "962.46",
+    "ethRateDelta": "87.46000000000004 USD",
+    "tokensTransation": "500",
+    "tokensCredit": "49.9771428571429",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xeb76fdcc4abae7cd5775addf5ae964c1578c7cb5",
+    "purchasedDate": "2018-02-04T00:40:48.000Z",
+    "ethAmount": "1.97",
+    "ethRate": "961.71",
+    "ethRateDelta": "86.71000000000004 USD",
+    "tokensTransation": "9850.000000000002",
+    "tokensCredit": "976.106857142858",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x3e7b12a76c0d68091d41d16ee3faa8736036e8f6",
+    "purchasedDate": "2018-02-04T00:49:15.000Z",
+    "ethAmount": "0.5",
+    "ethRate": "956.82",
+    "ethRateDelta": "81.82000000000005 USD",
+    "tokensTransation": "2500",
+    "tokensCredit": "233.771428571429",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x2749e122c4620ddbe10d60ec5c3c6cd0c3d8448f",
+    "purchasedDate": "2018-02-04T00:55:04.000Z",
+    "ethAmount": "0.3",
+    "ethRate": "951.73",
+    "ethRateDelta": "76.73000000000002 USD",
+    "tokensTransation": "1500",
+    "tokensCredit": "131.537142857143",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x63e18e4ed09b07b36a7f3d180d4983cd54bc46a4",
+    "purchasedDate": "2018-02-04T00:59:04.000Z",
+    "ethAmount": "0.491",
+    "ethRate": "951.69",
+    "ethRateDelta": "76.69000000000005 USD",
+    "tokensTransation": "2454.9999999999995",
+    "tokensCredit": "215.170228571429",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x4f85931aad02d3f72036b44e5fc96f023a13ec90",
+    "purchasedDate": "2018-02-04T01:25:47.000Z",
+    "ethAmount": "2.25",
+    "ethRate": "955.25",
+    "ethRateDelta": "80.25 USD",
+    "tokensTransation": "11250.000000000002",
+    "tokensCredit": "1031.78571428571",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x984c5d268b220784e87fbe8edbb5c6b9f7ba9fc4",
+    "purchasedDate": "2018-02-04T01:36:43.000Z",
+    "ethAmount": "0.3",
+    "ethRate": "955.16",
+    "ethRateDelta": "80.15999999999997 USD",
+    "tokensTransation": "1500",
+    "tokensCredit": "137.417142857143",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x57ee162c0b9906aca6b6a65b2b1dbd16fa0da078",
+    "purchasedDate": "2018-02-04T01:39:48.000Z",
+    "ethAmount": "0.25",
+    "ethRate": "955.5",
+    "ethRateDelta": "80.5 USD",
+    "tokensTransation": "1250",
+    "tokensCredit": "115",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x521e7a6bd0c6f48ed7099e2bebbe2a2d66024b84",
+    "purchasedDate": "2018-02-04T01:43:00.000Z",
+    "ethAmount": "0.5",
+    "ethRate": "954.3",
+    "ethRateDelta": "79.29999999999995 USD",
+    "tokensTransation": "2500",
+    "tokensCredit": "226.571428571428",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xf1dc93805dc2551884866ada89f48781ffda7fe0",
+    "purchasedDate": "2018-02-04T01:47:28.000Z",
+    "ethAmount": "1.03308197",
+    "ethRate": "952.99",
+    "ethRateDelta": "77.99000000000001 USD",
+    "tokensTransation": "5165.40985",
+    "tokensCredit": "460.400359087429",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x857690bf14f67e0b729b34da24d1fa45724d4eb0",
+    "purchasedDate": "2018-02-04T01:47:35.000Z",
+    "ethAmount": "0.1",
+    "ethRate": "952.99",
+    "ethRateDelta": "77.99000000000001 USD",
+    "tokensTransation": "500",
+    "tokensCredit": "44.5657142857143",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x57ee162c0b9906aca6b6a65b2b1dbd16fa0da078",
+    "purchasedDate": "2018-02-04T01:50:12.000Z",
+    "ethAmount": "0.75",
+    "ethRate": "948.37",
+    "ethRateDelta": "73.37 USD",
+    "tokensTransation": "3750",
+    "tokensCredit": "314.442857142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xfd41852f337688dc59ca7f2ddbfdfe8c94de726e",
+    "purchasedDate": "2018-02-04T01:50:12.000Z",
+    "ethAmount": "0.420418",
+    "ethRate": "948.37",
+    "ethRateDelta": "73.37 USD",
+    "tokensTransation": "2102.09",
+    "tokensCredit": "176.263249485714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x7ae7073419c3dc3c32b69f92a319e4b02170538d",
+    "purchasedDate": "2018-02-04T01:55:16.000Z",
+    "ethAmount": "0.15",
+    "ethRate": "945.17",
+    "ethRateDelta": "70.16999999999996 USD",
+    "tokensTransation": "750",
+    "tokensCredit": "60.1457142857142",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xeb76fdcc4abae7cd5775addf5ae964c1578c7cb5",
+    "purchasedDate": "2018-02-04T02:02:02.000Z",
+    "ethAmount": "1.999",
+    "ethRate": "945.07",
+    "ethRateDelta": "70.07000000000005 USD",
+    "tokensTransation": "9995.000000000002",
+    "tokensCredit": "800.399600000001",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xf3ee72ebe9990c1dfa4b58a0bdca0d708ae57ac5",
+    "purchasedDate": "2018-02-04T02:09:35.000Z",
+    "ethAmount": "2",
+    "ethRate": "941.83",
+    "ethRateDelta": "66.83000000000004 USD",
+    "tokensTransation": "10000",
+    "tokensCredit": "763.771428571429",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x83413e1f41d73f0494769d94b20c0105b8e03049",
+    "purchasedDate": "2018-02-04T02:09:57.000Z",
+    "ethAmount": "0.11",
+    "ethRate": "941.83",
+    "ethRateDelta": "66.83000000000004 USD",
+    "tokensTransation": "550.0000000000001",
+    "tokensCredit": "42.0074285714286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xe91547b3ac88cf291629129644195fffbe80454f",
+    "purchasedDate": "2018-02-04T02:12:20.000Z",
+    "ethAmount": "1.1",
+    "ethRate": "941.68",
+    "ethRateDelta": "66.67999999999995 USD",
+    "tokensTransation": "5500",
+    "tokensCredit": "419.131428571428",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x9363ad0b0b69ced411f7473612ba38356110b115",
+    "purchasedDate": "2018-02-04T02:15:10.000Z",
+    "ethAmount": "0.8",
+    "ethRate": "944.17",
+    "ethRateDelta": "69.16999999999996 USD",
+    "tokensTransation": "4000",
+    "tokensCredit": "316.205714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xf3305575519631dadb1afc70c4ecb9715b5939d1",
+    "purchasedDate": "2018-02-04T02:15:47.000Z",
+    "ethAmount": "3",
+    "ethRate": "944.17",
+    "ethRateDelta": "69.16999999999996 USD",
+    "tokensTransation": "15000",
+    "tokensCredit": "1185.77142857143",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x2853c163f380ef0ef8fd02dafaf8eec4ed8b5fce",
+    "purchasedDate": "2018-02-04T02:26:09.000Z",
+    "ethAmount": "0.1024",
+    "ethRate": "949.35",
+    "ethRateDelta": "74.35000000000002 USD",
+    "tokensTransation": "512",
+    "tokensCredit": "43.5053714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x56b8930767dd80c0495f273af8a96e0f1cdcbe7a",
+    "purchasedDate": "2018-02-04T02:40:13.000Z",
+    "ethAmount": "0.281",
+    "ethRate": "948.48",
+    "ethRateDelta": "73.48000000000002 USD",
+    "tokensTransation": "1405",
+    "tokensCredit": "117.987885714286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xbb7ebd70b419534abee323bb3f517c0c929f32ca",
+    "purchasedDate": "2018-02-04T02:47:52.000Z",
+    "ethAmount": "2.5",
+    "ethRate": "950.72",
+    "ethRateDelta": "75.72000000000003 USD",
+    "tokensTransation": "12500.000000000002",
+    "tokensCredit": "1081.71428571429",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xef7a784a3a6f3247ebc22770a2649b1e5a1756cf",
+    "purchasedDate": "2018-02-04T02:50:08.000Z",
+    "ethAmount": "0.085",
+    "ethRate": "951.24",
+    "ethRateDelta": "76.24000000000001 USD",
+    "tokensTransation": "425",
+    "tokensCredit": "37.0308571428572",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x8b98a60cea9a05b8f43d7d4886a3d09e19f3667f",
+    "purchasedDate": "2018-02-04T03:04:38.000Z",
+    "ethAmount": "0.105015528",
+    "ethRate": "953.32",
+    "ethRateDelta": "78.32000000000005 USD",
+    "tokensTransation": "525.0776400000001",
+    "tokensCredit": "46.9989494454857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xb21c081cb4c05f60e2d5a91ae283dad354ffc562",
+    "purchasedDate": "2018-02-04T03:06:18.000Z",
+    "ethAmount": "0.09279",
+    "ethRate": "957.18",
+    "ethRateDelta": "82.17999999999995 USD",
+    "tokensTransation": "463.95",
+    "tokensCredit": "43.574184",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xdda5044bad54a0d718db253dee5a471896b293e6",
+    "purchasedDate": "2018-02-04T03:07:01.000Z",
+    "ethAmount": "0.10532",
+    "ethRate": "957.26",
+    "ethRateDelta": "82.25999999999999 USD",
+    "tokensTransation": "526.6",
+    "tokensCredit": "49.5064182857143",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xc326a9a221c8323917e2fc48fcf54c898c45bbe0",
+    "purchasedDate": "2018-02-04T03:14:38.000Z",
+    "ethAmount": "0.05851539",
+    "ethRate": "954.23",
+    "ethRateDelta": "79.23000000000002 USD",
+    "tokensTransation": "292.57695",
+    "tokensCredit": "26.4924248554286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xbe31f9c6c9bbc4acb508c792560b5500b6b13b06",
+    "purchasedDate": "2018-02-04T03:28:00.000Z",
+    "ethAmount": "0.7",
+    "ethRate": "959.55",
+    "ethRateDelta": "84.54999999999995 USD",
+    "tokensTransation": "3500",
+    "tokensCredit": "338.2",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x2a1cb354d1191666a295b1cfb2186b66f8e1a82f",
+    "purchasedDate": "2018-02-04T03:29:29.000Z",
+    "ethAmount": "0.7",
+    "ethRate": "960.41",
+    "ethRateDelta": "85.40999999999997 USD",
+    "tokensTransation": "3500",
+    "tokensCredit": "341.64",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x87f57d32b17bc55fd55d483de62e9fec8e530cf5",
+    "purchasedDate": "2018-02-04T03:29:29.000Z",
+    "ethAmount": "0.2115",
+    "ethRate": "960.41",
+    "ethRateDelta": "85.40999999999997 USD",
+    "tokensTransation": "1057.5",
+    "tokensCredit": "103.224085714286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xaf037e2ed637fb4f3b9ac830653719af22afd103",
+    "purchasedDate": "2018-02-04T03:34:46.000Z",
+    "ethAmount": "0.11",
+    "ethRate": "960.91",
+    "ethRateDelta": "85.90999999999997 USD",
+    "tokensTransation": "550.0000000000001",
+    "tokensCredit": "54.0005714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xf92ea332a1fd70017b603d04a6580ac2416951eb",
+    "purchasedDate": "2018-02-04T03:47:21.000Z",
+    "ethAmount": "0.98",
+    "ethRate": "960.58",
+    "ethRateDelta": "85.58000000000004 USD",
+    "tokensTransation": "4900",
+    "tokensCredit": "479.248",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xf92ea332a1fd70017b603d04a6580ac2416951eb",
+    "purchasedDate": "2018-02-04T03:50:35.000Z",
+    "ethAmount": "0.012",
+    "ethRate": "961.29",
+    "ethRateDelta": "86.28999999999996 USD",
+    "tokensTransation": "60",
+    "tokensCredit": "5.91702857142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x02121facb41f9dd8c34764f60d463453cca5a578",
+    "purchasedDate": "2018-02-04T04:41:13.000Z",
+    "ethAmount": "0.10407",
+    "ethRate": "953.28",
+    "ethRateDelta": "78.27999999999997 USD",
+    "tokensTransation": "520.35",
+    "tokensCredit": "46.5519977142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xff4fcd2cb8b9bbd04929145110f6d654dde212fd",
+    "purchasedDate": "2018-02-04T05:03:17.000Z",
+    "ethAmount": "0.13161",
+    "ethRate": "946.56",
+    "ethRateDelta": "71.55999999999995 USD",
+    "tokensTransation": "658.0500000000001",
+    "tokensCredit": "53.8172091428571",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x652ba88e19f6574860dd07601938eb70ff972342",
+    "purchasedDate": "2018-02-04T05:30:15.000Z",
+    "ethAmount": "0.1",
+    "ethRate": "954.83",
+    "ethRateDelta": "79.83000000000004 USD",
+    "tokensTransation": "500",
+    "tokensCredit": "45.6171428571429",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xe6ba52d1be2dd98ea3d75470fa52ed4e74730629",
+    "purchasedDate": "2018-02-04T05:52:45.000Z",
+    "ethAmount": "0.65",
+    "ethRate": "957.65",
+    "ethRateDelta": "82.64999999999998 USD",
+    "tokensTransation": "3250",
+    "tokensCredit": "306.985714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x4f6c46ceb04d50f9fc171977fef7fb518f8ac999",
+    "purchasedDate": "2018-02-04T05:56:25.000Z",
+    "ethAmount": "0.292340474",
+    "ethRate": "958.04",
+    "ethRateDelta": "83.03999999999996 USD",
+    "tokensTransation": "1461.70237",
+    "tokensCredit": "138.719731205486",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x102f4ffd0861dc31aabbf53841c89868e2a7b79b",
+    "purchasedDate": "2018-02-04T06:10:52.000Z",
+    "ethAmount": "0.31006",
+    "ethRate": "966.35",
+    "ethRateDelta": "91.35000000000002 USD",
+    "tokensTransation": "1550.3000000000002",
+    "tokensCredit": "161.85132",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x6ad7d206b2c53f84ed57879c84dc84b5397984a0",
+    "purchasedDate": "2018-02-04T06:17:41.000Z",
+    "ethAmount": "3",
+    "ethRate": "964.29",
+    "ethRateDelta": "89.28999999999996 USD",
+    "tokensTransation": "15000",
+    "tokensCredit": "1530.68571428571",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x1362e0b0da1a9ad90bd5c0a71401fa9a61d80dee",
+    "purchasedDate": "2018-02-04T06:17:41.000Z",
+    "ethAmount": "5",
+    "ethRate": "964.29",
+    "ethRateDelta": "89.28999999999996 USD",
+    "tokensTransation": "25000.000000000004",
+    "tokensCredit": "2551.14285714286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xd1626358e30b207932b9f7393dd058a72179cc52",
+    "purchasedDate": "2018-02-04T06:27:27.000Z",
+    "ethAmount": "1.18975",
+    "ethRate": "965.65",
+    "ethRateDelta": "90.64999999999998 USD",
+    "tokensTransation": "5948.75",
+    "tokensCredit": "616.2905",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x35fe256b02f4383a9374206f07482acf99df58b4",
+    "purchasedDate": "2018-02-04T06:44:46.000Z",
+    "ethAmount": "0.28",
+    "ethRate": "964.23",
+    "ethRateDelta": "89.23000000000002 USD",
+    "tokensTransation": "1400",
+    "tokensCredit": "142.768",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x524095b7a5d74c28d3edccb37f70d9e7fcdf9403",
+    "purchasedDate": "2018-02-04T06:51:15.000Z",
+    "ethAmount": "0.1",
+    "ethRate": "963.49",
+    "ethRateDelta": "88.49000000000001 USD",
+    "tokensTransation": "500",
+    "tokensCredit": "50.5657142857143",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x187f13fa6fce8cd7dc6e0ec012a6b19fb7069775",
+    "purchasedDate": "2018-02-04T07:00:52.000Z",
+    "ethAmount": "0.0099999",
+    "ethRate": "961.91",
+    "ethRateDelta": "86.90999999999997 USD",
+    "tokensTransation": "49.9995",
+    "tokensCredit": "4.96623605142857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x187f13fa6fce8cd7dc6e0ec012a6b19fb7069775",
+    "purchasedDate": "2018-02-04T07:04:52.000Z",
+    "ethAmount": "0.074",
+    "ethRate": "962.01",
+    "ethRateDelta": "87.00999999999999 USD",
+    "tokensTransation": "370",
+    "tokensCredit": "36.7928",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xaa5a2e5e83095ebb80a0167fc0335fe3dc4c476d",
+    "purchasedDate": "2018-02-04T07:30:33.000Z",
+    "ethAmount": "0.23",
+    "ethRate": "959.12",
+    "ethRateDelta": "84.12 USD",
+    "tokensTransation": "1150.0000000000002",
+    "tokensCredit": "110.557714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x2a1cb354d1191666a295b1cfb2186b66f8e1a82f",
+    "purchasedDate": "2018-02-04T07:47:03.000Z",
+    "ethAmount": "1.6",
+    "ethRate": "948.12",
+    "ethRateDelta": "73.12 USD",
+    "tokensTransation": "8000",
+    "tokensCredit": "668.525714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xb7e117fa6ee0d2c330c80e513645cfc1dcaee973",
+    "purchasedDate": "2018-02-04T07:52:29.000Z",
+    "ethAmount": "7",
+    "ethRate": "947.55",
+    "ethRateDelta": "72.54999999999995 USD",
+    "tokensTransation": "35000",
+    "tokensCredit": "2902",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x789228a687c18186b6708d3f1d2f86c8dc977551",
+    "purchasedDate": "2018-02-04T08:04:47.000Z",
+    "ethAmount": "20",
+    "ethRate": "952.53",
+    "ethRateDelta": "77.52999999999997 USD",
+    "tokensTransation": "100000.00000000001",
+    "tokensCredit": "8860.57142857143",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x31c5f55b114c0d146fae01559502cbf872e47299",
+    "purchasedDate": "2018-02-04T08:10:23.000Z",
+    "ethAmount": "0.5",
+    "ethRate": "951.27",
+    "ethRateDelta": "76.26999999999998 USD",
+    "tokensTransation": "2500",
+    "tokensCredit": "217.914285714286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x8b28f7950c2dc26439288832cb2ddf85bcf7db6c",
+    "purchasedDate": "2018-02-04T08:47:47.000Z",
+    "ethAmount": "0.94422",
+    "ethRate": "936.1",
+    "ethRateDelta": "61.10000000000002 USD",
+    "tokensTransation": "4721.1",
+    "tokensCredit": "329.667668571429",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xe24e60071f9933774a32ac7e12b3d21b09c374ed",
+    "purchasedDate": "2018-02-04T08:51:10.000Z",
+    "ethAmount": "1",
+    "ethRate": "936.15",
+    "ethRateDelta": "61.14999999999998 USD",
+    "tokensTransation": "5000",
+    "tokensCredit": "349.428571428571",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x7d395b9a2461812e0b9acbcbdf45a4c1a2f52772",
+    "purchasedDate": "2018-02-04T09:09:50.000Z",
+    "ethAmount": "0.0185",
+    "ethRate": "921.96",
+    "ethRateDelta": "46.960000000000036 USD",
+    "tokensTransation": "92.5",
+    "tokensCredit": "4.96434285714286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xb4a44b54b3368069b56b6a23a026492e3a0e89d1",
+    "purchasedDate": "2018-02-04T09:38:19.000Z",
+    "ethAmount": "0.1",
+    "ethRate": "902",
+    "ethRateDelta": "27 USD",
+    "tokensTransation": "500",
+    "tokensCredit": "15.4285714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x3a36bbba1d7eaa5020f3990801b18a418f7dabd1",
+    "purchasedDate": "2018-02-04T09:43:22.000Z",
+    "ethAmount": "0.62470675",
+    "ethRate": "906.09",
+    "ethRateDelta": "31.090000000000032 USD",
+    "tokensTransation": "3123.5337500000005",
+    "tokensCredit": "110.983616328572",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x89f0b658da3d463abfbbc0694f2975c900a0a8ea",
+    "purchasedDate": "2018-02-04T09:54:26.000Z",
+    "ethAmount": "1.3",
+    "ethRate": "899.91",
+    "ethRateDelta": "24.909999999999968 USD",
+    "tokensTransation": "6500",
+    "tokensCredit": "185.045714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x2824d2c731c13b0925484973a70e3d78099e8968",
+    "purchasedDate": "2018-02-04T09:56:36.000Z",
+    "ethAmount": "0.196827613",
+    "ethRate": "900.87",
+    "ethRateDelta": "25.870000000000005 USD",
+    "tokensTransation": "984.1380650000001",
+    "tokensCredit": "29.0967448474857",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xa80ae72b3909857ef60d443156a1ce3f23a3c385",
+    "purchasedDate": "2018-02-04T10:00:28.000Z",
+    "ethAmount": "0.09468",
+    "ethRate": "900.18",
+    "ethRateDelta": "25.17999999999995 USD",
+    "tokensTransation": "473.4",
+    "tokensCredit": "13.6230994285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x6ad7d206b2c53f84ed57879c84dc84b5397984a0",
+    "purchasedDate": "2018-02-04T10:07:21.000Z",
+    "ethAmount": "3",
+    "ethRate": "896.2",
+    "ethRateDelta": "21.200000000000045 USD",
+    "tokensTransation": "15000",
+    "tokensCredit": "363.428571428572",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xb4be4440e34dbe28c745e8702e7d13c3135d2ad8",
+    "purchasedDate": "2018-02-04T10:09:16.000Z",
+    "ethAmount": "2",
+    "ethRate": "900.29",
+    "ethRateDelta": "25.289999999999964 USD",
+    "tokensTransation": "10000",
+    "tokensCredit": "289.028571428571",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x5e7b01f9205104b6e65c78269ec9368c97fc0b2f",
+    "purchasedDate": "2018-02-04T10:13:32.000Z",
+    "ethAmount": "0.187",
+    "ethRate": "899.17",
+    "ethRateDelta": "24.16999999999996 USD",
+    "tokensTransation": "935",
+    "tokensCredit": "25.8273714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x6ad7d206b2c53f84ed57879c84dc84b5397984a0",
+    "purchasedDate": "2018-02-04T10:22:02.000Z",
+    "ethAmount": "1",
+    "ethRate": "895.35",
+    "ethRateDelta": "20.350000000000023 USD",
+    "tokensTransation": "5000",
+    "tokensCredit": "116.285714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x6ad7d206b2c53f84ed57879c84dc84b5397984a0",
+    "purchasedDate": "2018-02-04T10:22:57.000Z",
+    "ethAmount": "1",
+    "ethRate": "895.35",
+    "ethRateDelta": "20.350000000000023 USD",
+    "tokensTransation": "5000",
+    "tokensCredit": "116.285714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xed8140506f23bb1750d26b7d77d620342bf71e53",
+    "purchasedDate": "2018-02-04T10:31:46.000Z",
+    "ethAmount": "0.44452626",
+    "ethRate": "900.7",
+    "ethRateDelta": "25.700000000000045 USD",
+    "tokensTransation": "2222.6313",
+    "tokensCredit": "65.2818564685715",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x29e45c91acf73d6632642ff6c6957332183b587a",
+    "purchasedDate": "2018-02-04T10:50:00.000Z",
+    "ethAmount": "1.4",
+    "ethRate": "890.7",
+    "ethRateDelta": "15.700000000000045 USD",
+    "tokensTransation": "7000",
+    "tokensCredit": "125.6",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xd77d339bf6044d857a183ef249d9fdddec4edb8e",
+    "purchasedDate": "2018-02-04T10:50:47.000Z",
+    "ethAmount": "0.35",
+    "ethRate": "890.7",
+    "ethRateDelta": "15.700000000000045 USD",
+    "tokensTransation": "1750",
+    "tokensCredit": "31.4000000000001",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x9dde360a239aa8980e812f4d2df71a6b5d1218f5",
+    "purchasedDate": "2018-02-04T10:51:17.000Z",
+    "ethAmount": "0.25",
+    "ethRate": "892.66",
+    "ethRateDelta": "17.659999999999968 USD",
+    "tokensTransation": "1250",
+    "tokensCredit": "25.2285714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x187f13fa6fce8cd7dc6e0ec012a6b19fb7069775",
+    "purchasedDate": "2018-02-04T10:51:46.000Z",
+    "ethAmount": "0.173",
+    "ethRate": "892.66",
+    "ethRateDelta": "17.659999999999968 USD",
+    "tokensTransation": "865",
+    "tokensCredit": "17.4581714285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x326f3838cdf3312d99f66d6c64fdde7ee3a6231a",
+    "purchasedDate": "2018-02-04T11:04:27.000Z",
+    "ethAmount": "1.5",
+    "ethRate": "899.52",
+    "ethRateDelta": "24.519999999999982 USD",
+    "tokensTransation": "7500",
+    "tokensCredit": "210.171428571428",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xda381f25292cccd21cafff5b3e5d18bec08b26ec",
+    "purchasedDate": "2018-02-04T11:09:24.000Z",
+    "ethAmount": "0.5",
+    "ethRate": "910.39",
+    "ethRateDelta": "35.389999999999986 USD",
+    "tokensTransation": "2500",
+    "tokensCredit": "101.114285714286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xadc9b248907c9ff74ad0d209fd52bf940e06fc5b",
+    "purchasedDate": "2018-02-04T11:13:46.000Z",
+    "ethAmount": "1.9",
+    "ethRate": "912.05",
+    "ethRateDelta": "37.049999999999955 USD",
+    "tokensTransation": "9499.999999999998",
+    "tokensCredit": "402.257142857142",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x65efc4083df5dcbdd2aa734ccdd59ee64e7d7d44",
+    "purchasedDate": "2018-02-04T11:21:48.000Z",
+    "ethAmount": "0.53998933",
+    "ethRate": "910.03",
+    "ethRateDelta": "35.02999999999997 USD",
+    "tokensTransation": "2699.9466500000003",
+    "tokensCredit": "108.090435599428",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x839d4178a4490dce9a09b1507453c2d24b4d8cfc",
+    "purchasedDate": "2018-02-04T11:21:55.000Z",
+    "ethAmount": "1",
+    "ethRate": "910.03",
+    "ethRateDelta": "35.02999999999997 USD",
+    "tokensTransation": "5000",
+    "tokensCredit": "200.171428571428",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xff3295a7dcb6971c9b11cd0fefd09d5651468422",
+    "purchasedDate": "2018-02-04T11:25:49.000Z",
+    "ethAmount": "0.27",
+    "ethRate": "910.58",
+    "ethRateDelta": "35.58000000000004 USD",
+    "tokensTransation": "1350",
+    "tokensCredit": "54.8948571428572",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xb4be4440e34dbe28c745e8702e7d13c3135d2ad8",
+    "purchasedDate": "2018-02-04T11:40:30.000Z",
+    "ethAmount": "1",
+    "ethRate": "911.14",
+    "ethRateDelta": "36.139999999999986 USD",
+    "tokensTransation": "5000",
+    "tokensCredit": "206.514285714286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xec77a33847dc05edbc7c9c603c44c305dd7ec6c4",
+    "purchasedDate": "2018-02-04T11:45:53.000Z",
+    "ethAmount": "0.1",
+    "ethRate": "907.92",
+    "ethRateDelta": "32.91999999999996 USD",
+    "tokensTransation": "500",
+    "tokensCredit": "18.8114285714285",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x72ff996ddcdec3e9875f944368babd34aeb45973",
+    "purchasedDate": "2018-02-04T12:01:11.000Z",
+    "ethAmount": "0.07028796",
+    "ethRate": "880.89",
+    "ethRateDelta": "5.889999999999986 USD",
+    "tokensTransation": "351.4398",
+    "tokensCredit": "2.36569191085714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x40b599d38302e360ecda287a64934e367cb8e539",
+    "purchasedDate": "2018-02-04T12:07:06.000Z",
+    "ethAmount": "0.26",
+    "ethRate": "880.42",
+    "ethRateDelta": "5.419999999999959 USD",
+    "tokensTransation": "1300",
+    "tokensCredit": "8.05257142857137",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x72ff996ddcdec3e9875f944368babd34aeb45973",
+    "purchasedDate": "2018-02-04T12:51:54.000Z",
+    "ethAmount": "0.000611038",
+    "ethRate": "881.13",
+    "ethRateDelta": "6.1299999999999955 USD",
+    "tokensTransation": "3.05519",
+    "tokensCredit": "0.0214037882285714",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xcdbc42fffb7e3a02a8846d091439a43e0a22dda3",
+    "purchasedDate": "2018-02-04T13:02:58.000Z",
+    "ethAmount": "0.5",
+    "ethRate": "890.33",
+    "ethRateDelta": "15.330000000000041 USD",
+    "tokensTransation": "2500",
+    "tokensCredit": "43.8000000000001",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x3c053a3553d299e3a7d67d04e334f4454f5aa7e2",
+    "purchasedDate": "2018-02-04T13:38:58.000Z",
+    "ethAmount": "0.21",
+    "ethRate": "876.49",
+    "ethRateDelta": "1.490000000000009 USD",
+    "tokensTransation": "1050.0000000000002",
+    "tokensCredit": "1.78800000000001",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x3ed2968545959c098dab6d9af1827f429db5db36",
+    "purchasedDate": "2018-02-04T13:40:34.000Z",
+    "ethAmount": "0.09113661",
+    "ethRate": "882.45",
+    "ethRateDelta": "7.4500000000000455 USD",
+    "tokensTransation": "455.68305",
+    "tokensCredit": "3.87981568285717",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xd893dbbc3da0d313c3af806e465b7422bed9d010",
+    "purchasedDate": "2018-02-04T14:07:14.000Z",
+    "ethAmount": "2",
+    "ethRate": "891.92",
+    "ethRateDelta": "16.91999999999996 USD",
+    "tokensTransation": "10000",
+    "tokensCredit": "193.371428571428",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x25b3d7d88616426f1b1f7ee5f84613fe5b32d6f8",
+    "purchasedDate": "2018-02-04T14:39:18.000Z",
+    "ethAmount": "0.221559",
+    "ethRate": "894.85",
+    "ethRateDelta": "19.850000000000023 USD",
+    "tokensTransation": "1107.795",
+    "tokensCredit": "25.1311208571429",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x51efde99d4104242c0090de90cfb0b1dce92e2e7",
+    "purchasedDate": "2018-02-04T14:54:14.000Z",
+    "ethAmount": "0.29",
+    "ethRate": "881.23",
+    "ethRateDelta": "6.230000000000018 USD",
+    "tokensTransation": "1450",
+    "tokensCredit": "10.324",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xb8411e76d141d1fe97edb0489f3e30f3cc4fe8ec",
+    "purchasedDate": "2018-02-04T15:04:39.000Z",
+    "ethAmount": "0.1",
+    "ethRate": "885.44",
+    "ethRateDelta": "10.440000000000055 USD",
+    "tokensTransation": "500",
+    "tokensCredit": "5.96571428571432",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xda6b27e6193f0abc92b44f6230083fbefec2603c",
+    "purchasedDate": "2018-02-04T15:06:26.000Z",
+    "ethAmount": "0.2",
+    "ethRate": "883.3",
+    "ethRateDelta": "8.299999999999955 USD",
+    "tokensTransation": "1000",
+    "tokensCredit": "9.48571428571423",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xb8411e76d141d1fe97edb0489f3e30f3cc4fe8ec",
+    "purchasedDate": "2018-02-04T15:11:00.000Z",
+    "ethAmount": "0.2",
+    "ethRate": "880.37",
+    "ethRateDelta": "5.3700000000000045 USD",
+    "tokensTransation": "1000",
+    "tokensCredit": "6.13714285714286",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xb8411e76d141d1fe97edb0489f3e30f3cc4fe8ec",
+    "purchasedDate": "2018-02-04T15:12:38.000Z",
+    "ethAmount": "0.2",
+    "ethRate": "879.86",
+    "ethRateDelta": "4.860000000000014 USD",
+    "tokensTransation": "1000",
+    "tokensCredit": "5.55428571428573",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xbc9fb7bd5834ae2d29748f4be8c150f1558e9c93",
+    "purchasedDate": "2018-02-04T15:12:53.000Z",
+    "ethAmount": "0.6148365832",
+    "ethRate": "879.86",
+    "ethRateDelta": "4.860000000000014 USD",
+    "tokensTransation": "3074.182916",
+    "tokensCredit": "17.07489025344",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xd1626358e30b207932b9f7393dd058a72179cc52",
+    "purchasedDate": "2018-02-04T17:37:33.000Z",
+    "ethAmount": "0.997106794",
+    "ethRate": "876.94",
+    "ethRateDelta": "1.9400000000000546 USD",
+    "tokensTransation": "4985.53397",
+    "tokensCredit": "11.0536410306289",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0x4a34e3f3c4074b0ff02516ab38c5430077a8eb00",
+    "purchasedDate": "2018-02-04T18:11:21.000Z",
+    "ethAmount": "25",
+    "ethRate": "879.68",
+    "ethRateDelta": "4.67999999999995 USD",
+    "tokensTransation": "125000.00000000001",
+    "tokensCredit": "668.571428571422",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xbec944d0a47f3f03a1d24876252e1284d1c92543",
+    "purchasedDate": "2018-02-04T18:22:18.000Z",
+    "ethAmount": "0.41",
+    "ethRate": "876.67",
+    "ethRateDelta": "1.669999999999959 USD",
+    "tokensTransation": "2050",
+    "tokensCredit": "3.91257142857133",
+    "creditTransaction": ""
+  },
+  {
+    "wallet": "0xcde6b1ae16372aa775a3b051a2f04c1bef7488d7",
+    "purchasedDate": "2018-02-04T18:22:18.000Z",
+    "ethAmount": "0.41856888",
+    "ethRate": "876.67",
+    "ethRateDelta": "1.669999999999959 USD",
+    "tokensTransation": "2092.8444000000004",
+    "tokensCredit": "3.99434302628562",
+    "creditTransaction": ""
+  }
+]

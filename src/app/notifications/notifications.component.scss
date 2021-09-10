@@ -1,0 +1,20 @@
+.notify-date {
+  position: absolute;
+  right: 1rem;
+  top: 0.7rem;
+}
+
+.notify-row {
+  position: relative;
+  border-bottom: 1px solid #eee;
+  margin: 10px 0;
+  &:last-of-type{
+    border: none;
+  }
+}
+
+h2 {
+  font-weight: 300;
+}
+
+.org-invite__title { color: #fff }

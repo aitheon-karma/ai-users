@@ -1,0 +1,36 @@
+<div class="widget-card" *ngIf="welcomeEnabled">
+  <div class="row sticky-header">
+    <div class="col-sm-12">
+      <div class="dummy-bg"></div>
+      <div class="card-header">
+        <i class="pr-2"></i>Welcome Header
+      </div>
+      <div class="card-body news-block">
+        <div class="news-item" [innerHTML]="welcomeHtml | safeHtml"></div>
+      </div>
+      <div class="card-header">
+        <i class="fa fa-newspaper-o pr-2"></i> Feed
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card-body news-block">
+        <ul class="news">
+          <li class="news-item" *ngFor="let newsItem of news">
+            <h6>{{ newsItem.title }}</h6>
+            <div [innerHTML]="newsItem.htmlContent | safeHtml"></div>
+          </li>
+        </ul>
+        <span class="no-value no-news" *ngIf="news?.length === 0">No recent news</span>
+      </div>
+    </div>
+  </div>
+  <div class="row sticky-footer p-1">
+      <div class="dummy-bg mt-1"></div>
+      <div class="col-sm-12">
+          <fl-pagination class="pull-right" *ngIf="news?.length > 0" [currentPage]="currentNewsPage" [pageSize]="'1'" 
+              [total]="newsCount" (totalPagesCount)="onTotalPagesCount($event)" (pageChange)="onPageChange($event)"></fl-pagination>
+      </div>
+  </div>
+</div>

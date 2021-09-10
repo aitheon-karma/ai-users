@@ -1,0 +1,54 @@
+<div class="q" *ngIf="!loading && questions.length">
+  <div class="q__container" [formGroup]="questionsFormArray.controls[currentQuestionIndex]">
+      <span class="q__progress d-block" [ngStyle]="{'width': questionProgress + '%'}"></span>
+    <p class="q__question-no">Question {{ currentQuestionIndex +1 }} / {{ questions.length }}</p>
+
+    <p class="q__question mt-3">
+     {{ currentQuestion.questionText }}
+    </p>
+
+    <div class="q__options-multiple" *ngIf="currentQuestion.questionType === questionType.MULTIPLE_IMAGE" >
+      <!-- *ngIf="currentQuestion.questionType === questionType.MULTIPLE_IMAGE"  -->
+      <div class="row">
+        <div *ngFor="let option of currentQuestion.options" class="col-6 mt-3 mb-4 q__m-option" (click)="selectOption(option._id)">
+          <div class="q__m-image-container">
+              <img class="img-fluid q__m-img" [src]="option.imageUrl" [alt]="option.optionText">
+          </div>
+          <div class="radio d-flex q__m-label-container p-2" [class.q__option-checked] = "isChecked(option._id)"  tooltip="{{ option['tooltip'] }}">
+            <input [id]="option._id" [value]="option._id" formControlName="selectedOption" type="radio">
+            <label [for]="option._id">{{ option.optionText }}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="q__options-single mt-4" *ngIf="currentQuestion.questionType === questionType.SINGLE_IMAGE">
+      <div class="row">
+        <div class="col-12 mb-5 d-flex justify-content-center">
+           <img [src]="currentQuestion.imageUrl" alt="" class="q__s-img img-fluid justify-conten">
+        </div>
+        <div *ngFor="let option of currentQuestion.options" class="q__no-img-options d-flex p-2"
+        [ngClass]="{'col-12': currentQuestion.options.length <= 2, 'col-6': currentQuestion.options.length > 2}">
+            <div class="radio d-flex q__no-img-option w-100 pl-2" [class.q__option-checked] = "isChecked(option._id)" tooltip="{{ option['tooltip'] }}" (click)="selectOption(option._id)" >
+                <input [id]="option._id" class="q__checkbox"[id]="option._id" [value]="option._id" formControlName="selectedOption" type="radio">
+                <label class="q__option-label mb-0" [for]="option._id"
+                  [class.q__option-label--checked] = "isChecked(option._id)">{{ option.optionText }}</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span *ngIf="questionsFormArray.controls[currentQuestionIndex].touched && !isCurrentGroupValid" class="text-danger d-block text-center q__error">Please select an option</span>
+    </div>
+
+
+
+
+  <div class="q__previous" *ngIf="currentQuestionIndex !== 0" (click)="prevQuestion()">
+    <div class="q__circle q__circle--previous">
+    </div>
+  </div>
+  <div class="q__next" (click)="nextQuestion()">
+    <div class="q__circle q__circle--next">
+    </div>
+  </div>
+</div>

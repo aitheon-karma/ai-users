@@ -1,0 +1,22 @@
+<div class="row m-0 pt-0">
+    <div class="col-12 p-0 type__wrap" *ngIf="serviceForm">
+      <form [formGroup]="serviceForm" class="py-3 px-4">
+        <div class="textarea type__description-input service-description">
+          <textarea type="text" name="description" type="text" rows="3" placeholder="Description" formControlName="description" class="w-100" required></textarea>
+          <small  class="text-danger"
+                  *ngIf="submitted && serviceForm.get('description').hasError('required')">
+            Description is required
+          </small>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="modal-footer">
+        <button id="back" class="button button--ghost button--medium mr-2 my-0" (click)="onCloseEditModal()">Cancel</button>
+        <ai-loading class="xs inline tab-loading" *ngIf="loading"></ai-loading>
+        <button id="create" *ngIf="!loading" class="button button--contained button--medium my-0" value="1" type="submit" (click)="saveChanges()">Save</button>
+      </div>
+    </div>
+  </div>

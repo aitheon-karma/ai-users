@@ -1,0 +1,217 @@
+<div *ngIf="locationsForm;else loadingView" class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <form [formGroup]="locationsForm">
+                    <div formArrayName="locations">
+                        <div *ngFor="let location of locationsArray.controls; let i = index;"
+                            [formGroup]="locationsArray.controls[i]">
+                            <div class="d-flex">
+                                <div class="address-heading">Location {{ i + 1 }}</div>
+                                <button class="remove-location btn btn-link ml-auto p-0 my-0 mr-0" *ngIf="i !== 0"
+                                    (click)="removeLocation(i)">X</button>
+                            </div>
+                            <div class="address-container">
+
+                                <div class="row">
+
+                                    <input ng2FileSelect [id]="i" name="upload-files" class="upload-input form-control" type="file"
+                                      [uploader]="driveUploader?.uploader" accept=".jpg, .png" />
+                                    <div class="infrastructure-form__cover-section">
+                                      <label [for]="i">
+                                        <div class="infrastructure-form__cover" *ngIf="!locations[i]?.logo"></div>
+                                        <div class="infrastructure-form__cover_with_image" *ngIf="locations[i]?.logo"
+                                          [style.background-image]="'url(' + locations[i]?.logo.signedUrl + ')'"
+                                          [ngStyle]="{  'background-size': 'cover','background-repeat': 'no-repeat'} "></div>
+                                      </label>
+                                      <div class="infrastructure-form__cover-info">
+                                        <div class="infrastructure-form__requirements">
+                                          <span class="infrastructure-form__requirement">Max image size: 3MB</span>
+                                          <span class="infrastructure-form__requirement">Formats: JPG, PNG</span>
+                                        </div>
+                                        <label [for]="i" class="infrastructure-form__upload-button btn btn-link">Upload</label>
+                                        <span class="infrastructure-form__upload-error" *ngIf="false">File format is not support</span>
+                                      </div>
+                                      <ai-drive-uploader (failedUploadFile)="failedUpload($event)" [autoUpload]="true" #driveUploader
+                                        (success)="onSuccessUpload($event, i)" (afterAddingFile)="onAfterAdd($event, i)"
+                                        [oganizationId]="organization?._id" [service]="serviceKey">
+                                      </ai-drive-uploader>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="input m-0">
+                                            <input formControlName="name" type="text" autocomplete="off" required>
+                                            <label class="input-text">Location name</label>
+                                            <span *ngIf="currentGroup(i).get('name').invalid && submitted" role="alert">
+                                                <span when="required">
+                                                    <span class="text-danger">Location name is required</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="input m-0">
+                                            <input formControlName="phoneNumber" type="tel"
+                                                pattern="^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$"
+                                                autocomplete="off" required>
+                                            <label class="input-text">Phone number</label>
+                                            <span *ngIf="currentGroup(i).get('phoneNumber').invalid && submitted"
+                                                for="locations.addressLine1.$error" role="alert">
+                                                <span when="required">
+                                                    <span class="text-danger">Invalid phone number</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="input m-0">
+                                            <input formControlName="email" type="email"
+                                                autocomplete="off" required>
+                                            <label class="input-text">Email ID</label>
+                                            <span *ngIf="currentGroup(i).get('email').invalid && submitted"
+                                                for="locations.addressLine1.$error" role="alert">
+                                                <span when="required">
+                                                    <span class="text-danger">Email required</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label class="input-text">Location type</label>
+                                        <ngx-select-dropdown tabindex="0" [multiple]="false" [options]="type"
+                                            formControlName="type" (change)="setType($event,locationsArray.controls[i].get('_id').value,i)" [config]="typeConfig" required>
+                                        </ngx-select-dropdown>
+                                        <span *ngIf="currentGroup(i).get('type').invalid && submitted"
+                                        for="locations.type.$error" role="alert">
+                                        <span when="required">
+                                            <span class="text-danger">Location type  required</span>
+                                        </span>
+                                    </span>
+                                    </div>
+
+                                    <div class="col-6" *ngIf="currentSelectedType === 'OTHER' && currentSelectedLocationId==locationsArray.controls[i].get('_id').value" >
+                                        <div class="input m-0">
+                                            <input type="text" formControlName="type" autocomplete="off" name="type">
+                                            <label class="input-text">Location Type</label>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+                                <div class="row" formGroupName="address">
+                                    <div class="col-6">
+                                        <div class="input m-0">
+                                            <input formControlName="addressLine1" type="text" autocomplete="off"
+                                                name="addressLine1" required>
+                                            <label class="input-text">Address line 1</label>
+                                            <span
+                                                *ngIf="currentGroup(i).get('address').get('addressLine1').invalid && submitted"
+                                                for="locations.addressLine1.$error" role="alert">
+                                                <span when="required">
+                                                    <span class="text-danger">* Address line 1 is required</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="input m-0">
+                                            <input formControlName="addressLine2" type="text" autocomplete="off">
+                                            <label class="input-text">Address line 2</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="input m-0">
+                                            <input formControlName="city" type="text" autocomplete="off" name="city"
+                                                required>
+                                            <label class="input-text">City</label>
+                                            <span
+                                                *ngIf="currentGroup(i).get('address').get('city').invalid && submitted"
+                                                for="locations.city.$error" role="alert">
+                                                <span when="required">
+                                                    <span class="text-danger">* City is required</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="input m-0">
+                                            <input formControlName="code" type="text" autocomplete="off" name="code"
+                                                required>
+                                            <label class="input-text">Zip code</label>
+                                            <span
+                                                *ngIf="currentGroup(i).get('address').get('code').invalid && submitted"
+                                                for="locations.code.$error" role="alert">
+                                                <span when="required">
+                                                    <span class="text-danger">* Zip code is required</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="input m-0">
+                                            <input formControlName="regionState" type="text" autocomplete="off"
+                                                name="regionState" required>
+                                            <label class="input-text">Region state</label>
+                                            <span
+                                                *ngIf="currentGroup(i).get('address').get('regionState').invalid && submitted"
+                                                for="locations.regionState.$error" role="alert">
+                                                <span when="required">
+                                                    <span class="text-danger">* State is required</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="input m-0">
+                                            <input formControlName="country" type="text" autocomplete="off"
+                                                name="country" required>
+                                            <label class="input-text">Country</label>
+                                            <span
+                                                *ngIf="currentGroup(i).get('address').get('country').invalid && submitted"
+                                                for="locations.country.$error" role="alert">
+                                                <span when="required">
+                                                    <span class="text-danger">* Country is required</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <button type="button" class="btn btn-link p-0 ml-0 mt-3" (click)="addLocation()"> + Add
+                                location </button>
+                        </div>
+                        <div class="col-6 d-flex">
+                            <button type="button" class="btn btn-primary btn-sm ml-auto px-3 mt-3" (click)="onSubmit()">
+                                Save </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #loadingView>
+    <ai-loading class="mt-1 d-block"></ai-loading>
+</ng-template>
+
+

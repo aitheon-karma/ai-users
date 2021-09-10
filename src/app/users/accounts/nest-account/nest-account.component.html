@@ -1,0 +1,59 @@
+<h2 [hidden]="organizationId" class="mb-3">Nest Account</h2>
+<div [class.card]="!organizationId">
+  <div [class.card-body]="!organizationId">
+    <!-- Account Edit-->
+    <form class="form--align-right" *ngIf="credentialsForm" novalidate [formGroup]="credentialsForm" (ngSubmit)="onSubmit(credentialsForm)">
+      <div class="row">
+        <div class="col-sm-12">
+          <!-- Product ID -->
+          <div class="form-group row">
+            <label class="col-form-label col-md-3" for="productID">Product ID</label>
+            <div class="col col-md-9">
+              <input type="text" class="form-control" id="productID" placeholder="Enter Product ID" formControlName="productID" />
+              <small *ngIf="submitted && credentialsForm.get('productID').hasError('required')" class="text-danger">
+                  Product ID is required
+              </small>
+            </div>
+          </div>
+          <!-- Product Secret -->
+          <div class="form-group row">
+            <label class="col-form-label col-md-3" for="productSecret">Product Secret</label>
+            <div class="col col-md-9">
+              <input type="text" class="form-control" id="productSecret" placeholder="Enter Product Secret" formControlName="productSecret" />
+              <small *ngIf="submitted && credentialsForm.get('productSecret').hasError('required')" class="text-danger">
+                  Product Secret is required
+              </small>
+            </div>
+          </div>
+          <!-- Authorization URL -->
+          <div class="form-group row">
+            <label class="col-form-label col-md-3" for="authorizationURL">Authorization URL</label>
+            <div class="col col-md-9">
+              <input type="text" class="form-control" id="authorizationURL" placeholder="Enter authorizationURL" formControlName="authorizationURL" />
+              <small *ngIf="submitted && credentialsForm.get('authorizationURL').hasError('required')" class="text-danger">
+                  Authorization URL is required
+              </small>
+            </div>
+          </div>
+          <!-- Error -->
+          <div class="row" *ngIf="error">
+            <div class="col offset-md-3">
+              <div class="alert alert-danger">{{ error }}</div>
+            </div>
+          </div>
+          <!-- End Error -->
+        </div>
+      </div>
+      <div class="row justify-content-end border-top pt-3">
+        <div class="col">
+        </div>
+        <div class="col text-right">
+          <button type="button" class="btn btn-secondary ripple-effect mr-2" (click)="cancelClick()">Cancel</button>
+          <button type="submit" class="btn btn-primary ripple-effect">Save</button>
+        </div>
+      </div>
+    </form>
+    <!--End Account-->
+    
+  </div>
+</div>

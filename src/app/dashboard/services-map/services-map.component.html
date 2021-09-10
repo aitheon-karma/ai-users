@@ -1,0 +1,175 @@
+<div class="services position-relative">
+  <div class="services-grid"
+       [class.services-grid--hidden]="isHidden">
+    <div class="services-grid__top">
+      <h2 class="services-grid__top-title">Services Map</h2>
+
+      <button class="button button--ghost button--core-container ml-auto mr--24" (click)="openCore()">
+        <span class="button--core">
+          <span class="icon icon--size-16px service-icon system_graph"></span>
+          Open core
+        </span>
+      </button>
+
+      <button class="button button--ghost button--medium services-grid__top-button"
+              (click)="hideServiceMap($event)">
+        <span class="icon {{ isHidden ? 'icon--show' : 'icon--hide' }} icon--active icon--size-16px"></span>
+        {{ isHidden ? 'Show' : 'Hide' }}
+      </button>
+    </div>
+    <div class="services-grid__content">
+      <div class="services-grid__left-side">
+        <div class="service-info" *ngIf="!activeService">
+          <div class="service-info__icon service-info__icon--default"></div>
+          <div class="service-info__description service-info__description--hide-hr">
+            Aitheon platform brings together a solid base individual applications
+            with the ability to add new applications, AI agents and bots made by
+            others as well as create your own, all in one platform.
+          </div>
+        </div>
+        <div class="service-info"
+             *ngIf="activeService">
+          <div class="service-info__preview service-info__preview--{{ activeService.name }}"
+               [hidden]="activeService.name == 'iot' ||
+                            activeService.name == 'robotics' ||
+                            activeService.name == 'machines' ||
+                            activeService.name == 'phone' ||
+                            activeService.name == 'camera' ||
+                            activeService.name == 'pilots' ||
+                            activeService.name == 'requests'">
+            <div class="service-info__preview-overlay"
+                 *ngIf="activeService.status == 'unconfigured'"></div>
+            <span class="service-info__preview-text"
+                  *ngIf="activeService.status == 'unconfigured'">Not Configured</span>
+          </div>
+          <div class="service-info__title">
+            {{ activeService.descriptionTitle }}
+          </div>
+          <div class="service-info__description--white"
+               *ngIf="activeService.status == 'disabled'">
+            {{ activeService.price }}
+          </div>
+          <div class="service-info__description--white service-info__description--big"
+               *ngIf="activeService.status == 'UNAVAILABLE'">
+            Coming soon
+          </div>
+          <div class="service-info__description"
+               [class.service-info__description--hide-hr]="activeService.status == 'UNAVAILABLE'"
+               *ngIf="activeService.status == 'disabled' || activeService.status == 'UNAVAILABLE'">
+            {{ activeService.description }}
+          </div>
+          <!-- Hide Automate button untill system-graph will be in PROD state. ( && user && user.sysadmin) - now only show for sysadmin -->
+          <button class="button button--ghost button--medium service-info__configure-button"
+                  *ngIf="activeService.status == 'enabled' && !loading"
+                  [hidden]="activeService.name == 'iot' ||
+                              activeService.name == 'robotics' ||
+                              activeService.name == 'machines' ||
+                              activeService.name == 'phone' ||
+                              activeService.name == 'camera' ||
+                              activeService.name == 'pilots' ||
+                              activeService.name == 'requests'"
+                  (click)="configureService(activeService)">
+            Automate service
+          </button>
+          <button class="service-info__settings icon icon--dynamic icon--settings"
+                  routerLink="../organizations/organization-detail/settings"
+                  *ngIf="activeService.status == 'enabled' && !loading"
+                  [hidden]="activeService.name == 'iot' ||
+                              activeService.name == 'robotics' ||
+                              activeService.name == 'machines' ||
+                              activeService.name == 'phone' ||
+                              activeService.name == 'camera' ||
+                              activeService.name == 'pilots' ||
+                              activeService.name == 'requests'"></button>
+          <button class="button button--ghost button--medium service-info__configure-button"
+                  *ngIf="userOwner && activeService.status == 'disabled'"
+                  [hidden]="activeService.name == 'iot' ||
+                              activeService.name == 'robotics' ||
+                              activeService.name == 'machines' ||
+                              activeService.name == 'phone' ||
+                              activeService.name == 'camera' ||
+                              activeService.name == 'pilots' ||
+                              activeService.name == 'requests'"
+                  (click)="enableService(activeService)">
+            Activate service
+          </button>
+          <button class="button button--ghost button--medium service-info__configure-button"
+                  *ngIf="userOwner && activeService.status == 'unconfigured'"
+                  [hidden]="activeService.name == 'iot' ||
+                              activeService.name == 'robotics' ||
+                              activeService.name == 'machines' ||
+                              activeService.name == 'phone' ||
+                              activeService.name == 'camera' ||
+                              activeService.name == 'pilots' ||
+                              activeService.name == 'requests'"
+                  (click)="configureQuestions(activeService)">
+            Configure service
+          </button>
+          <button class="button button--ghost button--medium service-info__configure-button--border"
+                  *ngIf="userOwner && activeService.status == 'UNAVAILABLE'"
+                  (click)="onAutomateConfirm(activeService._id)">
+            Get early access
+          </button>
+          <div class="service-info__status-container"
+               *ngIf="activeService.status !== 'UNAVAILABLE'">
+            <span class="service-info__status-title">Status:</span>
+            <span class="service-info__status service-info__status--online"
+                  *ngIf="activeService.status == 'enabled'">Online</span>
+            <span class="service-info__status service-info__status--offline"
+                  *ngIf="activeService.status == 'disabled'">Offline</span>
+            <span class="service-info__status service-info__status--unconfigured"
+                  *ngIf="activeService.status == 'unconfigured'">Unconfigured</span>
+          </div>
+          <a class="button button--contained button--medium service-info__configure-button"
+             *ngIf="activeService.status == 'enabled'"
+             href="/{{ activeService.url }}">
+            Go to Service
+          </a>
+        </div>
+      </div>
+      <div class="services-grid__vertical-divider"></div>
+      <div class="services-grid__right-side">
+        <div class="services-grid__grid-container">
+          <!-- <img class="arrows arrows-1" src="assets/img/arrows/arrows-1.svg"> -->
+
+          <div class="services-grid__group-line-1"></div>
+          <div class="services-grid__group-line-2"></div>
+          <div class="services-grid__group-line-3"></div>
+          <div class="services-grid__group-line-4"></div>
+          <div class="services-grid__group-line-5"></div>
+          <div class="services-grid__group-line-6"></div>
+          <div class="services-grid__group-line-7"></div>
+          <div class="services-grid__connections"></div>
+          <div class="services-grid__grid">
+            <div class="services-grid__service-container {{ service.name }}"
+                 [class.active-service]="service.name == activeService.name"
+                 *ngFor="let service of services"
+                 [class.services-grid__service-container--disabled]="service.status === 'disabled'"
+                 [class.services-grid__service-container--coming-soon]="service.status === 'UNAVAILABLE'"
+                 [class.services-grid__service-container--enabled]="service.status === 'enabled'"
+                 [class.services-grid__service-container--unconfigured]="service.status === 'unconfigured'"
+                 (click)="chooseService($event, service)">
+              <div class="services-grid__service-icon"></div>
+              <div class="services-grid__service-name">{{ service.title }}</div>
+            </div>
+            <div class="empty-1"></div>
+            <div class="empty-2"></div>
+            <div class="empty-3"></div>
+            <div class="empty-4"></div>
+            <div class="empty-5"></div>
+            <div class="empty-6"></div>
+            <div class="empty-7"></div>
+            <div class="empty-8"></div>
+            <div class="empty-9"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template [ngIf]="loading">
+  <div class="loading-container">
+    <ai-load></ai-load>
+  </div>
+</ng-template>

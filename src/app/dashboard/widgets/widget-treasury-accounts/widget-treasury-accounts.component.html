@@ -1,0 +1,58 @@
+<div id="accounts" class="container accounts">
+  <div class="accounts__header">
+    <span class="accounts__header--text">
+        Treasury
+    </span>
+
+    <div class="accounts__header-actions">
+        <span class="accounts__header-actions--previous ml-auto">
+            <button class="icon icon--chevron-left icon--dynamic icon--size-16px mr-3" [disabled]="!showPrevious" (click)="changeAccount(-1)"></button>
+        </span>
+        <span>{{ currentWidget.index + 1 }} / {{ accounts?.length + (ethAccounts?.length ? 1 : 0) + 1}}</span>
+        <span class="accounts__header-actions--next ml-auto pl-1" [class.mr-4]="editMode">
+          <button class="icon icon--chevron-right icon--dynamic icon--size-16px ml-3" [disabled]="!showNext" (click)="changeAccount(1)"></button>
+        </span>
+
+    </div>
+
+  </div>
+  <div (click)="viewAccounts()">
+    <div  class="card p-3 accounts__card" *ngIf="currentWidget.type === WidgetType.FIAT">
+        <div class="card-body accounts__card-body-loading p-0" *ngIf="loading">
+          <ai-loading></ai-loading>
+        </div>
+        <div class="card-body p-0" *ngIf="!loading">
+          <div class="row accounts__container" *ngIf="accounts.length">
+            <div class="accounts__head">
+              <div class="accounts__main-info">
+                <h2 class="accounts__name">{{ accounts[fiatAccountIndex].bankName }}  <span class="accounts__status"> ({{ accounts[fiatAccountIndex].accountStatus === 'ACTIVE'? 'ACTIVE': 'INACTIVE' | titlecase }}) </span> </h2>
+                <div class="accounts__number">**** **** **** {{ accounts[fiatAccountIndex].lastDigits }}</div>
+              </div>
+              <div class="accounts__types">
+                <span *ngIf="accounts[fiatAccountIndex]?.allowedOperations.includes('INBOUND')" class="accounts__type-label accounts__type-label--red">Sending</span>
+                <span *ngIf="accounts[fiatAccountIndex]?.allowedOperations.includes('OUTBOUND')"  class="accounts__type-label accounts__type-label--blue">Receiving</span>
+                <span *ngIf="accounts[fiatAccountIndex]?.allowedOperations.includes('TRANSACTIONS')"  class="accounts__type-label accounts__type-label--orange">History</span>
+              </div>
+            </div>
+            <hr class="accounts__hr">
+            <div class="accounts__content row m-0">
+              <div class="accounts__left-section col-6"></div>
+              <div class="accounts__right-section col-6">
+                <div class="accounts__graph"></div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="accounts__empty" *ngIf="!accounts.length && !cryptoAccount">
+            <div class="accounts__empty-icon"></div>
+            <div class="accounts__empty-text">You can add one more account</div>
+            <button class="btn btn-link accounts__empty-add-button">Add account</button>
+          </div> -->
+        </div>
+      </div>
+
+      <ai-widget-treasury-crypto-accounts [externalEthAccounts] = "ethAccounts" *ngIf="currentWidget.type === WidgetType.ETH"></ai-widget-treasury-crypto-accounts>
+
+      <ai-widget-aitheon-account [orgTrialBalance] ="orgTrialBalance" [userTrialBalance] ="userTrialBalance" [aitheonAccount]="aitheonAccount" *ngIf="currentWidget.type === WidgetType.AITHEON"></ai-widget-aitheon-account>
+
+    </div>
+</div>

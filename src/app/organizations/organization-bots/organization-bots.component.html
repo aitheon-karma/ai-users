@@ -1,0 +1,142 @@
+<main class="bots pt-4 container">
+
+  <div class="bots__top-bar card">
+    <div class="bots__top-bar-body card-body">
+      <button class="btn btn-link p-0 m-0 bots__add" (click)="openBotFormModal()">
+        + ADD BOT
+      </button>
+
+      <div  class="search bots__search">
+        <input  [(ngModel)]="searchText" (ngModelChange)="onSearchTextChange()"
+                type="text" autocomplete="off" placeholder="Search">
+      </div>
+    </div>
+  </div>
+  <div class="card bots__data mt-4">
+
+    <div class="card-body p-0 m-0" *ngIf="!loading; else loadingView">
+      <div class="row members__data-header row m-0 py-3">
+        <div class="col-4">Bot name</div>
+        <div class="col-7">Bot username</div>
+        <div class="col-1"></div>
+      </div>
+
+      <div class="bots__no-results p-3" *ngIf="!filteredBots?.length">
+        <span>No bots found</span>
+      </div>
+      <div *ngIf="filteredBots && !loading">
+        <div  class="bots__data-container" *ngFor="let bot of filteredBots">
+          <div  class="row bots__data-row m-0 align-items-center">
+            <div class="col-4 pr-0 bots__data-name d-flex">
+              <span>{{ bot?.firstName }} {{ bot?.lastName }}</span>
+            </div>
+            <div class="col-7 pr-0 bots__data-name d-flex">
+              <span>{{ bot?.username }} </span>
+            </div>
+            <div class="col-1 text-right">
+              <span>
+                <div class="btn-group" dropdown>
+                  <button class="btn btn-ball-transparent btn--more bots__more" dropdownToggle
+                    aria-controls="dropdown-basic"></button>
+                  <ul id="dropdown-basic" 
+                      *dropdownMenu 
+                      class="dropdown-menu dropdown-menu-right" 
+                      role="menu" 
+                      aria-labelledby="button-basic">
+                    <li role="menuitem">
+                      <span class="dropdown-item" 
+                            (click)="editBot(bot)">
+                        Edit
+                      </span>
+                    </li>
+                    <li role="menuitem"
+                        (click)="removeBot(bot)">
+                      <span class="dropdown-item">Delete Bot</span>
+                    </li>
+                  </ul>
+                </div>
+              </span>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+  </div>
+</main>
+<ng-template #botFormModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">{{ currentBot ? 'Edit bot' : 'New bot' }}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body py-4">
+    <form [formGroup]="botForm">
+      <div>
+        <div class="bot-form__section mb-2">
+          <label [hidden]="submitted && botForm.get('name').invalid">
+            Name
+          </label>
+          <label *ngIf="submitted && botForm.get('name').hasError('required')"
+                  class="text-danger">
+            Name is required
+          </label>
+          <div  class="input-wrap input-wrap--contained input-wrap--small"
+                [class.input-wrap--error]="submitted && botForm.get('name').hasError('required')">
+            <input  type="text" formControlName="name"
+                    class="input-wrap__input" placeholder="Enter name">
+          </div>
+        </div>
+        <div class="bot-form__section mb-2">
+          <label [hidden]="(submitted && botForm.get('username').invalid) || handleErrorText">
+            Username {{ currentBot ? "can't be edited" : '' }}
+          </label>
+          <label *ngIf="submitted && botForm.get('username').hasError('required')"
+                  class="text-danger">
+            Username is required
+          </label>
+          <label *ngIf="submitted && botForm.get('username').hasError('pattern')"
+                  class="text-danger">
+            Username is invalid
+          </label>
+          <label *ngIf="handleErrorText"
+                  class="text-danger">
+            {{ handleErrorText }}
+          </label>
+          <div  class="input-wrap input-wrap--contained input-wrap--small"
+                [class.input-wrap--error]="(submitted && botForm.get('username').hasError('required')) || handleErrorText">
+            <input  type="text" formControlName="username"
+                    class="input-wrap__input" placeholder="Enter @username">
+          </div>
+        </div>
+        <div class="bot-form__section">
+          <label>
+            Description (optional)
+          </label>
+          <div class="textarea-wrap textarea-wrap--contained">
+            <textarea class="textarea-wrap__textarea"
+                      formControlName="description"
+                      rows="4"
+                      placeholder="Enter Description"></textarea>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="button button--ghost button--medium mr-2"
+            (click)="close()">Cancel</button>
+    <button class="button button--contained button--medium"
+            (click)="currentBot ? updateBot(botForm.value, currentBot) : addBot(botForm.value)">
+      {{ currentBot ? 'Update' : 'Create' }}
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #loadingView>
+  <div class="loading-container">
+    <ai-loading></ai-loading>
+  </div>
+</ng-template>
+
+<fl-generic-confirm #genericConfirm></fl-generic-confirm>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="41px" viewBox="0 0 40 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>buildings</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="12.2265625%" y1="-31.593192%" x2="83.2571232%" y2="132.324219%" id="linearGradient-1">
+            <stop stop-color="#EF33F2" offset="0%"></stop>
+            <stop stop-color="#3544DC" offset="100%"></stop>
+        </linearGradient>
+        <path d="M6,0 L34,0 C37.3137085,-6.08718376e-16 40,2.6862915 40,6 L40,34 C40,37.3137085 37.3137085,40 34,40 L6,40 C2.6862915,40 4.05812251e-16,37.3137085 0,34 L0,6 C-4.05812251e-16,2.6862915 2.6862915,6.08718376e-16 6,0 Z" id="path-2"></path>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#BFADFC" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-5" points="31 35 25.6666667 35 25.6666667 28.555557 20.3333333 28.555557 20.3333333 35 13 35 13 6 31 6"></polygon>
+        <filter x="-38.9%" y="-17.2%" width="177.8%" height="148.3%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-7">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#BFADFC" offset="100%"></stop>
+        </linearGradient>
+        <path d="M8.56097561,9.33333333 L1.97560976,9.33333333 L1.975,27.9993333 L0,28 L0,7.35454335 L4.2804878,5.33333333 L8.56097561,7.35454335 L8.56097561,9.33333333 Z" id="path-8"></path>
+        <filter x="-81.8%" y="-22.1%" width="263.5%" height="161.8%" filterUnits="objectBoundingBox" id="filter-9">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M27,-3.01980663e-13 L27,28 L19.7560976,28 L19.7560976,21.7777792 L16.4634146,21.7777792 L16.4634146,28 L9.2195122,28 L9.2195122,-3.01980663e-13 L27,-3.01980663e-13 L27,-3.01980663e-13 Z M8.56097561,28 L1.97560976,28 L1.97560976,7.73526786 L4.2804878,6.66666667 L8.56097561,8.54635417 L8.56097561,28 Z" id="path-10"></path>
+        <filter x="-28.0%" y="-17.9%" width="155.9%" height="150.0%" filterUnits="objectBoundingBox" id="filter-11">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="-123.62593%" y1="-80.4980469%" x2="159.801415%" y2="84.6875%" id="linearGradient-12">
+            <stop stop-color="#EF33F2" offset="0%"></stop>
+            <stop stop-color="#3544DC" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-123.62593%" y1="-80.4980469%" x2="159.801415%" y2="84.6875%" id="linearGradient-13">
+            <stop stop-color="#EF33F2" offset="0%"></stop>
+            <stop stop-color="#3544DC" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="01-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01-Desktop-/-01-HomePage-/-01_01_Home-1440" transform="translate(-991.000000, -2190.000000)">
+            <g id="buildings" transform="translate(991.000000, 2190.000000)">
+                <mask id="mask-3" fill="white">
+                    <use xlink:href="#path-2"></use>
+                </mask>
+                <use id="Mask-Copy-6" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                <g id="Path" fill-rule="nonzero">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                    <use fill="url(#linearGradient-4)" xlink:href="#path-5"></use>
+                </g>
+                <g id="Group-13" transform="translate(6.000000, 7.000000)">
+                    <g id="Combined-Shape" fill-rule="nonzero">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-9)" xlink:href="#path-8"></use>
+                        <use fill="url(#linearGradient-7)" xlink:href="#path-8"></use>
+                    </g>
+                    <g id="Shape" fill-rule="nonzero">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-11)" xlink:href="#path-10"></use>
+                        <use fill="#FFFFFF" xlink:href="#path-10"></use>
+                    </g>
+                    <g id="Group-8" transform="translate(3.951220, 2.000000)">
+                        <polygon id="Path" fill="url(#linearGradient-12)" points="21.0731707 0 17.7804878 0 17.7804878 3.33333333 21.0731707 3.33333333"></polygon>
+                        <polygon id="Path" fill="url(#linearGradient-12)" points="15.804878 0 12.5121951 0 12.5121951 3.33333333 15.804878 3.33333333"></polygon>
+                        <polygon id="Path" fill="url(#linearGradient-12)" points="10.5365854 0 7.24390244 0 7.24390244 3.33333333 10.5365854 3.33333333"></polygon>
+                        <polygon id="Path" fill="url(#linearGradient-12)" points="21.0731707 5.33333333 17.7804878 5.33333333 17.7804878 8.66666667 21.0731707 8.66666667"></polygon>
+                        <polygon id="Path" fill="url(#linearGradient-12)" points="15.804878 5.33333333 12.5121951 5.33333333 12.5121951 8.66666667 15.804878 8.66666667"></polygon>
+                        <polygon id="Path" fill="url(#linearGradient-12)" points="10.5365854 5.33333333 7.24390244 5.33333333 7.24390244 8.66666667 10.5365854 8.66666667"></polygon>
+                        <polygon id="Path" fill="url(#linearGradient-13)" points="2.63414634 8 0 8 0 10.6666667 2.63414634 10.6666667"></polygon>
+                        <polygon id="Path" fill="url(#linearGradient-12)" points="21.0731707 10.6666667 17.7804878 10.6666667 17.7804878 14 21.0731707 14"></polygon>
+                        <polygon id="Path" fill="url(#linearGradient-12)" points="15.804878 10.6666667 12.5121951 10.6666667 12.5121951 14 15.804878 14"></polygon>
+                        <polygon id="Path" fill="url(#linearGradient-12)" points="10.5365854 10.6666667 7.24390244 10.6666667 7.24390244 14 10.5365854 14"></polygon>
+                        <polygon id="Path" fill="url(#linearGradient-13)" points="2.63414634 12.6666667 0 12.6666667 0 15.3333333 2.63414634 15.3333333 2.63414634 12.6666667"></polygon>
+                        <polygon id="Path" fill="url(#linearGradient-13)" points="2.63414634 17.3333333 0 17.3333333 0 20 2.63414634 20"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

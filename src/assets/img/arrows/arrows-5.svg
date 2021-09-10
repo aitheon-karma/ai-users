@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="370px" height="19px" viewBox="0 0 370 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Group 54</title>
+    <desc>Created with Sketch.</desc>
+    <g id="01-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01-Desktop-/-01-HomePage-/-01_01_Home" transform="translate(-503.000000, -2458.000000)" stroke="#383838" stroke-width="1.5">
+            <g id="Group-51" transform="translate(134.000000, 1865.000000)">
+                <g id="Group-27" transform="translate(308.000000, 0.000000)">
+                    <g id="Group-43">
+                        <g id="Group-54" transform="translate(63.000000, 595.000000)">
+                            <circle id="Oval" cx="92.75" cy="2.25" r="2.25"></circle>
+                            <circle id="Oval" cx="1.5" cy="1.5" r="2.25"></circle>
+                            <circle id="Oval-Copy" cx="364.5" cy="2.25" r="2.25"></circle>
+                            <circle id="Oval-Copy-5" cx="182" cy="2.25" r="2.25"></circle>
+                            <circle id="Oval-Copy-6" cx="274.25" cy="2.25" r="2.25"></circle>
+                            <path d="M1.5,4 L1.5,13 C1.5,14.6568542 2.84314575,16 4.5,16 L361.5,16 C363.156854,16 364.5,14.6568542 364.5,13 L364.5,4 L364.5,4" id="Path-18" stroke-linejoin="round"></path>
+                            <line x1="274.25" y1="15.75" x2="274.25" y2="3.75" id="Path-20-Copy"></line>
+                            <line x1="182" y1="15.75" x2="182" y2="3.75" id="Path-20"></line>
+                            <line x1="93" y1="15.75" x2="93" y2="3.75" id="Path-20"></line>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,2691 @@
+@font-face {
+    font-family: 'Proxima Nova Rg';
+    src: url('../fonts/proxima_nova/ProximaNova-Bold.eot');
+    src: url('../fonts/proxima_nova/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/proxima_nova/ProximaNova-Bold.woff2') format('woff2'),
+        url('../fonts/proxima_nova/ProximaNova-Bold.woff') format('woff'),
+        url('../fonts/proxima_nova/ProximaNova-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Lt';
+    src: url('../fonts/proxima_nova/ProximaNova-Semibold.eot');
+    src: url('../fonts/proxima_nova/ProximaNova-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/proxima_nova/ProximaNova-Semibold.woff2') format('woff2'),
+        url('../fonts/proxima_nova/ProximaNova-Semibold.woff') format('woff'),
+        url('../fonts/proxima_nova/ProximaNova-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Rg';
+    src: url('../fonts/proxima_nova/ProximaNova-Regular.eot');
+    src: url('../fonts/proxima_nova/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/proxima_nova/ProximaNova-Regular.woff2') format('woff2'),
+        url('../fonts/proxima_nova/ProximaNova-Regular.woff') format('woff'),
+        url('../fonts/proxima_nova/ProximaNova-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Th';
+    src: url('../fonts/proxima_nova/ProximaNovaT-Thin.eot');
+    src: url('../fonts/proxima_nova/ProximaNovaT-Thin.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/proxima_nova/ProximaNovaT-Thin.woff2') format('woff2'),
+        url('../fonts/proxima_nova/ProximaNovaT-Thin.woff') format('woff'),
+        url('../fonts/proxima_nova/ProximaNovaT-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background: #f3f7fc;
+    font-family: 'Proxima Nova Rg';
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.pad-all-0 {
+    padding: 0px;
+}
+
+.padr-0 {
+    padding-right: 0px;
+    margin-bottom: 15px;
+}
+
+ol,
+ul {
+    list-style: none outside none;
+}
+
+#fulls {
+    padding: 0;
+}
+
+#bgvid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo {
+    margin-top: 58px;
+}
+
+.nav {
+    margin-top: 70px;
+}
+
+.nav a span {
+    color: #ffffff;
+    font-size: 14px;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 600;
+    margin-left: 40px;
+    text-transform: capitalize;
+    padding-bottom: 6px;
+}
+
+.nav .active {
+    border-bottom: 3px solid #5289f3;
+    color: #5289f3;
+}
+
+.nav a {
+    text-decoration: none;
+}
+
+.nav>a:hover span {
+    color: #5289f3;
+}
+
+.head-text {
+    position: absolute;
+    bottom: 57px;
+    text-align: center;
+}
+.head-text1 {
+    position: absolute;
+    bottom: 145px;
+    text-align: center;
+}
+.head-text img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 11px;
+    cursor: pointer;
+    margin-bottom: 36px;
+}
+
+.header {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.head-text span {
+    color: #ffffff;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.header-buttons {
+    padding-top: 5px;
+}
+
+.header-buttons button {
+    margin-right: 9px;
+}
+
+.btn-blue {
+    border-radius: 500px;
+    padding: 10px 30px;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 600;
+    font-size: 15px;
+    color: #ffffff;
+    text-transform: uppercase;
+    border: none;
+    text-shadow: 0px 1px #757575;
+    margin: 25px 0;
+    text-align: center;
+    box-shadow: 0px 5px 20px 3px rgba(0, 0, 0, 0.22);
+   transition: all 0.3s ease 0s;
+    background: #2bd3fd;
+    background-image: -webkit-linear-gradient(top, #2bd3fd, #1ca5c7);
+    background-image: -moz-linear-gradient(top, #2bd3fd, #1ca5c7);
+    background-image: -ms-linear-gradient(top, #2bd3fd, #1ca5c7);
+    background-image: -o-linear-gradient(top, #2bd3fd, #1ca5c7);
+    background-image: linear-gradient(to bottom, #2bd3fd, #1ca5c7);
+}
+
+.btn-blue:focus {
+    outline: none;
+}
+
+.btn-blue:hover {
+        box-shadow: none;
+    background: #1ca5c7;
+     transition: all 0.3s ease 0s;
+
+}
+
+.btn-big {
+    padding: 20px 55px;
+    font-size: 18px;
+}
+
+
+/*======Header Ends========*/
+
+
+/*======Section 2 starts========*/
+
+.sec-2 {
+    background-image: url("../images/sec2-bg.png");
+    background-size: cover;
+}
+
+.sec-2-1 {
+    text-align: center;
+}
+
+.sec-2-1 p:nth-child(1) {
+    font-family: 'Proxima Nova Rg';
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 60px;
+    text-align: center;
+    color: #45cfd2;
+    margin-top: 56px;
+    font-style: normal;
+}
+
+
+/*.sec-2-1 p:nth-child(1) span {
+    color: #3465c2;
+}*/
+
+.sec-2-1 p {
+    font-size: 24px;
+    text-align: center;
+    color: #ffffff;
+    line-height: 30px;
+    margin-bottom: 31px;
+    font-family: 'Proxima Nova Th';
+    font-weight: 100;
+    font-style: oblique;
+}
+
+.sec-2-1 button {
+    margin-bottom: 101px;
+}
+
+
+/*======Section 2 Ends========*/
+
+
+/*======Section 3 starts========*/
+
+.sec-3 {
+    background: #f3f7fc url(../images/sec3-bg.png);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+}
+
+.content-1 {
+    border: 1px solid #d4dbe3;
+    text-align: center;
+    background: #ffffff;
+    min-height: 421px;
+    -webkit-box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.22);
+    box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.22);
+}
+
+.content-1 img {
+    margin: 48px 0 29px 0;
+}
+
+.content-1 h5 {
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 600;
+    color: #343434;
+}
+
+.content-1 p {
+    color: #343434;
+    font-family: 'Proxima Nova Rg';
+    font-size: 15px;
+    font-weight: 400;
+    padding: 0 30px 0 30px;
+}
+
+.btn-adj {
+    margin-top: 63px;
+}
+
+.btn-adj2 {
+    margin-top: 36px;
+}
+
+.mar-adj {
+    margin-top: 27px;
+}
+
+.overlap {
+    position: relative;
+    top: -75px;
+}
+
+.token {
+    text-align: center;
+}
+
+.token button {
+    margin: 55px 0 48px 0;
+}
+
+.content-1:hover {
+    border: 1px solid #4786ff;
+    background-image: url("../images/hover.png");
+}
+
+
+/*section 4 road map*/
+
+.sec-4 {
+    background: #1e4082;
+    /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #1e4082 0%, #2b6db5 99%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #1e4082 0%, #2b6db5 99%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #1e4082 0%, #2b6db5 99%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e4082', endColorstr='#2b6db5', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.sec-4>img:nth-child(1) {
+    position: absolute;
+    left: 0px;
+}
+
+.sec-4>img:nth-child(2) {
+    position: absolute;
+    right: 0px;
+}
+
+.circle,
+.circle2,
+.circle3,
+.circle4 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(0, -50%);
+    opacity: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid rgba(76, 186, 226, 0.5411764705882353);
+    -webkit-animation: ripple 4s linear infinite;
+    animation: ripple 4s linear infinite;
+}
+
+.circle2 {
+    -webkit-animation-delay: 1s;
+}
+
+.circle3 {
+    -webkit-animation-delay: 2s;
+}
+
+.circle4 {
+    -webkit-animation-delay: 3s;
+}
+
+@-webkit-keyframes ripple {
+    0% {
+        -webkit-transform: scale(1);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.5;
+    }
+    60% {
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: scale(10);
+        opacity: 0;
+    }
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.5;
+    }
+    60% {
+        opacity: 0;
+    }
+    100% {
+        transform: scale(10);
+        opacity: 0;
+    }
+}
+
+.ripple {
+    position: relative;
+    right: -8px;
+    top: -3px;
+}
+
+.adj {
+    bottom: 0px !important;
+}
+
+.margin-set {
+    margin: -114px auto 10px;
+}
+
+
+/*section 4 road map ends*/
+
+
+/*section 5 starts*/
+
+.sec-5 {
+    background: #f3f7fc;
+    text-align: center;
+}
+
+.left {
+    text-align: center;
+    padding-top: 40px;
+}
+
+.right {
+    text-align: center;
+    padding-top: 40px;
+    min-height: 526px;
+    background-color: #fff;
+}
+
+.left h3 {
+    font-size: 30px;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 600;
+    color: #343434;
+    text-transform: uppercase;
+}
+
+.right h3 {
+    font-size: 30px;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 600;
+    color: #343434;
+    text-transform: uppercase;
+}
+
+.faqs {
+    max-width: 580px;
+    padding-left: 19px;
+}
+
+.faqs a {
+    position: relative;
+    top: 19px;
+    text-decoration: none;
+    border-bottom: 1px dotted;
+}
+
+.coins-allo {
+    float: right;
+}
+
+.main {}
+
+.panel-heading {
+    border-bottom: 1px solid #dedede !important;
+    background: none!important;
+    padding-bottom: 10px;
+}
+
+.panel-title {
+    font-size: 15px;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 600;
+    color: #343434;
+    align-self: left;
+    text-align: left;
+}
+
+.panel-group .panel {
+    border: none;
+}
+
+.panel-heading img {
+    cursor: pointer;
+    padding: 10px 0px;
+    height: 28px;
+}
+
+.panel {
+    background: none;
+    background-color: transparent;
+    border: none !important;
+    border-radius: 0px !important;
+    box-shadow: none !important;
+}
+
+.panel-body {
+    text-align: left;
+    padding: 15px 6px;
+}
+
+.panel-default>.panel-heading {
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0;
+    padding-right: 0px;
+}
+
+.main p {
+    text-align: left;
+    margin: 0px;
+    padding-top: 22px;
+}
+
+.rotate {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    padding-left: 5px;
+    padding-right: 0px!important;
+}
+
+video {
+    margin: 0 auto;
+    display: block;
+}
+
+.carousel-control {
+    width: 0% !important;
+}
+
+.carousel-indicators {
+    display: none !important;
+}
+
+item-video {
+    height: 400px;
+}
+
+
+/*graph*/
+
+#graph {
+    display: inline-block;
+    height: 350px;
+    margin: 0px;
+    width: 655px;
+    float: right;
+    margin-right: 48px;
+}
+
+#graph_mobile {display: none;}
+
+/*graph*/
+
+
+/*jassor slider*/
+
+
+/*jssor slider loading skin spin css*/
+
+.jssorl-009-spin img {
+    animation-name: jssorl-009-spin;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes jssorl-009-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/*jssor slider bullet skin 051 css*/
+
+.jssorb051 .i {
+    position: absolute;
+    cursor: pointer;
+}
+
+.jssorb051 .i .b {
+    fill: #fff;
+    fill-opacity: 0.5;
+}
+
+.jssorb051 .i:hover .b {
+    fill-opacity: .7;
+}
+
+.jssorb051 .iav .b {
+    fill-opacity: 1;
+}
+
+.jssorb051 .i.idn {
+    opacity: .3;
+}
+
+
+/*jssor slider arrow skin 051 css*/
+
+.jssora051 {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+}
+
+.jssora051 .a {
+    fill: none;
+    stroke: #000;
+    stroke-width: 360;
+    stroke-miterlimit: 10;
+}
+
+.jssora051:hover {
+    opacity: .8;
+}
+
+.jssora051.jssora051dn {
+    opacity: .5;
+}
+
+.jssora051.jssora051ds {
+    opacity: .3;
+    pointer-events: none;
+}
+
+.test {
+    bottom: 26px;
+}
+
+
+/*jassor slider*/
+
+
+/*section 6*/
+
+.sec-6 {
+    text-align: center;
+    margin: 90px 0 55px 0;
+}
+
+.sec-6 select {
+    float: right;
+}
+
+.sec-6>div>h4 {
+    font-size: 31px;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0 70px 55px 0;
+}
+
+.sec-6>div {
+    padding: 0px;
+}
+
+.dropdown {
+    border-radius: 20px;
+    border: none;
+    padding: 10px 50px 10px 20px;
+    color: #343434;
+    font-size: 15px;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 700;
+    /*  appearance:none;
+    -webkit-appearance: none;
+    -moz-appearance: none;*/
+}
+
+.dropdown:focus {
+    outline: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.padr-0>img {
+    width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    background-color: #3465c2;
+    border-radius: 0 25px 25px 0;
+    bottom: 17px;
+    width: 84%;
+}
+
+.overlay label {
+    font-size: 14px;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 600;
+    text-align: left;
+    color: #fff;
+    float: left;
+    margin: 5px 2px 0 15px;
+    width: 168px;
+}
+
+.overlay span {
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Proxima Nova Rg';
+    float: left;
+    color: #fff;
+    margin: 0 0 5px 15px;
+}
+
+.overlay label span {
+    margin-left: 0px;
+}
+
+.overlay>div {
+    position: absolute;
+    top: 5px;
+    right: 13px;
+}
+
+.overlay>div a {
+    color: #fff;
+    margin-left: 6px;
+}
+
+.pad-0 {
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+
+/*new feed*/
+
+.sec-7 {
+    background-color: #f9f9f9;
+    border: 1px solid #e2e2e2;
+    -webkit-box-shadow: inset 0px 10px 11px 1px rgba(224, 219, 219, 0.44);
+    -moz-box-shadow: inset 0px 10px 11px 1px rgba(224, 219, 219, 0.44);
+    box-shadow: inset 0px 10px 11px 1px rgba(224, 219, 219, 0.44);
+    margin-top: 50px;
+}
+
+.sec-7-main {
+    padding: 43px 0 43px 0;
+}
+
+.sec-7>img {
+    position: absolute;
+    float: left;
+}
+
+.img-adj {
+    width: 100%;
+}
+
+.sec-7-heading {
+    position: absolute;
+    z-index: 99;
+    left: 45%;
+    font-size: 25px;
+    font-family: 'Proxima Nova Rg';
+    top: 33px;
+}
+
+.col-7-bg {
+    background-color: #fff;
+    margin-top: 50px;
+    border: 1px solid #e7e7e7;
+    border-left: transparent;
+}
+
+.leftnav {
+    position: absolute !important;
+    left: 94% !important;
+    top: 13px !important;
+    border: 1px solid #e7e7e7;
+}
+
+.rightnav {
+    top: 13px !important;
+    border: 1px solid #e7e7e7;
+    right: 0!important;
+}
+
+.col-7-bg {
+    padding: 0 18px 0 25px;
+}
+
+.btn-sec7 {
+    margin: 4px 0 20px 0;
+}
+
+.col-7-bg>h5 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #343434;
+    padding: 6px 0;
+}
+
+.col-7-bg>h6 {
+    font-size: 13px;
+    font-weight: 500;
+    color: #737373;
+}
+
+.col-7-bg>p {
+    font-size: 12px;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 400;
+    color: #737373;
+}
+
+
+/*new feed*/
+
+
+/*as seen on sec 8*/
+.sec-8 .as-seen-mobile{
+    display: none;
+}
+.sec-8 {
+    background-color: #5a91fa;
+    min-height: 550px;
+}
+
+.sec-8-main {}
+
+.sec-8-main>h4 {
+    font-size: 30px;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    margin: 65px;
+}
+
+.leftnav2 {
+    top: 79px !important;
+    background-color: #f9f9f98f;
+    left: -53px !important;
+}
+
+.rightnav2 {
+    top: 79px !important;
+    background-color: #f9f9f98f;
+    right: -48px !important;
+}
+
+.sec-8>img:nth-child(1) {
+    left: 0;
+    position: absolute;
+}
+
+.sec-8>img:nth-child(2) {
+    right: 0;
+    position: absolute;
+}
+
+.img-customize div {
+    background: #fff;
+    -webkit-box-shadow: 0px 6px 14px 2px rgba(0, 0, 0, 0.31);
+    -moz-box-shadow: 0px 6px 14px 2px rgba(0, 0, 0, 0.31);
+    box-shadow: 0px 6px 14px 2px rgba(0, 0, 0, 0.31);
+    margin-bottom: 28px;
+    height: 84px;
+    border-radius: 3px;
+    position: relative;
+}
+
+.img-customize div img {
+    width: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+
+/*as seen on sec 8*/
+
+
+/*partners*/
+.partners-mobile{
+    display: none;
+}
+.sec-9 {
+    background-color: #f3f7fc;
+}
+
+.sec-9-main>h4 {
+    font-size: 30px;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 600;
+    text-align: center;
+    margin: 76px 0 55px 0;
+}
+
+.leftnav3 {
+    background-color: #f9f9f9;
+    border: 1px solid #e7e7e7;
+    top: 26px !important;
+    left: -60px !important;
+}
+
+.rightnav3 {
+    background-color: #f9f9f9;
+    border: 1px solid #e7e7e7;
+    top: 26px !important;
+    right: -50px !important;
+}
+
+.mar-5 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+
+/*partners*/
+
+
+/*footer*/
+
+.sec-10 {
+    background-color: #fff;
+    min-height: 245px;
+}
+
+.sec-10>img:nth-child(1) {
+    left: 0;
+    position: absolute;
+}
+
+.sec-10>img:nth-child(2) {
+    right: 0;
+    position: absolute;
+}
+
+.social {
+    margin-top: 65px;
+}
+
+.social>label {
+    font-size: 25px;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    display: block;
+    margin-bottom: 45px;
+}
+
+.social>ul {
+    display: block;
+    text-align: center;
+    padding: 0px;
+}
+
+.social>ul>li {
+    display: inline-block;
+    list-style: none;
+    margin-right: 6px;
+}
+
+.logo-new {
+    margin-top: 110px;
+}
+
+.btn-adj3 {
+    text-align: center;
+    margin-top: 79px;
+}
+
+.footer-btn1 {
+    margin-bottom: 18px;
+    margin-top: 0px;
+}
+
+.footer-btn2 {
+    margin-top: 5px;
+    padding: 10px 63px;
+}
+
+
+/*footer*/
+
+
+/*road map*/
+
+
+/*new structure*/
+
+.sec-4 h5 {
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    font-family: 'Proxima Nova Rg';
+}
+
+.content>ul>li:before {
+    border: 1px solid #29b8cd;
+    border-radius: 30px;
+    width: 4px;
+    float: left;
+    height: 6px;
+    margin-top: 1%;
+    padding-right: 4px;
+    background: #29b8cd;
+    margin-right: 6px;
+    position: absolute;
+    content: '';
+    left: 23.5%;
+}
+
+.content>ul {
+    margin: 0px;
+    padding-left: 7px;
+}
+
+.content>ul>li {
+    list-style: none;
+    font-size: 13px;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 0px;
+}
+
+.content-r>ul>li:before {
+    border: 1px solid #29b8cd;
+    border-radius: 30px;
+    width: 4px;
+    float: left;
+    height: 6px;
+    margin-top: 1%;
+    padding-right: 4px;
+    background: #29b8cd;
+    margin-right: 6px;
+    position: absolute;
+    content: '';
+    left: 9.5%;
+}
+
+.content-r>ul {
+    margin: 0px;
+    padding-left: 7px;
+}
+
+.content-r>ul>li {
+    list-style: none;
+    font-size: 13px;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 0px;
+}
+
+.idk-right {
+    position: relative;
+    top: -56px;
+}
+
+.top-adj {
+    position: relative;
+    top: -157px;
+}
+
+
+/*new structure*/
+
+.center-line {
+    background-color: #29b8cd;
+    width: 3px;
+    position: absolute;
+    top: 0px;
+    bottom: 122px;
+    right: 0px;
+    left: 0px;
+    margin: 0 auto;
+}
+
+.adjustment>h4 {
+    font-size: 30px;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 600;
+    margin: 72px 0 60px 0;
+    color: #fff;
+    text-align: center;
+}
+
+.center-line-main {
+    position: relative;
+}
+
+.idk-left {
+    position: relative;
+    top: -156px;
+}
+
+.road-empty-l {
+    float: right;
+    width: 30px;
+    border-top: 1px solid #29b8cd;
+    border-left: 1px solid#29b8cd;
+    border-radius: 10px 0 0 0;
+    height: 90px;
+}
+
+.dot-solid-large {
+    position: absolute;
+    top: -3px;
+    right: -5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 25px;
+    background-color: #29b8cd;
+}
+
+.dot-solid-small {
+    position: relative;
+    bottom: -14px;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    border-radius: 25px;
+    background-color: #29b8cd;
+}
+
+.dot-hollow {
+    border: 2px solid #29b8cd;
+    position: relative;
+    bottom: -5px;
+    left: -8px;
+    width: 10px;
+    height: 10px;
+    border-radius: 25px;
+    background-color: transparent;
+}
+
+.content {
+    float: right;
+    border-bottom: 1px solid #29b8cd;
+    border-right: 1px solid #29b8cd;
+    border-radius: 0 0 10px 0;
+    margin-top: 8px;
+    margin-right: -1px;
+    padding-right: 31px;
+    max-width: 70%;
+}
+
+.content>h5 {
+    font-size: 20px;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: right;
+    margin: 0px;
+}
+
+.content>h6 {
+    font-size: 15px;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: right;
+    margin-top: 5px;
+}
+
+.content>p {
+    font-size: 15px;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: right;
+    margin-bottom: 0px;
+}
+
+.road-empty-r {
+    float: left;
+    width: 30px;
+    border-top: 1px solid #29b8cd;
+    border-right: 1px solid #29b8cd;
+    border-radius: 0 10px 0 0;
+    height: 30px;
+}
+
+.content-r {
+    float: left;
+    border-bottom: 1px solid #29b8cd;
+    border-left: 1px solid #29b8cd;
+    border-radius: 0 0 0 10px;
+    margin-top: 8px;
+    margin-left: -1px;
+    padding-left: 31px;
+    text-align: left;
+    max-width: 70%;
+}
+
+.content-r>h5 {
+    font-size: 20px;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0px;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.content-r>h6 {
+    font-size: 15px;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 5px;
+}
+
+.content-r>p {
+    font-size: 15px;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 0px;
+}
+
+.dot-solid-large-r {
+    position: absolute;
+    top: -4px;
+    left: -6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 25px;
+    background-color: #29b8cd;
+}
+
+.dot-solid-small-r {
+    position: absolute;
+    width: 6px;
+    left: 27px;
+    top: 50%;
+    height: 6px;
+    border-radius: 25px;
+    margin: auto 0;
+    background-color: #29b8cd;
+}
+
+.dot-hollow-r {
+    border: 2px solid #29b8cd;
+    position: relative;
+    bottom: -5.2px;
+    width: 10px;
+    right: -8px;
+    float: right;
+    height: 10px;
+    border-radius: 25px;
+    background-color: transparent;
+}
+
+
+/*road map*/
+
+
+/* Team Page  */
+
+
+/*** andrew , Ryan , sergei , marketing-section ,  Advisors-section , Community-section styling ***/
+
+.aitheon-contents {
+    background: #f3f7fc;
+    padding-bottom: 65px;
+}
+
+.aitheon-contents .main-heading h1 {
+    font-family: 'Proxima Nova Rg';
+    color: #343434;
+    text-align: center;
+    margin-top: 49px;
+    margin-bottom: 60px;
+}
+
+.aitheon-contents .aitheon-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.aitheon-contents .aitheon-content .heading h2 {
+    font-family: 'Proxima Nova Rg';
+    font-size: 24px;
+    color: #343434;
+    margin-top: 0;
+}
+
+.aitheon-contents .aitheon-content .heading h3 {
+    font-family: 'Proxima Nova Rg';
+    font-size: 18px;
+    color: #343434;
+    margin-top: 0px;
+    margin-bottom: 29px;
+}
+
+.aitheon-contents .links {
+    display: flex;
+}
+
+.aitheon-contents .fa-facebook {
+    border-radius: 5px;
+    width: 37px;
+    height: 37px;
+    font-size: 18px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1883d5;
+    margin-right: 4px;
+}
+
+.aitheon-contents .fa-linkedin {
+    border-radius: 5px;
+    width: 37px;
+    height: 37px;
+    font-size: 18px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #3ea1ec;
+    margin-right: 4px;
+}
+
+.aitheon-contents .fa-twitter {
+    border-radius: 5px;
+    width: 37px;
+    height: 37px;
+    font-size: 18px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #21c2f8;
+}
+
+.aitheon-contents .links li .fa {
+    margin-right: 8px;
+}
+
+.aitheon-contents .links li:last-child .fa {
+    margin-right: 0;
+}
+
+.aitheon-contents .paragraph p {
+    font-family: 'Proxima Nova Rg';
+    font-size: 16px;
+    color: #343434;
+    padding-bottom: 13px;
+}
+
+.aitheon-contents .set-padding {
+    padding-left: 58px;
+}
+
+.aitheon-contents .set-padding-1 {
+    padding-right: 58px;
+}
+
+.aitheon-contents .s-content {
+    position: relative;
+    min-height: 407px;
+    height: 100%;
+}
+
+.aitheon-contents .alignment {
+    position: absolute;
+    vertical-align: middle;
+    top: 50%;
+    transform: translatey(-50%);
+}
+
+.sergei .set-pt {
+    padding-top: 73px;
+}
+
+
+/*** marketing section styling ***/
+
+.marketing {
+    background: #f3f7fc;
+}
+
+.marketing .main-heading h1 {
+    font-family: 'Proxima Nova Rg';
+    color: #343434;
+    text-align: center;
+    margin-top: 38px;
+    margin-bottom: 50px;
+}
+
+
+/*** marketing section styling-end***/
+
+
+/*** advisors section styling ***/
+
+.advisors {
+    background: #f3f7fc;
+}
+
+.advisors .main-heading h1 {
+    font-family: 'Proxima Nova Rg';
+    color: #343434;
+    text-align: center;
+    margin-top: 49px;
+    margin-bottom: 70px;
+}
+
+.advisors .set-content {
+    padding-top: 20px;
+}
+
+
+/*** advisors section styling-end ***/
+
+
+/*** community section styling ***/
+
+.community {
+    background: #f3f7fc;
+}
+
+.community .main-heading h1 {
+    font-family: 'Proxima Nova Rg';
+    color: #343434;
+    text-align: center;
+    margin-top: 22px;
+    margin-bottom: 46px;
+}
+
+
+/*** community section styling-end ***/
+
+
+/*** development section styling ***/
+
+.development {
+    background: #f3f7fc;
+}
+
+.development .development-heading {
+    text-align: center;
+}
+
+.development .development-heading h1 {
+    font-family: 'Proxima Nova Rg';
+    color: #343434;
+    margin-bottom: 20px;
+}
+
+.development .development-heading p {
+    font-family: 'Proxima Nova Rg';
+    color: #343434;
+    font-size: 24px;
+    margin-bottom: 35px;
+}
+
+.development .development-cards {
+    text-align: -webkit-center;
+}
+
+.development .development-cards {
+    height: 100%;
+    min-height: 365px;
+    padding: 55px 27px 0px 27px;
+    background: #ffffff;
+    box-shadow: 0px 6px 8.19px 0.81px rgba(0, 0, 0, 0.31);
+    border: 1px solid rgb(212, 219, 227)
+}
+
+.development .development-cards h3 {
+    font-family: 'Proxima Nova Rg';
+    color: #343434;
+    padding-top: 22px;
+    padding-bottom: 19px;
+}
+
+.development .development-cards p {
+    font-family: 'Proxima Nova Rg';
+    color: #343434;
+    font-size: 18px;
+}
+
+.development .development-cards p span {
+    font-family: 'Proxima Nova Rg';
+    color: #343434;
+}
+
+
+/*community cards */
+
+.c-card {
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 1px solid #eeeeef;
+}
+
+.c-card:hover {
+    -webkit-box-shadow: -1px 2px 18px -1px rgba(201, 201, 201, 1);
+    -moz-box-shadow: -1px 2px 18px -1px rgba(201, 201, 201, 1);
+    box-shadow: -1px 2px 18px -1px rgba(201, 201, 201, 1);
+    background: #fff url(../images/commu.png) no-repeat;
+    background-position: right;
+    background-position-y: bottom;
+    transition: .2s ease-in-out;
+}
+
+.c-img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+
+/*.c-img:hover {
+      -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}*/
+
+.c-card h2 {
+    margin: 0;
+    padding: 12px 3px 9px 12px;
+    font-size: 22px;
+}
+
+.c-card h4 {
+    margin: 0;
+    color: #5891ff;
+    padding: 0px 3px 5px 12px
+}
+
+.c-card h4 i {
+    padding-right: 5px;
+}
+
+.c-card h5 {
+    font-size: 15px;
+    margin: 0;
+    color: #909090;
+    padding: 0px 3px 12px 12px;
+}
+
+.c-card h5 i {
+    padding-right: 5px;
+    font-size: 15px;
+}
+
+
+/* COntact page */
+
+
+/*** header styling ***/
+
+.subpages {
+    padding-bottom: 42px;
+    background: #193771;
+    /* Old browsers */
+    background: -moz-linear-gradient(45deg, #193771 0%, #224891 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #193771 0%, #224891 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #193771 0%, #224891 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#193771', endColorstr='#224891', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+}
+
+
+/*** header styling-end ***/
+
+
+/*** contact section styling ***/
+
+.contact {
+    background: #f3f7fc;
+    padding-bottom: 70px;
+}
+
+.contact .contact-heading h1 {
+    font-family: 'Proxima Nova Rg';
+    color: #343434;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 49px;
+    margin-bottom: 60px;
+}
+
+.contact .form .form-control {
+    font-family: 'Proxima Nova Rg';
+    font-size: 16px;
+    height: 50px;
+    color: #878888;
+    border: 1px solid #bec1c1;
+    border-radius: 0;
+    padding: 6px 19px;
+    margin-bottom: 20px;
+    box-shadow: none;
+    background: transparent;
+}
+
+.contact .form .form-control:focus {
+    outline: none;
+    color: #323232;
+    box-shadow: none;
+    background: #fff;
+    border: 1px solid #3284ea;
+}
+
+.contact .form .f-message {
+    font-family: 'Proxima Nova Rg';
+    font-size: 16px;
+    height: 168px;
+    color: #878888;
+    border: 1px solid #bec1c1;
+    border-radius: 0;
+    width: 100%;
+    min-width: 100%;
+    min-height: 168px;
+    max-width: 100%;
+    background: transparent;
+    padding: 6px 19px;
+}
+
+.contact .form .f-message:focus {
+    outline: none;
+    border-radius: 0;
+    color: #323232;
+    background: #fff;
+    border: 1px solid #3284ea;
+}
+
+.contact .send {
+    float: right;
+    margin-top: 23px;
+}
+
+.contact .send .s-btn {
+    padding: 13px 62px;
+    box-shadow: 0px 4px 14px 0px rgba(141, 141, 141, 0.75);
+}
+
+.contact .send .s-btn:focus {
+    box-shadow: 0px 4px 14px 0px rgba(141, 141, 141, 0.75);
+}
+
+.contact .get-in p {
+    font-family: 'Proxima Nova Rg';
+    font-size: 18px;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.contact .get-in-links ul {
+    padding: 0;
+}
+
+.contact .get-in-links ul li {
+    display: flex;
+    align-items: center;
+}
+
+.contact .get-in-links ul li i {
+    color: #4786ff;
+}
+
+.contact .get-in-links ul li a {
+    font-family: 'Proxima Nova Rg';
+    font-size: 18px;
+    color: #4786ff;
+    border-bottom: 1px dotted #4786ff;
+    margin-top: 14px;
+    text-decoration: none;
+}
+
+.contact .far,
+.contact .fab,
+.contact .fas {
+    font-size: 22px;
+    text-align: center;
+    padding: 14px 14px;
+    border: 1px solid #4786ff;
+    border-radius: 40px;
+    margin-top: 19px;
+    margin-right: 26px;
+}
+
+.contact .fab {
+    padding: 14px 15px;
+}
+
+.contact .set-pad {
+    padding-left: 33px;
+}
+
+
+/*** join section styling ***/
+
+.join {
+    background: #193771;
+    /* Old browsers */
+    background: -moz-linear-gradient(45deg, #193771 0%, #224891 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #193771 0%, #224891 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #193771 0%, #224891 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#193771', endColorstr='#224891', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    text-align: center;
+    min-height: 321px;
+    margin-top: 20px;
+}
+
+.join h1 {
+    font-family: 'Proxima Nova Rg';
+    color: #ffffff;
+    margin-top: 85px;
+    margin-bottom: 50px;
+    ;
+}
+
+.btn {
+    font-family: 'Proxima Nova Rg';
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: uppercase;
+    border-radius: 40px;
+    border: none;
+    padding: 22px 53px;
+    background-image: -moz-linear-gradient( 30deg, rgb(71, 134, 255) 0%, rgb(99, 152, 255) 100%);
+    background-image: -webkit-linear-gradient( 30deg, rgb(71, 134, 255) 0%, rgb(99, 152, 255) 100%);
+    background-image: -ms-linear-gradient( 30deg, rgb(71, 134, 255) 0%, rgb(99, 152, 255) 100%);
+    box-shadow: inset 0px 1px 14px -4px rgba(141, 141, 141, 0.75);
+    box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.4);
+}
+
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+    outline: none;
+    outline-offset: -2px;
+    background-image: none;
+    outline: 0;
+    box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.4);
+    background-image: -webkit-linear-gradient( 30deg, rgb(71, 134, 255) 0%, rgb(99, 152, 255) 100%);
+    color: #fff;
+}
+
+.btn:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/*** section news styling ***/
+
+.news {
+    background: #f3f7fc;
+}
+
+.news .news-heading h1 {
+    font-family: 'Proxima Nova Rg';
+    text-align: center;
+    padding-top: 35px;
+    padding-bottom: 44px;
+}
+
+.news .news-content h3 {
+    font-family: 'Proxima Nova Rg';
+    color: #343434;
+    margin-bottom: 0;
+}
+
+.news .news-content h4 {
+    font-family: 'Proxima Nova Rg';
+    font-size: 16px;
+    color: #737373;
+    margin-top: 5px;
+    margin-bottom: 27px;
+}
+
+.news .news-content p {
+    font-family: 'Proxima Nova Rg';
+    font-size: 16px;
+    color: #343434;
+}
+
+.news .news-content {
+    background: #fff;
+    padding: 20px 50px 30px 45px;
+    border: 1px solid #dedede;
+}
+
+.news .m-t {
+    margin-top: 51px;
+}
+
+.news .card-content h3 {
+    font-family: 'Proxima Nova Rg';
+    color: #343434;
+}
+
+.news .card-content h4 {
+    font-family: 'Proxima Nova Rg';
+    font-size: 16px;
+    color: #737373;
+    margin-top: 5px;
+    margin-bottom: 26px;
+}
+
+.news .card-content p {
+    font-family: 'Proxima Nova Rg';
+    font-size: 16px;
+    color: #343434;
+}
+
+.news .card-content p span {
+    color: #4786ff;
+    font-family: 'Proxima Nova Rg';
+}
+
+.news .card-content {
+    padding: 21px 17px 41px 35px;
+    background: #fff;
+    border: 1px solid #dedede;
+}
+
+.news .btn {
+    font-family: 'Proxima Nova Rg';
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: uppercase;
+    border-radius: 40px;
+    background-image: -webkit-linear-gradient( 30deg, rgb(71, 134, 255) 0%, rgb(99, 152, 255) 100%);
+    border: none;
+    padding: 13px 35px;
+    margin-top: 25px;
+    box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.4);
+}
+
+.news .btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+    outline-offset: -2px;
+    background-image: none;
+    outline: 0;
+    box-shadow: inset 0 0px 0px rgba(0, 0, 0, .125);
+    box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.4);
+    background-image: -webkit-linear-gradient( 30deg, rgb(71, 134, 255) 0%, rgb(99, 152, 255) 100%);
+    color: #fff;
+}
+
+.news .btn:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.set {
+    min-height: 428px;
+    height: 100%;
+}
+
+.set-pad {
+    margin-top: 44px;
+}
+
+
+/*** section news styling-end ***/
+
+
+/*** section FAQ styling***/
+
+.faq h1 {
+    font-family: 'Proxima Nova Rg';
+    color: #343434;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 24px;
+    margin-bottom: 60px;
+}
+
+.faq .faq-content h3 {
+    font-family: 'Proxima Nova Rg';
+    color: #343434;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.faq .faq-content h3 a {
+    font-family: 'Proxima Nova Rg';
+    font-size: 18px;
+    text-decoration: none;
+    border-bottom: 1px dotted #337ab7;
+    text-transform: lowercase;
+    margin-left: 10px;
+}
+
+.faq .faq-content p {
+    font-family: 'Proxima Nova Rg';
+    font-size: 18px;
+    color: #343434;
+    text-align: center;
+}
+
+.faq .faq-content p a {
+    font-family: 'Proxima Nova Rg';
+    font-size: 18px;
+    text-decoration: none;
+    border-bottom: 1px dotted #337ab7;
+}
+
+.faq .faq-content span {
+    font-family: 'Proxima Nova Rg';
+    font-size: 18px;
+    color: #343434;
+}
+
+
+/**** Accordion styling****/
+
+.faq h3 {
+    font-family: 'Proxima Nova Rg';
+    color: #343434;
+    font-weight: bold;
+    padding-top: 33px;
+    padding-bottom: 10px;
+}
+
+.faq .accordion {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 40px;
+}
+
+.faq .accordion .link {
+    cursor: pointer;
+    padding: 13px 20px 12px 25px;
+    color: #343434;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Proxima Nova Rg';
+    font-weight: inherit;
+    border: 1px solid #dedede;
+    position: relative;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.faq .accordion .li i {
+    position: absolute;
+    top: 9px;
+    left: 12px;
+    font-size: 18px;
+    color: #999999;
+}
+
+.faq .accordion .li i.fa-angle-down {
+    right: 14px;
+    left: auto;
+    font-size: 30px;
+}
+
+.faq .accordion .li.open .link {
+    background: #4786ff;
+    border: 1px solid #4786ff;
+    color: #fff;
+}
+
+.faq .accordion .li.open i {
+    color: #fff;
+}
+
+.faq .accordion .li.open i.fa-angle-down {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.faq .accordion .li {
+    margin-bottom: 10px;
+    background: #fff;
+}
+
+.faq .accordion .li .font {
+    border-left: 1px solid #dedede;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 25px;
+}
+
+.faq .accordion .li.default .submenu {
+    display: block;
+}
+
+.faq .submenu {
+    display: none;
+    background: #fff;
+    font-family: 'Proxima Nova Rg';
+    font-size: 18px;
+    padding: 13px 20px 0 25px;
+    font-weight: 300;
+}
+
+.faq .submenu p span {
+    font-weight: bold;
+    color: #4786ff;
+}
+
+.faq .submenu p a {
+    font-family: 'Proxima Nova Rg';
+    font-size: 18px;
+    text-decoration: none;
+    /* border-bottom: 1px solid;*/
+}
+
+.faq .li.open div.submenu {
+    border: 1px solid #4786ff;
+}
+
+.faq .submenu .li {
+    border-bottom: 1px solid #4b4a5e;
+}
+
+
+/*** section FAQ styling***/
+
+
+/*** section login styling ***/
+
+.login {
+    background: #e2e2e2;
+    background-position: top right;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.login-form,
+.signup-form {
+    float: left;
+    z-index: 5;
+}
+
+.main-div {
+    float: left;
+    position: relative;
+    width: 72%;
+    margin: 0 99px 0 153px;
+    background: #f1f1f1;
+    overflow: hidden;
+    box-shadow: 0px 0px 45px 0px rgba(212, 212, 212, 0.75);
+    border-radius: 9px;
+}
+
+.login .p-text {
+    float: left;
+    padding: 46px 76px 0;
+}
+
+.login .pad-set {
+    padding: 145px 76px 0;
+}
+
+.img-bg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: url("../images/login/l-bg-img.png");
+    width: 430px;
+    height: 216px;
+}
+
+.login .login-form form {
+    width: 396px;
+    text-align: -webkit-center;
+    text-align: -moz-center;
+    padding-top: 7em;
+    padding-bottom: 24px;
+    background: #ffffff;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    z-index: 5;
+}
+
+.login .login-form form .group {
+    position: relative;
+    margin-top: 48px;
+}
+
+.login .signup-form form {
+    width: 396px;
+    text-align: -webkit-center;
+    text-align: -moz-center;
+    padding-top: 3em;
+    padding-bottom: 24px;
+    background: #ffffff;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    z-index: 5;
+}
+
+.login .signup-form form .group {
+    position: relative;
+    margin-top: 30px;
+}
+
+.login .login-form form input:focus {
+    outline: none;
+}
+
+.login .signup-form form input:focus {
+    outline: none;
+}
+
+.login .login-form form a {
+    font-family: 'Proxima Nova Rg';
+    font-size: 12px;
+    color: #4886ff;
+    text-decoration: none;
+}
+
+.login .signup-form form a {
+    font-family: 'Proxima Nova Rg';
+    font-size: 12px;
+    color: #4886ff;
+    text-decoration: none;
+}
+
+.login .login-form form .forgot {
+    margin-top: 10px;
+    padding-left: 60px;
+    margin-left: 53px;
+}
+
+.login .login-form form p {
+    font-size: 12px;
+    color: #343434;
+}
+
+.login .signup-form form p {
+    font-size: 12px;
+    color: #343434;
+}
+
+.login .s-b {
+    padding: 11px 53px!important;
+    margin-top: 28px!important;
+}
+
+.login .p-text p {
+    font-family: 'Proxima Nova Rg';
+    color: #4e4e4e;
+    font-size: 24px;
+    text-align: center;
+}
+
+
+/*Input Styling*/
+
+.input-style {
+    position: relative;
+    width: 53%;
+    padding: 0;
+    margin: 9px 0;
+    border: none;
+    overflow: visible;
+}
+
+.input-style input {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 2px 3px;
+    border: none;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 1px solid #e2e2e2;
+    font-size: 14px;
+    outline: none;
+    cursor: text;
+    font-family: 'Proxima Nova Rg';
+}
+
+.input-style input::-webkit-input-placeholder {
+    -webkit-transition: color 300ms ease;
+    transition: color 300ms ease;
+}
+
+.input-style input:not(:focus)::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.input-style input:not(:focus)::-moz-placeholder {
+    color: transparent;
+}
+
+.input-style input:not(:focus):-ms-input-placeholder {
+    color: transparent;
+}
+
+.input-style input:not(:focus):-moz-placeholder {
+    color: transparent;
+}
+
+.input-style hr {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 1px;
+    border: none;
+    background: #42b4ba;
+    font-size: 1px;
+    will-change: transform, visibility;
+    -webkit-transition: all 200ms ease-out;
+    transition: all 200ms ease-out;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    visibility: hidden;
+    z-index: 10;
+}
+
+.input-style input:focus~hr {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    visibility: visible;
+}
+
+.input-style label {
+    position: absolute;
+    top: 7px;
+    left: 3px;
+    font-size: 100%;
+    color: #b5b5b5;
+    -webkit-transform-origin: 0 -150%;
+    transform-origin: 0 -150%;
+    -webkit-transition: -webkit-transform 300ms ease;
+    transition: -webkit-transform 300ms ease;
+    transition: transform 300ms ease;
+    transition: transform 300ms ease, -webkit-transform 300ms ease;
+    pointer-events: none;
+    font-weight: normal;
+    font-family: 'Proxima Nova Rg';
+}
+
+.input-style input:focus~label,
+.input-style input:valid~label {
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+}
+
+
+/*Change border of DOB to red validation*/
+
+.b-b {
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.b-b.red {
+    border-bottom: 1px solid #ff4848;
+    opacity: 1;
+}
+
+
+/* arrow animation */
+
+.ba-parent {
+    position: absolute;
+    bottom: -41px;
+    left: -2%;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 31px;
+    height: 31px;
+    -webkit-animation: bounce 6s infinite;
+    animation: bounce 6s infinite;
+    animation-delay: 6s;
+    cursor: pointer;
+}
+
+.banner-arrow {
+    height: 1px;
+    background: white;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+}
+
+.banner-arrow:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 100%;
+    background: white;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+}
+
+@-webkit-keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+    60% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+    60% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+}
+
+.js div#preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999999;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    background: #00162b;
+}
+
+
+/*Loader*/
+
+.loader-wrapper {
+    width: 200px;
+    height: 200px;
+    background: url(../images/ai_chip.png) no-repeat;
+    background-position: center;
+    /*background-size: 60%;*/
+    margin: 17em auto 0;
+}
+
+.loader {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, .5);
+    position: relative;
+    -webkit-animation: spin .9s linear infinite;
+    animation: spin .9s linear infinite;
+}
+
+.loader:before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 500px;
+    background: #ffffff;
+    position: absolute;
+    top: 49px;
+    left: 5px;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+
+/*404 Page*/
+
+.st0 {
+    font-family: 'Proxima Nova Rg';
+}
+
+.st1 {
+    font-size: 82px;
+}
+
+.st2 {
+    fill: gray;
+}
+
+#container_404 {
+    text-align: center;
+    background: #00162b;
+    height: 100%;
+}
+
+#container_404 svg {
+    width: 500px;
+    height: 329px;
+    text-align: center;
+    fill: #e4e4e4;
+}
+
+#container_404 path#XMLID_5_ {
+    fill: #000;
+    filter: url(#blurFilter4);
+}
+
+#container_404 path#XMLID_11_,
+path#XMLID_2_ {
+    fill: #16a085;
+}
+
+#container_404 .circle_404 {
+    animation: out 2s infinite ease-out;
+    fill: #16a085;
+}
+
+.message-404 {
+    color: #16a085;
+}
+
+.message-404:after {
+    content: "]";
+}
+
+.message-404:before {
+    content: "[";
+}
+
+.message-404:after,
+.message-404:before {
+    color: #16a085;
+    font-size: 20px;
+    -webkit-animation-name: opacity;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: opacity;
+    animation-name: opacity;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    margin: 0 50px;
+}
+
+.back_home {
+    margin-top: 3em;
+}
+
+.min-body {
+    min-height: 300px;
+}
+
+@-webkit-keyframes opacity {
+    0%,
+    100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes opacity {
+    0%,
+    100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes out {
+    0% {
+        r: 1;
+        opacity: 0.9;
+    }
+    25% {
+        r: 5;
+        opacity: 0.3;
+    }
+    50% {
+        r: 10;
+        opacity: 0.2;
+    }
+    75% {
+        r: 15;
+        opacity: 0.1;
+    }
+    100% {
+        r: 20;
+        opacity: 0;
+    }
+}
+
+
+/*Timer*/
+
+ .title {
+  margin-bottom: 0;
+  color: #fff;
+  font-size: 30px;
+}
+
+.box {
+  display: inline-block;
+  color: #fff;
+  background-color: rgba(0,0,0,.2);
+  padding: 5px 4px 0;
+  border-radius: 8px;
+}
+
+.days, .hours, .minutes, .seconds {
+  padding: 0px;
+    background-color: #171717;
+    border-radius: 8px;
+    font-size: 33px;
+    min-width: 62px;
+}
+
+.text {
+    margin-bottom: 6px;
+    color: #ffffff;
+       font-size: 14px;
+    padding-top: 5px;
+}
+
+/*Mobile hamburger menu*/
+
+.mobile-view{
+    display: none;
+    padding-top: 21px;
+}
+.mobile-menu{
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 81px;
+        z-index: 100;
+}
+.mobile-view img{
+    width: 40px;
+    cursor: pointer;
+}
+.menu-container{
+    display: flex;
+    justify-content: space-between;
+}
+.nav-bar{
+    background: black;
+    display: flex;
+    flex-direction: column;
+}
+.mobile-nav-bar{
+    padding: 12px 0;
+    background: rgba(0,0,0,.9);
+}
+
+/*Badges*/
+
+.badges {
+        padding: 11px 0;
+    background: #1b1113;
+}
+.badges-container {
+    width: 98vw;
+    max-width: 1366px;
+}
+.badge-set {
+    margin-right: 13px;
+    margin-bottom: 5px;
+    transition: all 0.3s ease 0s;
+}
+
+.badge-set:hover {
+    -ms-transform: scale(1.05, 1.05); /* IE 9 */
+    -webkit-transform: scale(1.05, 1.05); /* Safari */
+    transform: scale(1.05, 1.05);
+}
+.pl-23 {
+    padding-left: 23px;
+}
+/*new right section in main Header*/
+.t-raise{
+    font-size: 26px;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 400;
+    color: #fff;
+    display: block;
+    letter-spacing: 0.5px;
+}
+.raised {
+    float: left;
+    margin-top: 17px;
+}
+
+.raised>span {
+    color: #fff;
+    font-size: 35px;
+    font-family: 'Proxima Nova Rg';
+    font-weight: 400;
+    padding: 17px 20px;
+    background: rgba(0,0,0,.6);
+    border-radius: 8px;
+}
+
+.desclaimer {
+    text-align: center;
+    margin-top: 1.8rem;
+    margin-bottom: 1.8rem;
+}
+.offset3{
+    margin-left: 3.333333%;
+}
+.ml-20 {
+    margin-left: 20px;
+}

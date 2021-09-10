@@ -1,0 +1,298 @@
+<div class="modal-header px-4 py-3">
+  <h4 class="modal-title pull-left pb--8 pt--8">
+    {{ location._id ? location.name + ' location in ' + organization.name : 'Add new location' }}
+  </h4>
+  <button class="icon icon--close icon--dynamic" aria-label="Close" (click)="closeModal()"></button>
+</div>
+<div class="modal-body p--24">
+  <form [formGroup]="locationForm" *ngIf="this.locationForm">
+    <div class="form-group">
+      <div class="location-avatar">
+        <!-- If Location came from SI, check key smartInfrastucture for now -->
+        <div class="location-avatar__img"
+             [class.location-avatar__img--from-si]="location?.smartInfrastucture"
+             [class.location-avatar__img--empty]="!location?.logo">
+          <img [src]="location?.logo ? location.logo?.signedUrl : 'assets/img/upload-avatar.svg'">
+        </div>
+        <div class="location-avatar__action">
+          <span class="location-avatar__action__from-si" *ngIf="location?.smartInfrastucture">
+            <span class="icon icon--info icon--size-16px icon--white"></span>
+            <span class="pl--8">Created in Smart Infastructure</span>
+          </span>
+          <span class="location-avatar__action__avatar-requirements">Max image size: 3MB | Formats: JPG, PNG</span>
+          <label for="avatar-upload">
+            <input ng2FileSelect
+                   name="upload-files"
+                   class="d-none"
+                   type="file"
+                   [uploader]="driveUploader?.uploader"
+                   id="avatar-upload"
+                   #avatarUploader
+                   accept="image/*" />
+            <button for="avatar-upload" class="button button--medium button--ghost" (click)="avatarUploader.click()">
+              Upload Image
+            </button>
+            <ai-drive-uploader (failedUploadFile)="failedUpload($event)"
+                               [autoUpload]="true"
+                               #driveUploader
+                               (success)="onSuccessUpload($event)"
+                               (afterAddingFile)="onAfterAdd($event)"
+                               [oganizationId]="organization._id"
+                               [service]="serviceKey">
+            </ai-drive-uploader>
+
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label *ngIf="(!isSubmitted && controls.name?.errors) ||
+            (isSubmitted && !controls.name?.errors) ||
+            (!isSubmitted && !controls.name?.errors)">
+        Location name (required)
+      </label>
+      <label class="label-error"
+             *ngIf="isSubmitted && controls.name?.errors?.required">
+        Name is required
+      </label>
+      <label class="label-error" *ngIf="isSubmitted && controls.name?.errors && !controls.name?.errors?.required">
+        Name is invalid
+      </label>
+      <div class="input-wrap input-wrap--contained input-wrap--small"
+           [class.input-wrap--error]="controls.name.errors && isSubmitted">
+        <input type="text"
+               class="input-wrap__input"
+               formControlName="name"
+               autocomplete="off" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label *ngIf="(!isSubmitted && controls.type?.errors) ||
+            (isSubmitted && !controls.type?.errors) ||
+            (!isSubmitted && !controls.type?.errors)">
+        Location Type (required)
+      </label>
+      <label class="label-error" *ngIf="isSubmitted && controls.type?.errors?.required">
+        Type is required
+      </label>
+      <ng-select class="dropdown dropdown--contained w-100"
+                 [class.dropdown--error]="controls.type.errors && isSubmitted"
+                 [multiple]="false"
+                 [items]="typeList"
+                 bindLabel="name"
+                 bindValue="value"
+                 placeholder="Select Type"
+                 [searchable]="false"
+                 [clearable]="false"
+                 formControlName="type">
+      </ng-select>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label *ngIf="(!isSubmitted && controls.phoneNumber?.errors) ||
+            (isSubmitted && !controls.phoneNumber?.errors) ||
+            (!isSubmitted && !controls.phoneNumber?.errors)">
+            Phone Number (required)
+          </label>
+          <label class="label-error" *ngIf="isSubmitted && controls.phoneNumber?.errors?.required">
+            Phone Number is required
+          </label>
+          <label class="label-error" *ngIf="isSubmitted && controls.phoneNumber?.errors?.minlength">
+            Phone Number is invalid
+          </label>
+          <div class="input-wrap input-wrap--contained input-wrap--small"
+               [class.input-wrap--error]="controls.phoneNumber.errors && isSubmitted">
+            <input type="tel"
+                   [style.color]="telFieldColor"
+                   (input)="fillTel($event)"
+                   prefix="+"
+                   mask="00 000-000-0000"
+                   [validation]="false"
+                   placeHolderCharacter="_"
+                   [showMaskTyped]="true"
+                   class="input-wrap__input"
+                   formControlName="phoneNumber"
+                   autocomplete="off" />
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label *ngIf="(!isSubmitted && controls.email?.errors) ||
+            (isSubmitted && !controls.email?.errors) ||
+            (!isSubmitted && !controls.email?.errors)">
+            Location Email
+          </label>
+          <label class="label-error" *ngIf="isSubmitted && controls.email?.errors?.email">
+            Email is invalid
+          </label>
+          <div class="input-wrap input-wrap--contained input-wrap--small"
+               [class.input-wrap--error]="controls.email.errors && isSubmitted">
+            <input type="email"
+                   class="input-wrap__input"
+                   formControlName="email"
+                   autocomplete="off" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div formGroupName="address">
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label *ngIf="(!isSubmitted && controls.address.controls.addressLine1?.errors) ||
+            (isSubmitted && !controls.address.controls.addressLine1?.errors) ||
+            (!isSubmitted && !controls.address.controls.addressLine1?.errors)">
+              Address line 1 (required)
+            </label>
+            <label class="label-error"
+                   *ngIf="isSubmitted && controls.address.controls.addressLine1?.errors?.required">
+              Address is required
+            </label>
+            <label class="label-error"
+                   *ngIf="isSubmitted && controls.address.controls.addressLine1?.errors && !controls.address.controls.addressLine1?.errors?.required">
+              Address is invalid
+            </label>
+            <div class="input-wrap input-wrap--contained input-wrap--small"
+                 [class.input-wrap--error]="controls.address.controls.addressLine1.errors && isSubmitted">
+              <input type="text"
+                     class="input-wrap__input"
+                     formControlName="addressLine1"
+                     autocomplete="off" />
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label>Address line 2</label>
+            <div class="input-wrap input-wrap--contained input-wrap--small"
+                 [class.input-wrap--error]="controls.address.controls.addressLine2.errors && isSubmitted">
+              <input type="text"
+                     class="input-wrap__input"
+                     formControlName="addressLine2"
+                     autocomplete="off" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label *ngIf="(!isSubmitted && controls.address.controls.city?.errors) ||
+            (isSubmitted && !controls.address.controls.city?.errors) ||
+            (!isSubmitted && !controls.address.controls.city?.errors)">
+              City (required)
+            </label>
+            <label class="label-error"
+                   *ngIf="isSubmitted && controls.address.controls.city?.errors?.required">
+              City is required
+            </label>
+            <label class="label-error"
+                   *ngIf="isSubmitted && controls.address.controls.city?.errors && !controls.address.controls.city?.errors?.required">
+              City is invalid
+            </label>
+            <div class="input-wrap input-wrap--contained input-wrap--small"
+                 [class.input-wrap--error]="controls.address.controls.city.errors && isSubmitted">
+              <input type="text"
+                     class="input-wrap__input"
+                     formControlName="city"
+                     autocomplete="off" />
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label *ngIf="(!isSubmitted && controls.address.controls.code?.errors) ||
+            (isSubmitted && !controls.address.controls.code?.errors) ||
+            (!isSubmitted && !controls.address.controls.code?.errors)">
+              Zip Code (required)
+            </label>
+            <label class="label-error" *ngIf="isSubmitted && controls.address.controls.code?.errors?.required">
+              Zip Code is required
+            </label>
+            <label class="label-error" *ngIf="isSubmitted && controls.address.controls.code?.errors?.pattern">
+              Zip Code is invalid
+            </label>
+            <div class="input-wrap input-wrap--contained input-wrap--small"
+                 [class.input-wrap--error]="controls.address.controls.code.errors && isSubmitted">
+              <input type="text"
+                     class="input-wrap__input"
+                     formControlName="code"
+                     autocomplete="off" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label *ngIf="(!isSubmitted && controls.address.controls.regionState?.errors) ||
+            (isSubmitted && !controls.address.controls.regionState?.errors) ||
+            (!isSubmitted && !controls.address.controls.regionState?.errors)">
+              Region state
+            </label>
+            <label class="label-error" *ngIf="isSubmitted && controls.address.controls.regionState?.errors?.required">
+              Region is required
+            </label>
+            <div class="input-wrap input-wrap--contained input-wrap--small"
+                 [class.input-wrap--error]="controls.address.controls.regionState.errors && isSubmitted">
+              <input type="text"
+                     class="input-wrap__input"
+                     formControlName="regionState"
+                     autocomplete="off" />
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label *ngIf="(!isSubmitted && controls.address.controls.country?.errors) ||
+            (isSubmitted && !controls.address.controls.country?.errors) ||
+            (!isSubmitted && !controls.address.controls.country?.errors)">
+              Country (required)
+            </label>
+            <label class="label-error"
+                   *ngIf="isSubmitted && controls.address.controls.country?.errors?.required">
+              Country is required
+            </label>
+            <label class="label-error"
+                   *ngIf="isSubmitted && controls.address.controls.country?.errors && !controls.address.controls.country?.errors?.required">
+              Country is invalid
+            </label>
+            <div class="input-wrap input-wrap--contained input-wrap--small"
+                 [class.input-wrap--error]="controls.address.controls.country.errors && isSubmitted">
+              <input type="text"
+                     class="input-wrap__input"
+                     formControlName="country"
+                     autocomplete="off" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </form>
+</div>
+<div class="modal-footer">
+  <button class="button button--error button--medium button--ghost"
+          *ngIf="location._id"
+          [disabled]="location?.smartInfrastucture"
+          [class.button--disabled]="location?.smartInfrastucture"
+          (click)="removeLocation(location._id, location.name)">
+    Remove
+  </button>
+  <button class="button button--ghost button--medium ml-auto mr--8"
+          (click)="closeModal()">
+    Cancel
+  </button>
+  <button class="button button--contained button--medium"
+          (click)="submitLocationForm()">
+    {{ location._id ? 'Save' : 'Create' }}
+  </button>
+</div>
+
+<div class="location-loader" *ngIf="loading">
+  <ai-loading></ai-loading>
+</div>
+
+<swal #dialog></swal>

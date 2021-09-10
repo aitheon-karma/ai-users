@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>pilots</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="117.692718%" y2="111.015449%" id="linearGradient-1">
+            <stop stop-color="#9B3CB7" offset="0%"></stop>
+            <stop stop-color="#FF396F" offset="100%"></stop>
+        </linearGradient>
+        <path d="M6,0 L34,0 C37.3137085,-6.08718376e-16 40,2.6862915 40,6 L40,34 C40,37.3137085 37.3137085,40 34,40 L6,40 C2.6862915,40 4.05812251e-16,37.3137085 0,34 L0,6 C-4.05812251e-16,2.6862915 2.6862915,6.08718376e-16 6,0 Z" id="path-2"></path>
+        <linearGradient x1="8.04349459%" y1="-17.7621695%" x2="100%" y2="95.0871394%" id="linearGradient-4">
+            <stop stop-color="#FF396F" offset="0%"></stop>
+            <stop stop-color="#9B3CB7" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="37.7087206%" y1="0.61558297%" x2="62.2912794%" y2="99.384417%" id="linearGradient-5">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-6" cx="20" cy="20" r="2"></circle>
+        <filter x="-175.0%" y="-125.0%" width="450.0%" height="450.0%" filterUnits="objectBoundingBox" id="filter-7">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="01-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01-Desktop-/-01-HomePage-/-01_01_Home-1440" transform="translate(-1199.000000, -2466.000000)">
+            <g id="pilots" transform="translate(1199.000000, 2466.000000)">
+                <g id="Creators-2">
+                    <mask id="mask-3" fill="white">
+                        <use xlink:href="#path-2"></use>
+                    </mask>
+                    <use id="Rectangle-6-Copy-19" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                </g>
+                <circle id="Oval" fill="url(#linearGradient-4)" cx="20" cy="20" r="17"></circle>
+                <g id="Oval">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-7)" xlink:href="#path-6"></use>
+                    <use fill="url(#linearGradient-5)" fill-rule="evenodd" xlink:href="#path-6"></use>
+                </g>
+                <path d="M20,5 C11.7158,5 5,11.7158 5,20 C5,28.2839 11.7158,35 20,35 C28.2839,35 35,28.2839 35,20 C35,11.7158 28.2839,5 20,5 Z M19.6007021,7 C24.8095196,7 29.2526517,10.0135958 31,14.2529016 C30.9813461,14.8540614 30.8041338,15.5436745 30.127346,15.7275713 C27.2275348,16.7564794 24.805439,14.5443404 19.4520536,14.4757824 C14.0983767,14.5443404 11.7004727,16.7564794 8.80095297,15.7275713 C8.31915703,15.5966389 8.09414404,15.2094877 8,14.7803951 C9.58500082,10.2660507 14.1782388,7 19.6007021,7 Z M24,19.9998177 C24,22.2092165 22.2094995,24 20,24 C17.7905005,24 16,22.2092165 16,19.9998177 C16,17.7907835 17.7908652,16 20,16 C22.2091348,16 24,17.7911482 24,19.9998177 Z M11.2993701,27.9259251 C10.8576069,28.0991062 10.3876533,27.9502416 9.9489842,27.6697118 C8.34454152,25.8913428 7.28671635,23.7283573 7,21.3657983 C7.38882037,21.0221048 8.00041315,20.8803572 8.84646702,21.1172952 C10.7623785,21.6534451 13.2290329,27.169147 11.2993701,27.9259251 Z M24.0812295,31.1772784 C23.9913809,31.2377726 23.9262539,31.2915453 23.882127,31.3388652 C22.7071831,31.7663578 21.4413271,32 20.1209772,32 C18.6225249,32 17.1939844,31.6980665 15.889584,31.1549627 C14.3964481,30.1362397 15.0745663,29.2465711 15.8148873,27.9530699 C16.5607906,26.6498896 19.9854067,27.0617881 19.9854067,27.0617881 C19.9854067,27.0617881 23.4318205,26.6501584 24.1777238,27.9530699 C24.923893,29.2565191 25.618758,30.1491452 24.0812295,31.1772784 Z M30.9877181,26.7013714 C30.3833792,27.4012312 29.4763799,28.2591525 28.666232,27.9258295 C26.8303111,27.1690319 29.1792821,21.6531878 31.0027693,21.117024 C32.0112007,20.8210663 32.6692005,21.117024 33,21.6620843 C32.738567,23.4983266 32.0347591,25.2073487 30.9877181,26.7013714 Z" id="Shape" fill="url(#linearGradient-5)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

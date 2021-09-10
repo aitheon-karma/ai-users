@@ -1,0 +1,73 @@
+<div class="row"
+    [class.m-0]="inModal">
+  <form class="org-services card col-md-6" *ngIf="servicesForm"
+        [formGroup]="servicesForm"
+        (ngSubmit)="onSubmit()"
+        [class.mb-60]="inModal">
+    <div class="org-services__boxes card-body">
+      <div *ngFor="let service of services.controls; let i = index;" class="org-services__box mb-2 row"
+        [class.org-services__box--active] = "selectedService?._id === service.get('_id').value"
+        [formGroup]="service" (click)="selectService(service.get('_id').value)">
+        <div class="org-services__box-left col-8 d-flex align-items-center ml-0 pl-0">
+          <i class="{{ 'service-icon ' + (service.get('_id').value | slug )}} org-services__img"></i>
+          <h5 class="org-services__box-text">
+            {{ service.get('value').value }}
+          </h5>
+        </div>
+
+        <div class="org-services__checkbox d-flex pr-4 col-4 align-items-center">
+          <!-- <input class="ml-auto" type="checkbox" formControlName="checked"> -->
+          <div class="switch-container ml-auto my-auto" *ngIf="!service.get('core').value; else coreService">
+            <label class="switch">
+              <input [id]="service.get('value').value" type="checkbox" formControlName="checked">
+              <span class="slider round"></span>
+            </label>
+            <label [for]="service.get('value').value"></label>
+          </div>
+        </div>
+        <div *ngIf="service.get('dependencies').value.length" class="org-services__dependencies col-12 pl-0">
+          <hr>
+          <div class="org-services__dependency-data d-flex align-items-center">
+            <span class="org-services__dependency-heading">Dependencies:</span>
+            <div class="org-services__dependency ml-2">
+              <span class="org-services__dependency-item"
+                *ngFor="let dependency of getDependencyNames(service.get('dependencies').value)">
+                {{ dependency }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="org-services__footer"
+        [class.org-services__footer--inModal]="inModal">
+      <p class="org-services__footer-text">You can edit all information about organization later</p>
+      <button type="submit" class="button button--medium button--contained">
+        Save
+      </button>
+    </div>
+  </form>
+
+  <div class="col-md-4">
+    <div  class="service-description"
+          *ngIf="selectedService"
+          [class.service-description--inModal]="inModal">
+      <i class="{{ 'service-icon ' + (selectedService._id | slug )}} service-description__img"></i>
+      <h6 class="service-description__name">{{ selectedService.name }}</h6>
+      <p class="service-description__text">
+         {{ selectedService.description || 'We believe that people create businesses to share their passions with the world. Unfortunately, today’s business model is laden with back-end processes that are time consuming, complicated and require multiple systems; each to complete a different task. Passion is quickly displaced by the demands of daily operations.' }}
+      </p>
+    </div>
+
+    <div *ngIf="!selectedService" class="service-description col-md-4"> </div>
+  </div>
+
+</div>
+
+<ng-template #coreService>
+  <div class="org-services__enabled-default">
+    Enabled by default
+  </div>
+</ng-template>

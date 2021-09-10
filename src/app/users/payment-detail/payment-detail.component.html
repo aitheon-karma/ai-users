@@ -1,0 +1,109 @@
+<div>
+  <div bsModal #detailModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" (onHide)="onHide()" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">Payment Information</h4>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body p-4 text-center" *ngIf="loading">
+          <ai-loading class="inline"></ai-loading>
+        </div>
+        <div class="modal-body" *ngIf="!loading && !!payment">
+          <div class="form-group row">
+            <label class="col-sm-4 col-label">Status:</label>
+            <div class="col-sm-8">
+              <span *ngIf="payment.status === 'PENDING'">
+                  <span *ngIf="payment.extra.confirmsReceived != payment.extra.confirmsNeeded">Waiting for buyer funds...</span>
+                  <span *ngIf="payment.extra.confirmsReceived == payment.extra.confirmsNeeded">Funds confirmed, pending...</span>
+              </span>
+              <span *ngIf="payment.status === 'PAID'" class="text-primary">
+                  Funds received and confirmed, processing...
+              </span>
+              <span *ngIf="payment.status === 'DONE'" class="text-success">
+                  Completed, tokens transferred.
+              </span>
+              <span *ngIf="payment.status === 'ERROR'" class="text-danger">
+                  Error.
+              </span>
+              <span *ngIf="payment.status === 'TIMEOUT'" >
+                <p class="text-danger">Cancelled / Timed Out</p>
+                <p>This payment has timed out either due to lack of confirms before the time limit or due to not sending enough funds. </p>
+                <!-- If you have sent any funds you will receive an email to claim them within 8 hours of them confirming. -->
+                <p>
+                  <small>
+                      If submitting a support ticket after the 8 hour window make sure to include the following information:
+                      The payment ID: {{ payment.externalId }}
+                  </small>
+                </p>
+              </span>
+              <p class="text-muted mb-1 small" *ngIf="payment.status == 'PENDING' || payment.status == 'PAID'">Status refreshed every 2 minutes</p>
+            </div>
+          </div>
+          <div class="form-group row" *ngIf="payment.status === 'PENDING'">
+            <label class="col-sm-4 col-label">Total Amount To Send:</label>
+            <div class="col-sm-8">
+              <strong>{{ payment.amount.coin }} {{ payment.sentCurrency }} (confirms: {{ payment.extra.confirmsReceived || 0 }} of {{ payment.extra.confirmsNeeded }})</strong>
+            </div>
+          </div>
+         
+          <div class="form-group row" *ngIf="payment.status === 'DONE' || payment.status === 'PAID'">
+            <label class="col-sm-4 col-label">Amount received:</label>
+            <div class="col-sm-8">
+              {{ payment.amount.usd | currency }}
+            </div>
+          </div>
+          <div class="form-group row" *ngIf="payment.status === 'DONE'">
+            <label class="col-sm-4 col-label">Tokens amount:</label>
+            <div class="col-sm-8">
+              {{ payment.tokens.amount }}
+            </div>
+          </div>
+          <div class="form-group row" *ngIf="payment.status === 'DONE'">
+            <label class="col-sm-4 col-label">Tokens transfer date:</label>
+            <div class="col-sm-8">
+              {{ payment.tokens.transferredAt | momentFormat: 'MM/DD/YYYY hh:mm a'}}
+            </div>
+          </div>
+          <div class="form-group row" *ngIf="payment.status === 'DONE'">
+            <label class="col-sm-4 col-label">TxHash:</label>
+            <div class="col-sm-8">
+              <a style="word-wrap: break-word;" href="https://etherscan.io/tx/{{ payment.tokens.transactionHash }}" target="_blank" title="Open at etherscan.io">{{ payment.tokens.transactionHash }}</a>
+            </div>
+          </div>
+          <div class="form-group row" *ngIf="payment.status === 'PENDING'">
+            <label class="col-sm-4 col-label">Send To Address:</label>
+            <div class="col-sm-8">
+              <strong style="word-wrap: break-word;">{{ payment.extra.address }}</strong>
+              <strong style="word-wrap: break-word;" *ngIf="payment.extra.dest_tag">with the Payment ID set to: {{ payment.extra.dest_tag }}</strong>
+            </div>
+          </div>
+          <div class="form-group row" *ngIf="payment.status === 'PENDING'">
+            <label class="col-sm-4 col-label">Time to Confirm Funds:</label>
+            <div class="col-sm-8">
+              <span>{{ timeout }}</span>
+            </div>
+          </div>
+          <!--  -->
+          <div class="form-group row" *ngIf="payment.status === 'PENDING'">
+            <label class="col-sm-4 col-label">&nbsp;</label>
+            <div class="col-sm-8">
+                <qr-code [value]="payment.extra.address" [size]="250"></qr-code>
+            </div>
+          </div>
+          <!--  -->
+          <div class="form-group row">
+            <label class="col-sm-4 col-label">Payment ID:</label>
+            <div class="col-sm-8">
+              {{ payment.externalId }}
+              <p>(have this handy if you need any support related to this transaction)</p>
+            </div>
+          </div>
+          <!--  -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

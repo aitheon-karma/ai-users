@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="344" height="120" viewBox="0 0 344 120">
+  <g fill="none" fill-rule="evenodd">
+    <g fill="#383838">
+      <rect width="344" height="1" y="39" transform="matrix(1 0 0 -1 0 79)"/>
+      <rect width="344" height="1" transform="matrix(1 0 0 -1 0 1)"/>
+      <rect width="344" height="1" y="80" transform="matrix(1 0 0 -1 0 161)"/>
+      <rect width="344" height="1" y="119" transform="matrix(1 0 0 -1 0 239)"/>
+    </g>
+    <g transform="translate(0 21)">
+      <polyline stroke="#DCBC65" points="2 95.861 23.766 27.28 40.837 8.473 60.047 70.487 86.869 94.448 119.401 66.546 129.388 96.453 148.386 57.355 171.907 27.28 195.244 24.272 209.617 70.487 231.604 88.744 248.71 70.487 254.864 47.081 274.14 34.342 282.42 27.28 297.075 3 308.968 34.342 316.811 70.487 330.156 83.853 342 99"/>
+      <circle cx="2.5" cy="94.5" r="2.5"/>
+      <circle cx="24.5" cy="26.5" r="2.5"/>
+      <circle cx="41.5" cy="8.5" r="2.5"/>
+      <circle cx="59.5" cy="69.5" r="2.5"/>
+      <circle cx="85.5" cy="94.5" r="2.5"/>
+      <circle cx="120.5" cy="67.5" r="2.5"/>
+      <circle cx="129.5" cy="94.5" r="2.5"/>
+      <circle cx="172.5" cy="29.5" r="2.5"/>
+      <circle cx="149.5" cy="57.5" r="2.5"/>
+      <circle cx="194.5" cy="24.5" r="2.5"/>
+      <circle cx="210.5" cy="70.5" r="2.5"/>
+      <circle cx="231.5" cy="87.5" r="2.5"/>
+      <circle cx="248.5" cy="69.5" r="2.5"/>
+      <circle cx="256.5" cy="47.5" r="2.5"/>
+      <circle cx="282.5" cy="27.5" r="2.5"/>
+      <circle cx="296.5" cy="2.5" r="2.5"/>
+      <circle cx="309.5" cy="34.5" r="2.5"/>
+      <circle cx="316.5" cy="69.5" r="2.5"/>
+      <circle cx="331.5" cy="83.5" r="2.5"/>
+      <circle cx="331.5" cy="83.5" r="2.5"/>
+      <circle cx="341.5" cy="96.5" r="2.5"/>
+    </g>
+  </g>
+</svg>

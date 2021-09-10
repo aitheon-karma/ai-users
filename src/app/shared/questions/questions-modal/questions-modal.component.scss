@@ -1,0 +1,259 @@
+.q {
+  border-radius: 2px;
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  background: transparent !important;
+
+
+   &__option-checked {
+    background-color: #383838 !important;
+  }
+  &__progress {
+    height: 4px;
+    background-color: #dcbc65;
+    transition: all .3s;
+    position: absolute;
+    top:0;
+    left: 0rem;
+  }
+
+  &__s-img {
+    max-width: 400px;
+    max-height: 200px;
+    height: 200px;
+  }
+
+  &__previous,
+  &__next {
+      position: absolute;
+      transition: transform .2s ease-in-out;
+      &:hover {
+        transform: translateY(-50%) scale(1.02);
+        cursor: pointer;
+      }
+  }
+
+  &__previous {
+      top: 50%;
+      transform: translateY(-50%) scale(1);
+      left: -36px;
+      transition: transform .2s ease-in-out;
+
+      &:hover {
+        transform: translateY(-50%) scale(1.02);
+        cursor: pointer;
+      }
+  }
+
+
+
+
+  &__previous-text {
+    color: #dcbc65;
+    font-size: 0.875rem;
+    margin-left: -1rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  &__next {
+      top: 50%;
+      transform: translateY(-50%);
+      right: -36px;
+/*
+      &::after {
+          display: block;
+          position: absolute;
+          content: "";
+          width: 58px;
+          height: 58px;
+          border-radius: 100%;
+          border: 1px solid #dcbc65;
+          transform: scale(1.18);
+          top: 0;
+
+      }
+*/
+  }
+
+
+  &__circle {
+      border-radius: 100%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 1rem 1rem;
+      &--next {
+        background-color: #dcbc65;
+        background-image: url(../../../../assets/img/icons/arrow-right.svg);
+
+      }
+
+      &--previous {
+        color: #7e7e7e;
+        transform: rotate(180deg);
+        border: 1px solid #7e7e7e;
+        position: relative;
+        z-index: 3;
+
+        &::after{
+          position: absolute;
+          content: "";
+          left: 50%;
+          width: 1rem;
+          height: 1rem;
+          transform: translate(-50%);
+          display: block;
+          background-color: #7e7e7e;
+          -webkit-mask: url(../../../../assets/img/icons/arrow-right.svg) no-repeat center;
+          mask: url(../../../../assets/img/icons/arrow-right.svg) no-repeat center;
+          -webkit-mask-size: 1rem 1rem;
+          mask-size: 1rem 1rem;
+        }
+      }
+
+  }
+
+  &__previous-circle {
+    border: solid 1px #838383;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+  &__container {
+      width: 500px;
+      background-color: #282828;
+      margin: 0 auto;
+      padding: 1.875rem;
+      border-radius: 2px;
+      position: relative;
+  }
+
+  &__question-no {
+    letter-spacing: 0.3px;
+    font-size: 1.125rem;
+  }
+
+  &__question {
+    font-family: ProximaNova;
+    line-height: 1.25;
+    font-size: 0.875rem;
+    letter-spacing: 0.2px;
+    word-wrap: break-word;
+  }
+
+  &__m-img {
+    width: 74px;
+    height: 74px;
+  }
+
+  &__m-option {
+
+    &:hover{
+      cursor: pointer;
+    }
+
+  }
+
+  &__m-image-container {
+    border: 1px solid #383838;
+    justify-content: center;
+    align-items: center;
+    border-bottom: none;
+    height: 108px;
+    display: flex;
+  }
+
+  &__m-label-container {
+
+    height: 40px;
+    align-items: center;
+    border: 1px solid #383838;
+    border-radius: 2px;
+
+    input {
+      margin-top: -3px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+  }
+
+  &__option-label {
+    font-size: 0.875rem;
+    line-height: 1.43;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-top: 3.5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--checked {
+      color: #dcbc65
+    }
+  }
+
+&__no-img-option {
+  height: 40px;
+  align-items: center;
+  background-color: #222222;
+  border-radius: 2px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+
+}
+
+&__checkbox {
+  margin-top: -2px;
+  min-width: 16px;
+}
+
+&__error {
+  font-size: 0.75rem;
+}
+
+}
+
+//Quick fix
+
+.q__m-label-container {
+
+  label {
+    margin-top: 10.2px;
+    margin-left: .55rem;
+  }
+}
+
+
+::ng-deep .modal .modal-content {
+  background: transparent;
+}
+
+::ng-deep .modal {
+  padding: 7rem 0;
+}
+
+
+::ng-deep .radio input {
+border: 1px solid #7e7e7e !important;
+}

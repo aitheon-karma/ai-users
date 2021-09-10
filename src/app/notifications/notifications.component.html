@@ -1,0 +1,36 @@
+<div class="container">
+  <h2 class="mt-3 mb-4">Notifications</h2>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <!-- Notifications -->
+          <div *ngFor="let notification of notifications" class="notify-row">
+            <div [ngSwitch]="notification.actionType">
+              <span class="dropdown-item org-invite" *ngSwitchCase="'organization-invite'">
+                <span class="org-invite__title">
+                  {{ notification.title }}
+                </span>
+                <span class="notify-actions d-flex mt-3" *ngIf="!notification.read">
+                  <button class="btn btn-medium btn-success ripple-effect" (click)="acceptOrgInvite(notification)">Accept</button>
+                  <button class="btn btn-medium btn-link ripple-effect" (click)="declineOrgInvite(notification)">Cancel</button>
+                </span>
+              </span>
+              <span class="dropdown-item" *ngSwitchDefault>
+                <span class="org-invite__title">
+                {{ notification.title }}
+                </span>
+                <i class="fa fa-times ml-3 close-notification" *ngIf="!notification.read" (click)="markAsRead(notification)" aria-hidden="true"></i>
+              </span>
+            </div>
+            <div class="notify-date">
+              {{ notification.createdAt | date }}
+            </div>
+          </div>
+          <span *ngIf="notifications?.length == 0">No notifications</span>
+          <!--End notificatoins-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,159 @@
+.transation-settings {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: #949494;
+}
+
+.alert {
+    box-shadow: none;
+}
+
+.qr-code {
+    padding: 1.5rem;
+    padding-top: 50px;
+    float: left;
+    width: 200px;
+    img{
+        // max-width: 100%;
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.transation {
+    float: left;
+    width: calc(100% - 224px);
+    padding-top: 1.5rem;
+    .input-group-text {
+        width: 60px;
+    }
+}
+
+.ai-wallet {
+    font-weight: bold;
+}
+
+.btn-secondary {
+    box-shadow: none;
+}
+
+.sale-address {
+    border: none;
+    background: none;
+    min-width: 430px;
+    font-weight: bold;
+    color: #545454;
+}
+
+.user-wallet {
+    min-width: 430px;
+    display: inline-block;
+}
+
+.btn-coinpayments {
+    // border: none;
+    // background: none;
+    // cursor: pointer;
+    margin-top: 1.5rem;
+    img {
+        max-width: 100px;
+    }
+}
+
+.coin-select {
+    cursor: pointer;
+    display: inline-block;
+    width: 30%;
+    margin-right: 3%;
+    margin-bottom: 15px;
+    padding: 9px 9px 5px;
+    float: left;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.coin-select:hover {
+    background-color: #e1ecd2;
+}
+
+.loading-redirect {
+    top: -5px;
+    position: relative;
+}
+
+.coin-select.selected {
+    /* border-style: none; */
+    background-color: rgba(92, 184, 92, .04);
+    box-shadow: inset 0 0 0 1px #72b611;
+}
+
+.price-bold {
+    color: #132338;
+    font-size: 12px;
+}
+
+.coin-image {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    float: left;
+}
+
+.checkout-price {
+    display: inline-block;
+    width: calc(100% - 40px);
+    float: left;
+    color: #9a9a9a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.coins-wrapper {
+    max-height: 250px;
+    overflow: auto;
+}
+
+@media (max-width: 1275px){
+   .transation {
+       width: 100%;
+   }
+   .qr-code {
+    width: 100%;
+    text-align: center;
+   }
+}
+
+@media (max-width:550px){
+    .qr-code {
+        padding: 1rem 1rem 0 1rem;
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    .transation {
+        padding-top: 0;
+        width: 100%;
+    }
+    .ai-wallet, .user-wallet {
+        padding: 0!important;
+        .sale-address {
+            padding: 0!important;            
+        }
+    }
+    .sale-address {
+        min-width: calc(100% - 70px);
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 100%;
+    }
+    .user-wallet {
+        display: inline;
+        min-width: auto;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}

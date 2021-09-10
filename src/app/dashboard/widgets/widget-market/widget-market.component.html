@@ -1,0 +1,28 @@
+<div class="container market">
+  <div class="row market__header">Market</div>
+  <div class="card market__card">
+    <div class="row market__container">
+      <div class="market__top-section">
+        <div class="market__product">
+          <span class="market__product-image"></span>
+          <span class="market__product-name">Wi-Fi repeater JMR 540</span>
+        </div>
+        <div class="market__price">$29 - $36</div>
+      </div>
+      <div class="market__bottom-section">
+        <div class="market__graph">
+            <ngx-charts-bar-vertical [view]="view"
+                                    [scheme]="colorScheme"
+                                    [results]="single"
+                                    [gradient]="gradient"
+                                    [xAxis]="showXAxis"
+                                    [yAxis]="showYAxis"
+                                    [legend]="showLegend"
+                                    [showXAxisLabel]="showXAxisLabel"
+                                    [showYAxisLabel]="showYAxisLabel">
+            </ngx-charts-bar-vertical>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

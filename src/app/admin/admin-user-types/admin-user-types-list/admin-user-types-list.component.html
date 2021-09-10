@@ -1,0 +1,29 @@
+<div class="user-types">
+  <ul class="user-types__list">
+    <li *ngFor="let type of userTypes" class="user-types__item">
+      <div class="row w-100 align-items-center">
+        <div class="col-md-2 user-types__name" title="{{type.displayText}}">
+          {{type.displayText}}
+        </div>
+        <div class="col-md-2 user-types__image">
+          <img [src]="type.image" alt="">
+        </div>
+        <div class="col-md-7 user-types__description" title="{{type.description}}">
+          {{type.description}}
+        </div>
+        <div class="col-md-1 pr-3 user-types__buttons">
+
+          <span class="user-types__item-edit" (click)="goToEdit(type)"></span>
+
+            <div class="switch-container">
+              <label class="switch">
+                <input (ngModelChange)="confirmChangingSwitch(type)" id="isProduction" name="isProduction" type="checkbox" [(ngModel)]="type.isActive">
+                <span class="slider round"></span>
+              </label>
+            </div>
+
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

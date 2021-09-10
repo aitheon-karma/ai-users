@@ -1,0 +1,68 @@
+<div class="container locations">
+  <div class="locations__header">
+    <div class="d-flex flex-column">
+      <h2 class="locations__header__title">
+        All Locations
+        <span *ngIf="organization?.locations?.length">
+          ({{ organization.locations.length }})
+        </span>
+      </h2>
+      <span class="locations__header__sub-title">
+        Locations in {{ organization.name }}
+      </span>
+    </div>
+    <button type="button"
+            class="button button--ghost button--medium ml--auto"
+            (click)="openLocationModal()">
+      <span class="button__icon icon icon--size-16px icon--pin icon--gold"></span>
+      Add new Location
+    </button>
+  </div>
+  <hr class="mt--24 mb--16">
+  <div class="search-container search-container--contained search-container--outlined"
+       *ngIf="organization?.locations?.length && !loadingList"
+       [class.search-container--filled]="search.value.length">
+    <input type="search"
+           (input)="searchLocations(search.value)"
+           autocomplete="off"
+           placeholder="Search"
+           class="search-container__input"
+           #search>
+    <div class="search-container__button icon icon--search icon--size-16px"></div>
+    <div class="search-container__button icon icon--close icon--dynamic icon--size-16px"
+         (click)="search.value = ''; searchLocations(search.value)"></div>
+  </div>
+  <div class="locations__body">
+    <div class="locations__body__list" *ngIf="organization?.locations?.length && !loadingList">
+      <ai-organization-locations-card *ngFor="let location of locationsListCopy"
+                                      [location]="location"
+                                      (click)="openLocationModal(location)">
+      </ai-organization-locations-card>
+    </div>
+    <div class="empty-state"
+         *ngIf="!organization?.locations?.length || organization?.locations?.length === 0">
+      <img src="assets/img/plant.svg">
+      <p>This organisation has no locations yet. You can add a new location right now!</p>
+      <button type="button"
+              class="button button--ghost button--medium mt--24"
+              (click)="openLocationModal()">
+        <span class="button__icon icon icon--size-16px icon--pin icon--gold"></span>
+        Add Location
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Location Modal -->
+<ng-template #locationModal>
+  <ai-organization-locations-form [location]="selectedLocation"
+                                  [organization]="organization"
+                                  (canceled)="locationModalRef.hide()"
+                                  (submitted)="updateLocationsList($event)">
+  </ai-organization-locations-form>
+</ng-template>
+
+
+<ng-template [ngIf]="loadingList">
+  <ai-loading class="loading-container"></ai-loading>
+</ng-template>

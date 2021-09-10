@@ -1,0 +1,19 @@
+<div class="user-types">
+  <ul class="user-types__list">
+    <li *ngFor="let service of services" class="user-types__item">
+      <div class="row w-100 align-items-center">
+          <div class="col-md-2 user-types__name" title="{{service.name}}">
+              {{service.name}}
+            </div>
+        <div class="col-md-9 user-types__name" title="{{service.description}}">
+          {{service.description}}
+        </div>
+        <div class="col-md-1 pr-3 user-types__buttons">
+
+          <span class="user-types__item-edit" (click)="goToEdit(service)"></span>
+
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

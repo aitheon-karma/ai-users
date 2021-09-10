@@ -1,0 +1,131 @@
+ <ngx-datatable class="material"
+                [rows]="users"
+                [columnMode]="'flex'"
+                [headerHeight]="50"
+                [footerHeight]="50"
+                [limit]="5"
+                [rowHeight]="'auto'">
+  <ngx-datatable-column name="Name" [flexGrow]="2">
+    <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template><span (click)="sort()" class="pl-5">{{column.name}}</span></ng-template>
+    <ng-template let-row="row" let-value="row" ngx-datatable-cell-template>
+      <img src="assets/img/nophoto.png" alt="..." class="rounded-circle user-pic mr-3">
+      {{value.profile.firstName}} {{value.profile.lastName}}
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Email" [flexGrow]="2">
+    <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>{{value}}</ng-template>
+  </ngx-datatable-column>
+ 
+  <ngx-datatable-column name="Status" [flexGrow]="1">
+    <ng-template let-row="row" let-value="row" ngx-datatable-cell-template>
+      {{value.disabled ? 'Disabled': 'Active' }}
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Actions" [flexGrow]="1">
+    <ng-template let-column="column" ngx-datatable-header-template>&nbsp;</ng-template>
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      <button class="btn btn-sm ripple-effect btn-secondary" (click)="edit(row)">Edit</button>
+    </ng-template>
+  </ngx-datatable-column>
+</ngx-datatable>
+<button type="button" class="btn btn-primary ripple-effect btn-sm pull-right mt-1" (click)="addUser()">Add user</button>
+<div class="clearfix"></div>
+<div *ngIf="invites?.length > 0">
+  <hr class="mt-4">
+  <h5 class="pl-3">Invites</h5>
+  <ngx-datatable
+    class="material"
+    [rows]="invites"
+    [columnMode]="'flex'"
+    [headerHeight]="0"
+    [footerHeight]="50"
+    [limit]="5"
+    [rowHeight]="'auto'">
+    <ngx-datatable-column name="Name" [flexGrow]="2">
+      <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template><span (click)="sort()" class="pl-5">{{column.name}}</span></ng-template>
+      <ng-template let-row="row" let-value="row" ngx-datatable-cell-template>
+        <img src="assets/img/nophoto.png" alt="..." class="rounded-circle user-pic mr-3">
+        {{ value.profile.firstName }} {{ value.profile.lastName }}
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Email" [flexGrow]="2">
+      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>{{value}}</ng-template>
+    </ngx-datatable-column>
+  
+    <ngx-datatable-column name="Status" [flexGrow]="1">
+      <ng-template let-row="row" let-value="row" ngx-datatable-cell-template>
+        Invite Sent
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Actions" [flexGrow]="1">
+      <ng-template let-column="column" ngx-datatable-header-template>&nbsp;</ng-template>
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        <button class="btn btn-sm ripple-effect btn-secondary" 
+         [swal]="{ title: 'Are you sure to cancel the invite?', type: 'warning', showCancelButton: true, confirmButtonText: 'Yes, cancel it'}"
+        (confirm)="cancelInvite(row)">Cancel</button>
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
+</div>
+
+
+<div>
+  <div bsModal #userModal="bs-modal" (onHidden)="onHidden()" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">{{ selectedUser && selectedUser._id ? (selectedUser.profile.firstName + ' ' + selectedUser.profile.lastName) : 'New User' }}</h4>
+          <button type="button" class="close pull-right" (click)="userModal.hide()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ng-template #searchView>
+            <div>
+              <form novalidate [formGroup]="searchForm" (ngSubmit)="onSearchSubmit(searchForm)">
+                 <h5 class="user-search__head">Enter new user email address</h5>
+                 <fieldset [disabled]="searchForm.disabled">
+                     <div class="input-group">
+                      <input type="email" class="form-control" formControlName="email" placeholder="Email address">
+                      <span class="input-group-btn">
+                        <button class="btn btn-primary ripple-effect" type="submit">Continue</button>
+                      </span>
+                    </div>
+                    <small *ngIf="submitted && searchForm.get('email').hasError('required')" class="text-danger">
+                        Email is required
+                    </small>
+                    <small *ngIf="submitted && searchForm.get('email').hasError('normalEmailRule')" class="text-danger">
+                        Email format is not correct
+                    </small>
+                 </fieldset>
+              </form>
+            </div>
+            <div class="text-center loading-holder mt-3" >
+              <div *ngIf="loading">
+                <ai-loading ></ai-loading>
+              </div>
+            </div>
+            <div *ngIf="error">
+              <div class="alert alert-danger" >{{ error }}</div>
+            </div>
+          </ng-template>
+         
+          <div *ngIf="showUserForm; else searchView">
+            <fl-user-form *ngIf="selectedUser" 
+                          [user]="selectedUser" 
+                          [teams]="teams" 
+                          [searchView]="true" 
+                          [isEdit]="isEdit" 
+                          [foundUser]="foundUser" 
+                          [personal]="false" 
+                          [services]="services" 
+                          [organizationId]="organizationId" 
+                          (saved)="onSaved($event)" 
+                          (canceled)="onCancel()" 
+                          (backToSearch)="onBackToSearch()"></fl-user-form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

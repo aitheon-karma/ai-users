@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="62px" height="62px" viewBox="0 0 62 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Market Coming icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M10.7,0 L49.3,0 C55.2094468,-1.08554777e-15 60,4.79055318 60,10.7 L60,49.065625 C60,54.9750718 55.2094468,59.765625 49.3,59.765625 L10.7,59.765625 C4.79055318,59.765625 7.23698514e-16,54.9750718 0,49.065625 L0,10.7 C-7.23698514e-16,4.79055318 4.79055318,1.08554777e-15 10.7,0 Z" id="path-1"></path>
+        <path d="M14.0353267,11.9999892 C19.3505622,11.9999892 24.6657978,11.9999892 29.9810333,11.9999892 C35.3099979,11.9999892 40.6489514,11.9999892 45.9978938,11.9999892 C47.1024634,11.999989 47.997894,12.8954196 47.997894,13.9999892 C47.997894,14.0006909 47.9978936,14.0013925 47.9978929,14.0020941 L47.9642187,45.9983963 C47.963057,47.1021433 47.0679673,47.9962915 45.9642198,47.9962915 L29.7298513,47.9962915 L14.0020793,47.9962915 C12.8975098,47.9962915 12.0020793,47.100861 12.0020793,45.9962915 C12.0020793,45.9955987 12.0020796,45.994906 12.0020804,45.9942133 L12.0353278,13.997911 C12.0364747,12.8941536 12.9315687,11.9999892 14.0353267,11.9999892 Z" id="path-3"></path>
+        <filter x="-20.8%" y="-15.3%" width="141.7%" height="141.7%" filterUnits="objectBoundingBox" id="filter-4">
+            <feMorphology radius="0.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowInner" result="shadowInner"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.188592657 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M22.0793091,9 C22.8635132,15 25.506905,18 30.0094844,18 C34.9544961,18 37.5968596,15 37.936575,9" id="path-5"></path>
+        <filter x="-29.1%" y="-40.2%" width="157.9%" height="201.3%" filterUnits="objectBoundingBox" id="filter-6">
+            <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="1" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+            <feOffset dx="0" dy="1" in="shadowInner" result="shadowInner"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="App-icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Categories" transform="translate(-420.000000, -233.000000)">
+            <g id="Market-Coming-icon" transform="translate(421.000000, 234.000000)">
+                <g id="Group-15" opacity="0.300000012">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Rectangle-6-Copy-22" stroke="#DCBC65" xlink:href="#path-1"></use>
+                    <g id="Group-6" mask="url(#mask-2)" stroke="#DCBC65" stroke-width="0.5">
+                        <g id="guides">
+                            <ellipse id="Oval-1" cx="30" cy="29.8828125" rx="11.25" ry="11.2050781"></ellipse>
+                            <ellipse id="Oval-1" cx="30" cy="29.8828125" rx="15.75" ry="15.6875"></ellipse>
+                            <ellipse id="Oval-1" cx="30" cy="29.8828125" rx="25.75" ry="25.6484375"></ellipse>
+                            <line x1="0" y1="0" x2="60" y2="59.765625" id="Line" stroke-linecap="square"></line>
+                            <line x1="0" y1="0" x2="60" y2="59.765625" id="Line" stroke-linecap="square" transform="translate(30.000000, 29.882812) scale(-1, 1) translate(-30.000000, -29.882812) "></line>
+                        </g>
+                    </g>
+                    <g id="Group-14" mask="url(#mask-2)" stroke="#DCBC65" stroke-linecap="square" stroke-width="0.5">
+                        <g transform="translate(3.461538, 0.000000)" id="Line-2">
+                            <line x1="0.322802198" y1="0.962171053" x2="0.645604396" y2="59.6546053"></line>
+                            <line x1="53.2516026" y1="0.962171053" x2="53.5744048" y2="59.0131579"></line>
+                            <line x1="26.7925824" y1="0.320723684" x2="26.6311813" y2="60.1356908"></line>
+                            <line x1="15.7366071" y1="0.881990132" x2="15.575206" y2="60.6969572"></line>
+                            <line x1="38.332761" y1="0.881990132" x2="38.1713599" y2="60.6969572"></line>
+                        </g>
+                    </g>
+                    <g id="Group-14" mask="url(#mask-2)" stroke="#DCBC65" stroke-linecap="square" stroke-width="0.5">
+                        <g transform="translate(30.545673, 30.355168) rotate(90.000000) translate(-30.545673, -30.355168) translate(3.545673, -0.144832)" id="Line-2">
+                            <line x1="0.322802198" y1="0.962171053" x2="0.645604396" y2="59.6546053"></line>
+                            <line x1="53.2516026" y1="0.962171053" x2="53.5744048" y2="59.0131579"></line>
+                            <line x1="26.7925824" y1="0.320723684" x2="26.6311813" y2="60.1356908"></line>
+                            <line x1="15.7366071" y1="0.881990132" x2="15.575206" y2="60.6969572"></line>
+                            <line x1="38.332761" y1="0.881990132" x2="38.1713599" y2="60.6969572"></line>
+                        </g>
+                    </g>
+                </g>
+                <g id="Rectangle">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                    <use stroke="#DCBC65" stroke-width="1" xlink:href="#path-3"></use>
+                </g>
+                <circle id="Oval-Copy-2" stroke="#DCBC65" cx="22" cy="18" r="3"></circle>
+                <circle id="Oval-Copy-2" stroke="#DCBC65" cx="38" cy="18" r="3"></circle>
+                <g id="Path-6" stroke-linecap="round" transform="translate(30.007942, 13.500000) scale(1, -1) translate(-30.007942, -13.500000) ">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                    <use stroke="#DCBC65" stroke-width="2" xlink:href="#path-5"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

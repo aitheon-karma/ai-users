@@ -1,0 +1,62 @@
+<div class="accounts">
+  <!-- <div class="btn-account" (click)="selectNest()">
+    <img src="assets/img/nest_logo.png" class="accounts-logo" alt="Nest">
+  </div> -->
+  <div class="btn-account" [class.disabled]="upworkLoading" (click)="selectUpwork()">
+    <img src="assets/img/upwork-logo.svg" class="upwork-logo" alt="Nest">
+  </div>
+</div>
+
+<div>
+  <div bsModal #accountModal="bs-modal" class="modal fade" (onHidden)="onModalHidden()" tabindex="-1" role="dialog" aria-labelledby="accountModal"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">{{ selectedAccount?.header }} Account</h4>
+        <button type="button" class="close pull-right" (click)="accountModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div [ngSwitch]="selectedAccount?.type">
+          <fl-nest-account *ngSwitchCase="'NEST'" [organizationId]="organizationId" (saved)="onAccountSaved($event)" (canceled)="onAccountCanceled()"></fl-nest-account>
+          <!-- <fl-upwork-account *ngSwitchCase="'UPWORK'" [organizationId]="organizationId" (saved)="onAccountSaved($event)" (canceled)="onAccountCanceled()"></fl-upwork-account> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div>
+  <div bsModal #upworkCompanyModal="bs-modal" class="modal fade" (onHidden)="onModalHidden()" tabindex="-1" role="dialog" aria-labelledby="upworkCompany"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Select Upwork Company Account</h4>
+        <button type="button" class="close pull-right" (click)="upworkCompanyModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group" *ngIf="upworkRoles; else loading">
+          <li [class.active]="role === selectedRole" (click)="selectRole(role)" class="list-group-item" *ngFor="let role of upworkRoles.userroles.userrole">
+            {{ role.company__name || role.team__name }}
+          </li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" [disabled]="!selectedRole" type="button" (click)="saveUpworkRoles()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<ng-template #loading>
+  <ai-loading></ai-loading>
+</ng-template>

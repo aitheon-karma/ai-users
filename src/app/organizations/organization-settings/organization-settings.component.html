@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="settings-container">
+            <div class="tabs-wrapper">
+                <div class="ai-tabs">
+                    <div class="tabs-group">
+
+                        <div class="tab-item" [class.active]="currentTab === OrganizationSettingTabs.SERVICES">
+                            <a href="javascript:void(0);" (click)="currentTab = OrganizationSettingTabs.SERVICES">Services</a>
+                        </div>
+
+                        <!-- <div class="tab-item" [class.active]="currentTab === OrganizationSettingTabs.INTERFACES">
+                            <a href="javascript:void(0);" (click)="currentTab = OrganizationSettingTabs.INTERFACES">Interfaces</a>
+                        </div> -->
+
+                        <!-- <div class="tab-item" [class.active]="currentTab === OrganizationSettingTabs.COMPANY_INFO">
+                            <a href="javascript:void(0);" (click)="currentTab = OrganizationSettingTabs.COMPANY_INFO">Company
+                                Reg. Info</a>
+                        </div> -->
+
+                        <div class="tab-item" [class.active]="currentTab === OrganizationSettingTabs.DOCUMENTS" *ngIf="!production">
+                            <a href="javascript:void(0);" (click)="currentTab = OrganizationSettingTabs.DOCUMENTS">Documents</a>
+                        </div>
+<!--
+                        <div class="tab-item" [class.active]="currentTab === OrganizationSettingTabs.LOCATIONS">
+                            <a href="javascript:void(0);" (click)="currentTab = OrganizationSettingTabs.LOCATIONS">Locations</a>
+                        </div>
+                        -->
+                    </div>
+                </div>
+            </div>
+
+            <main>
+                <fl-organization-services [organization]="organization" *ngIf="currentTab === OrganizationSettingTabs.SERVICES">
+                </fl-organization-services>
+                <fl-organization-interfaces [organization]="organization" *ngIf="currentTab === OrganizationSettingTabs.INTERFACES">
+                </fl-organization-interfaces>
+                <fl-organization-company-registration [organization]="organization" *ngIf="currentTab === OrganizationSettingTabs.COMPANY_INFO">
+                </fl-organization-company-registration>
+                <fl-organization-documents [organization]="organization" *ngIf="currentTab === OrganizationSettingTabs.DOCUMENTS">
+                </fl-organization-documents>
+              <!--
+                <fl-organization-locations [organization]="organization" *ngIf="currentTab === OrganizationSettingTabs.LOCATIONS">
+                </fl-organization-locations>
+                -->
+            </main>
+        </div>
+    </div>
+</div>

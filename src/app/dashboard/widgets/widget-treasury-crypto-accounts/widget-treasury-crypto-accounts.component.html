@@ -1,0 +1,85 @@
+<div id="accounts" class="accounts">
+    <!-- <div class="row accounts__header">
+    <span class="accounts__header-text">Treasury crypto accounts</span>
+    <span class="accounts__header-action" (click)="viewAccounts()" [class.mr-4]="editMode">View accounts</span>
+    </div> -->
+    <div class="accounts__card card ">
+        <div class="card-body accounts__card-body-loading p-0" *ngIf="loading">
+          <ai-loading></ai-loading>
+        </div>
+        <div class="card-body accounts__card-body p-0" *ngIf="!loading">
+          <div class="accounts__container" *ngIf="externalEthAccounts?.length > 0">
+            <div *ngFor="let account of externalEthAccounts | slice:0:1">
+              <div class="accounts__head">
+                <div class="accounts__main-info">
+                  <h2 class="accounts__name">{{ account?.name }} <span class="accounts__status"> (ETH)</span> </h2>
+                  <div class="accounts__number">{{ account?.ethAddress }}</div>
+                </div>
+              </div>
+              <hr class="accounts__hr">
+              <div class="accounts__content row m-0">
+                <div class="accounts__left-section col-6">
+                  <div class="accounts__balance-sections">
+                    <label class="accounts__balance-label">ETH</label>
+                    <div class="accounts__balance-info">{{ account?.balance || 0 }}</div>
+                  </div>
+                  <div class="accounts__balance-sections">
+                    <label class="accounts__balance-label">ACU</label>
+                    <div class="accounts__balance-info">{{ account?.tokens?.available || 0 }}</div>
+                  </div>
+                </div>
+                <div class="accounts__right-section col-6">
+                  <div class="accounts__graph"></div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="accounts__table-row" *ngFor="let account of externalEthAccounts | slice:0:1">
+              <div class="accounts__table-cell">
+                <div class="accounts__table-title">Name</div>
+                <div class="accounts__table-value">{{  }}</div>
+              </div>
+              <div class="accounts__table-cell pl-2 pr-2">
+                <div class="accounts__table-title">Address</div>
+                <div class="accounts__table-value">{{  }}</div>
+              </div>
+              <div class="accounts__table-cell">
+                <div class="accounts__table-title">ETH</div>
+                <div class="accounts__table-value">{{ account?.balance || 0 }}</div>
+              </div>
+              <div class="accounts__table-cell">
+                <div class="accounts__table-title">ACU</div>
+                <div class="accounts__table-value">{{ account?.tokens?.available || 0 }}</div>
+              </div>
+              <div class="accounts__table-cell">
+                <div class="accounts__table-title">Sale Tokens</div>
+                <div class="accounts__table-value" *ngIf="saleHolders?.length > 0">{{ account?.saleHolder?.tokens || 0 }}</div>
+              </div>
+            </div> -->
+        </div>
+          <p class="accounts__empty-text" *ngIf="externalEthAccounts?.length === 0">No ETH accounts</p>
+          <!-- <div class="accounts__stats-table">
+            <div class="accounts__title">My Aitheon Account</div>
+            <div class="accounts__stats-table-cell">
+              <div class="accounts__stats-table-title">ETH</div>
+              <div class="accounts__stats-table-value">{{ aitheonEthAccount?.balance || 0 }}</div>
+            </div>
+            <div class="accounts__stats-table-cell">
+              <div class="accounts__stats-table-title">Available tokens</div>
+              <div class="accounts__stats-table-value">{{ aitheonEthAccount?.tokens.available || 0 }}</div>
+            </div>
+            <div class="accounts__stats-table-cell">
+              <div class="accounts__stats-table-title">Locked tokens</div>
+              <div class="accounts__stats-table-value">{{ aitheonEthAccount?.tokens.locked || 0 }}</div>
+            </div>
+            <div class="accounts__stats-table-cell">
+              <div class="accounts__stats-table-title">Internal tokens</div>
+              <div class="accounts__stats-table-value">{{ aitheonEthAccount?.tokens.internal || 0}}</div>
+            </div>
+            <div class="accounts__stats-table-total">
+              <div class="accounts__stats-table-title">Total tokens</div>
+              <div class="accounts__stats-table-value">{{ aitheonEthAccount?.tokens['total'] || 0 }}</div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>  

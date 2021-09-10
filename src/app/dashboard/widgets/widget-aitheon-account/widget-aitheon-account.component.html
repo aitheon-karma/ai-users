@@ -1,0 +1,46 @@
+<div class="accounts" *ngIf="aitheonAccount">
+  <div class="accounts__card card ">
+    <div class="card-body accounts__card-body p-0">
+      <div class="accounts__container">
+        <div class="accounts__head">
+          <div class="accounts__main-info">
+            <h2 class="accounts__name">Aitheon Account {{ aitheonAccount.name }}</h2>
+          </div>
+        </div>
+        <hr class="accounts__hr">
+        <div class="accounts__content row m-0">
+          <div class="accounts__left-section col-6">
+            <div class="accounts__balance-sections" [class.mb-0]="orgTrialBalance || userTrialBalance">
+              <label class="accounts__balance-label">Available tokens:</label>
+              <div class="accounts__balance-info">{{ aitheonAccount?.tokens?.available || 0 | number : '1.2-2' }}</div>
+            </div>
+            <div class="accounts__balance-sections" [class.mb-0]="orgTrialBalance || userTrialBalance">
+              <label class="accounts__balance-label">Locked tokens:</label>
+              <div class="accounts__balance-info">{{ aitheonAccount?.tokens?.locked || 0 | number : '1.2-2' }}</div>
+            </div>
+            <div class="accounts__balance-sections" [class.mb-0]="orgTrialBalance || userTrialBalance">
+              <label class="accounts__balance-label">Internal tokens:</label>
+              <div class="accounts__balance-info">{{ aitheonAccount?.tokens?.internal || 0 | number : '1.2-2' }}</div>
+            </div>
+            <div class="accounts__balance-sections" *ngIf="orgTrialBalance"  [class.mb-0]="orgTrialBalance || userTrialBalance">
+              <label class="accounts__balance-label">Organization Trial Tokens</label>
+              <div class="accounts__balance-info accounts__balance-info--green">{{ orgTrialBalance || 0 | number : '1.2-2'  }}</div>
+            </div>
+            <div class="accounts__balance-sections" *ngIf="userTrialBalance"  [class.mb-0]="orgTrialBalance || userTrialBalance">
+              <label class="accounts__balance-label">Personal Trial Tokens</label>
+              <div class="accounts__balance-info accounts__balance-info--green">{{ userTrialBalance || 0 | number : '1.2-2'  }}</div>
+            </div>
+            <div class="accounts__balance-sections"  [class.mb-0]="orgTrialBalance || userTrialBalance">
+              <label class="accounts__balance-label">Total:</label>
+              <div class="accounts__balance-info">{{ (aitheonAccount?.tokens.available + aitheonAccount?.tokens?.internal
+                + aitheonAccount?.tokens?.locked + (orgTrialBalance || 0) + (userTrialBalance || 0)) || 0 | number : '1.2-2' }}</div>
+            </div>
+          </div>
+          <div class="accounts__right-section col-6">
+            <div class="accounts__graph"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

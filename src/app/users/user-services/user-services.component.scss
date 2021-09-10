@@ -1,0 +1,41 @@
+:host {
+  width: 100%;
+}
+
+.services-container {
+  width: 100%;
+}
+
+.services {
+  margin-bottom: 115px;
+
+  &__title {
+    color: #fff;
+    font-size: 32px;
+    letter-spacing: 0px;
+    line-height: 40px;
+  }
+}
+
+.services-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  &__image {
+    width: 250px;
+    height: 196px;
+    margin-bottom: 24px;
+    background: url('~/assets/img/icons/services.svg') center center no-repeat;
+    background-size: contain;
+  }
+
+  &__text {
+    color: #7e7e7e;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    line-height: 20px;
+  }
+}

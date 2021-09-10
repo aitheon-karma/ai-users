@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row justify-content-between align-items-center mt-4 m-0">
+    <h2>Organizations</h2>
+    <button class="button button--contained button--medium" [routerLink]="['/organizations/setup']">Add Organization</button>
+  </div>
+  <hr>
+  <div class="row" *ngIf="organizations">
+    <div class="col organizations-list">
+      <div class="card organization-card" *ngFor="let organization of organizations" (click)="navigateTo(organization)">
+        <div class="card-body row m-0">
+          <div class="col-2 p-0 org-list-icon-container">
+            <div class="org-list-icon" *ngIf="organization['profile']?.avatarResolutions?.original" [ngStyle]="{'background-image' : 'url(' + (organization['profile']?.avatarResolutions?.original || 'assets/img/org-default.png') + ')' }"></div>
+            <span class="icon icon--company" *ngIf="!organization['profile']?.avatarResolutions?.original"></span>
+          </div>
+          <div class="col-10 pr-0 org-list-info">
+            <div class="organization-name">{{ organization.name }}</div>
+            <!-- <div class="organization-member-count">402 members</div> -->
+          </div>
+        </div>
+      </div>
+      <h3 *ngIf="organizations?.length == 0">You don't have any organizations that you can manage.</h3>
+    </div>
+  </div>
+</div>

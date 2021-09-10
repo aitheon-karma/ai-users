@@ -1,0 +1,168 @@
+<div class="container members">
+  <div class="members__head">
+    <div class="members__title-section">
+      <div class="members__title">All Members <span *ngIf="filteredMembers?.length">({{ filteredMembers?.length }})</span></div>
+      <div class="members__subtitle">People who were invited to "{{ organizationName }}"</div>
+    </div>
+    <button class="members__add-button button button--ghost button--medium"
+            (click)="openMemberPickModal()">
+      <span class="members__add-icon icon icon--size-16px mr--8"></span>
+      Add new Member
+    </button>
+  </div>
+
+  <div class="members__divider"></div>
+
+  <div class="d-flex mb--16">
+    <div class="members__search search-container search-container--contained search-container--outlined"
+         [class.search-container--filled]="searchText.length">
+      <input type="search"
+             (ngModelChange)="onSearchTextChange()"
+             [(ngModel)]="searchText"
+             autocomplete="off"
+             placeholder="Search"
+             class="search-container__input"
+             #search>
+      <div class="search-container__button icon icon--search icon--size-16px"></div>
+      <div  class="search-container__button icon icon--close icon--dynamic icon--size-16px"
+            (click)="searchText = search.value = ''; onSearchTextChange()"></div>
+    </div>
+
+    <div class="button__item">
+      <div *ngIf="activeFilters.length" class="filter__count"> {{activeFilters.length}}</div>
+      <button class="icon icon--filter icon--size-24px icon--dynamic"
+            [class.icon--active]="isFiltersOpen"
+            (click)="toggleFilters()"
+            [tooltip]="isFiltersOpen ? 'Hide Filters' : 'Show Filters'"></button>
+    </div>
+  </div>
+
+  <ai-filters-form [hidden]="!isFiltersOpen"
+              [filterType]="'MEMBERS'"
+              [organizationId]="organizationId"
+              (filtersChanged)="onFilterChange($event)"></ai-filters-form>
+
+  <div class="members__column-labels">
+    <div class="members__label members__label--user">
+      <div class="sort-block" (click)="sortMembers('name')">
+        User
+        <span class="icon icon--table-sort icon--size-16px"></span>
+      </div>
+    </div>
+      <div class="members__label members__label--team">Team</div>
+      <div class="members__label members__label--status">
+        <div class="sort-block" (click)="sortMembers('role')">
+          Organization Role
+          <span class="icon icon--table-sort icon--size-16px"></span>
+        </div>
+      </div>
+      <div class="members__label">
+        <div class="sort-block" (click)="sortMembers('status')">
+          Status
+          <span class="icon icon--table-sort icon--size-16px"></span>
+        </div>
+      </div>
+  </div>
+
+  <div class="members__list" #organizationMembersList [class.members__list--filters-open]="isFiltersOpen">
+    <div class="members__item member" *ngFor="let member of filteredMembers; let i=index">
+      <div class="member__avatar">
+        <ngx-avatar size="32" src="{{ member?.profile?.avatarUrl }}"
+                    name="{{ member?.profile?.firstName }} {{ member?.profile?.lastName }}">
+        </ngx-avatar>
+      </div>
+      <div class="member__info">
+        <div class="member__name">
+            {{ member?.profile?.firstName }} {{ member?.profile?.lastName }}
+        </div>
+        <div class="member__mail">
+          {{ member?.email }}
+        </div>
+      </div>
+      <div class="member__team-container">
+        <div  class="member__team"
+              [class.member__team--empty]="!member?.team"
+              [tooltip]="member?.team"
+              triggers=""
+              #memberTeam
+              #toolTip="bs-tooltip"
+              (mouseenter)="showTooltipIfLong(toolTip, memberTeam)"
+              (mouseleave)="toolTip.isOpen && toolTip.hide()"
+        >
+          {{ member?.team || 'No team' }}
+        </div>
+      </div>
+      <div class="member__role-container">
+        <div class="member__role">
+          {{ member?.role }}
+        </div>
+      </div>
+      <div class="member__status" [class.member__status--active]="!member?.invite">
+        {{ member?.status }}
+      </div>
+      <div class="member__actions">
+        <button class="member__edit button button--ghost button--medium"
+                *ngIf="!member?.invite"
+                (click)="editMember(member)">
+          Edit
+        </button>
+        <button class="member__remove button button--ghost button--medium button--error"
+                *ngIf="!member?.invite"
+                (click)="removeFormOrg(member)">
+          Remove
+        </button>
+        <button class="member__cancel button button--ghost button--medium"
+                *ngIf="member?.invite"
+                (click)="removeOrgInvite(member)">
+          Cancel invitation
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #memberFormModal>
+
+  <div class="modal-header">
+    <h4 class="modal-title pull-left mt--8 mb--8">
+      {{ currentMemberEdit._id && !currentMemberEdit['newInvite'] ? 'Edit Member': 'Add new member' }}
+    </h4>
+    <button type="button"
+            class="icon icon--close icon--dynamic pull-right ml--8"
+            (click)="closeMembersFormModal()">
+    </button>
+  </div>
+  <div class="modal-body p-0">
+    <fl-organization-member-form  (saved)="memberSaved()" (canceled)="closeMembersFormModal()"
+                                  [organizationId]="organizationId" [member]="currentMemberEdit">
+    </fl-organization-member-form>
+  </div>
+
+</ng-template>
+
+
+<ng-template #memberPickModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left mt--8 mb--8">Add new member</h4>
+    <button type="button"
+            class="icon icon--close icon--dynamic pull-right ml--8"
+            (click)="closeMemberPickModal()">
+    </button>
+  </div>
+  <div class="modal-body p-0">
+    <fl-organization-member-pick-form (memberSelected)="memberSelected($event)" (canceled)="closeMemberPickModal()"
+                                      [organizationId]="organizationId" [ignoreEmails]="ignoreMembersEmails">
+    </fl-organization-member-pick-form>
+  </div>
+</ng-template>
+
+
+<ng-template [ngIf]="loading">
+  <ai-loading class="loading-container"></ai-loading>
+</ng-template>
+
+<ng-template #loadingMemberView>
+  <ai-loading class="d-block sm ml-auto"></ai-loading>
+</ng-template>
+
+<fl-generic-confirm #genericConfirm [membersConfirm]="true"></fl-generic-confirm>

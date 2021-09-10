@@ -1,0 +1,245 @@
+.organization_setup {
+    width: 330px;
+    margin: 0 auto;
+
+    .input {
+        margin: 0 !important;
+    }
+
+    input:focus + label {
+        font-size: 12px;
+        transform: translateY(10px);
+    }
+
+    .label_active {
+        font-size: 12px;
+        transform: translateY(10px);
+    }
+
+    &__input {
+        box-shadow: none;
+        border-bottom: 1px solid #454545;
+        border-radius: 0;
+        transition: .15s ease-in;
+        padding: 0;
+        display: block;
+        font-size: 14px;
+
+        &:focus {
+            box-shadow: none;
+            color: #fff !important;
+            border-color: #dcbc65;
+            background-color: transparent !important;
+        }
+
+        input {
+            min-width: 150px !important;
+            width: 210px !important;
+        }
+    }
+
+    &__input_group {
+        display: flex;
+        align-items: center;
+    }
+
+    &__domain-section {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      margin-bottom: 34px;
+    }
+
+    &__domain {
+        position: relative;
+        top: 8px;
+        color: #8c8c8c;
+    }
+
+    &__label {
+        color: #8c8c8c;
+
+        margin: 0;
+    }
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 2rem;
+        align-items: center;
+    }
+
+    &__create_button {
+        padding: 10px 50px;
+        background-color: #dcbc65;
+        color: #222222;
+    }
+
+    &__footer {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 1rem;
+      padding-left: 1rem;
+      align-items: center;
+      margin: 0 -24px;
+      height: 60px;
+      padding-top: 0;
+      background: #222222;
+
+    }
+
+    &__address-block {
+      background-color: #242424;
+      border-radius: 2px;
+      padding: 12px 24px 12px 24px;
+      margin-top: 1rem;
+      position: relative;
+    }
+
+    &__remove-location {
+      position: absolute;
+      top: 50%;
+      right: -4rem;
+
+      &:hover {
+
+        &:before {
+          color:#e96058;
+        }
+      }
+    }
+
+  &__locations-heading {
+    margin-left: 4.5rem;
+  }
+
+  &__add-location {
+    position: relative;
+    font-size: 0.75rem;
+    padding-left: 1rem;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:before {
+      position: absolute;
+      content: '+';
+      font-size: 16px;
+      line-height: 16px;
+      color: #dcbc65;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+
+  &__hr {
+      margin: 1rem -16px;
+    }
+}
+
+.input-wrap__counter {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 8px;
+  color: #7e7e7e;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.input-wrap--unclicable:hover{
+  border-color: #1F1F1F !important;
+}
+
+::ng-deep ngx-select-dropdown .ngx-dropdown-container .ngx-dropdown-list-container {
+  overflow-y: scroll !important;
+  background-color: black;
+  max-height: 400px;
+}
+
+.error-ngx-select {
+
+  ::ng-deep ngx-select-dropdown {
+    .ngx-dropdown-container {
+      .ngx-dropdown-button {
+        border: 1px solid #e95858 !important;
+      }
+    }
+  }
+}
+
+::ng-deep ngx-select-dropdown {
+
+  .ngx-dropdown-container {
+
+    .search-container input {
+      height: 34px !important;
+    }
+
+    .ngx-dropdown-button {
+      width: 100% !important;
+      border: 1px solid transparent !important;
+
+      &:hover {
+        border: 1px solid #454545 !important;
+      }
+
+      &:active,
+      &:focus,
+      &:focus-within {
+        border: 1px solid #dcbc65 !important;
+      }
+
+      span {
+        color: #fff;
+      }
+    }
+
+    .ngx-dropdown-list-container {
+      width: 100% !important;
+      margin-top: 0 !important;
+
+      .search-container {
+        min-width: 80% !important;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: #353535;
+      }
+
+      &::-webkit-scrollbar {
+          width: 4px;
+          background-color: #353535;
+      }
+
+      &::-webkit-scrollbar-thumb {
+          background-color: #494949;
+      }
+    }
+  }
+
+  .ngx-dropdown-list-container ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+  }
+
+}
+
+.btn {
+  font-size: 12px;
+}
+
+.textarea-wrap {
+
+  &:before {
+    display: none;
+  }
+
+  textarea {
+    resize: none;
+  }
+}

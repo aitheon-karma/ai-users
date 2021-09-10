@@ -1,0 +1,103 @@
+<div class="referal-container">
+  <div class="referral">
+    <h2 class="referral__title  ">
+      My referral
+    </h2>
+  </div>
+
+  <div class="referral-empty">
+    <div class="referral-empty__image"></div>
+    <div class="referral-empty__text">
+      We will update you with details about our Referral Program soon.<br> Stay tuned for updates!
+    </div>
+  </div>
+</div>
+
+<!-- <div class="card mb-5">
+<div class="card-body">
+  <ng-container *ngIf="!isLoading; else loading">
+    Refer a friend to get a reward tokens. The referral bonus is {{ bonus }}%.
+    <div class="referral-count" *ngIf="referralCount > 0">
+      You have {{ referralCount }} friend{{ referralCount === 1 ? '' : 's' }}
+      reffered that bought {{ referralTokenAmount | number: '1.0-0' }} amount
+      of tokens.
+      <span>Your bonus: {{ bonusValue | number: '1.0-0' }} tokens</span>
+    </div>
+    <form [formGroup]="referralForm" class=" mb-3 mt-3" (ngSubmit)="onSendReferral()">
+      <fieldset [disabled]="sending">
+          <label [hidden]="submitted && referralForm.get('emails').invalid">
+            Email
+          </label>
+          <label  *ngIf="submitted && referralForm.get('emails').hasError('required')"
+                  class="text-error">
+            Email is required
+         </label>
+         <label *ngIf="submitted && referralForm.get('emails').hasError('email')"
+                class="text-error">
+           Email is invalid
+        </label>
+        <div class="section">
+          <div  class="input-wrap input-wrap--contained input-wrap--small mb-2 mr-2 w-100"
+                [class.input-wrap--error]="submitted && referralForm.get('emails').invalid">
+            <input  type="text"
+                    formControlName="emails"
+                    email
+                    class="input-wrap__input"/>
+          </div>
+          <button class="button button--contained button--medium"
+                  type="submit">
+            Invite
+          </button>
+        </div>
+        <small  *ngIf="submitted && referralForm.get('emails').hasError('alreadySent')"
+                class="text-danger mt-1 d-block">
+            Email invitation already sent to this email
+         </small>
+      </fieldset>
+    </form>
+    <div class="alert alert-info" *ngIf="info">{{ info }}</div>
+    Here is your referral code that you can copy and send directly to your friend:
+    <div class="code">
+      <div class="referral-code">
+        <input  #copyTarget
+                readonly
+                [(ngModel)]="referralCode"/>
+        <div class="section-copy">
+          <button class="icon icon--duplicate icon--gold icon--dynamic ml-3"
+                  type="button"
+                  [ngxClipboard]="copyTarget"
+                  (cbOnSuccess)="copyOnSuccess()">
+          </button>
+          <span class="copied ml-3" *ngIf="isCopied">Copied!</span>
+        </div>
+      </div>
+      <hr>
+      <div class="referral-link">
+        <a href="{{ referralLink }}">{{ referralLink }}</a>
+        <div class="hide-copy-wrapper">
+          <input  class="hide-copy"
+                  type="text"
+                  #copyLinkTarget
+                  [(ngModel)]="referralLink" />
+        </div>
+        <div class="section-copy">
+          <button class="icon icon--duplicate icon--gold icon--dynamic ml-3"
+                  type="button"
+                  [ngxClipboard]="copyLinkTarget"
+                  (cbOnSuccess)="copyOnSuccess('isCopiedLink')">
+          </button>
+          <span class="copied ml-3" *ngIf="isCopiedLink">Copied!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+  </ng-container>
+
+</div>
+</div>
+
+<ng-template #loading>
+  <ai-loading class="loading-container"></ai-loading>
+</ng-template>
+ -->

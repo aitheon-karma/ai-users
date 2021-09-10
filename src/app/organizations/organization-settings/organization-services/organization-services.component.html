@@ -1,0 +1,206 @@
+<div *ngIf="orgServices.length > 0; else loading" class="container">
+  <h3 class="title">Services</h3>
+  <div class="services-wrapper">
+
+    <div class="services-wrapper__list">
+
+      <div class="services-list">
+
+        <div class="services-list__header mb-3">
+
+          <div class="services-list__tab"
+               [class.services-list__tab--selected]="activeServiceTab === 'enabled'"
+               (click)="toggleServiceTab('enabled')"
+          >
+            <span class="services-list__tab-name">Enabled</span>
+          </div>
+
+          <div class="services-list__tab"
+               [class.services-list__tab--selected]="activeServiceTab !== 'enabled'"
+               (click)="toggleServiceTab('available')"
+          >
+            <span class="services-list__tab-name">
+              <span>Available</span>
+              <span class="services-list__counter">{{ disabledServicesNumber }}</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="services-list__list" *ngIf="activeServiceTab === 'enabled'">
+          <div class="service-item"
+               *ngFor="let service of orgServices"
+               [class.service-item--selected]="service.service === selectedService.service"
+               [hidden]="service.checked === false && service.core === false"
+               (click)="selectService(service)">
+            <span class="{{ 'service-icon ' + service?.service | serviceIcon }}"></span>
+            <span class="service-item__text">
+              {{ service.service.split('_').join(' ') | titlecase }}
+            </span>
+          </div>
+        </div>
+
+        <div class="services-list__list" *ngIf="activeServiceTab !== 'enabled'">
+          <div class="service-item"
+               *ngFor="let service of orgServices"
+               [hidden]="service.checked === true || service.core === true"
+               [class.service-item--selected]="service.service === selectedService.service"
+               (click)="selectService(service)">
+            <span class="{{ 'service-icon ' + service?.service | serviceIcon }}"></span>
+            <span class="service-item__text">
+              {{  service.service.split('_').join(' ') | titlecase }}
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="services-wrapper__description">
+    <div class="service-description">
+      <div class="d-flex justify-content-between align-items-center mb--24">
+        <h3 class="service-description__title">
+          {{ selectedService.service.split('_').join(' ') | titlecase }}
+        </h3>
+        <button class="button button--medium"
+                *ngIf="selectedService.core == false; else defaultBlock"
+                [ngClass]="selectedService.checked ? 'button--error button--outlined' : 'button--contained'"
+                (click)="selectedService.checked = !selectedService.checked; enableDependencyServices(selectedService)">
+          {{ selectedService.checked ? 'Disable' : 'Enable' }}
+        </button>
+        <ng-template #defaultBlock>
+          <span class="text-free">
+            Enabled for free
+          </span>
+        </ng-template>
+      </div>
+      <div class="service-description__images" *ngIf="selectedService.images[0].load">
+        <div *ngFor="let image of selectedService.images">
+          <div class="service-description__images__image"
+               (click)="zoomImage(image.path)"
+               *ngIf="image.load">
+            <img [src]="image.path"
+                 alt="{{ (selectedService.service.split('_').join(' ') | titlecase) + ' example' }}">
+          </div>
+        </div>
+      </div>
+      <div class="service-description__description">
+        <span>
+          {{ selectedService.description }}
+        </span>
+      </div>
+      <!--
+      <div class="service-description__subscriptions">
+        <div class="d-flex align-items-center justify-content-between mb--16">
+          <span>Subsription</span>
+          <button class="button button--ghost button--medium" (click)="openSubsModal()">
+            Manage
+          </button>
+        </div>
+        <div class="price-block">
+          <span>Monthly</span>
+          <span>$20 / month</span>
+        </div>
+        <div class="price-block">
+          <span>Yearly (25% OFF)</span>
+          <span>$15 / month</span>
+        </div>
+      </div>
+      -->
+      <div class="service-description__members" *ngIf="!selectedService.core">
+        <span class="pr--8">Members:</span>
+        <div class="service-description__members__list">
+          <div class="team__members">
+            <ng-container *ngFor="let member of selectedService.members?.slice(0, 5); let y = index">
+              <ng-container *ngIf="y < 5">
+                <img *ngIf="member?.profile?.avatarUrl"
+                     class="team__member"
+                     [ngStyle]="{'z-index': (5 - y)}"
+                     src="{{member?.profile?.avatarUrl}}"
+                     tooltip="{{ member.profile?.firstName + ' ' + member.profile?.lastName }}"
+                     container="body"
+                     placement="top">
+                <span *ngIf="member?.profile?.avatarUrl == '' || !member?.profile?.avatarUrl"
+                      class="team__member team__member--text"
+                      [ngStyle]="{'background-color': getRandomColor(y),'z-index': (5 - y)}"
+                      tooltip="{{ member.profile?.firstName + ' ' + member.profile?.lastName }}"
+                      container="body"
+                      placement="top">
+                  {{ member?.profile?.firstName ? getInitials(member?.profile?.firstName) : '' }}
+                </span>
+              </ng-container>
+            </ng-container>
+            <span class="team__members-plus ml--8" *ngIf="selectedService.members?.length > 5"
+                  [tooltip]="getOtherAssignees(selectedService.members)" container="body" placement="right">
+              +{{ selectedService.members.length - 5 }}
+            </span>
+          </div>
+        </div>
+        <button class="button button--ghost button--medium ml--auto button--disabled" disabled>
+          Add members
+        </button>
+      </div>
+      <!-- Temporary hide block with prices and Dependency Services -->
+      <!--
+      <div *ngIf="selectedService.service === 'PROJECT_MANAGER'">
+        <hr>
+        <div class="d-flex align-items-center justify-content-between mb--16 w-50">
+          <img src="assets/img/liquidplanner.svg" alt="">
+          <span class="text-gray">
+          $45 user/month
+        </span>
+        </div>
+        <div class="d-flex align-items-center justify-content-between mb--16 w-50">
+          <img src="assets/img/jira.svg" alt="">
+          <span class="text-gray">
+          $14 user/month
+        </span>
+        </div>
+        <div class="d-flex align-items-center justify-content-between w-50">
+          <img src="assets/img/trello.svg" alt="">
+          <span class="text-gray">
+          $20.83 user/month
+        </span>
+        </div>
+      </div>
+      <hr *ngIf="selectedService.dependencies.length > 0">
+      <div class="service-description__linked-service" *ngIf="selectedService.dependencies.length > 0">
+        <span class="pb--16">Linked service</span>
+        <div class="linked-service" *ngFor="let dependency of selectedService.dependencies">
+          <span class="{{ 'service-icon ' + dependency | serviceIcon }}"></span>
+          <div class="d-flex flex-column">
+            <span class="pb--4">{{ dependency.split('_').join(' ') | titlecase }}</span>
+            <span class="color-label color-label--necessary">
+              Necessary to upload
+            </span>
+          </div>
+        </div>
+      </div>
+      -->
+    </div>
+  </div>
+  </div>
+</div>
+
+
+<div class="image-modal-overlay" *ngIf="imageModal">
+  <button class="icon icon--close icon--dynamic icon--active-open" (click)="imageModal = false"></button>
+  <div class="image-modal" (click)="imageModal = false">
+    <img [src]="zoomedImgUrl" />
+  </div>
+</div>
+
+<ng-template #loading>
+  <ai-loading class="loading-container"></ai-loading>
+</ng-template>
+<swal #dialog></swal>
+
+<ng-template #manageSubscriptionModal>
+  <ai-subscription-modal [service]="selectedService"
+                         (closeModalEvent)="closeSubsModal()"
+                         (createPaymentMethodEvent)="openPaymentMethodModal()">
+  </ai-subscription-modal>
+</ng-template>
+
+<ng-template #paymentMethodModal>
+  <ai-payment-method-modal (closeModalEvent)="closePaymentMethodModal()"></ai-payment-method-modal>
+</ng-template>

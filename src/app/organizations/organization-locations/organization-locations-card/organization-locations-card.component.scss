@@ -1,0 +1,119 @@
+.location-card {
+  background-color: #2b2b2b;
+  display: flex;
+  cursor: pointer;
+  border: solid 1px transparent;
+  transition: all ease-in-out .3s;
+  overflow: hidden;
+
+  &--dashboard-view {
+    background-color: #383838;
+  }
+
+  &:hover {
+    border: solid 1px #dcbd65;
+  }
+
+  &__image {
+    width: 207px;
+    height: 207px;
+    min-width: 207px;
+    position: relative;
+    background-color: #1f1f1f;
+
+    img {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    &--empty img{
+      object-fit: contain;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 0.2px;
+    line-height: 20px;
+    width: calc(100% - 207px);
+
+    &__title {
+      color: rgb(255, 255, 255);
+      font-size: 14px;
+      font-weight: normal;
+      letter-spacing: 0.2px;
+      line-height: 20px;
+      padding-right: 8px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    &__type {
+      color: rgb(255, 255, 255);
+      font-size: 12px;
+      font-weight: normal;
+      letter-spacing: 0.3px;
+      line-height: 20px;
+      background: rgb(69, 69, 69);
+      border-radius: 18px;
+      height: 24px;
+      padding: 0 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__location {
+      padding-left: 18px;
+      background-repeat: no-repeat;
+      background-position: left 3px;
+      background-size: 10px;
+      background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='14px' height='17px' viewBox='0 0 14 17' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3Eicon / 24-cont / info / location-pin-24%3C/title%3E%3Cdefs%3E%3Cpath d='M11.969501,4 C15.8354942,4 19,6.57987711 19,11.0043895 C19,15.4289019 13.0699882,21 12,21 C10.9300118,21 5,15.4208241 5,11.0043895 C5,6.58795492 8.10350771,4 11.969501,4 Z M11.969501,6.00118249 C8.99361131,6.00118249 7,7.89966257 7,11.0043895 C7,12.4097323 7.9999141,14.4074556 9.63720299,16.3796444 C10.2412497,17.1072461 10.8928332,17.7812357 11.4878556,18.3084497 L11.7390988,18.5251406 L12.0005485,18.7367669 L12.2617062,18.5256023 C12.9208204,17.9737726 13.6730399,17.2130863 14.3631229,16.3822811 C16.0004013,14.4111279 17,12.4133736 17,11.0043895 C17,7.91149112 14.9679608,6.00118249 11.969501,6.00118249 Z M11.969501,9.00320702 C13.0740705,9.00320702 13.969501,9.89916693 13.969501,11.0043895 C13.969501,12.109612 13.0740705,13.0055719 11.969501,13.0055719 C10.8649315,13.0055719 9.96950096,12.109612 9.96950096,11.0043895 C9.96950096,9.89916693 10.8649315,9.00320702 11.969501,9.00320702 Z' id='path-1'%3E%3C/path%3E%3C/defs%3E%3Cg id='InstaGuard-Alina' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Group' transform='translate(-5.000000, -4.000000)'%3E%3Cmask id='mask-2' fill='white'%3E%3Cuse xlink:href='%23path-1'%3E%3C/use%3E%3C/mask%3E%3Cuse id='Combined-Shape' fill='%237e7e7e' fill-rule='nonzero' xlink:href='%23path-1'%3E%3C/use%3E%3Cg mask='url(%23mask-2)' fill='%237e7e7e' id='Colors-/-Dark-Theme-/-Grayscale-/-Filled-/-$base-gray'%3E%3Cg%3E%3Crect id='Dark-Theme-/-Grayscale-/-Filled-/-$base-gray' x='0' y='0' width='24' height='24'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      color: rgb(126, 126, 126);
+      font-size: 12px;
+      font-weight: normal;
+      letter-spacing: 0.3px;
+      line-height: 20px;
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-line-clamp: 3;
+    }
+
+    &__label {
+      color: rgb(126, 126, 126);
+      font-size: 14px;
+      font-weight: normal;
+      letter-spacing: 0.2px;
+      line-height: 20px;
+      min-width: 110px;
+      padding-right: 16px;
+    }
+  }
+}
+
+hr {
+  background-color: #454545;
+  width: 100%;
+  height: 1px;
+  border: none;
+  box-shadow: none;
+}
+
+.text-crop {
+  max-width: 150px;
+}

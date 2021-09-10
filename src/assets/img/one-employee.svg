@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="67px" height="82px" viewBox="0 0 67 82" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 2</title>
+    <defs>
+        <path d="M13,4 L13,10.999 L20,11 L20,13 L13,13 L13,20 L11,20 L11,13 L4,13 L4,11 L11,11 L11,4 L13,4 Z" id="path-1"></path>
+        <path d="M13,4 L13,10.999 L20,11 L20,13 L13,13 L13,20 L11,20 L11,13 L4,13 L4,11 L11,11 L11,4 L13,4 Z" id="path-3"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="30-Smart-Infrastructure-/-06-Device-Manager-/-06_10_Device-Page-Copy-33" transform="translate(-692.000000, -421.000000)">
+            <g id="Group-11" transform="translate(581.000000, 421.000000)">
+                <g id="Group-2" transform="translate(111.000000, 0.000000)">
+                    <g id="icons8-queue-copy" transform="translate(0.000000, 20.000000)" fill-rule="nonzero">
+                        <path d="M34.2042755,8.98495645 C28.397196,8.98495645 23.6896279,13.6925246 23.6896279,19.4996041 C23.6896279,25.3066837 28.397196,30.0142518 34.2042755,30.0142518 C40.0113551,30.0142518 44.7189232,25.3066837 44.7189232,19.4996041 C44.7189232,13.6925246 40.0113551,8.98495645 34.2042755,8.98495645 Z M34.2042755,40.5288994 C27.1857482,40.5288994 13.1749802,44.3182786 13.1749802,51.3105193 L13.1749802,61.5581948 L55.2335709,61.5581948 L55.2335709,51.3105193 C55.2335709,44.3182786 41.2228029,40.5288994 34.2042755,40.5288994 Z" id="Shape" fill="#333433"></path>
+                        <path d="M21.0292953,0.877276326 C15.2222158,0.877276326 10.5146477,5.58484444 10.5146477,11.391924 C10.5146477,17.1990035 15.2222158,21.9065717 21.0292953,21.9065717 C26.8363749,21.9065717 31.543943,17.1990035 31.543943,11.391924 C31.543943,5.58484444 26.8363749,0.877276326 21.0292953,0.877276326 Z M21.0292953,32.4212193 C14.010768,32.4212193 0,36.2105984 0,43.2028391 L0,53.4505146 L42.0585907,53.4505146 L42.0585907,43.2028391 C42.0585907,36.2105984 28.0478226,32.4212193 21.0292953,32.4212193 Z" id="Shape-Copy" fill="#DCBC65"></path>
+                    </g>
+                    <g id="icon-/-24-cont-/-actions-/-plus-24-copy" transform="translate(43.000000, 7.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#7E7E7E" xlink:href="#path-1"></use>
+                        <g id="Group" mask="url(#mask-2)" fill="#383838">
+                            <g id="Colors-/-Dark-Theme-/-Grayscale-/-Filled-/-$base-gray">
+                                <rect id="Dark-Theme-/-Grayscale-/-Filled-/-$base-gray" x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </g>
+                    </g>
+                    <g id="icon-/-24-cont-/-actions-/-plus-24" transform="translate(36.500000, 0.000000)">
+                        <mask id="mask-4" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <use id="Mask" fill="#7E7E7E" xlink:href="#path-3"></use>
+                        <g id="Group" mask="url(#mask-4)" fill="#DCBC65">
+                            <g id="Colors-/-Dark-Theme-/-Grayscale-/-Filled-/-$base-gray">
+                                <rect id="Dark-Theme-/-Grayscale-/-Filled-/-$base-gray" x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

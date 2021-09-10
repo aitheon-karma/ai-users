@@ -1,0 +1,104 @@
+.documents {
+  padding-left: 167px;
+  padding-right: 167px;
+
+  &__top-bar {
+    height: 50px;
+    background-color: #282828;
+  }
+
+  &__add {
+    line-height: 1.33;
+    letter-spacing: 0.3px;
+    font-size: 0.75rem;
+
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  &__search {
+    height: 35px;
+    input {
+      height: 35px;
+      max-width: 270px;
+
+      &::after {
+        top: 41%;
+      }
+    }
+  }
+
+  &__top-bar-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.25rem;
+  }
+
+  &__data-container {
+    background-color: #282828;
+    &:nth-child(odd) {
+      background-color: #222222;
+    }
+  }
+
+  &__data-header {
+    color: #8c8c8c;
+    font-size: 0.875rem;
+    height: 3.75rem;
+    background-color: #282828;
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+  }
+
+  &__data {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    flex-wrap: wrap; // for now
+    span {
+      display: block;
+      color: #ffff;
+      margin-right: 0.6rem;
+      font-size: 12px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+
+  &__data-name {
+    display: flex;
+    align-items: center;
+  }
+
+  &__actions-download,
+  &__actions-delete {
+    font-size: 0.75rem;
+  }
+}
+
+.document-form {
+  &__title {
+    letter-spacing: 3.1px;
+    font-size: 1.125rem;
+    color: #ffff;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .teams {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}

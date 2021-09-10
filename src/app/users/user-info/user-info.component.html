@@ -1,0 +1,230 @@
+<div class="user-profile">
+<!--  <fl-user-settings-menu></fl-user-settings-menu>-->
+
+  <div class="user-profile__header">
+    <div class="user-profile__header-title">
+      <h2>My profile</h2>
+    </div>
+
+    <div class="user-profile__action-buttons">
+      <div class="user-profile__save">
+        <button class="button button--contained button--medium"
+                [class.button--disabled]="!isFormChanged"
+                [disabled]="!isFormChanged"
+                (click)="updateForm()"
+        >
+          SAVE CHANGES
+        </button>
+      </div>
+
+      <div class="user-profile__delete-account">
+        <button class="button button--ghost button--error button--medium" (click)="showDeleteAccount()">
+          <span class="icon icon--size-16px icon--delete button__icon"></span>
+          DELETE ACCOUNT
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body profile-body">
+      <div class="profile-body__form-container">
+        <div *ngIf="authService.currentUser | async as currentUser; else loading">
+          <div *ngIf="profileLoaded else loading">
+            <fl-user-form [user]="currentUser"
+                          [personal]="true"
+                          [isUpdating]="isUpdating"
+                          (saved)="onSaved($event)"
+                          (isFormChanged)="updateButtonState($event)"
+                          (emailConfirmationClicked)="resendVerifyEmail()"
+                          (canceled)="onCanceled()"></fl-user-form>
+          </div>
+        </div>
+      </div>
+
+      <ng-template #loading>
+        <ai-loading class="loading-container"></ai-loading>
+      </ng-template>
+    </div>
+  </div>
+
+  <ng-template #deleteAccountModal>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Confirm Delete account</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="onCloseDialog()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <strong>We are sorry to hear you'd like to delete your account</strong><br><br>
+      Documents provided for KYC verification process may be required to be stored by law.<br>
+      For security reasons, you will not be able to signup with the same email again. If you have any questions about this
+      please contact us: contact@aitheon.com
+      <br><br>
+
+      <div class="checkbox">
+        <input class="checkbox__input mr-2" name="userDelete" id="userDelete" type="checkbox" [(ngModel)]="consentDelete">
+        <label class="checkbox__label" for="userDelete">I CONSENT, DELETE MY ACCOUNT</label>
+      </div>
+      <br>
+      <div class="d-flex align-items-center w-100 justify-content-between">
+        <button class="button button--error button--ghost button--medium"
+                [disabled]="!consentDelete"
+                type="button"
+                (click)="requestDelete()">
+          Delete My Account
+        </button>
+        <button class="button button--ghost button--medium"
+                type="button"
+                (click)="onCloseDialog()">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </ng-template>
+
+  <fl-second-factor-modal #secondFactorModal (success)="secondFactorSuccess($event)"></fl-second-factor-modal>
+
+  <ng-template #usernameModal>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Pick a username</h4>
+      <button type="button" class="close pull-right" (click)="usernameModalRef.hide()" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body pb-0">
+      <ai-username-form (saved)="currentUser.username = $event; usernameModalRef.hide()"
+                        (canceled)="usernameModalRef.hide()"
+      ></ai-username-form>
+    </div>
+  </ng-template>
+</div>
+
+
+<!--&lt;!&ndash; VIEW MODE &ndash;&gt;-->
+<!--<div class="view-mode form&#45;&#45;align-right">-->
+<!--  &lt;!&ndash; GENERAL TAB CONTENT &ndash;&gt;-->
+<!--  <div class="tab-pane fade pt-3 show active" role="tabpanel"-->
+<!--       aria-labelledby="nav-general-tab">-->
+<!--    <div class="row">-->
+<!--      <div class="col col-sm-auto">-->
+<!--        <div [ngStyle]="{'background-image': 'url('+ (currentUser?.profile.avatarUrl || '/users/assets/img/nophoto.png') +')'}"-->
+<!--             class="rounded-circle user-pic&#45;&#45;big float-left"></div>-->
+<!--      </div>-->
+<!--      <div class="col">-->
+<!--        &lt;!&ndash; View form&ndash;&gt;-->
+<!--        <div class="row align-items-center mb-2">-->
+<!--          <label class="col-form-label col-sm-3"><strong>Email</strong></label>-->
+<!--          <p class="form-control-static m-0 d-flex align-items-center">{{ currentUser.email }}-->
+<!--            <span class="pl-2 text-success d-flex align-items-center" *ngIf="currentUser.emailVerified">-->
+<!--                                Email Verified-->
+<!--                                <span class="icon icon&#45;&#45;done-success icon&#45;&#45;green ml-1"></span>-->
+<!--                              </span>-->
+<!--            <span class="text-danger d-flex align-items-center pl-2" *ngIf="!currentUser.emailVerified">-->
+<!--                                Email address is not verified-->
+<!--                                <span class="icon icon&#45;&#45;block icon&#45;&#45;red ml-1"></span>-->
+<!--                                <button class="button button&#45;&#45;ghost button&#45;&#45;medium" (click)="resendVerifyEmail()">Resend</button>-->
+<!--                              </span>-->
+<!--          </p>-->
+<!--        </div>-->
+<!--        <div class="row form-group align-items-center">-->
+<!--          <label class="col-form-label col-sm-3 d-flex align-items-center">-->
+<!--            <strong>KYC</strong>-->
+<!--            <span class="icon icon&#45;&#45;info ml-2"-->
+<!--                  tooltip="The Know Your Client (KYC) is the way to verify the identity, suitability, and risks involved with maintaining a business relationship."-->
+<!--                  placement="left"></span>-->
+<!--          </label>-->
+<!--          <button (click)="verifyUser(kycModal)"-->
+<!--                  class="button button&#45;&#45;ghost button&#45;&#45;medium button&#45;&#45;margin-fix mr-3"-->
+<!--                  *ngIf="currentUser.KYCStatus !== 'VERIFY_FINISHED'">-->
+<!--            Get KYC Verified-->
+<!--          </button>-->
+<!--          <span class="text-danger d-flex align-items-center"-->
+<!--                *ngIf="currentUser.KYCStatus == 'NONE'">-->
+<!--                              Documents not verified-->
+<!--                              <span class="icon icon&#45;&#45;block icon&#45;&#45;red ml-1"></span>-->
+<!--                            </span>-->
+<!--          <span class="text-success d-flex align-items-center"-->
+<!--                *ngIf="currentUser.KYCStatus == 'VERIFY_FINISHED'">-->
+<!--                              Documents verified-->
+<!--                              <span class="icon icon&#45;&#45;done-success icon&#45;&#45;green ml-1"></span>-->
+<!--                            </span>-->
+<!--          <span class="text-warning d-flex align-items-center"-->
+<!--                *ngIf="currentUser.KYCStatus == 'PENDING'">-->
+<!--                              Documents on verification-->
+<!--                              <span class="icon icon&#45;&#45;attention icon&#45;&#45;orange ml-1"></span>-->
+<!--                            </span>-->
+<!--          <span class="text-warning d-flex align-items-center"-->
+<!--                *ngIf="currentUser.KYCStatus == 'DENIED_IMAGE'">-->
+<!--                              Images denied. Please, provide new-->
+<!--                              <span class="icon icon&#45;&#45;attention icon&#45;&#45;orange ml-1"></span>-->
+<!--                            </span>-->
+<!--        </div>-->
+
+<!--        <div class="row form-group align-items-center">-->
+<!--          <label class="col-form-label col-sm-3"><strong>Username</strong></label>-->
+<!--          <p *ngIf="currentUser.username" class="form-control-static m-0 d-flex align-items-center">{{ currentUser.username }} </p>-->
+<!--          <button class="button button&#45;&#45;ghost button&#45;&#45;medium button&#45;&#45;margin-fix"-->
+<!--                  *ngIf="!currentUser.username" (click)="openUsernameModal()">-->
+<!--            Set Username-->
+<!--          </button>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; First Name &ndash;&gt;-->
+<!--        <div class="form-group row align-items-center">-->
+<!--          <label class="col-form-label col-sm-3"><strong>First name</strong></label>-->
+<!--          <p class="form-control-static m-0">{{ currentUser.profile.firstName }}</p>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; Last Name &ndash;&gt;-->
+<!--        <div class="form-group row align-items-center">-->
+<!--          <label class="col-form-label col-sm-3"><strong>Last name</strong></label>-->
+<!--          <p class="form-control-static m-0">{{ currentUser.profile.lastName }}</p>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; Devices Pin &ndash;&gt;-->
+<!--        <div class="form-group row align-items-center" *ngIf="currentUser.envAccess === 'ALPHA'">-->
+<!--          <label class="col-form-label col-sm-3"><strong>Devices Pin</strong></label>-->
+<!--          <button class="btn btn-link show-pin" *ngIf="!currentUser.devicesPin" (click)="requestPin()">Show me</button>-->
+<!--          <p class="form-control-static m-0" *ngIf="currentUser.devicesPin">-->
+<!--            <strong>{{ currentUser.devicesPin }}</strong>-->
+<!--          </p>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; End Form &ndash;&gt;-->
+<!--        <div class="form-group row align-items-center" *ngIf="currentUser.profile.telegram">-->
+<!--          <label class="col-form-label col-sm-3"><strong>Telegram</strong></label>-->
+<!--          <p class="form-control-static m-0">-->
+<!--            {{ currentUser.profile.telegram.username || currentUser.profile.telegram.id }}-->
+<!--            <a class="btn btn-link btn-sm unlink" href="javascript://" [swal]="{ title: 'Confirm unlink telegram account?', text: 'We will miss you :(', type: 'warning', showCancelButton: true, confirmButtonText: 'Yes, unlink it'}"-->
+<!--               (confirm)="unlinkTelegram()"><i class="fa fa-trash mr-2"></i>Unlink</a>-->
+<!--          </p>-->
+
+<!--        </div>-->
+<!--        <div class="form-group row align-items-center telegram-col" *ngIf="!currentUser.profile.telegram">-->
+<!--          <div class="offset-sm-3">-->
+<!--            <a  class="button button&#45;&#45;medium button&#45;&#45;ghost button&#45;&#45;margin-fix mb-2"-->
+<!--                target="_blank"-->
+<!--                href="{{getTelegramRedirectURI()}}">-->
+<!--              Add telegram account-->
+<!--            </a>-->
+<!--            <p class="m-0"><small>In the Telegram you will need to click 'Start' button to link accounts</small></p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;  &ndash;&gt;-->
+<!--        <div class="form-group row align-items-center">-->
+<!--          <label class="col-form-label col-sm-3"><strong>&nbsp;</strong></label>-->
+<!--          <p class="form-control-static m-0">-->
+<!--            <button class="button button&#45;&#45;error button&#45;&#45;ghost button&#45;&#45;medium button&#45;&#45;margin-fix"-->
+<!--                    type="button"-->
+<!--                    (click)="showDeleteAccount()">-->
+<!--              Delete account-->
+<!--            </button>-->
+<!--          </p>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;  &ndash;&gt;-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  &lt;!&ndash; GENERAL TAB CONTENT END &ndash;&gt;-->
+
+<!--</div>-->
+<!--&lt;!&ndash; END VIEW MODE &ndash;&gt;-->

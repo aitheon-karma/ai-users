@@ -1,0 +1,280 @@
+<!--<div class="card mb-3">
+  <div class="card-body">
+    <ng-container *ngIf="userWallet; else loading">
+      <h4>Buy tokens</h4>
+
+      <div class="alert alert-success" *ngIf="user.KYCStatus === 'Verified'">KYC Verified</div>
+      <div class="alert alert-warning" *ngIf="user.KYCStatus === 'Pending'">Pending verification. Thanks for your patience.</div>
+      <div class="alert alert-danger" *ngIf="user.KYCStatus === 'Denied'">KYC Denied</div>
+      <div class="">
+        
+
+        <tabset>
+          <tab heading="Ethereum" (select)="tabSelected()">
+           <div class="mt-2">
+              1. Add your myetherwallet to buy token
+            <span class="text-success" *ngIf="userWallet.ethWalletAddress">
+              <i class="fa fa-check text-success"></i> Done</span>
+            <form [formGroup]="walletForm" *ngIf="walletForm" class="mb-2" novalidate (ngSubmit)="onSaveWallet('ethWalletAddress')">
+              <fieldset [disabled]="savingWallet">
+                <div class="input-group mb-3" *ngIf="walletEditModeEth">
+                  <input type="text" class="form-control" placeholder="0x0000000000000000000000000000000000000000" formControlName="ethWalletAddress">
+                  <div class="input-group-append">
+                    <ai-loading class="sm inline" *ngIf="savingWallet" style="    padding-left: 20px;"></ai-loading>
+                    <button class="btn btn-primary" *ngIf="!savingWallet" type="submit">Save</button>
+                    <button class="btn btn-outline" [hidden]="savingWallet" *ngIf="userWallet.ethWalletAddress" type="button" (click)="toggleEditMode('Eth')">Cancel</button>
+                  </div>
+                </div>
+                <strong class="pl-3 user-wallet" *ngIf="!walletEditModeEth">{{ userWallet.ethWalletAddress }}</strong>
+                <button class="btn btn-link btn-sm" *ngIf="!walletEditModeEth" (click)="toggleEditMode('Eth')" type="button">Edit</button>
+                <small *ngIf="submitted && walletForm.get('ethWalletAddress').hasError('required')" class="text-danger">
+                  Wallet address is required
+                </small>
+              </fieldset>
+            </form>
+           </div>
+            <div class="mt-2">
+              2.
+              <span>{{ saleActive? 'You can send ETH to the token sale smart contract here, send with the same address you entered
+                above' : 'SALE CLOSED'}}</span>
+              <br>
+              <span class="ai-wallet " *ngIf="saleActive">
+                <input type="text" [(ngModel)]=" cryptoSettings.tokenSaleAddress" #copyTarget class="sale-address pl-3" readonly>
+                <button class="btn btn-link btn-sm" type="button" [ngxClipboard]="copyTarget" (cbOnSuccess)="copyOnSuccess()">{{ isCopied ? 'Copied' : 'Copy'}}</button>
+              </span>
+              <div class="step2">
+                <div class="qr-code" *ngIf="saleActive">
+                  <qr-code [value]="cryptoSettings.tokenSaleAddress" [size]="150"></qr-code>
+                </div>
+                <div class="transation">
+                  <div class="row ">
+                    <div class="col-lg-6 pt-4" *ngIf="saleActive">
+                      Please use our recommended transation settings:
+                      <ul class="transation-settings">
+                        <li>Gas limit: 250000</li>
+                        <li>Gas price: 50 GWei</li>
+                        <li>Data: none</li>
+                      </ul>
+                    </div>
+                    <div class="col-lg-6 col-calc">
+                      <h6>Сonversion calculator</h6>
+                      <form [formGroup]="calcForm">
+                        <div class="input-group mb-3">
+                          <input min="0" type="number" placeholder="Enter value" formControlName="ETH" class="form-control">
+                          <div class="input-group-append">
+                            <span class="input-group-text">ETH</span>
+                          </div>
+                        </div>
+              
+                        <div class="input-group mb-3">
+                          <input min="0" type="number" placeholder="Enter value" formControlName="USD" class="form-control">
+                          <div class="input-group-append">
+                            <span class="input-group-text">USD</span>
+                          </div>
+                        </div>
+                        <div class="input-group mb-3">
+                          <input min="0" type="number" placeholder="Enter value" formControlName="AITHEON_TOKEN" class="form-control">
+                          <div class="input-group-append">
+                            <span class="input-group-text">AIC</span>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </tab>
+          <tab heading="Bitcoin and altcoins">
+            <div class="row">
+              <div class="col">
+                <div class="alert alert-danger mt-3" *ngIf="!userWallet?.ethWalletAddress">
+                  Please add your Ethereum address to which we will send tokens after payment is done.
+                </div>
+                
+              </div>
+            </div>
+            <div class="row" *ngIf="!paymentCheckoutUrl">
+              <div class="col-lg-8">
+                <h5 class="mt-3">Select a coin</h5>
+               <div class="coins-wrapper">
+                  <div class="coin-select" (click)="selectCoin(rate)" [class.selected]="rate.key === selectedCoin" *ngFor="let rate of rates">
+                      <img class="coin-image" height="25" src="assets/img/coins/{{ rate.key }}.png" width="25">
+                      <div class="checkout-price"><p class="m-0">{{ rate.rate_aic }}</p><strong class="price-bold">{{ rate.key }}</strong>
+                      </div>
+                    </div>
+               </div>
+              </div>
+              <div class="col-lg-4">
+                  <h5 class="mt-3">Enter USD amount</h5>
+                  <div class="input-group">
+                    <input min="0" type="number" (change)="coinpaymentsAmountChanged()" placeholder="Enter value" [(ngModel)]="coinpaymentsAmount" class="form-control text-right">
+                    <div class="input-group-append">
+                      <span class="input-group-text">USD</span>
+                    </div>
+                  </div>
+                 
+                  <button type="button" class="btn btn-coinpayments btn-primary btn-block" [disabled]="paymentSubmitted" (click)="buyWithCoinpayments()">
+                    
+                    <span *ngIf="!paymentSubmitted">Complete Checkout</span>
+                    <ai-loading *ngIf="paymentSubmitted" class="sm inline white"></ai-loading>
+                  </button>
+                  <p class="mt-2 small text-center">AIC tokens will be sent to your configured ETH wallet address after payment completed.</p>
+                  <div class="text-danger " *ngIf="paymentError">
+                    {{ paymentError }}
+                  </div>
+              </div>
+            </div>
+             
+          </tab> -->
+          <!-- <tab heading="Bitcoin" (select)="tabSelected()" *ngIf="cryptoSettings?.bitcoinSaleAddress">
+            <div class="mt-2">
+                1. Add your Bitcoin address before buy token
+              <span class="text-success" *ngIf="userWallet.bitcoinWalletAddress">
+                <i class="fa fa-check text-success"></i> Done</span>
+              <form [formGroup]="walletForm" *ngIf="walletForm" class="mb-2" novalidate (ngSubmit)="onSaveWallet('bitcoinWalletAddress')">
+                <fieldset [disabled]="savingWallet">
+                  <div class="input-group mb-3" *ngIf="walletEditModeBtc">
+                    <input type="text" class="form-control" placeholder="Bitcoin address" formControlName="bitcoinWalletAddress">
+                    <div class="input-group-append">
+                      <ai-loading class="sm inline" *ngIf="savingWallet" style="    padding-left: 20px;"></ai-loading>
+                      <button class="btn btn-primary" *ngIf="!savingWallet" type="submit">Save</button>
+                      <button class="btn btn-outline" [hidden]="savingWallet" *ngIf="userWallet.bitcoinWalletAddress" type="button" (click)="toggleEditMode('Btc')">Cancel</button>
+                    </div>
+                  </div>
+                  <strong class="pl-3 user-wallet" *ngIf="!walletEditModeBtc">{{ userWallet.bitcoinWalletAddress }}</strong>
+                  <button class="btn btn-link btn-sm" *ngIf="!walletEditModeBtc" (click)="toggleEditMode('Btc')" type="button">Edit</button>
+                  <small *ngIf="submitted && walletForm.get('bitcoinWalletAddress').hasError('required')" class="text-danger">
+                    Wallet address is required
+                  </small>
+                </fieldset>
+              </form>
+            
+              
+              </div>
+            <div class="mt-2">
+              2.
+              <span>{{ saleActive? 'You can send Bitcoin here, send with the same address you entered above ' : 'SALE CLOSED'}}</span>
+              <br>
+              <span class="ai-wallet " *ngIf="saleActive">
+                <input type="text" [(ngModel)]="cryptoSettings.bitcoinSaleAddress" #copyTarget class="sale-address pl-3" readonly>
+                <button class="btn btn-link btn-sm" type="button" [ngxClipboard]="copyTarget" (cbOnSuccess)="copyOnSuccess()">{{ isCopied ? 'Copied' : 'Copy'}}</button>
+              </span>
+              <div class="step2">
+                <div class="qr-code" *ngIf="saleActive">
+                  <qr-code [value]="cryptoSettings.bitcoinSaleAddress" [size]="150"></qr-code>
+                </div>
+                <div class="transation">
+                  <div class="row ">
+                    <div class="col-lg-6 pt-4" *ngIf="saleActive">
+                    </div>
+                    <div class="col-lg-6 col-calc">
+                      <h6>Сonversion calculator</h6>
+                      <form [formGroup]="calcForm">
+                        <div class="input-group mb-3">
+                          <input min="0" type="number" placeholder="Enter value" formControlName="BTC" class="form-control">
+                          <div class="input-group-append">
+                            <span class="input-group-text">BTC</span>
+                          </div>
+                        </div>
+                        <div class="input-group mb-3">
+                          <input min="0" type="number" placeholder="Enter value" formControlName="USD" class="form-control">
+                          <div class="input-group-append">
+                            <span class="input-group-text">USD</span>
+                          </div>
+                        </div>
+                        <div class="input-group mb-3">
+                          <input min="0" type="number" placeholder="Enter value" formControlName="AITHEON_TOKEN" class="form-control">
+                          <div class="input-group-append">
+                            <span class="input-group-text">AIC</span>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </tab>
+          <tab heading="Litecoin" (select)="tabSelected()" *ngIf="cryptoSettings?.litecoinSaleAddress">
+            <div class="mt-2">
+                1. Add your Litecoin address before buy token
+              <span class="text-success" *ngIf="userWallet.litecoinWalletAddress">
+                <i class="fa fa-check text-success"></i> Done</span>
+              <form [formGroup]="walletForm" *ngIf="walletForm" class="mb-2" novalidate (ngSubmit)="onSaveWallet('litecoinWalletAddress')">
+                <fieldset [disabled]="savingWallet">
+                  <div class="input-group mb-3" *ngIf="walletEditModeLtc">
+                    <input type="text" class="form-control" placeholder="Litecoin address" formControlName="litecoinWalletAddress">
+                    <div class="input-group-append">
+                      <ai-loading class="sm inline" *ngIf="savingWallet" style="    padding-left: 20px;"></ai-loading>
+                      <button class="btn btn-primary" *ngIf="!savingWallet" type="submit">Save</button>
+                      <button class="btn btn-outline" [hidden]="savingWallet" *ngIf="userWallet.litecoinWalletAddress" type="button" (click)="toggleEditMode('Ltc')">Cancel</button>
+                    </div>
+                  </div>
+                  <strong class="pl-3 user-wallet" *ngIf="!walletEditModeLtc">{{ userWallet.litecoinWalletAddress }}</strong>
+                  <button class="btn btn-link btn-sm" *ngIf="!walletEditModeLtc" (click)="toggleEditMode('Ltc')" type="button">Edit</button>
+                  <small *ngIf="submitted && walletForm.get('litecoinWalletAddress').hasError('required')" class="text-danger">
+                    Wallet address is required
+                  </small>
+                </fieldset>
+              </form>
+              </div>
+            <div class="mt-2">
+              2.
+              <span>{{ saleActive? 'You can send Litecoin here, send with the same address you entered above ' : 'SALE CLOSED'}}</span>
+              <br>
+              <span class="ai-wallet " *ngIf="saleActive">
+                <input type="text" [(ngModel)]="cryptoSettings.litecoinSaleAddress" #copyTarget class="sale-address pl-3" readonly>
+                <button class="btn btn-link btn-sm" type="button" [ngxClipboard]="copyTarget" (cbOnSuccess)="copyOnSuccess()">{{ isCopied ? 'Copied' : 'Copy'}}</button>
+              </span>
+              <div class="step2">
+                <div class="qr-code" *ngIf="saleActive">
+                  <qr-code [value]="cryptoSettings.litecoinSaleAddress" [size]="150"></qr-code>
+                </div>
+                <div class="transation">
+                  <div class="row ">
+                    <div class="col-lg-6 pt-4" *ngIf="saleActive">
+                    </div>
+                    <div class="col-lg-6 col-calc">
+                      <h6>Сonversion calculator</h6>
+                      <form [formGroup]="calcForm">
+                        <div class="input-group mb-3">
+                          <input min="0" type="number" placeholder="Enter value" formControlName="LTC" class="form-control">
+                          <div class="input-group-append">
+                            <span class="input-group-text">LTC</span>
+                          </div>
+                        </div>
+                        <div class="input-group mb-3">
+                          <input min="0" type="number" placeholder="Enter value" formControlName="USD" class="form-control">
+                          <div class="input-group-append">
+                            <span class="input-group-text">USD</span>
+                          </div>
+                        </div>
+                        <div class="input-group mb-3">
+                          <input min="0" type="number" placeholder="Enter value" formControlName="AITHEON_TOKEN" class="form-control">
+                          <div class="input-group-append">
+                            <span class="input-group-text">AIC</span>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </tab> 
+        </tabset>
+
+
+
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #loading>
+  <ai-loading></ai-loading>
+</ng-template>-->

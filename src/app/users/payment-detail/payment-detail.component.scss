@@ -1,0 +1,8 @@
+.col-label {
+    text-align: right;
+}
+@media (max-width: 576px){
+    .col-label {
+        text-align: left;
+    }
+}

@@ -1,0 +1,40 @@
+<ng-template #secondFactorTml>
+  <div class="second-factor-modal__header">
+    <h4 class="modal-title pull-left">Two-factor authentication</h4>
+  </div>
+
+  <div class="second-factor-modal__body">
+    <form class="second-factor-modal__form" novalidate [formGroup]="secondFactorForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-12">
+          <!-- Name -->
+          <p class="modal-message mb--24">
+              We have sent a message to your email address with an authentication code. Once you receive it enter the code below to complete your action.
+          </p>
+
+          <div class="form-group">
+            <label class="form-control__label second-factor-error text-error"
+                   *ngIf="isWrongCode">
+              {{ error }}
+            </label>
+
+            <div class="input-wrap input-wrap--contained input-wrap--small"
+                 [class.input-wrap--error]="isWrongCode">
+              <input type="text"
+                     placeholder="Enter code"
+                     formControlName="code"
+                     class="input-wrap__input">
+            </div>
+          </div>
+          <!-- End Name-->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <button type="submit" class="button button--contained button--medium submit-button" [disabled]="!code?.value?.length > 0">Continue</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</ng-template>

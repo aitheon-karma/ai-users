@@ -1,0 +1,47 @@
+<div class="container profile-widget">
+  <div class="row creator-studio__header">Creator Studio</div>
+  <div class="card creator-studio__container" *ngIf="!loading; else loadingView">
+      <div class="card-body creator-studio__body" *ngIf="projects && projects.length; else noProjects">
+          <div class="row m-0">
+            <div class="col-12 p-0">
+              <div class="creator-studio__title">Recent projects</div>
+            </div>
+          </div>
+          <div class="row creator-studio__projects">
+            <ul class="creator-studio__projects-list">
+              <li class="creator-studio__project project" *ngFor="let project of projects" (click)="goToCreator()">
+                 <div class="project__top-section">
+                   <span class="project__type">{{project.projectType | prettyEnum}}</span>
+                   <span class="project__language">{{project.language | prettyEnum}}</span>
+                 </div>
+                 <div class="project__bottom-section">
+                   <div class="project__name">{{project.name}}</div>
+                   <div class="project__edited">Last edited {{project.updatedAt | editDate}}</div>
+                 </div>
+              </li>
+            </ul>
+          </div>
+          <div class="row creator-studio__container">
+              <div class="creator-studio__description">
+                  You can create {{ (projects && projects.length) ? 'a': 'another' }} project which you will be able to code in the creator studio
+              </div>
+              <button class="btn btn-primary creator-studio__add-button"
+                      (click)="goToCreator()">
+                Add project
+              </button>
+            </div>
+      </div>
+  </div>
+
+  <ng-template #loadingView>
+    <ai-loading></ai-loading>
+  </ng-template>
+
+  <ng-template #noProjects>
+    <div class="creator-studio__empty">
+      <div class="creator-studio__empty-icon"></div>
+      <div class="creator-studio__empty-text">You do not have any projects yet</div>
+      <button class="btn btn-link creator-studio__empty-add-button"
+              (click)="goToAutomateConfirm()">Get early access</button>
+    </div>
+  </ng-template>

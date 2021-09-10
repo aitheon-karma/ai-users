@@ -1,0 +1,46 @@
+.settings-container {
+  width: 720px;
+  margin: auto;
+}
+.tabs-wrapper {
+  width: 100%;
+  display: flex;
+  background: #282828;
+  margin: 30px 0 15px;
+  .ai-tabs {
+    .tabs-group {
+      border-radius: 2px;
+      display: flex;
+      padding: 0 15px;
+
+      .tab-item {
+        padding: 10px 5px;
+        margin-right: 15px;
+
+        a {
+          color: #8c8c8c;
+          letter-spacing: 0.4px;
+        }
+        a:hover {
+          text-decoration: none;
+        }
+      }
+      .tab-item.active {
+        border-bottom: 2px solid #dcbc65;
+        a {
+          color: #dcbc65;
+        }
+      }
+    }
+  }
+  .links {
+    .fa-ellipsis-h {
+      margin-top: 12px;
+      color: #828282;
+    }
+  }
+}
+.activetab {
+  color: #dcbc65;
+  text-decoration: none;
+}

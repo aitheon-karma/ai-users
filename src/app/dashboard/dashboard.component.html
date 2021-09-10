@@ -1,0 +1,164 @@
+<div class="container dashboard" joyridestep="grid-dashboard">
+  <!-- RELEASE_1_COMMENT -->
+  <!-- <div class="alert alert-danger" *ngIf="currentUser && !currentUser.emailVerified">
+          Email address not verified. <a href="javascript://" style="color: #fff; text-decoration: underline;" (click)="resendVerifyEmail()">Resend link</a>
+      </div> -->
+  <div class="row dashboard__header">
+    <h1 class="dashboard__title">Dashboard</h1>
+    <button *ngIf="!editMode" class="dashboard__edit" (click)="toggleEdit()" joyrideStep="edit-widget">
+      <span class="dashboard__edit-icon" tooltip="Edit dashboard" placement="bottom"></span>
+    </button>
+    <div joyrideStep="edit-widget" class="row dashboard__edit-buttons" *ngIf="editMode">
+      <button class="btn btn-link mr-3 pull-right" (click)="toggleEdit()">Complete</button>
+      <button class="btn btn-primary btn-medium pull-right" [disabled]="availableWidgets?.length === 0" (click)="addWidget()">Add Widget</button>
+    </div>
+  </div>
+  <div class="dashboard__services-map" *ngIf="activeOrg">
+
+    <ai-services-map
+                     [activeOrg]="activeOrg"
+                     [isHidden] = 'isHidden'
+                     (onConfigureService)='showQuestionsModal($event)'
+                     (onServiceEnable)='serviceEnable($event)'
+                     (toggleServiceMap)='onToggleServiceMap($event)'
+                     (automateConfirm)='automateConfirm($event)'>
+    </ai-services-map>
+  </div>
+  <ai-applications-dashboard *ngIf="activeOrg"></ai-applications-dashboard>
+  
+  <div class="dashboard__widgets overflow-hidden" *ngIf="widgets.length > 0 && !activeOrg" [style.height.px]="gridHeight" joyrideStep="grid-widget">
+    <gridster *ngIf="options" #gridster [options]="options" class="overflow-hidden" [style.height.px]="gridHeight">
+      <gridster-item [item]="widget.config" *ngFor="let widget of widgets" [ngSwitch]="widget.component">
+        <div class="widget" *ngSwitchCase="'profileState'">
+          <span class="widget__remove" *ngIf="editMode" (click)="removeWidget(widget)"></span>
+          <fl-widget-profile></fl-widget-profile>
+        </div>
+        <div class="widget" *ngSwitchCase="'create-organization'" joyrideStep="widget-organization">
+          <span (click)="removeWidget(widget)" class="widget__remove" *ngIf="editMode"></span>
+          <fl-widget-organization [orgTrialBalance]="organizationTrialBalance"></fl-widget-organization>
+        </div>
+
+        <div class="widget" *ngSwitchCase="'treasuryAccounts'" joyrideStep="treasury-accounts">
+          <span (click)="removeWidget(widget)" class="widget__remove" *ngIf="editMode"></span>
+          <fl-widget-treasury-accounts [orgTrialBalance]="organizationTrialBalance" [userTrialBalance]="personalTrialBalance" [editMode]='editMode'></fl-widget-treasury-accounts>
+        </div>
+
+        <div class="widget" *ngSwitchCase="'organization-stats'">
+          <span (click)="removeWidget(widget)" class="widget__remove" *ngIf="editMode"></span>
+          <div class="w-100 h-100" style="background-color: orangered">organization-stats </div>
+        </div>
+
+        <div class="widget" *ngSwitchCase="'creator-studio'">
+          <span (click)="removeWidget(widget)" class="widget__remove" *ngIf="editMode"></span>
+          <fl-widget-creators-studio (automateConfirm)="automateConfirm($event)"></fl-widget-creators-studio>
+        </div>
+        <div class="widget" *ngSwitchCase="'treasuryCryptoAccounts'">
+          <span (click)="removeWidget(widget)" class="widget__remove" *ngIf="editMode"></span>
+          <ai-widget-treasury-crypto-accounts [editMode]='editMode'></ai-widget-treasury-crypto-accounts>
+        </div>
+
+
+        <div class="widget" *ngSwitchCase="'platform-introduce'">
+          <span (click)="removeWidget(widget)" class="widget__remove" *ngIf="editMode"></span>
+          <ai-widget-platform-introduce></ai-widget-platform-introduce>
+        </div>
+
+        <div class="widget" *ngSwitchCase="'market'">
+          <span (click)="removeWidget(widget)" class="widget__remove" *ngIf="editMode"></span>
+          <ai-widget-market></ai-widget-market>
+        </div>
+
+        <div class="widget" *ngSwitchCase="'my-organization'">
+          <span (click)="removeWidget(widget)" class="widget__remove" *ngIf="editMode"></span>
+          <ai-widget-my-organization></ai-widget-my-organization>
+        </div>
+
+        <div class="widget" *ngSwitchCase="'recent-projects'">
+          <span (click)="removeWidget(widget)" class="widget__remove" *ngIf="editMode"></span>
+          <div class="w-100 h-100" style="background-color: darkslateblue">recent-project </div>
+        </div>
+
+        <div class="widget" *ngSwitchCase="'create-project'">
+          <span (click)="removeWidget(widget)" class="widget__remove" *ngIf="editMode"></span>
+          <div class="w-100 h-100" style="background-color: seagreen">create-project </div>
+        </div>
+
+        <div class="widget" *ngSwitchCase="'tutorial'">
+          <span (click)="removeWidget(widget)" class="widget__remove" *ngIf="editMode"></span>
+          <div class="w-100 h-100" style="background-color: tan">tutorial </div>
+        </div>
+
+        <div class="widget" *ngSwitchCase="'marketing'">
+          <span (click)="removeWidget(widget)" class="widget__remove" *ngIf="editMode"></span>
+          <div class="w-100 h-100" style="background-color: yellow">marketing</div>
+        </div>
+      </gridster-item>
+    </gridster>
+  </div>
+
+
+
+
+
+  <ng-template #loading>
+    <ai-loading></ai-loading>
+  </ng-template>
+  <div>
+    <div bsModal #addWidgetModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+      aria-labelledby="addWidgetModal" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="h4 modal-title pull-left">Add widget</div>
+            <button type="button" class="close pull-right" data-dismiss='modal' (click)="closeAddWidget()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row modal-widget" *ngFor="let widget of availableWidgets">
+              <div class="modal-widget__image-container">
+                <img [src]="widget.previewImg" class="modal-widget__image" />
+              </div>
+              <div class="modal-widget__info-container">
+                <div class="modal-widget__info-left">
+                  <h3 class="modal-widget__title">{{ widget.title }}</h3>
+                  <p class="modal-widget__description">{{ widget.description }}</p>
+                </div>
+                <button class="btn btn-link" (click)="insertWidget(widget)">Insert</button>
+              </div>
+            </div>
+            <span class="modal-widget-empty" *ngIf="availableWidgets?.length === 0">No available widgets</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div bsModal #welcomeVideoModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+      aria-labelledby="welcomeVideoModal">
+      <div class="modal-dialog modal-lg modal-xxl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="h4 modal-title pull-left">Welcome video</div>
+            <button type="button" class="close pull-right" (click)="showCloseVideo()">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <video width="1170" height="656" [src]='welcomeVideo' frameborder="0" controls [muted]="true" autoplay></video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<fl-generic-confirm #genericConfirm></fl-generic-confirm>
+
+
+<ng-template #questionsTemplate>
+  <fl-questions-modal-v2 [target]="questionTarget" [isSetup]="false" [service]="selectedService?._id"
+                      (questionsSubmit)="onQuestionsSubmit($event)" (skipSetup)='onSkipSetup()'>
+  </fl-questions-modal-v2>
+</ng-template>
+
+<ai-service-modal *ngIf="serviceModalOpen"
+                  (closeServiceModal)="onCloseServiceModal()"></ai-service-modal>

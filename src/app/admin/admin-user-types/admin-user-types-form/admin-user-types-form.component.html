@@ -1,0 +1,87 @@
+<div class="row m-0">
+  <div class="col-12 px-4 py-2 type__wrap" *ngIf="typesForm">
+    <form [formGroup]="typesForm">
+      <label  [hidden]="(submitted && typesForm.get('displayText').invalid) || (submitted && typesForm.get('image').hasError('required'))">
+        Type name
+      </label>
+      <label  class="text-danger mr-2"
+              *ngIf="submitted && typesForm.get('displayText').hasError('required')">
+        Type name text is required 
+      </label>
+      <label class="text-danger mr-2" *ngIf="submitted && typesForm.get('displayText').hasError('maxlength')">
+        Type name is too long 
+      </label>
+      <label class="text-danger" *ngIf="submitted && typesForm.get('image').hasError('required')">
+        Image is required
+      </label>
+      <div class="type__section mb-2">
+        <div  class="input-wrap input-wrap--small input-wrap--contained"
+              [class.input-wrap--error]="submitted && typesForm.get('displayText').invalid">
+          <input  type="text"
+                  name="displayText" 
+                  class="pr-5" 
+                  formControlName="displayText"
+                  class="input-wrap__input">
+        </div>
+        <div class="type__image-section">
+          <ai-file-upload formControlName="image"></ai-file-upload>
+        </div>
+      </div>
+      <div class="type__widgets mb-3">
+          <label for="displayText" class="input-text">Widgets</label>
+          <ng-select  class="dropdown dropdown--contained"
+                      formControlName="widgets" 
+                      [items]="widgets" 
+                      [searchable]="false"
+                      [clearable]="false"
+                      [multiple]="true" 
+                      bindValue="_id" 
+                      bindLabel="title"
+                      placeholder="Select Widgets"></ng-select>
+      </div>
+      <label [hidden]="submitted && typesForm.get('description').hasError('required')">
+        Description
+      </label>
+      <label  class="text-danger"
+              *ngIf="submitted && typesForm.get('description').hasError('required')">
+        Description is required
+      </label>
+      <div  class="textarea-wrap textarea-wrap--contained mb-3"
+            [class.textarea-wrap--error]="submitted && typesForm.get('description').hasError('required')"> 
+        <textarea type="text"
+                  name="description" 
+                  type="text" 
+                  rows="3" 
+                  placeholder="Description" 
+                  formControlName="description" 
+                  class="textarea-wrap__textarea" 
+                  maxlength="250" 
+                  required></textarea>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div class="modal-footer">
+      <button id="back"
+              class="button button--ghost button--medium mr-2"
+              (click)="onCloseEditModal()">
+        Cancel
+      </button>
+      <ai-loading class="xs inline tab-loading"
+                  *ngIf="loading"></ai-loading>
+      <button class="button button--ghost button--medium button--error"
+              *ngIf="editTypeId"
+              (click)="deleteUserType(editTypeId)">Delete</button>
+      <button id="create"
+              *ngIf="!loading" 
+              class="button button--contained button--medium" 
+              value="1" 
+              type="submit" 
+              (click)="saveChanges()">
+        Save Type
+      </button>
+    </div>
+  </div>
+</div>

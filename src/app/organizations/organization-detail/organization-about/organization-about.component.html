@@ -1,0 +1,246 @@
+<div class="container mt--32 about">
+  <div class="about__header">
+    <div class="about__header__org-name">
+      <h3>{{ organization?.name }}</h3>
+      <span (click)="openModal(editOrgTemplate)"
+            class="icon icon--edit icon--size-32px icon--dynamic mt--4"
+            aria-hidden="true">
+      </span>
+    </div>
+    <div class="about__header__actions">
+      <button type="button"
+              class="button button--ghost button--medium"
+              (click)="openLocationModal()">
+        <span class="button__icon icon icon--size-16px icon--pin icon--gold"></span>
+        Add new Location
+      </button>
+      <button type="button" class="button button--ghost button--medium ml--24" (click)="addTeam()">
+        <span class="button__icon icon icon--size-16px icon--group icon--gold"></span>
+        Add new Team
+      </button>
+      <button type="button"
+              class="button button--ghost button--medium ml--24"
+              (click)="openMemberPickModal()">
+        <span class="button__icon icon icon--size-16px icon--new-user icon--gold"></span>
+        Add new Member
+      </button>
+    </div>
+  </div>
+  <div class="about__body">
+    <div class="about__body__avatar">
+      <div class="about__body__avatar__picture"
+           [class.about__body__avatar__picture--empty]="!avatarUrl && !organization['profile']?.avatarResolutions?.original">
+        <img #avatarImage
+             [src]="avatarUrl || organization['profile']?.avatarResolutions?.original || 'assets/img/upload-avatar.svg'">
+      </div>
+      <span class="about__body__avatar__descr">Max image size: 3MB | Formats: JPG, PNG</span>
+      <label for="avatar-upload">
+        <input ng2FileSelect [uploader]="uploader" accept="image/*" class="d-none" type="file" id="avatar-upload" #avatarUploader>
+        <button for="avatar-upload"
+                class="button button--medium button--ghost"
+                [class.button--disabled]="uploadingAvatar"
+                (click)="avatarUploader.click()">
+          {{ uploadingAvatar ? 'Uploading Please wait...' : 'Upload Avatar' }}
+        </button>
+      </label>
+    </div>
+    <div class="about__body__locations">
+      <span class="about__body__locations__title">
+        Locations <span *ngIf="organization?.locations?.length">({{ organization.locations.length }})</span>
+      </span>
+      <ai-loading *ngIf="loadingList" class="mt--32"></ai-loading>
+      <div class="about__body__locations__list" *ngIf="organization?.locations?.length && !loadingList">
+        <div class="location" *ngFor="let location of organization?.locations; let i = index">
+          <ai-organization-locations-card [location]="location"
+                                          (click)="openLocationModal(location)"
+                                          [dashboardView]="true">
+          </ai-organization-locations-card>
+        </div>
+      </div>
+      <div class="empty-state" *ngIf="!organization?.locations?.length || organization?.locations?.length === 0">
+        <img src="assets/img/plant.svg">
+        <p>This organisation has no locations yet. You can add a new location right now!</p>
+        <button type="button"
+                class="button button--ghost button--medium mt--24"
+                (click)="openLocationModal()">
+          <span class="button__icon icon icon--size-16px icon--pin icon--gold"></span>
+          Add Location
+        </button>
+      </div>
+    </div>
+    <div class="about__body__members">
+      <tabset class="tabs tabs--large mt--32" #staticTabs>
+        <tab [heading]="allMembersCount" [active]="tabState == 1" (click)="switchTab(1)">
+          <ai-loading *ngIf="loadingMembers" class="mt--32 mr--auto ml--auto"></ai-loading>
+          <div class="members" *ngIf="membersList.length && !loadingMembers">
+            <div class="members__search">
+              <div class="search-container search-container--contained"
+                   [class.search-container--filled]="search.value.length">
+                <input type="search"
+                       autocomplete="off"
+                       placeholder="Search"
+                       class="search-container__input"
+                       (input)="searchMembers(search.value)"
+                       #search>
+                <div class="search-container__button icon icon--search icon--size-16px"></div>
+                <div class="search-container__button icon icon--close icon--dynamic icon--size-16px"
+                     (click)="search.value = ''; searchMembers(search.value)"></div>
+              </div>
+            </div>
+            <div class="members__list">
+              <div class="member-card" *ngFor="let member of membersListCopy" (click)="memberSelected(member)">
+                <ngx-avatar size="40"
+                            class="mr--16"
+                            src="{{member?.profile?.avatarUrl}}"
+                            name="{{member?.profile?.firstName}} {{member?.profile?.lastName}}">
+                </ngx-avatar>
+                <div class="member-card__info">
+                  <span class="member-card__info__name">
+                    {{ member?.profile?.firstName }} {{ member?.profile?.lastName }}
+                  </span>
+                  <span class="member-card__info__position" *ngIf="member?.teams?.length">
+                    {{ member?.teams[0]?.name }}
+                  </span>
+                </div>
+                <span class="member-card__view">
+                  View
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="empty-state" *ngIf="!membersList.length && !loadingMembers">
+            <img src="assets/img/one-employee.svg">
+            <p>This organization has no members yet. You can add a new member right now!</p>
+            <button type="button"
+                    class="button button--ghost button--medium mt--24"
+                    (click)="openMemberPickModal()">
+              <span class="button__icon icon icon--size-16px icon--new-user icon--gold"></span>
+              Add new Member
+            </button>
+          </div>
+        </tab>
+        <tab [heading]="allTeamsCount" [active]="tabState == 2" (click)="switchTab(2)">
+          <ai-loading *ngIf="loadingMembers" class="mt--32 mr--auto ml--auto"></ai-loading>
+          <div class="teams" *ngIf="teams?.length && !loadingMembers">
+            <div class="teams__list">
+            <div class="team" *ngFor="let team of teamsArr">
+              <div class="team__header" (click)="team.isOpen = !team.isOpen">
+                <span class="icon mr--8" [ngClass]="team.isOpen ? 'icon--arrow-drop-down' : 'icon--arrow-drop-right'"></span>
+                <span class="team__header__name">
+                  {{ team.teamName }} ({{ team.members?.length }})
+                </span>
+              </div>
+              <div class="team__list" *ngIf="team.isOpen">
+                <div class="member-card" *ngFor="let member of team.members" (click)="memberSelected(member)">
+                  <ngx-avatar size="40"
+                              class="mr--16"
+                              src="{{member?.profile?.avatarUrl}}"
+                              name="{{member?.profile?.firstName}} {{member?.profile?.lastName}}">
+                  </ngx-avatar>
+                  <div class="member-card__info">
+                  <span class="member-card__info__name">
+                    {{ member?.profile?.firstName }} {{ member?.profile?.lastName }}
+                  </span>
+                    <span class="member-card__info__position" *ngIf="member?.teams?.length">
+                    {{ member?.teams[0]?.name }}
+                  </span>
+                  </div>
+                  <span class="member-card__view">
+                  View
+                </span>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+          <div class="empty-state" *ngIf="!teams?.length && !loadingMembers">
+            <img class="mb--103" src="assets/img/three-employees.svg">
+            <p>There are no members in organization. You can add a new location right now!</p>
+            <button type="button" class="button button--ghost button--medium mt--24" (click)="addTeam()">
+              <span class="button__icon icon icon--size-16px icon--group icon--gold"></span>
+              Add Team
+            </button>
+          </div>
+        </tab>
+      </tabset>
+    </div>
+  </div>
+</div>
+
+<!-- Add Team -->
+<ng-template #teamModal class="modalfade"  tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-lg">
+    <div class="modal-content">
+      <div class="modal-header py-2">
+        <h4 class="modal-title pull-left mt--8 mb--8">Team form</h4>
+        <button type="button"
+                class="icon icon--close icon--dynamic pull-right ml--8"
+                (click)="modalRef.hide()">
+        </button>
+      </div>
+      <div class="modal-body p-0" *ngIf="selectedTeam">
+        <fl-team-form [team]="selectedTeam"
+                      [organizationId]="organization._id"
+                      [services]="services"
+                      (saved)="onSaved($event)"
+                      (cancel)="onCancel()">
+        </fl-team-form>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<!-- Add Member -->
+<ng-template #memberPickModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left mt--8 mb--8">Add new member</h4>
+    <button type="button"
+            class="icon icon--close icon--dynamic pull-right ml--8"
+            (click)="closeMemberPickModal()">
+    </button>
+  </div>
+  <div class="modal-body p-0">
+    <fl-organization-member-pick-form (memberSelected)="memberSelected($event)"
+                                      (canceled)="closeMemberPickModal()"
+                                      [organizationId]="organization._id"
+                                      [ignoreEmails]="ignoreMembersEmails">
+    </fl-organization-member-pick-form>
+  </div>
+</ng-template>
+<ng-template #memberFormModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left mt--8 mb--8">
+      {{ memberModalTitle }}
+    </h4>
+    <button type="button"
+            class="icon icon--close icon--dynamic pull-right ml--8"
+            (click)="closeMembersFormModal()">
+    </button>
+  </div>
+  <div class="modal-body p-0">
+    <fl-organization-member-form (saved)="memberSaved()"
+                                 (canceled)="closeMembersFormModal()"
+                                 [organizationId]="organization._id"
+                                 [member]="currentMemberEdit">
+    </fl-organization-member-form>
+  </div>
+</ng-template>
+<!-- Location Modal -->
+<ng-template #locationModal>
+  <ai-organization-locations-form [location]="selectedLocation"
+                                  [organization]="organization"
+                                  (canceled)="locationModalRef.hide()"
+                                  (submitted)="updateLocationsList($event)">
+  </ai-organization-locations-form>
+</ng-template>
+<!-- Edit Organization Modal -->
+<ng-template #editOrgTemplate>
+  <div class="edit-org__header modal-header">
+    <h3 class="modal-title">Edit</h3>
+    <button type="button" class="close" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body pb-0 overflow-hidden">
+   <fl-organization-form (updated)="onOrgUpdate($event)" [organization]="organization"></fl-organization-form>
+  </div>
+</ng-template>

@@ -1,0 +1,35 @@
+.doc-form {
+  display: flex;
+  flex-direction: column;
+  &__file-remove {
+    color: #dc3545;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #222222;
+    border-radius: 2px;
+    height: 55px;
+    margin-left: -1rem;
+    margin-right: -1rem;
+
+    button {
+      height: 35px;
+    }
+}
+
+}
+
+
+.btn-secondary label {
+  color: #DCBC65 !important;
+}
+
+.text-danger {
+  font-size: 0.75rem;
+}

@@ -1,0 +1,85 @@
+<!-- Organization Edit-->
+<form class="form--align-right" novalidate [formGroup]="addressForm" (ngSubmit)="onSubmit(addressForm)">
+    <div class="row">
+      <div class="col-sm-12">
+
+        <!-- Address -->
+        <fieldset formGroupName="address">
+          <!-- Address Line1 -->
+          <div class="form-group row">
+            <label class="col-form-label col-md-3" for="line1">Address line 1</label>
+            <div class="col col-md-9">
+              <input type="text" class="form-control" id="line1" placeholder="Enter address line" formControlName="line1"  />
+              <small *ngIf="submitted && addressForm.get('address.line1').hasError('required')" class="text-danger">
+                          Address Line1 is required
+                      </small>
+            </div>
+          </div>
+          <!-- Address Line2 -->
+          <div class="form-group row">
+            <label class="col-form-label col-md-3" for="line2">Address line 2</label>
+            <div class="col col-md-9">
+              <input type="text" class="form-control" id="line2" placeholder="Enter address line" formControlName="line2"  />
+              <small *ngIf="submitted && addressForm.get('address.line2').hasError('required')" class="text-danger">
+                          Address line2 is required
+                      </small>
+            </div>
+          </div>
+          <!-- Address State/Zip  -->
+          <div class="form-group row">
+            <label class="col-form-label col-md-3" for="state">State</label>
+            <div class="col col-md-4">
+              <input type="text" class="form-control" id="state" placeholder="Enter state" formControlName="state"  />
+              <small *ngIf="submitted && addressForm.get('address.state').hasError('required')" class="text-danger">
+                            State is required
+                        </small>
+            </div>
+            <!-- Zip -->
+            <label class="col-form-label col-md-2" for="zip">Zip</label>
+            <div class="col col-md-3">
+              <input type="text" class="form-control" id="zip" placeholder="Enter zip" formControlName="zip"  />
+              <small *ngIf="submitted && addressForm.get('address.zip').hasError('required')" class="text-danger">
+                          Zip is required
+                      </small>
+            </div>
+          </div>
+          <!--End State/Zip -->
+          <!-- Address city -->
+          <div class="form-group row">
+            <label class="col-form-label col-md-3" for="city">City</label>
+            <div class="col col-md-9">
+              <input type="text" class="form-control" id="city" placeholder="Enter city" formControlName="city"  />
+              <small *ngIf="submitted && addressForm.get('address.city').hasError('required')" class="text-danger">
+                      City is required
+                  </small>
+            </div>
+          </div>
+          <!-- Address country -->
+          <div class="form-group row">
+            <label class="col-form-label col-md-3" for="zip">Country</label>
+            <div class="col col-md-9" >
+              <ng-select [items]="countries" formControlName="country"  placeholder="Select country">
+              </ng-select>
+              <small *ngIf="submitted && addressForm.get('address.country').hasError('required')" class="text-danger">
+                          Country is required
+                      </small>
+            </div>
+          </div>
+        </fieldset>
+        <!-- End Address -->
+         <!-- Error -->
+        <div class="row" *ngIf="error">
+          <div class="col offset-md-3">
+            <div class="alert alert-danger">{{ error }}</div>
+          </div>
+        </div>
+        <!-- End Error -->
+      </div>
+    </div>
+    <div class="row pl-3 pr-3 justify-content-end">
+      <button type="button" class="btn btn-secondary mr-2" (click)="cancel()">Cancel</button>
+      <button type="submit" class="btn btn-primary">{{ isNew ? "Create" : "Update" }}</button>
+    </div>
+
+  </form>
+  <!--End Organization-->

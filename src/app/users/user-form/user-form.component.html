@@ -1,0 +1,332 @@
+<div class="user-form">
+  <div class="user-form__form-container">
+    <form class="form--align-right user-form__form"
+          *ngIf="user"
+          novalidate
+          [formGroup]="userForm"
+          (ngSubmit)="onSubmit()"
+    >
+      <fieldset [disabled]="loading">
+        <div class="row">
+          <div class="col user-form__personal-container">
+            <div *ngIf="personal" class="user-form__personal">
+              <div ng2FileDrop
+                   [ngClass]="{'file-over': hasBaseDropZoneOver }"
+                   (fileOver)="fileOverBase($event)"
+                   [uploader]="uploader"
+                   class="drop-zone"
+              >
+                <div [ngStyle]="{'background-image': 'url('+ (user.profile.avatarUrl || 'assets/img/nophoto.png') +')'}"
+                     class="rounded-circle user-pic--big mb-2"></div>
+
+                <h1 *ngIf="uploadingAvatar" class="uploading-avatar">Uploading...</h1>
+
+                <div class="position-relative">
+                  <button type="button"
+                          [disabled]="uploadingAvatar"
+                          [class.button--disabled]="uploadingAvatar"
+                          class="button button--medium button--ghost position-relative"
+                          style="z-index: 2"
+                          (click)="avatarUploader.click()">
+                    {{ user.profile.avatarUrl ? 'Update photo' : 'Browse' }}
+                  </button>
+                  <input type="file" ng2FileSelect [uploader]="uploader" accept="image/*" #avatarUploader />
+                  <!-- avatarRefresh -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <fieldset formGroupName="profile">
+              <!--Profile fieldset-->
+              <div class="user-form__row-section">
+                <div class="section user-form__form-control">
+                  <label  for="firstName"
+                          [hidden]="!validationState?.firstName?.isValid">
+                    First name
+                  </label>
+                  <label  *ngIf="!validationState?.firstName?.isValid"
+                          class="text-error">
+                    {{ validationState?.firstName?.message }}
+                  </label>
+                  <div  class="input-wrap input-wrap--contained input-wrap--small mb-2"
+                        [class.input-wrap--error]="!validationState?.firstName?.isValid">
+                    <input  type="text"
+                            id="firstName"
+                            placeholder="Enter first name"
+                            formControlName="firstName"
+                            class="input-wrap__input"
+                            (input)="resetErrorState('firstName')"/>
+                  </div>
+                </div>
+
+                <div class="section user-form__form-control">
+                  <label  for="lastName"
+                          [hidden]="!validationState?.lastName?.isValid">
+                    Last name
+                  </label>
+                  <label  *ngIf="!validationState?.lastName?.isValid"
+                          class="text-error">
+                    {{ validationState?.lastName?.message }}
+                  </label>
+                  <div  class="input-wrap input-wrap--contained input-wrap--small mb-2"
+                        [class.input-wrap--error]="!validationState?.lastName?.isValid">
+                    <input  type="text"
+                            id="lastName"
+                            placeholder="Enter last name"
+                            formControlName="lastName"
+                            class="input-wrap__input"
+                            (input)="resetErrorState('lastName')"
+                    />
+                  </div>
+                </div>
+
+                <div class="section user-form__form-control">
+                  <span class="user-form__resend-confirmation"
+                        *ngIf="!user.emailVerified && validationState.email.isValid"
+                        (click)="resendConfirmation($event)"
+                  >
+                    <span [class]="{'resend-confirmation--disabled': (secondsToRestartEmailVerification > 0)}">Resend confirmation</span>
+                    <span *ngIf="secondsToRestartEmailVerification > 0" class="resend-confirmation__timer">(...{{ secondsToRestartEmailVerification }})</span>
+                  </span>
+
+                  <label [hidden]="!validationState.email.isValid">
+                    <span>Email</span>
+                    <span *ngIf="!user.emailVerified" class="not-verified__text text-error">{{ notVerifiedMessage }}</span>
+                  </label>
+
+                  <label  *ngIf="!validationState.email.isValid"
+                          class="text-error">
+                    {{ validationState.email.message }}
+                  </label>
+                  <div  class="input-wrap input-wrap--contained input-wrap--small mb-2"
+                        [class.input-wrap--error]="!validationState.email.isValid">
+                    <input  type="text"
+                            id="email"
+                            placeholder="Enter email"
+                            formControlName="email"
+                            class="input-wrap__input"
+                            (input)="resetErrorState('email')"/>
+                  </div>
+                </div>
+              </div>
+
+              <div class="user-form__row-section">
+                <div class="section user-form__form-control">
+                  <label  for="phoneNumber"
+                          [hidden]="!validationState?.phoneNumber?.isValid">
+                    Phone number (optional)
+                  </label>
+                  <label  *ngIf="!validationState?.phoneNumber?.isValid"
+                          class="text-error">
+                    {{ validationState?.phoneNumber?.message }}
+                  </label>
+                  <div class="input-wrap input-wrap--contained input-wrap--small mb-2"
+                       [class.input-wrap--error]="!validationState?.phoneNumber?.isValid">
+                    <input type="tel"
+                           prefix="+"
+                           mask="00 000-000-0000"
+                           id="phoneNumber"
+                           [validation]="false"
+                           placeHolderCharacter="_"
+                           [showMaskTyped]="true"
+                           class="input-wrap__input"
+                           formControlName="phoneNumber"
+                           autocomplete="off"
+                           (input)="resetErrorState('phoneNumber')"/>
+                  </div>
+                </div>
+
+                <div class="section user-form__form-control">
+                  <label for="gender">Gender (optional)</label>
+                  <ng-select  tabindex="0"
+                              formControlName="gender"
+                              id="gender"
+                              name="gender"
+                              [searchable]="false"
+                              [clearable]="false"
+                              [items]="genders"
+                              class="dropdown dropdown--contained"></ng-select>
+                </div>
+
+                <div class="section user-form__form-control">
+                  <label  for="birthday"
+                          [hidden]="!validationState?.birthday?.isValid">
+                    Birthday (optional)
+                  </label>
+                  <label  *ngIf="!validationState?.birthday?.isValid"
+                          class="text-error">
+                    {{ validationState?.birthday?.message }}
+                  </label>
+                  <div class="input-wrap input-wrap--date-contained input-wrap--small mb-2"
+                       [class.input-wrap--error]="!validationState?.birthday?.isValid">
+                    <input  bsDatepicker
+                            readonly
+                            placement="top center"
+                            id="birthday"
+                            placeholder="Enter phone number"
+                            formControlName="birthday"
+                            class="input-wrap__input input-wrap__input--cursor"
+                            [bsConfig]="{ showWeekNumbers: false, customTodayClass: 'custom-today-class', dateInputFormat: 'DD.MM.YYYY'}"
+                            (bsValueChange)="resetErrorState('birthday')"/>
+                  </div>
+                </div>
+              </div>
+
+              <div class="user-form__row-section">
+                <div class="user-form__kyc-container">
+                  <div class="user-form__kyc-button position-relative">
+                    <label *ngIf="user.KYCStatus === 'VERIFY_FINISHED'"
+                            class="mt--8 mb-0">KYC verification</label>
+                    <button class="button button--outlined button--medium button--margin-fix mr-3"
+                            type="button"
+                            *ngIf="user.KYCStatus !== 'VERIFY_FINISHED'"
+                            (click)="verifyUser(kycModal)">
+                      Get KYC Verified
+                    </button>
+
+                    <span class="icon icon--info ml-2"
+                          tooltip="Know Your Client (KYC) is the way to verify the identity, suitability and risks involved with maintaining a business relationship."
+                          container="body"
+                          containerClass="kyc-tooltip"
+                          placement="right">
+                    </span>
+                 </div>
+                  <div class="user-form__kyc-status" [class]="getKycStatusClass()">
+                    {{ kycStatusMessage | uppercase }}
+                  </div>
+                </div>
+              </div>
+
+              <div class="user-form__row-section row-section__address">Address (optional)</div>
+
+              <!--Address fieldset-->
+              <fieldset formGroupName="currentAddress">
+                <div class="user-form__row-section">
+                  <div class="section user-form__form-control">
+                    <label for="addressLine1">Address Line 1</label>
+                    <div class="input-wrap input-wrap--contained input-wrap--small mb-2">
+                      <input  type="text"
+                              id="addressLine1"
+                              placeholder="Enter address line 1"
+                              formControlName="addressLine1"
+                              class="input-wrap__input"/>
+                    </div>
+                  </div>
+
+                  <div class="section user-form__form-control">
+                    <label for="addressLine2">Address Line 2</label>
+                    <div class="input-wrap input-wrap--contained input-wrap--small mb-2">
+                      <input  type="text"
+                              id="addressLine2"
+                              placeholder="Enter address line 2"
+                              formControlName="addressLine2"
+                              class="input-wrap__input"/>
+                    </div>
+                  </div>
+
+                  <div class="section user-form__form-control">
+                    <label for="country">Country</label>
+                    <ng-select  tabindex="0"
+                                formControlName="country"
+                                name="gender"
+                                [clearable]="false"
+                                [items]="countries"
+                                bindValue="country"
+                                bindLabel="country"
+                                (change)="currentCountryChange()"
+                                class="dropdown dropdown--contained"></ng-select>
+                  </div>
+                </div>
+
+                <div class="user-form__row-section">
+                  <div class="section user-form__form-control">
+                    <label  for="city"
+                            [hidden]="submitted && userForm.get('profile.currentAddress.city').hasError('pattern')">
+                      City
+                    </label>
+                    <label  *ngIf="submitted && userForm.get('profile.currentAddress.city').hasError('pattern')"
+                            class="text-error">
+                      City format is not correct
+                    </label>
+                    <div  class="input-wrap input-wrap--contained input-wrap--small mb-4"
+                          [class.input-wrap--error]="submitted && userForm.get('profile.currentAddress.city').hasError('pattern')">
+                      <input  type="text"
+                              id="city"
+                              placeholder="Enter city"
+                              formControlName="city"
+                              class="input-wrap__input"/>
+                    </div>
+                  </div>
+
+                  <div class="section user-form__form-control">
+                    <label for="state">Region/State</label>
+                    <ng-select  tabindex="0"
+                                id="state"
+                                formControlName="regionState"
+                                name="state"
+                                [clearable]="false"
+                                [items]="currentStates"
+                                class="dropdown dropdown--contained"></ng-select>
+                  </div>
+
+                  <div class="section user-form__form-control">
+                    <label  for="code"
+                            [hidden]="submitted && userForm.get('profile.currentAddress.code').invalid">
+                      Post code
+                    </label>
+                    <label  *ngIf="submitted && userForm.get('profile.currentAddress.code').hasError('pattern')"
+                            class="text-error mr-2">
+                      Post code format is not correct
+                    </label>
+                    <label  *ngIf="submitted && userForm.get('profile.currentAddress.code').hasError('minlength')"
+                            class="text-error mr-2">
+                      Post code is too short
+                    </label>
+                    <label  *ngIf="submitted && userForm.get('profile.currentAddress.code').hasError('maxlength')"
+                            class="text-error">
+                      Post code is too long
+                    </label>
+                    <div class="input-wrap input-wrap--contained input-wrap--small mb-2">
+                      <input  type="text"
+                              id="code"
+                              placeholder="Post code"
+                              formControlName="code"
+                              class="input-wrap__input"/>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </fieldset>
+          </div>
+        </div>
+      </fieldset>
+
+      <ng-template #loadingView>
+        <div class="row pl-3 pr-3 justify-content-end">
+          <ai-loading></ai-loading>
+        </div>
+      </ng-template>
+    </form>
+  </div>
+
+  <fl-second-factor-modal #secondFactorModal
+                          modalClass="second-factor-modal"
+                          [error]="error"
+                          (success)="secondFactorSuccess($event)"
+  ></fl-second-factor-modal>
+
+  <ng-template #kycModal>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">KYC Details</h4>
+      <button type="button" class="close pull-right" (click)="closeKYCModal()" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <fl-kyc-form #kycForm></fl-kyc-form>
+    </div>
+  </ng-template>
+</div>
+

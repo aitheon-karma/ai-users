@@ -1,0 +1,98 @@
+::ng-deep ai-dock {
+    display: none;
+}
+
+.admin {
+    min-height: calc(100vh - 65px);
+    margin-bottom: -3rem;
+
+    &__navigation {
+        padding: 1rem 0 1rem 0;
+        background: #1f1f1f;
+    }
+
+    &__nav-list,
+    &__sub-list {
+        list-style-type: none;
+        font-size: 14px;
+        letter-spacing: 0.2px;
+        padding: 0;
+    }
+
+    &__nav-item {
+        padding: .5rem 3rem;
+        color: #fff;
+        cursor: pointer;
+        position: relative;
+
+        &:hover {
+            background-color: rgba(#7e7e7e, .15);
+        }
+
+        &:after {
+            position: absolute;
+            content: '';
+            width: 8px;
+            height: 4px;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            background: url('~/assets/img/icons/arrow-dropdown.svg') center center no-repeat;
+            background-size: cover;
+            transition: .15s;
+        }
+
+        &--open {
+
+            &:after {
+                top: 46%;
+                transition: .15s;
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__onboarding-icon,
+    &__users-icon {
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    &__onboarding-icon {
+
+        &:before {
+            background: url('~/assets/img/icons/questions.svg');
+            background-size: contain;
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    &__users-icon {
+
+        &:before {
+            background: url('~/assets/img/icons/users.svg');
+            background-size: contain;
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    &__sub-item {
+        padding: .5rem .5rem .5rem 3.5rem;
+        color: #fff;
+        cursor: pointer;
+        outline: none;
+
+        &:hover {
+            background-color: rgba(#7e7e7e, .15);
+        }
+    }
+}

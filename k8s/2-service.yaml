@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ai-users
+  namespace: ai-users
+spec:
+  ports:
+  - port: 3000
+    targetPort: 3000
+    name: http
+  - port: 3443
+    targetPort: 3443
+    name: inner-https
+  selector:
+    app: ai-users

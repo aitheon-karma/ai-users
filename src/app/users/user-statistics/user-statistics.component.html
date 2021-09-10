@@ -1,0 +1,48 @@
+<main class="container">
+
+  <div class="members__top-bar-body card-body mt-2 pl-0">
+    <span class="mr-4">User activities</span>
+  </div>
+  <div class="card members__data mt-2">
+    <div class="card-body p-0 m-0" *ngIf="!loading; else loadingView">
+      <div class="row members__data-header row m-0">
+        <div class="col-3">Time</div>
+        <div class="col-3">Mouse</div>
+        <div class="col-3">Key</div>
+        <div class="col-3">Window Name</div>
+      </div>
+
+      <div class="members__no-results p-3" *ngIf="userActivities.length == 0">
+        <span>No activities found</span>
+      </div>
+
+      <div class="members__data-container" *ngFor="let activity of userActivities;let i=index">
+        <div class="row members__data-row m-0 align-items-center">
+          <div class="col-3 members__data-name d-flex">
+            <span style="margin-left: 4.5%">
+              {{ activity.activityTime | date:'medium' }} </span>
+          </div>
+
+          <div class="col-3 members__data-name">
+            <span> {{ activity?.isMouseActivity }} </span>
+          </div>
+
+          <div class="col-3 members__data-name">
+            <span> {{ activity?.isKeyboardActivity }} </span>
+          </div>
+
+          <div class="col-3">
+            <span>
+              {{activity?.windowName}}
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<ng-template #loadingView>
+  <ai-loading class="d-block mt-2"></ai-loading>
+</ng-template>

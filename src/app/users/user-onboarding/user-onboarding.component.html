@@ -1,0 +1,31 @@
+
+<div class="container">
+
+  <div class="user-types" *ngIf="!questionsMode && !servicePickMode">
+    <ai-user-onboarding-type-form (selectedUserTypes)="selectUserTypes($event)"></ai-user-onboarding-type-form>
+  </div>
+
+  <div class="d-flex" class="col-12 d-flex pt-4" *ngIf="allServices && servicePickMode">
+    <div>
+      <h4 class="services-setup__heading">We turn on recommended services by <br> analyzing your answers.</h4>
+      <div class="d-flex">
+        <span class="services-setup__info-icon"></span>
+        <p class="services-setup__sub-heading">You always can turn off services which you not need</p>
+      </div>
+
+      <div class="mt-1">
+        <div class=" pb-0">
+          <fl-user-register-services-form [enabledServices]="enabledServices" [allServices]="allServices"
+            (saved)="onServicesSaved($event)">
+          </fl-user-register-services-form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #questionsTemplate>
+  <div *ngIf="selectedUserTypes"  class="question-modal-wrapper">
+      <fl-questions-modal [userTypes]="selectedUserTypes" (questionsSubmit)="onQuestionsSubmit($event)"></fl-questions-modal>
+  </div>
+</ng-template>

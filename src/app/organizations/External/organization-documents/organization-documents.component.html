@@ -1,0 +1,80 @@
+<div class="settings-container">
+    <div class="teams pt-4">
+        <div class="documents__top-bar card">
+          <div class="documents__top-bar-body card-body">
+            <button class="btn btn-link p-0 m-0 documents__add" (click)="openModal(documentsForm)">
+              + ADD Document
+            </button>
+            <!--
+            <div class="search documents__search">
+              <input type="text" autocomplete="off" placeholder="Search" [(ngModel)]="searchText" (ngModelChange)="onSerchTextChange()">
+            </div> -->
+          </div>
+        </div>
+
+        <div class="card documents__data mt-4">
+          <div class="card-body p-0 m-0 w-100">
+
+            <div class="row documents__data-header row m-0">
+              <div class="col-4">File Name</div>
+              <div class="col-4">Type</div>
+              <div class="col-4">Actions</div>
+            </div>
+            <div *ngIf="!loading; else loadingView">
+      <div *ngIf="organization && organization.documents && organization.documents.length>0">
+          <div class="documents__data-container" *ngFor="let doc of organization.documents">
+              <div class="row documents__data-row m-0">
+                <div class="col-4 documents__data">
+                  <span> {{ doc.fileName }} </span>
+                </div>
+                <div class="col-4 documents__data">
+                  <span> {{ doc.docType }} </span>
+                </div>
+                <div class="col-4 documents__actions d-flex align-items-center"
+                  *ngIf="!isDeleting(doc._id); else loadingViewSmall">
+                  <button class="btn btn-link documents__actions-download m-0 p-0 mr-2"
+                    (click)="downloadDocument(doc)">Download </button>
+                  <button class="btn btn-link documents__actions-delete m-0 p-0" (click)="removeDocument(doc._id)">Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+      </div>
+      <div class="justify-content-between mt-4">
+          <button class="btn btn-primary float-right" (click)="done()"> Finish</button>
+        </div>
+
+
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+</div>
+
+
+
+<ng-template #documentsForm>
+  <div class="document-form__header modal-header">
+    <h3 class="document-form__title modal-title">Add Document</h3>
+    <button type="button" class="close" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body pb-0">
+    <fl-organization-documents-form-one (savedDoc)="onDocumentAdded($event)"></fl-organization-documents-form-one>
+  </div>
+</ng-template>
+
+<ng-template #loadingView>
+  <ai-loading class="d-block text-center"></ai-loading>
+</ng-template>
+
+<ng-template #loadingViewSmall>
+  <div class="col-4 documents__actions d-flex align-items-center">
+    <ai-loading class="sm inline white"></ai-loading>
+  </div>
+</ng-template>

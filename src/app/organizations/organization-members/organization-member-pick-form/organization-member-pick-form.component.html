@@ -1,0 +1,77 @@
+<div class="member-pick">
+  <div class="member-pick__container mx-auto">
+    <div class="search-form w-100">
+      <div [formGroup]="memberPickForm">
+        <div class="search-container search-container--contained"
+             [class.search-container--filled]="search.value.length">
+          <input type="search"
+                 autocomplete="off"
+                 placeholder="Find employee by name or email"
+                 formControlName="searchText"
+                 class="search-container__input"
+                 #search>
+          <div class="search-container__button icon icon--search icon--size-16px"></div>
+          <div class="search-container__button icon icon--close icon--dynamic icon--size-16px"
+               (click)="clearSerchInput($event, search)"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="member-pick__info"
+         *ngIf="!memberPickForm.get('searchText').value.length">
+      <div class="member-pick__title">
+        Employee List
+      </div>
+      <div class="member-pick__divider"></div>
+      <div class="member-pick__description">
+        Use search to find employees
+      </div>
+    </div>
+
+    <div class="results"
+         *ngIf="memberPickForm.get('searchText').value.length">
+      <div class="results__container">
+        <span class="results__container__title" *ngIf="searchResults && searchResults.length">All employee from “{{ organizationName }}”</span>
+        <ul class="results__list" *ngIf="searchResults && searchResults.length">
+          <li class="results__list-item"
+              *ngFor="let user of searchResults"
+              (click)="selectMember(user)">
+            <ngx-avatar size="32"
+                        src="{{ user?.profile?.avatarUrl }}"
+                        [name]="avatarName(user?.profile?.firstName,user?.profile?.lastName)">
+            </ngx-avatar>
+            <div class="d-flex flex-column ml--24">
+              <span class="results__list-item__name">
+                {{ (user.profile.firstName | truncate:[20, '...'] ) + ' ' + (user.profile.lastName | truncate:[20, '...'] )}}
+              </span>
+              <span class="results__list-item__email">
+                {{ user.email }}
+              </span>
+            </div>
+            <button class="button button--ghost button--medium ml-auto">Add</button>
+          </li>
+        </ul>
+
+        <div class="new-user" *ngIf="!searchResults || !searchResults.length">
+          <div class="new-user__content">
+            <div class="new-user__image mb-4"></div>
+            <div class="new-user__text mb-4">
+              User hasn't been found. Please check if you are entering a correct email to invite user to your organisation.
+            </div>
+            <div class="new-user__button">
+              <button class="button button--contained button--medium" [disabled]="!isSearchTextValidEmail()" (click)="selectMember()">Send Invite</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="action-footer d-flex align-items-center justify-content-end">
+    <button class="button button--medium button--ghost mr-2" (click)="canceled.emit()" type="button">
+      Cancel
+    </button>
+    <button class="button button--medium button--contained" type="button" (click)="onSubmit()">
+      Invite
+    </button>
+  </div> -->
+</div>

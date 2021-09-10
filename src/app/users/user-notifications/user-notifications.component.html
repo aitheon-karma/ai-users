@@ -1,0 +1,176 @@
+<div class="notifications">
+  <div class="notifications__warning-container" *ngIf="accessNotificationsPermissions === 'denied' && !(isIncognito$ | async)">
+    <div class="notifications__warning-icon warning-icon"></div>
+    <div class="notifications__warning-info">
+      <span class="notifications__warning-title">Notifications have been disabled in this browser. Go to browser settings and remove our website from block list.</span>
+      <div class="notifications__warning-info-section d-flex">
+        Or
+        <span class="notifications__warning-info-section--gold"
+              (click)="copySettingsLink(browserSettingsLink)"
+              (mouseout)="resetCopy()">
+          copy
+          <div class="notifications__tooltip-copy--word">
+            <span>{{ tooltipText }}</span>
+          </div>
+        </span>
+        this link
+        <div class="notifications__warning-link-container">
+          <input class="notifications__warning-link" [value]="browserSettingsLink">
+          <div  class="notifications__copy-icon icon icon--duplicate icon--size-16px"
+                (click)="copySettingsLink(browserSettingsLink)" (mouseout)="resetCopy()">
+            <div class="notifications__tooltip-copy--button">
+              <span>{{ tooltipText }}</span>
+            </div>
+          </div>
+        </div>
+        and paste in your address line.
+      </div>
+    </div>
+  </div>
+  <div class="notifications__warning-container" *ngIf="(accessNotificationsPermissions === 'default' || !pushSubscription) && !(isIncognito$ | async) && (accessNotificationsPermissions !== 'denied')">
+    <div class="notifications__warning-icon warning-icon"></div>
+    <div class="notifications__warning-info d-flex justify-content-between w-100">
+      <span class="notifications__warning-title d-flex align-items-center">Notifications have been not allowed in this browser. Click 'Allow' to enable them.</span>
+      <button class="button button--contained button--medium" (click)="askSubscription()">Allow</button>
+    </div>
+  </div>
+  <div class="notifications__warning-container" *ngIf="isIncognito$ | async">
+    <div class="notifications__warning-icon warning-icon"></div>
+    <div class="notifications__warning-info">
+      <span class="notifications__warning-title">Browser notifications are disabled, because you are using incognito mode</span>
+    </div>
+  </div>
+  <div class="notifications__top">
+    <h2 class="notifications__title">
+      Notifications
+    </h2>
+    <div class="notifications__switch-container mr--115">
+      <span class="notifications__switch-label notifications__switch-label--disabled">Turn on email notifications for all (coming soon)</span>
+      <div class="notifications__switch switch-container switch-container--disabled">
+        <label class="switch switch--disabled">
+          <input type="checkbox" (ngModelChange)="onOrgAllChanged($event, 'email')" [(ngModel)]='isAllEmail'>
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+    <div class="notifications__switch-container">
+      <span class="notifications__switch-label">Turn on push notifications for all</span>
+      <div class="notifications__switch switch-container">
+        <label class="switch" [class.switch--disabled]="accessNotificationsPermissions === 'denied'">
+          <input  type="checkbox" (ngModelChange)="onOrgAllChanged($event, 'push')" [(ngModel)]='isAllPush'>
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="warning-icon ml--16" *ngIf="!pushSubscription"></div>
+    </div>
+  </div>
+  <form class="notifications__org-list"
+        *ngIf="notificationsForm"
+        #organizationsList
+        [class.notifications__org-list--small]="isWarning()"
+        [formGroup]="notificationsForm" >
+    <div  class="notifications__organization organization"
+          *ngFor="let organization of orgArray.controls; let i = index"
+          formArrayName="organizations"
+          [class.organization--open]="isSettingsOpen && organization.get('id').value === activeOrganization">
+      <ng-container [formGroupName]="i">
+        <div class="organization__top">
+          <div  *ngIf="organization.get('organization').value?.profile"
+                [style.background-image]="organization.get('organization').value?.profile?.avatarUrl ? 'url(' + organization.get('organization').value?.profile?.avatarUrl + ')' : ''"
+                class="organization__avatar"
+                alt="Organization avatar">
+          </div>
+          <div  *ngIf="!organization.get('organization').value?.profile"
+                class="organization__avatar organization__avatar--generated"
+                [ngStyle]="{'background-color': getRandomColor(i)}"
+                alt="User image">
+              {{ getOrgAvatar(organization.get('organization').value) }}
+          </div>
+          <div  class="organization__name ellipsis" (click)="toggleOrgSettings(organization.get('organization').value)"
+                [class.cursor-default]="!organization.get('services').value.length">
+            {{ organization.get('name').value }}
+          </div>
+          <div class="organization__switch-container">
+            <span class="organization__switch-label organization__switch-label--disabled">Email notifications (coming soon)</span>
+            <div class="organization__switch switch-container switch-container--disabled">
+              <label class="switch switch--disabled">
+                <input type="checkbox" formControlName="email">
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+          <div class="organization__switch-container">
+            <span class="organization__switch-label">Push notifications</span>
+            <div class="organization__switch switch-container">
+              <label class="switch" [class.switch--disabled]="accessNotificationsPermissions === 'denied'">
+                <input  type="checkbox" formControlName="push">
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <div class="warning-icon ml--16" *ngIf="!pushSubscription"></div>
+          </div>
+          <div  class="organization__settings icon icon--settings icon--dynamic ml-auto"
+                [class.icon--disabled]="!organization.get('services').value.length"
+                [class.icon--active-open]="organization.get('id').value === activeOrganization && isSettingsOpen && organization.get('services').value.length"
+                (click)="toggleOrgSettings(organization.get('organization').value)"></div>
+        </div>
+        <div class="organization__bottom" *ngIf="organization.get('id').value === activeOrganization && isSettingsOpen">
+          <div class="organization__services-list" *ngIf="organization.value?.services">
+            <div  class="organization__service service"
+                  *ngFor="let service of getFormArray(organization, 'services').controls; let serviceIndex = index"
+                  formArrayName="services">
+              <ng-container [formGroupName]="serviceIndex">
+                <div class="service__info">
+                  <div class="service__image">
+                    <img [src]="service.get('service').value?.image" [alt]="service.get('name').value">
+                  </div>
+                  <div class="service__name-container">
+                    <div class="service__name" (click)="toggleServiceSettings(service.get('service').value)">
+                      {{ service.get('name').value }}
+                      <span class="service__arrow-icon icon icon--arrow-drop-down"
+                            [class.service__arrow-icon--rotate]="activeService === service.get('id').value && isServiceSettingsOpen">
+                      </span>
+                    </div>
+                  </div>
+                  <div class="service__switch service__switch--first switch-container switch-container--disabled">
+                    <label class="switch switch--disabled">
+                      <input type="checkbox" formControlName="email">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                  <div class="service__switch switch-container">
+                    <label class="switch" [class.switch--disabled]="accessNotificationsPermissions === 'denied'">
+                      <input  type="checkbox" formControlName="push">
+                      <span class="slider round"></span>
+                    </label>
+                    <div class="warning-icon ml--16" *ngIf="!pushSubscription"></div>
+                  </div>
+                </div>
+                <div  class="service__notifications-settings"
+                      [class.service__notifications-settings--open]="activeService === service.get('id').value && isServiceSettingsOpen">
+                  <div  class="service__section" formArrayName="actions"
+                        *ngFor="let control of getFormArray(service, 'actions').controls; let controlIndex = index">
+                    <ng-container [formGroupName]="controlIndex">
+                      <div class="service__section-title">{{ control.get('label').value }}</div>
+                      <div class="service__section-checkbox service__section-checkbox--disabled service__section-checkbox--first">
+                        <input class="checkbox__input"type="checkbox" formControlName="email">
+                      </div>
+                      <div  class="service__section-checkbox"
+                            [class.service__section-checkbox--disabled]="accessNotificationsPermissions === 'denied'">
+                        <input class="checkbox__input"type="checkbox" formControlName="push">
+                      </div>
+                    </ng-container>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </form>
+</div>
+
+<ng-template [ngIf]="loading">
+  <ai-loading class="loading-container"></ai-loading>
+</ng-template>

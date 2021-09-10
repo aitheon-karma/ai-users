@@ -1,0 +1,22 @@
+<div class="container organization-widget">
+  <div class="row organization-widget__header">Create organization</div>
+  <div class="card organization-widget__card">
+    <div class="row organization-widget__container" *ngIf="!loading; else loadingView">
+      <div class="organization-widget__description" *ngIf="!orgTrialBalance">
+        You can create another organization which could be
+        a subsidiary or partner company
+      </div>
+      <div class="organization-widget__description" *ngIf="orgTrialBalance">
+          You have <span class="organization-widget__trial-acu">  {{ orgTrialBalance | number:'1.0-0' }} FREE</span> trial ACU. Use this for all your organizations. Get started now!
+      </div>
+      <button class="btn btn-primary organization-widget__add-button" routerLink="/organizations/setup">Create Organization</button>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #loadingView>
+  <div class="loading mt-2">
+    <ai-loading></ai-loading>
+  </div>
+</ng-template>

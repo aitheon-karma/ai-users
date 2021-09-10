@@ -1,0 +1,59 @@
+<div class="doc-form-container d-flex justify-content-center" click="parentClick()">
+  <form class="doc-form pb-0 w-100" [formGroup]="documentForm" (ngSubmit)="onSubmit()">
+    <div class="doc-form__container">
+      <div class="dropdown-wrap dropdown-wrap--outlined dropdown-wrap--small"
+           [class.dropdownOpen]="filledSelect" [class.dropdownChoise]="dropdownChoise"
+           [class.dropdownLabelUp]="dropdownLabelUp"
+           [class.dropdown-error]="documentForm.get('type').invalid && submitted">
+        <ngx-select-dropdown tabindex="0"
+                             id="typeSelect"
+                             [class.dropdownOpen]="filledSelect"
+                             (open)="filledSelect = true"
+                             (close)="filledSelect = false"
+                             (focusout)="filledSelect = false"
+                             (open)="dropdownLabelUp = true"
+                             (close)="dropdownLabelUp = dropdownLabelUp"
+                             (focusout)="dropdownLabelUp = false"
+                             [multiple]="false"
+                             [(ngModel)]="multiSelect"
+                             [config]="typeConfig"
+                             [options]="docTypes"
+                             (change)="setType($event)">
+        </ngx-select-dropdown>
+      </div>
+      <div class="input m-0" *ngIf="currentSelectedType === 'Other'">
+        <input type="text" formControlName="type" autocomplete="off">
+        <label class="input-text">Document Type</label>
+      </div>
+      <span class="d-block text-danger mt-2" *ngIf="documentForm.get('type').invalid && submitted">Document Type is
+        required</span>
+
+      <div ng2FileDrop [uploader]="driveUploader?.uploader" *ngIf="!uploading && !uploadedFileName; else notUploading;"
+        class="mt-3">
+        <input type="file" id="doc-file" accept="application/pdf" ng2FileSelect [uploader]="driveUploader?.uploader"
+          class="d-none w-100 h-100" />
+        <label class="btn-upload m-0" for="doc-file">
+          <label class="m-0 file-requirements" for="doc-file">Select a file</label>
+          <label class="m-0 file-requirements file-requirements--small" for="doc-file">Supported formats: jpg, png, pdf, doc, xls</label>
+        </label>
+        <span class="d-block text-danger mt-2" *ngIf="documentForm.get('file').invalid && submitted">Please select a
+          document</span>
+      </div>
+    </div>
+    <div class="doc-form__footer mt-4 d-flex">
+      <button class="btn btn-primary  mr-4 ml-auto" type="submit"> Add Document </button>
+    </div>
+  </form>
+</div>
+
+<ai-drive-uploader (afterAddingFile)="uploading = true" #driveUploader (success)="onSuccessUpload($event)"
+  [oganizationId]="currentOrganization?._id" [service]="currentServiceKey"></ai-drive-uploader>
+
+<ng-template #notUploading>
+  <ai-loading *ngIf="uploading" class="sm inline white"></ai-loading>
+  <div *ngIf="!uploading" class="doc-form__file d-flex mt-3">
+    <span> {{ uploadedFileName }} </span>
+    <span class="doc-form__file-remove ml-2" (click)="removeFile()">X</span>
+  </div>
+
+</ng-template>

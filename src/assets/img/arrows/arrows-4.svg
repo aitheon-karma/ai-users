@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="434px" height="424px" viewBox="0 0 434 424" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Group 45</title>
+    <desc>Created with Sketch.</desc>
+    <g id="01-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01-Desktop-/-01-HomePage-/-01_01_Home-Copy-4" transform="translate(-884.000000, -2018.000000)">
+            <g id="Group-45" transform="translate(884.700000, 2019.400000)">
+                <polygon id="Path-19" fill="#383838" transform="translate(4.550000, 363.350000) scale(-1, 1) rotate(-90.000000) translate(-4.550000, -363.350000) " points="2.3 358.85 2.3 367.85 6.8 363.35"></polygon>
+                <path d="M9.05,55.3194461 L9.05,422.6 C9.05,424.256854 10.3931458,425.6 12.05,425.6 L425.046455,425.6 C426.703309,425.6 428.046455,424.256854 428.046455,422.6 C428.046455,422.598819 428.046454,422.597638 428.046453,422.596457 L427.54811,0.596457281 C427.546155,-1.05901247 426.203583,-2.4 424.548112,-2.4 L412.093349,-2.4 L412.093349,-2.4" id="Path-18" stroke="#383838" stroke-width="1.5" stroke-linejoin="round" transform="translate(218.550000, 211.600000) scale(-1, 1) rotate(90.000000) translate(-218.550000, -211.600000) "></path>
+                <line x1="4.5" y1="365" x2="4.5" y2="410.1" id="Path-17" stroke="#383838" stroke-width="1.5"></line>
+                <circle id="Oval" stroke="#383838" stroke-width="1.5" transform="translate(59.300000, 2.100000) scale(-1, 1) rotate(90.000000) translate(-59.300000, -2.100000) " cx="59.3" cy="2.1" r="2.25"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

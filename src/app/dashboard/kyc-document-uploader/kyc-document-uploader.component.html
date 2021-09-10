@@ -1,0 +1,18 @@
+<div *ngIf="uploader" class="uploader-holder">
+    <div  ng2FileDrop
+          [ngClass]="{'file-over': hasBaseDropZoneOver }"
+          (fileOver)="fileOverBase($event)"
+          [uploader]="uploader"
+          class="drop-zone mt-2">
+    <h1 *ngIf="uploading"
+        class="uploading">
+      <span class="mb-3">Uploading</span>
+      <ai-loading class="inline white"></ai-loading>
+    </h1>
+    <div class="upload-button-wrapper">
+      <div class="fileContainer button button--medium button--ghost">
+        <input type="file" ng2FileSelect [uploader]="uploader" accept="image/*" /> Browse
+      </div>
+    </div>
+  </div>
+</div>

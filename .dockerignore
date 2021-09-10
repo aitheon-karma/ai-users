@@ -1,0 +1,9 @@
+.git
+.gitignore
+README.md
+docker-compose.yml
+local-compose.yml
+node_modules
+logs
+k8s
+.env

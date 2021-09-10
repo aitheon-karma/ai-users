@@ -1,0 +1,140 @@
+<div class="container teams">
+  <div class="teams__header">
+    <div class="d-flex flex-column">
+      <h2 class="teams__header__title">
+        All Teams
+        <span *ngIf="teams?.length">
+          ({{ teams.length }})
+        </span>
+      </h2>
+      <span class="teams__header__sub-title">
+        Team in {{ organization.name }}
+      </span>
+    </div>
+    <button type="button"
+            class="button button--ghost button--medium ml--auto"
+            (click)="addTeam()">
+      <span class="button__icon icon icon--size-16px icon--group icon--gold"></span>
+      Add new Team
+    </button>
+  </div>
+  <hr class="mt--24 mb--24">
+  <div class="search-container search-container--contained search-container--outlined"
+       *ngIf="teams?.length"
+       [class.search-container--filled]="search.value.length">
+    <input type="search"
+           (ngModelChange)="onSearchTextChange()"
+           [(ngModel)]="searchText"
+           autocomplete="off"
+           placeholder="Search"
+           class="search-container__input"
+           #search>
+    <div class="search-container__button icon icon--search icon--size-16px"></div>
+    <div class="search-container__button icon icon--close icon--dynamic icon--size-16px"
+         (click)="search.value = searchText = ''; onSearchTextChange()"></div>
+  </div>
+  <div class="teams__body">
+    <div class="teams__column-labels" *ngIf="teams?.length">
+      <div class="teams__label teams__label--team">Team Name</div>
+      <div class="teams__label teams__label--members">Members</div>
+      <div class="teams__label">Accesses</div>
+    </div>
+    <div class="teams__body__list" *ngIf="teams?.length">
+      <div class="teams__item team mb--8" *ngFor="let team of filteredTeams">
+          <div class="team__title" [tooltip]="team?.name">
+            {{ team?.name }}
+          </div>
+          <div class="team__members">
+            <ng-container *ngFor="let member of team?.members?.slice(0, 5); let y = index">
+              <ng-container *ngIf="y < 5">
+                <img  *ngIf="member?.profile?.avatarUrl"
+                      class="team__member"
+                      [ngStyle]="{'z-index': (5 - y)}"
+                      src="{{member?.profile?.avatarUrl}}"
+                      tooltip="{{ member.profile?.firstName + ' ' + member.profile?.lastName }}"
+                      container="body" placement="top">
+                <span *ngIf="member?.profile?.avatarUrl == '' || !member?.profile?.avatarUrl"
+                      class="team__member team__member--text"
+                      [ngStyle]="{'background-color': getRandomColor(y),'z-index': (5 - y)}"
+                      tooltip="{{ member.profile?.firstName + ' ' + member.profile?.lastName }}"
+                      container="body" placement="top">
+                  {{ member?.profile?.firstName ? getInitials(member?.profile?.firstName) : '' }}
+                </span>
+              </ng-container>
+            </ng-container>
+            <span class="team__members-plus ml--8" *ngIf="team?.members?.length > 5"
+                  [tooltip]="getOtherAssignees(team?.members)" container="body" placement="right">
+              +{{ team?.members.length - 5 }}
+            </span>
+          </div>
+
+          <div class="team__services">
+            <ng-container *ngFor="let service of team?.services; let i = index">
+              <ng-container *ngIf="i < 10">
+                <div class="service-icon team__service {{ service?.service | serviceIcon }}"
+                     tooltip="{{ service?.service === 'HR' ? 'HR' : service?.service.replace('_', ' ') | titlecase }}"
+                     container="body"
+                     placement="top">
+                </div>
+              </ng-container>
+            </ng-container>
+            <ng-container *ngIf="team?.services?.length > 10">
+              <span class="team__services-more" placement="right" container="body"
+                    tooltip="{{ getServicesTooltipInfo(team?.services) | titlecase }}">
+                +{{ (team?.services?.length - 5) }}
+              </span>
+            </ng-container>
+          </div>
+
+          <div class="team__actions ml-auto">
+            <button class="button button--ghost button--medium mr--8" (click)="edit(team)">
+              Edit
+            </button>
+            <button class="button button--medium button--ghost button--error" (click)="deleteTeam(team)">
+              Delete
+            </button>
+          </div>
+        </div>
+    </div>
+
+    <div class="empty-state" *ngIf="!teams?.length">
+      <img src="assets/img/three-employees.svg">
+      <p>There are no members in organization. You can add a new location right now!</p>
+      <button type="button" class="button button--ghost button--medium mt--24" (click)="addTeam()">
+        <span class="button__icon icon icon--size-16px icon--group icon--gold"></span>
+        Add Team
+      </button>
+    </div>
+
+  </div>
+</div>
+
+
+<ng-template  #teamModal class="modalfade"  tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-lg">
+    <div class="modal-content">
+      <div class="modal-header py-2">
+        <h4 class="modal-title pull-left mt--8 mb--8">Team form</h4>
+        <button type="button"
+                class="icon icon--close icon--dynamic pull-right ml--8"
+                (click)="modalRef.hide()">
+        </button>
+      </div>
+      <div class="modal-body p-0" *ngIf="selectedTeam">
+        <fl-team-form [team]="selectedTeam"
+                      [organizationId]="organization._id"
+                      [services]="services"
+                      (saved)="onSaved($event)"
+                      (cancel)="onCancel()"
+                      (deleted)="deleteTeam($event)"></fl-team-form>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template [ngIf]="loading">
+  <ai-loading class="loading-container"></ai-loading>
+</ng-template>
+
+
+<fl-generic-confirm #genericConfirm [teamsConfirm]="true"></fl-generic-confirm>

@@ -1,0 +1,84 @@
+<div class="org-nav w-00">
+
+  <ul class="org-nav__items container">
+    <li class="org-nav__item">
+      <a  [routerLink]="['/organizations/organization-detail/']"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="org-nav__link--active"
+          class="org-nav__link">
+      Dashboard
+    </a>
+    </li>
+    <li class="org-nav__item">
+      <a [routerLink]="['/organizations/organization-detail/members']"
+          routerLinkActive="org-nav__link--active"
+          class="org-nav__link">
+        Members
+      </a>
+    </li>
+    <li class="org-nav__item">
+      <a  [routerLink]="['/organizations/organization-detail/teams']"
+          routerLinkActive="org-nav__link--active"
+          class="org-nav__link">
+        Teams
+      </a>
+    </li>
+    <li class="org-nav__item">
+      <a [routerLink]="['/organizations/organization-detail/locations']"
+         routerLinkActive="org-nav__link--active"
+         class="org-nav__link">
+        Locations
+      </a>
+    </li>
+    <!-- <li class="org-nav__item">
+      <a  [routerLink]="['/organizations/organization-detail/bots']"
+          routerLinkActive="org-nav__link--active"
+          class="org-nav__link">
+        Bots
+      </a>
+    </li> -->
+    <li class="org-nav__item">
+      <a  [routerLink]="['/organizations/organization-detail/services']"
+          routerLinkActive="org-nav__link--active"
+          class="org-nav__link">
+        Services
+      </a>
+    </li>
+
+  </ul>
+</div>
+<main *ngIf="(organization && teams); else loadingView">
+
+  <fl-organization-about [organization]="organization"
+                         [teams]="teams"
+                         [services]="services"
+                         *ngIf="!currentTab">
+  </fl-organization-about>
+
+  <fl-teams-list [organization]="organization"
+                 [services]="services"
+                 [teams]="teams"
+                 *ngIf="currentTab === 'teams'">
+  </fl-teams-list>
+
+  <fl-organization-services [organization]="organization"
+                            [members]="users"
+                            *ngIf="currentTab === 'services'">
+  </fl-organization-services>
+
+  <fl-organization-members [organizationId]="organization?._id"
+                           *ngIf="currentTab === 'members'">
+  </fl-organization-members>
+
+  <!-- <ai-organization-bots *ngIf="currentTab === 'bots'"
+                        [organizationId]="organization?._id">
+  </ai-organization-bots> -->
+
+  <ai-organization-locations *ngIf="currentTab === 'locations'"
+                             [organization]="organization">
+  </ai-organization-locations>
+</main>
+
+<ng-template #loadingView>
+  <ai-loading class="mt-5 d-block"></ai-loading>
+</ng-template>

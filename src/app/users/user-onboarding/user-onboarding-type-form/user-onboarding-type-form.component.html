@@ -1,0 +1,40 @@
+<div class="usertype" >
+  <form novalidate *ngIf="!loading; else loadingView" [formGroup]="userTypeForm" (ngSubmit)="onSubmit()"  class="jumbotron usertype__container">
+      <span class="square-top-left"></span>
+      <span class="square-top-right"></span>
+      <span class="square-bottom-left"></span>
+      <span class="square-bottom-right"></span>
+    <span class="usertype__step d-block"> Step 2</span>
+    <h3 class="usertype__title">Choose your type</h3>
+    <div formArrayName="userTypes" class="row usertype__row" *ngIf="userTypes">
+      <div *ngFor="let typeControl of userTypesFormArray.controls" (click) ="selectUserType(typeControl, $event)" class="usertype__col">
+        <div  [formGroup]="typeControl"
+              class="usertype__usertype-container"
+              [class.usertype__usertype-container--disabled]="typeControl.value.userType._id !== 'BUSINESS'"
+              [class.usertype__usertype-container--selected] = "typeControl.value.checked" >
+          <div class="usertype__disabled-background" *ngIf="typeControl.value.userType._id !== 'BUSINESS'"></div>
+          <div class="usertype__left">
+            <img [src]="typeControl.value.userType.image" class="usertype__icon">
+            <span class="d-block mt-2 text-center usertype__name">{{ typeControl.value.userType.displayText }}</span>
+          </div>
+          <div class="usertype__right">
+            <p class="usertype__description">{{ typeControl.value.userType.description }}</p>
+          </div>
+            <div class="checkbox usertype__checkbox">
+              <input  formControlName="checked"
+                      class="checkbox__input"
+                      type="checkbox">
+            </div>
+        </div>
+      </div>
+    </div>
+    <button type="submit" *ngIf="!loading; else loadingView"
+    class="btn btn-primary usertype__submit-button" [disabled]="userTypeForm.invalid">Confirm</button>
+  </form>
+</div>
+
+<ng-template #loadingView>
+  <div class="text-center loading">
+    <ai-loading class="inline"></ai-loading>
+  </div>
+</ng-template>

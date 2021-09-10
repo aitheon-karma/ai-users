@@ -1,0 +1,75 @@
+.introduce-widget {
+    padding: 0;
+    width: 604px;
+
+    &__header  {
+        height: 40px;
+        padding: 12px 20px;
+        margin: 0;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #fff;
+        background: #1f1f1f;
+    }
+
+    &__card {
+        padding: 1.5rem;
+        height: 216px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    &__container {
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        margin: 0;
+        height: 100%;
+    }
+
+    &__list {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+        width: 136px;
+        height: 136px;
+        background-color: #1f1f1f;
+        list-style-type: none;
+        position: relative;
+        background-position: 50% 40%;
+        background-size: 32px 32px;
+
+        &--tutorials {
+            background-image: url('assets/img/icons/hat.svg');
+            background-repeat: no-repeat;
+        }
+
+        &--documentation {
+            background-image: url('assets/img/icons/doc.svg');
+            background-repeat: no-repeat;
+            background-size: 28px 28px;
+        }
+
+        &--started {
+            background-image: url('assets/img/icons/rocket.svg');
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__item-title {
+        position: absolute;
+        bottom: 36px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 14px;
+        color: #fff;
+        letter-spacing: 0.2px;
+        white-space: nowrap;    
+    }
+}

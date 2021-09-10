@@ -1,0 +1,61 @@
+.organization-widget {
+    padding: 0;
+    width: 604px;
+
+    &__trial-acu {
+      color: #21c144;
+      font-weight: bold;
+    }
+
+    &__header  {
+        height: 40px;
+        padding: 12px 20px;
+        margin: 0;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #fff;
+        background: #1f1f1f;
+    }
+
+    &__card {
+        padding: 1rem 1.5rem;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        height: 80px;
+    }
+
+    &__container {
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        margin: 0;
+    }
+
+    &__description {
+        width: 60%;
+        font-size: 14px;
+        letter-spacing: 0.2px;
+        color: #7e7e7e;
+    }
+
+    &__add-button {
+        width: 202px;
+        height: 36px;
+        padding-left: 32px;
+        font-size: 12px;
+        line-height: 17px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            background: url('~/assets/img/icons/add-black.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 16px;
+            height: 16px;
+            left: 8px;
+            top: 49%;
+            transform: translateY(-50%);
+        }
+    }
+}

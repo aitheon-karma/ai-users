@@ -1,0 +1,10 @@
+<fl-kyc-documents (success)="onKYCDocumentsSuccess()"></fl-kyc-documents>
+<!-- <div class="mt-2 text-success" *ngIf="success">
+      You have completed all KYC steps. We will process it shortly.
+    </div> -->
+<div class="alert alert-success mt-2" *ngIf="user?.KYCStatus === 'VERIFY_FINISHED'">KYC Verified
+</div>
+<div class="alert alert-warning mt-3" *ngIf="user?.KYCStatus === 'PENDING' && kycDocumentsDone">You have completed all
+  KYC steps. Image recognition is in process, you will get an email notification after it is finished.</div>
+<div class="alert alert-danger mt-3" *ngIf="user?.KYCStatus === 'DENIED_IMAGE'">One of the documents failed image recognition. Please upload a new one.</div>
+

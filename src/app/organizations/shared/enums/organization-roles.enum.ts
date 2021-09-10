@@ -1,0 +1,6 @@
+export enum ORGANIZATION_ROLES {
+  USER,
+  ORGADMIN,
+  SUPERADMIN,
+  OWNER
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>cameras</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="117.692718%" y2="111.015449%" id="linearGradient-1">
+            <stop stop-color="#9B3CB7" offset="0%"></stop>
+            <stop stop-color="#FF396F" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="9" y="25" width="2" height="9" rx="1"></rect>
+        <filter x="-175.0%" y="-27.8%" width="450.0%" height="177.8%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M3.12584136,3.33175198 L18.597776,3.15094573 C19.150023,3.14449213 19.6029394,3.58694513 19.609393,4.13919218 C19.6094849,4.14706001 19.609484,4.15492865 19.6093902,4.16279646 L19.4840239,14.6802353 C19.4775509,15.2232856 19.038832,15.6619019 18.4957803,15.668248 L3.02384567,15.8490543 C2.47159863,15.8555079 2.01868227,15.4130549 2.01222867,14.8608078 C2.01213672,14.85294 2.01213764,14.8450714 2.01223142,14.8372035 L2.13759768,4.31976471 C2.14407075,3.77671443 2.58278958,3.33809813 3.12584136,3.33175198 Z" id="path-4"></path>
+        <filter x="-19.8%" y="-19.6%" width="139.6%" height="154.8%" filterUnits="objectBoundingBox" id="filter-5">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="01-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01-Desktop-/-01-HomePage-/-01_01_Home-1440" transform="translate(-1095.000000, -2466.000000)">
+            <g id="cameras" transform="translate(1095.000000, 2466.000000)">
+                <path d="M6,0 L34,0 C37.3137085,-6.08718376e-16 40,2.6862915 40,6 L40,34 C40,37.3137085 37.3137085,40 34,40 L6,40 C2.6862915,40 4.05812251e-16,37.3137085 0,34 L0,6 C-4.05812251e-16,2.6862915 2.6862915,6.08718376e-16 6,0 Z" id="Mask" fill="url(#linearGradient-1)"></path>
+                <path d="M40,17 L40,33.9889634 C40,36.6469103 38.2717079,38.9011929 35.8776163,39.6893188 L29,25.9367955 L32.2241814,19.3076072 L40,17 Z" id="Combined-Shape" fill="#000000" opacity="0.100000001"></path>
+                <g id="Rectangle">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                </g>
+                <rect id="Rectangle" fill="#FFFFFF" x="13" y="16" width="2" height="11"></rect>
+                <g id="Group-16" transform="translate(8.000000, 7.000000)">
+                    <path d="M19.8514212,10.4630053 L22.1876716,10.4357037 C22.7399186,10.4292501 23.192835,10.8717031 23.1992886,11.4239502 C23.1993805,11.431818 23.1993796,11.4396866 23.1992858,11.4475544 L23.128892,17.3531523 C23.1224189,17.8962026 22.6837001,18.3348189 22.1406483,18.341165 L19.7571828,18.3690184 L19.7571828,18.3690184 L19.8514212,10.4630053 Z" id="Rectangle" fill="#FFFFFF" transform="translate(21.484336, 14.396379) rotate(25.000000) translate(-21.484336, -14.396379) "></path>
+                    <g id="Rectangle" transform="translate(10.810811, 9.500000) rotate(25.000000) translate(-10.810811, -9.500000) ">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-4"></use>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-4"></use>
+                    </g>
+                </g>
+                <polygon id="Rectangle-Copy-4" fill="#FFFFFF" transform="translate(12.313157, 27.342767) rotate(68.000000) translate(-12.313157, -27.342767) " points="11.4820985 24.64376 13.435788 24.5389747 13.0520387 30.14656 11.1905263 30.0961924"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

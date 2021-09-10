@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="653px" height="660px" viewBox="0 0 653 660" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 80</title>
+    <g id="Organization-Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="27-Dashboard-/-01_02_ConfiguredService-Showed" transform="translate(-555.000000, -187.000000)">
+            <g id="Group-80" transform="translate(555.000000, 188.000000)">
+                <g id="Group-67" transform="translate(379.000000, 120.000000)">
+                    <g id="Group-77">
+                        <circle id="Oval" fill="#8C58E9" cx="20" cy="104" r="3"></circle>
+                        <circle id="Oval" fill="#8C58E9" cx="63" cy="3" r="3"></circle>
+                        <path d="M63,0 L63,17.1305441 C63,19.3396831 61.209139,21.1305441 59,21.1305441 L4,21.1305441 C1.790861,21.1305441 -2.32860118e-13,22.9214051 -2.27373675e-13,25.1305441 L-2.27373675e-13,100 C-2.34951572e-13,102.209139 1.790861,104 4,104 L11.6666667,104 L11.6666667,104" id="Path-23" stroke="#8C58E9"></path>
+                    </g>
+                    <g id="Group-66" transform="translate(60.000000, 0.000000)">
+                        <circle id="Oval" fill="#8C58E9" cx="3" cy="3" r="3"></circle>
+                        <circle id="Oval" fill="#8C58E9" cx="108" cy="53" r="3"></circle>
+                        <path d="M108,2 L108,17.458059 C108,19.667198 106.209139,21.458059 104,21.458059 L7,21.458059 C4.790861,21.458059 3,23.24892 3,25.458059 L3,55 L3,55" id="Path-25" stroke="#8C58E9" transform="translate(55.500000, 28.500000) scale(-1, 1) translate(-55.500000, -28.500000) "></path>
+                    </g>
+                </g>
+                <g id="Group-91" transform="translate(482.000000, 272.000000)">
+                    <g id="Group-66" transform="translate(61.000000, 0.000000)">
+                        <circle id="Oval" fill="#8C58E9" cx="3" cy="3" r="3"></circle>
+                        <circle id="Oval" fill="#8C58E9" cx="107" cy="53" r="3"></circle>
+                        <path d="M107,3 L107,18.458059 C107,20.667198 105.209139,22.458059 103,22.458059 L7,22.458059 C4.790861,22.458059 3,24.24892 3,26.458059 L3,56 L3,56" id="Path-25" stroke="#8C58E9" transform="translate(55.000000, 29.500000) scale(-1, 1) translate(-55.000000, -29.500000) "></path>
+                    </g>
+                    <g id="Group-88" transform="translate(0.000000, 3.000000)">
+                        <circle id="Oval" fill="#8C58E9" cx="64" cy="50" r="3"></circle>
+                        <circle id="Oval" fill="#8C58E9" cx="3" cy="101" r="3"></circle>
+                        <path d="M64,8 L64,15.5226481 C64,17.7317871 62.209139,19.5226481 60,19.5226481 C59.9981097,19.5226481 59.9962195,19.5226467 59.9943292,19.522644 L16.0056708,19.4602811 C13.796534,19.4571492 12.0031359,21.2454695 12.000004,23.4546063 C12.0000013,23.4564966 12,23.4583869 12,23.4602771 L12,51.9259259 L12,51.9259259 L12,97 C12,99.209139 10.209139,101 8,101 L2.72558594,101 L2.72558594,101" id="Path-25" stroke="#8C58E9"></path>
+                        <line x1="64" y1="0" x2="64" y2="50" id="Path-8" stroke="#8C58E9"></line>
+                    </g>
+                </g>
+                <g id="Group-74" transform="translate(43.000000, 72.000000)">
+                    <circle id="Oval" fill="#8C58E9" cx="64" cy="101" r="3"></circle>
+                    <path d="M356,0 L339.368421,0 C337.159282,4.05812251e-16 335.368421,1.790861 335.368421,4 L335.368421,72 C335.368421,74.209139 333.57756,76 331.368421,76 L68,76 C65.790861,76 64,77.790861 64,80 L64,104 L64,104" id="Path-29" stroke="#8C58E9"></path>
+                    <path d="M356,0 L339.368421,0 C337.159282,2.18216909e-15 335.368421,1.790861 335.368421,4 L335.368421,499.630885 C335.368421,501.840024 333.57756,503.630885 331.368421,503.630885 L16,503.630885 C13.790861,503.630885 12,505.421746 12,507.630885 L12,580 C12,582.209139 10.209139,584 8,584 L0,584 L0,584" id="Path-29" stroke="#8C58E9"></path>
+                    <circle id="Oval" fill="#8C58E9" cx="3" cy="584" r="3"></circle>
+                    <line x1="73.1513672" y1="76" x2="45.9394531" y2="76" id="Path-30" stroke="#8C58E9"></line>
+                </g>
+                <g id="Group-79" transform="translate(355.000000, 71.000000)">
+                    <circle id="Oval" fill="#8C58E9" cx="3" cy="305" r="3"></circle>
+                    <path d="M44,0.944580078 L27.5,0.944580078 C25.290861,0.944580078 23.5,2.73544108 23.5,4.94458008 L23.5,301.5 C23.5,303.709139 21.709139,305.5 19.5,305.5 L0,305.5 L0,305.5" id="Path-22" stroke="#8C58E9"></path>
+                </g>
+                <g id="Group-72" transform="translate(43.000000, 0.000000)">
+                    <circle id="Oval" fill="#8C58E9" cx="64" cy="21" r="3"></circle>
+                    <circle id="Oval" fill="#8C58E9" cx="3" cy="72" r="3"></circle>
+                    <circle id="Oval" fill="#8C58E9" cx="356" cy="72" r="3"></circle>
+                    <path d="M359,72 L338.592105,72 C336.382966,72 334.592105,70.209139 334.592105,68 L334.592105,4 C334.592105,1.790861 332.801244,-4.05812251e-16 330.592105,0 L68,0 C65.790861,4.05812251e-16 64,1.790861 64,4 L64,21 L64,21" id="Path-27" stroke="#8C58E9"></path>
+                    <path d="M83,0 L16,0 C13.790861,4.05812251e-16 12,1.790861 12,4 L12,24 L12,24 L12,68 C12,70.209139 10.209139,72 8,72 L3,72 L3,72" id="Path-28" stroke="#8C58E9"></path>
+                </g>
+                <g id="Group-75" transform="translate(0.000000, 272.000000)">
+                    <circle id="Oval" fill="#8C58E9" cx="107" cy="3" r="3"></circle>
+                    <circle id="Oval" fill="#8C58E9" cx="3" cy="3" r="3"></circle>
+                    <circle id="Oval" fill="#8C58E9" cx="211" cy="53" r="3"></circle>
+                    <circle id="Oval" fill="#8C58E9" cx="314" cy="53" r="3"></circle>
+                    <path d="M107,3 L107,22 C107,24.209139 108.790861,26 111,26 L207,26 C209.209139,26 211,27.790861 211,30 L211,54 L211,54" id="Path-5" stroke="#8C58E9"></path>
+                    <path d="M3,3 L3,22 C3,24.209139 4.790861,26 7,26 L207,26 C209.209139,26 211,27.790861 211,30 L211,54 L211,54" id="Path-5" stroke="#8C58E9"></path>
+                    <path d="M3,3 L3,22 C3,24.209139 4.790861,26 7,26 L310,26 C312.209139,26 314,27.790861 314,30 L314,54 L314,54" id="Path-5" stroke="#8C58E9"></path>
+                </g>
+                <g id="Group-73" transform="translate(43.000000, 120.000000)">
+                    <circle id="Oval" fill="#8C58E9" cx="3" cy="104" r="3"></circle>
+                    <circle id="Oval" fill="#8C58E9" cx="64" cy="3" r="3"></circle>
+                    <path d="M64,5 L64,24 C64,26.209139 62.209139,28 60,28 L16,28 C13.790861,28 12,29.790861 12,32 L12,100 C12,102.209139 10.209139,104 8,104 L0,104 L0,104" id="Path-26" stroke="#8C58E9"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

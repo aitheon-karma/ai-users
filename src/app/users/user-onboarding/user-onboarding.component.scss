@@ -1,0 +1,30 @@
+
+
+
+.services-setup {
+
+  &__heading {
+    margin-top: 1.875rem;
+    color: #ffff;
+    font-size: 2rem;
+    line-height: normal;
+    letter-spacing: 3.1px;
+    margin-bottom: 1.5rem;
+  }
+
+  &__sub-heading {
+    letter-spacing: 0.3px;
+    font-size: 0.875rem;
+    margin-top: 0.2rem;
+    color: #8c8c8c;
+    margin-bottom: 2rem;
+
+    &--active {
+      color: #ffff;
+    }
+  }
+}
+
+::ng-deep ai-header {
+  display: none;
+}

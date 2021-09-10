@@ -1,0 +1,67 @@
+<div>
+  <ai-loading *ngIf="loading" class="sm inline left-align"></ai-loading>
+  <p *ngIf="devices?.length === 0">No user assignable devices</p>
+  <table class="table table-hover">
+    <tr *ngFor="let device of devices">
+      <td>
+          <i class="fa fa-microchip"></i> {{ device.name }}
+      </td>
+      <td class="text-right">
+        <button type="button" (click)="showAccess(device)" class="btn btn-outline btn-sm">Set Access</button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div>
+  <div bsModal #deviceModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">{{ selectedDevice?.name }} - Access </h4>
+          <button type="button" class="close pull-right" (click)="deviceModal.hide()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <ng2-completer #userSearch
+            [dataService]="dataRemote"
+            [minSearchLength]="2"
+            [placeholder]="'Add more people'"
+            [clearSelected]="true"
+            (selected)="onUserSelected($event)"
+            (keydown)="onSearchKeydown($event)"
+            [inputClass]="'form-control'"
+            [openOnFocus]="true"
+            [textNoResults]="false"
+            [textSearching]="'Please wait...'">
+            </ng2-completer>
+          <table class="table table-hover mt-3">
+            <tr *ngFor="let deviceAccess of deviceAccesses">
+              <td>
+                <!-- <span class="rounded-circle user-pic mr-3" [ngStyle]="{'background-image': 'url('+ (deviceAccess?.user.profile.avatarUrl || '/users/assets/img/nophoto.png') +')'}"  alt="User image"></span> -->
+                <span style="margin-top: 6px;display: inline-block;">{{ deviceAccess.user.profile.firstName }} {{ deviceAccess.user.profile.lastName }}</span>
+              </td>
+              <td>
+                <select class="form-control" [disabled]="!deviceAccess.editMode" [(ngModel)]="deviceAccess.accessLevel">
+                  <option value="USER">User</option>
+                  <option value="MANAGER">Manager</option>
+                  <option value="ADMIN">Admin</option>
+                </select>
+              </td>
+              <td class="text-right">
+                <button class="btn btn-outline btn-sm" *ngIf="!deviceAccess.editMode" type="button" (click)="editAccess(deviceAccess)">Edit</button>
+                <button *ngIf="deviceAccess.editMode" style="margin-top: 6px;" class="btn btn-primary btn-sm" (click)="saveAccess(deviceAccess)">
+                  <span *ngIf="!deviceAccess.savingAccess">Save</span>
+                  <ai-loading *ngIf="deviceAccess.savingAccess" class="sm inline white"></ai-loading>
+                </button>
+                <button style="margin-top: 6px;" class="btn btn-sm btn-danger" *ngIf="deviceAccess._id && deviceAccess.editMode" type="button" (click)="removeAccess(deviceAccess)">Remove</button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+</div>

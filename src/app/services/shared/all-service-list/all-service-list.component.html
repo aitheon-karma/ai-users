@@ -1,0 +1,7 @@
+<main class="service-list">
+  <div *ngFor="let service of allServices" class="service-list__item"
+     [class.service-list__item--selected]="selectedService === service"
+     (click)="selectService(service)">
+    <span class="service-list__name">{{ service.name }}</span>
+  </div>
+</main>

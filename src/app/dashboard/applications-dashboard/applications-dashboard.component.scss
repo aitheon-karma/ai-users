@@ -1,0 +1,147 @@
+.applications-dashboard {
+  padding: 72px 0 0 0 !important;
+
+  &--pt-24 {
+    padding-top: 24px !important;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__edit {
+    height: 36px;
+  }
+
+  &__main-container {
+    min-height: fit-content;
+    max-height: calc(100vh - 214px);
+    margin-top: 16px;
+  }
+
+  &__create-dashboard-app-wrap {
+    padding: 24px;
+    background: #2b2b2b;
+    border-radius: 2px;
+  }
+
+  &__create-dashboard-app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 16px;
+    color: #dcbc65;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 24px;
+    border: 1px dashed #dcbc65;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: .1s ease-in-out;
+
+    &:hover {
+      background: #383838;
+      transition: .1s ease-in-out;
+    }
+  }
+
+  &__loader {
+    display: flex;
+    height: 265px;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+  }
+}
+
+.apps-dropdown {
+  &__selected-app {
+    user-select: none;
+    cursor: pointer;
+    color: #fff;
+    position: relative;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+
+    & > .icon {
+      margin-left: 16px;
+    }
+  }
+}
+
+.applications-list {
+  position: absolute;
+  left: 0;
+  top: 40px;
+  padding: 8px 0;
+  z-index: 100;
+  background: #2b2b2b;
+  border-radius: 2px;
+  overflow-y: auto;
+  transition: .2s ease-in-out;
+  box-shadow: 1px 1px 5px 0 rgba(26,26,26,1);
+  cursor: default;
+  width: 100%;
+  min-width: 240px;
+  max-height: 240px;
+
+  &--closed {
+    height: 0;
+    max-height: 0;
+    padding: 0;
+    box-shadow: unset;
+    overflow-y: hidden;
+  }
+
+  &--opened {
+    height: auto;
+    max-height: unset;
+  }
+
+  &__item {
+    padding: 8px 16px;
+    color: var(--white);
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 0.2px;
+    line-height: 20px;
+    transition: .2s ease-in-out;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+
+    &--create-dashboard {
+      color: #dcbc65;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    &:hover {
+      background: #303030;
+    }
+
+    span.icon {
+      margin-right: 8px;
+      margin-top: -2px;
+    }
+  }
+}
+
+.icon {
+  transition: .2s ease-in-out !important;
+  &--rotate-180 {
+    transform: rotate(180deg);
+  }
+}

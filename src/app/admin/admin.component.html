@@ -1,0 +1,31 @@
+<div class="container-fluid p-0">
+  <div class="row admin">
+    <div class="col-2 admin__navigation">
+      <ul class="admin__nav-list">
+        <li class="admin__nav-item admin__onboarding-icon" [ngClass]="{'admin__nav-item--open':isActiveQuestions}" (click)="isActiveQuestions=!isActiveQuestions">Onboarding</li>
+        <li class="admin__nav-item-sub">
+          <ul class="admin__sub-list" *ngIf="isActiveQuestions">
+              <li class="admin__sub-item" routerLink="questions" [queryParams]="{'activeTab':questionTarget.USER}">User</li>
+              <li class="admin__sub-item" routerLink="questions" [queryParams]="{'activeTab':questionTarget.ORGANIZATION}">Organization</li>
+              <li class="admin__sub-item" routerLink="services" [queryParams]="{'activeTab':questionTarget.SERVICES}">Services</li>
+            </ul>
+        </li>
+        <li class="admin__nav-item admin__users-icon" [ngClass]="{'admin__nav-item--open':isActiveTypes}" (click)="isActiveTypes=!isActiveTypes">Users</li>
+        <li class="admin__sub-list">
+          <ul class="admin__sub-list" *ngIf="isActiveTypes">
+            <li class="admin__sub-item" routerLink="users">User type</li>
+          </ul>
+        </li>
+        <li class="admin__nav-item admin__users-icon" [ngClass]="{'admin__nav-item--open':isActiveTutorials}" (click)="isActiveTutorials=!isActiveTutorials">Tutorials</li>
+        <li class="admin__sub-list">
+          <ul class="admin__sub-list" *ngIf="isActiveTutorials">
+            <li class="admin__sub-item" routerLink="tutorials/media">Media</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="col-10 admin__section">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

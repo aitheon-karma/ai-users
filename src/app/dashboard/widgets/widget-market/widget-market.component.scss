@@ -1,0 +1,61 @@
+.market {
+    padding: 0;
+    height: 130px;
+    width: 604px;
+
+    &__header  {
+        height: 40px;
+        padding: 12px 20px;
+        margin: 0;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #fff;
+        background: #1f1f1f;
+    }
+
+    &__card {
+        padding: 1.5rem;
+        height: 252px;
+    }
+
+    &__container {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        margin: 0;
+        height: 100%;
+    }
+
+    &__top-section,
+    &__bottom-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+        width: 100%;
+    }
+
+    &__product {
+        display: flex;
+        align-items: center;
+    }
+
+    &__top-section {
+        height: 32px;
+    }
+
+    &__product-image {
+        display: inline-block;
+        background: url('assets/img/5d011d7e5ee1730019423866.png') center center no-repeat;
+        background-size: 32px;
+        width: 32px;
+        height: 32px;
+        margin-right: 1rem;
+    }
+
+    &__graph {
+        height: 100%;
+        width: 100%;
+    }
+}

@@ -1,0 +1,72 @@
+<div *ngIf="isLoading; else loading" class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <div *ngFor="let project of projects">
+          <div class="service-container">
+            <div class="service-row">
+              <div class="service">
+                <div class="text text-left">
+                  {{ project.name }}
+                </div>
+
+                <div class="icon open-logs" (click)="openLogs(project)">
+                  <i class="fa fa-align-left fa-flip-vertical" aria-hidden="true" tooltip="Show Logs"></i>
+                </div>
+              </div>
+
+
+              <div class="actions text-right">
+                <div class="switch-container">
+                  <label class="switch">
+                    <input id="switchExample" name="switchExample" type="checkbox" [checked]="project.checked"
+                      (change)="project.checked != project.checked;">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+
+            </div>
+            <div class="dependency_text" *ngIf="project.publish.online">
+              Url: <span><a target="blank" [href]="project.publish.url">{{ project.publish.url }}</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="!projects || !projects.length" class="no-results pb-3">
+        <h3 class="text-center">No interfaces available</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #logsListModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Logs</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="hideModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="modal-body" style="position:relative;" style="height: 450px; overflow-y: auto;">
+    <div class="row" *ngFor="let log of logsList">
+      <div class="col-md-1">
+        {{ log.level }}
+      </div>
+      <div class="col-md-3">
+        {{ log.createdAt | date:'medium' }}
+      </div>
+      <div class="col-md-8">
+        <p class="mb-0">{{ log.message }}</p>
+        <p>{{ log.data | json }}</p>
+      </div>
+
+    </div>
+  </div>
+</ng-template>
+
+
+<ng-template #loading>
+  <ai-loading></ai-loading>
+</ng-template>

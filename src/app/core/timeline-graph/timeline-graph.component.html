@@ -1,0 +1,227 @@
+<!--======Vertical View Profile Start========-->
+<section *ngIf="isProfileView == true && enableHorizontalView == false" class="sec-4 pt-4">
+  <div class="container adjustment" *ngFor="let timeline of timelineData">
+    <h5 class="aos-item" data-aos="fade-up">{{timeline.year}}</h5>
+    <div class="center-line-main">
+      <div class="center-line"></div>
+      <div *ngFor="let item of timeline.profileTimeline;let i = index;">
+        <div *ngIf="i == 0 && i%2 == 0" class="row">
+          <div class="col-sm-6 pad-all-0 aos-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="road-empty-l-p">
+              <div class="ripple">
+                <div class="circle">
+                </div>
+                <div class="circle2">
+                </div>
+                <div class="circle3">
+                </div>
+                <div class="circle4">
+                </div>
+              </div>
+              <div class="dot-solid-large"></div>
+            </div>
+            <div class="content">
+              <div class="feed-content">
+                <img *ngIf="item.hasImage" class="timeline_thumb" src="{{item.imageUrl}}" />
+                <p class="profile-p">{{item.content}}</p>
+              </div>
+
+              <div class="dot-solid-small"></div>
+              <div class="dot-hollow"></div>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="i != 0 && i%2 == 1" class="row d-flex align-items-end flex-column">
+          <div class="col-sm-6 pad-all-0 aos-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="road-empty-r">
+              <div class="dot-solid-large-r"></div>
+            </div>
+            <div class="content-r">
+              <div class="feed-content">
+                <img *ngIf="item.hasImage" class="timeline_thumb" src="{{item.imageUrl}}" />
+                <p class="profile-p">{{item.content}}</p>
+              </div>
+
+              <div class="dot-solid-small-r"></div>
+              <div class="dot-hollow-r"></div>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="i != 0 && i%2 == 0" class="row idk-left-p">
+          <div class="col-sm-6 pad-all-0 aos-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="road-empty-l-p">
+              <div class="dot-solid-large"></div>
+            </div>
+            <div class="content">
+              <div class="feed-content">
+                <img *ngIf="item.hasImage" class="timeline_thumb" src="{{item.imageUrl}}" />
+                <p class="profile-p">{{item.content}}</p>
+              </div>
+              <div class="dot-solid-small"></div>
+              <div class="dot-hollow"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!--======Vertical View Profile End========-->
+
+<!--======Horizontal View Start========-->
+<div *ngIf="isProfileView == false && enableHorizontalView == true" class="swiper-container" [swiper]="config">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide" *ngFor="let timeline of timelineData">
+      <section class="horizontal-sec-4 pt-4">
+        <div class="horizontal-container adjustment">
+          <div class="h-center-line-main">
+            <!--Q1 -->
+            <div class="row">
+              <div class="d-flex align-items-start flex-row horizontal-container-height">
+                <h5 class="h-header" data-aos="fade-left">{{timeline.year}}</h5>
+                <div *ngFor="let timelineQuarter of timeline.timelineQuarter;let i = index;" [ngClass]="{ 'mt-auto h-bottom-content hide-topline': i%2 == 1, 'bottom-container d-flex align-items-end': i%2 == 0 }"
+                  class="custwidth p-2" data-aos="fade-left" data-aos-delay="300">
+
+                  <div *ngIf="i == 0 && i%2 == 0" class="h-road-empty-l">
+                    <div class="h-dot-solid-large"></div>
+                    <div class="h-dot-hollow-l"></div>
+                    <div class="h-ripple">
+                      <div class="circle">
+                      </div>
+                      <div class="circle2">
+                      </div>
+                      <div class="circle3">
+                      </div>
+                      <div class="circle4">
+                      </div>
+                    </div>
+                  </div>
+                  <div *ngIf="i == 0 && i%2 == 0" class="h-content">
+                    <h5 [popover]="popContent" class="pointer" [isOpen]="true" placement="top" popoverTitle="Q1">Q1</h5>
+                    <ng-template #popContent>
+                      <div data-aos="fade-left" data-aos-delay="300" class="dot-left">
+                        <ul>
+                          <li *ngFor="let item of timelineQuarter.quarterData;"><span></span>{{item.event}}</li>
+                        </ul>
+                      </div>
+                    </ng-template>
+
+                  </div>
+                  <div *ngIf="i != 0 && i%2 == 1" class="h-road-empty-r">
+                    <div class="dot-solid-large-r"></div>
+                    <div class="h-dot-hollow"></div>
+                  </div>
+                  <div *ngIf="i != 0 && i%2 == 1" class="h-content-r">
+                    <h5 [popover]="popContent" class="pointer" [isOpen]="true" placement="bottom" popoverTitle="Q2">Q2</h5>
+                    <ng-template #popContent>
+                      <div class="dot-left">
+                        <ul>
+                          <li *ngFor="let item of timelineQuarter.quarterData;"><span></span>{{item.event}}</li>
+                        </ul>
+                      </div>
+                    </ng-template>
+                  </div>
+
+                  <div *ngIf="i != 0 && i%2 == 0" class="h-road-empty-l">
+                    <div class="h-dot-solid-large"></div>
+                    <div class="h-dot-hollow-l"></div>
+                  </div>
+                  <div *ngIf="i != 0 && i%2 == 0" class="h-content">
+                    <h5 [popover]="popContent" class="pointer" [isOpen]="true" placement="top" popoverTitle="Q3">Q3</h5>
+                    <ng-template #popContent>
+                      <div class="dot-left">
+                        <ul>
+                          <li *ngFor="let item of timelineQuarter.quarterData;"><span></span>{{item.event}}</li>
+                        </ul>
+                      </div>
+                    </ng-template>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <!-- <div class="swiper-scrollbar"></div> -->
+  <!-- <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div> -->
+  <div class="swiper-pagination"></div>
+</div>
+<!--======Horizontal View End========-->
+
+<!--======Vertical View Start========-->
+<section *ngIf="isProfileView == false && enableHorizontalView == false" class="sec-4 pt-4">
+  <div class="container adjustment" *ngFor="let timeline of timelineData">
+    <h5 class="aos-item" data-aos="fade-up">{{timeline.year}}</h5>
+    <div class="center-line-main">
+      <div class="center-line"></div>
+      <div *ngFor="let timelineQuarter of timeline.timelineQuarter;let i = index;">
+        <div *ngIf="i == 0 && i%2 == 0" class="row">
+          <div class="col-sm-6 pad-all-0 aos-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="road-empty-l">
+              <div class="ripple">
+                <div class="circle">
+                </div>
+                <div class="circle2">
+                </div>
+                <div class="circle3">
+                </div>
+                <div class="circle4">
+                </div>
+              </div>
+              <div class="dot-solid-large"></div>
+            </div>
+            <div class="content">
+              <h5>{{timelineQuarter.quarter}}</h5>
+              <ul>
+                <li *ngFor="let item of timelineQuarter.quarterData;"><span></span>{{item.event}}</li>
+              </ul>
+              <div class="dot-solid-small"></div>
+              <div class="dot-hollow"></div>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="i != 0 && i%2 == 1" class="row top-adj d-flex align-items-end flex-column">
+          <div class="col-sm-6 pad-all-0 aos-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="road-empty-r">
+              <div class="dot-solid-large-r"></div>
+            </div>
+            <div class="content-r">
+              <h5>{{timelineQuarter.quarter}}</h5>
+              <ul>
+                <li *ngFor="let item of timelineQuarter.quarterData;"><span></span>{{item.event}}</li>
+              </ul>
+              <div class="dot-solid-small-r"></div>
+              <div class="dot-hollow-r"></div>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="i != 0 && i%2 == 0" class="row idk-left">
+          <div class="col-sm-6 pad-all-0 aos-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="road-empty-l">
+              <div class="dot-solid-large"></div>
+            </div>
+            <div class="content">
+              <h5>{{timelineQuarter.quarter}}</h5>
+              <ul>
+                <li *ngFor="let item of timelineQuarter.quarterData;"><span></span>{{item.event}}</li>
+              </ul>
+              <div class="dot-solid-small"></div>
+              <div class="dot-hollow"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!--======Vertical View End========-->

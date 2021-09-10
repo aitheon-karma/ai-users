@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>market</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="1.44424438%" y1="0%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#17EAD9" offset="0%"></stop>
+            <stop stop-color="#1D39BD" offset="100%"></stop>
+        </linearGradient>
+        <path d="M10.0228588,7.99999282 C13.3443577,7.99999282 16.6658566,7.99999282 19.9873555,7.99999282 C23.3183449,7.99999282 26.6551885,7.99999282 29.9978863,7.99999282 C31.1024601,7.99998511 31.997894,8.89541906 31.997894,9.99999282 C31.997894,10.0006945 31.9978936,10.0013961 31.9978929,10.0020977 L31.9768467,29.9996325 C31.975685,31.1033795 31.0805953,31.9975276 29.9768478,31.9975276 L19.8199009,31.9975276 L10.0020793,31.9975276 C8.89750979,31.9975276 8.00207929,31.1020971 8.00207929,29.9975276 C8.00207929,29.9968349 8.00207965,29.9961422 8.00208036,29.9954494 L8.02285986,9.99791462 C8.02400677,8.89415722 8.91910078,7.99999282 10.0228588,7.99999282 Z" id="path-2"></path>
+        <filter x="-29.2%" y="-20.8%" width="158.3%" height="158.3%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.188592657 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M14.7195394,6 C15.2423421,10 17.0046033,12 20.006323,12 C23.3029974,12 25.0645731,10 25.29105,6" id="path-4"></path>
+        <filter x="-43.7%" y="-60.4%" width="186.8%" height="252.0%" filterUnits="objectBoundingBox" id="filter-5">
+            <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="1" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+            <feOffset dx="0" dy="1" in="shadowInner" result="shadowInner"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="01-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01-Desktop-/-01-HomePage-/-01_01_Home-1440" transform="translate(-656.000000, -2038.000000)">
+            <g id="market" transform="translate(656.000000, 2038.000000)">
+                <g id="Group-13">
+                    <path d="M6,0 L34,0 C37.3137085,-6.08718376e-16 40,2.6862915 40,6 L40,34 C40,37.3137085 37.3137085,40 34,40 L6,40 C2.6862915,40 7.51123961e-15,37.3137085 7.10542736e-15,34 L7.10542736e-15,6 C6.69961511e-15,2.6862915 2.6862915,6.08718376e-16 6,0 Z" id="Rectangle-6-Copy" fill="url(#linearGradient-1)"></path>
+                    <g id="Rectangle">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    </g>
+                    <circle id="Oval-Copy-2" fill="url(#linearGradient-1)" cx="14.6666667" cy="12" r="2"></circle>
+                    <circle id="Oval-Copy-2" fill="url(#linearGradient-1)" cx="25.3333333" cy="12" r="2"></circle>
+                    <g id="Path-6" stroke-linecap="round" transform="translate(20.005295, 9.000000) scale(1, -1) translate(-20.005295, -9.000000) ">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-4"></use>
+                        <use stroke="#18D3D5" stroke-width="2" xlink:href="#path-4"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

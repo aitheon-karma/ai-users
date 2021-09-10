@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>hr-service</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="10.1139323%" y1="0%" x2="91.7578125%" y2="104.358724%" id="linearGradient-1">
+            <stop stop-color="#9B3CB7" offset="0%"></stop>
+            <stop stop-color="#FF396F" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="1.44424438%" y1="0%" x2="100%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#2575FC" offset="0%"></stop>
+            <stop stop-color="#6A11CB" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="95.5078125%" y1="24.4888117%" x2="8.45540365%" y2="75.2807785%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.314739948" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-4" x="0.333333333" y="0.389227642" width="32" height="21.3333333" rx="4"></rect>
+        <filter x="-20.3%" y="-25.8%" width="140.6%" height="160.9%" filterUnits="objectBoundingBox" id="filter-5">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="1.44424438%" y1="44.4444444%" x2="100%" y2="55.5555556%" id="linearGradient-6">
+            <stop stop-color="#2575FC" offset="0%"></stop>
+            <stop stop-color="#6A11CB" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="01-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01-Desktop-/-01-HomePage-/-01_01_Home-1440" transform="translate(-552.000000, -2342.000000)">
+            <g id="hr-service" transform="translate(552.000000, 2342.000000)">
+                <path d="M10,0 L30,0 C35.5228475,-1.01453063e-15 40,4.4771525 40,10 L40,30 C40,35.5228475 35.5228475,40 30,40 L10,40 C4.4771525,40 6.76353751e-16,35.5228475 0,30 L0,10 C-6.76353751e-16,4.4771525 4.4771525,1.01453063e-15 10,0 Z" id="Rectangle-6-Copy" fill="url(#linearGradient-1)"></path>
+                <g id="XMLID_456_" transform="translate(15.155866, 0.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                    <g id="XMLID_469_" transform="translate(3.598675, 0.000000)">
+                        <polygon id="XMLID_487_" points="6.57879234 0.0696135833 2.82509776 3.87316635 2.78568889 3.90660418 2.73642781 3.95676092 2.68716673 4.00691766 2.68716673 4.00691766 2.62805343 4.06961358 0.578792342 4.06961358 0.687166726 3.95258119 0.73642781 3.90660418 0.82509776 3.82300961 0.834949977 3.81047043 1.60342288 3.03304096 1.76105835 2.87421128 4.52953126 0.0696135833"></polygon>
+                    </g>
+                    <polygon id="XMLID_484_" points="6.17746686 4.06961358 4.12820578 4.06961358 4.06909248 4.00691766 4.00012696 3.93586228 3.93116144 3.87316635 0.177466863 0.0696135833 2.22672795 0.0696135833 5.15283632 3.03304096 5.92130923 3.81047043 6.05924026 3.94840146 6.06909248 3.95258119"></polygon>
+                </g>
+                <path d="M38.030303,8 L1.96969697,8 C1.61969697,8 1.33333333,8.30495868 1.33333333,8.67768595 L1.33333333,34.6556474 C1.33333333,35.0283747 1.61969697,35.3333333 1.96969697,35.3333333 L38.030303,35.3333333 C38.380303,35.3333333 38.6666667,35.0283747 38.6666667,34.6556474 L38.6666667,8.67768595 C38.6666667,8.4292011 38.4545455,8.20330579 38.030303,8 Z M22.6091954,10.6666667 L18.0574713,10.6666667 C17.654023,10.6666667 17.3333333,10.2238095 17.3333333,9.66666667 C17.3333333,9.10952381 17.654023,8.66666667 18.0574713,8.66666667 L22.6091954,8.66666667 C23.0126437,8.66666667 23.3333333,9.10952381 23.3333333,9.66666667 C23.3333333,10.2238095 23.0126437,10.6666667 22.6091954,10.6666667 Z" id="XMLID_459_" fill="#FFFFFF" fill-rule="nonzero" opacity="0.3"></path>
+                <rect id="XMLID_14_" fill="#FFFFFF" fill-rule="nonzero" x="1.66666667" y="11.722561" width="36.6666667" height="22.6666667" rx="4"></rect>
+                <path d="M12.1128397,21.9723748 C14.1226268,21.7259603 15.5521227,19.8969474 15.3057082,17.8871603 C15.0592936,15.8773732 13.2302808,14.4478773 11.2204936,14.6942918 C9.21070651,14.9407064 7.78121061,16.7697192 8.02762517,18.7795064 C8.27403973,20.7892935 10.1030526,22.2187894 12.1128397,21.9723748 Z" id="XMLID_25_" fill="#FFC1DA" fill-rule="nonzero"></path>
+                <path d="M18.6666667,28.3387622 C18.4198718,28.5298588 18.150641,28.7209555 17.8814103,28.9120521 C16.1314103,30.0412595 13.9326923,30.6666667 11.6666667,30.6666667 C9.40064103,30.6666667 7.17948718,30.0412595 5.45192308,28.9120521 C5.18269231,28.7383279 4.91346154,28.5472313 4.66666667,28.3387622 C4.93589744,26.6536374 6.79807692,25.3333333 9.06410256,25.3333333 L14.2916667,25.3333333 C16.5352564,25.3333333 18.3974359,26.6536374 18.6666667,28.3387622 Z" id="XMLID_24_" fill="#FFC1DA" fill-rule="nonzero"></path>
+                <rect id="Rectangle" fill="#F1F1F1" x="21.3333333" y="16.6666667" width="13.3333333" height="3.33333333" rx="1"></rect>
+                <rect id="Rectangle-Copy-2" fill="#F1F1F1" x="21.3333333" y="21.3333333" width="14.6666667" height="6" rx="1"></rect>
+                <path d="M6,0 L34,0 C37.3137085,-6.08718376e-16 40,2.6862915 40,6 L40,34 C40,37.3137085 37.3137085,40 34,40 L6,40 C2.6862915,40 4.05812251e-16,37.3137085 0,34 L0,6 C-4.05812251e-16,2.6862915 2.6862915,6.08718376e-16 6,0 Z" id="Rectangle-6-Copy" fill="url(#linearGradient-2)"></path>
+                <g id="Group-2" transform="translate(2.000000, 6.666667)">
+                    <rect id="Rectangle" fill="url(#linearGradient-3)" x="0" y="0" width="36" height="26.6666667" rx="6"></rect>
+                    <g id="Group-21" transform="translate(1.666667, 2.666667)">
+                        <g id="XMLID_14_" fill-rule="nonzero">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-4"></use>
+                            <use fill="#FFFFFF" xlink:href="#path-4"></use>
+                        </g>
+                        <path d="M8.73894518,12.6415529 C10.5660244,12.4175396 11.8655661,10.7548007 11.6415529,8.92772149 C11.4175396,7.10064228 9.75480069,5.80110055 7.92772149,6.02511379 C6.10064228,6.24912703 4.80110055,7.91186598 5.02511379,9.73894518 C5.24912703,11.5660244 6.91186598,12.8655661 8.73894518,12.6415529 Z" id="XMLID_25_" fill="url(#linearGradient-2)"></path>
+                        <path d="M14.3333333,18 C12.1984863,18 7.52115885,18 2.33333333,18 C2.56410256,16.3310954 5.05769231,14 7,14 C8.29487179,14 9.18376068,14 9.66666667,14 C11.5897436,14 14.1025641,16.3310954 14.3333333,18 Z" id="XMLID_24_" fill="url(#linearGradient-6)"></path>
+                        <rect id="Rectangle" fill="#E2D4FF" x="16.3333333" y="4" width="13.3333333" height="3.33333333" rx="1"></rect>
+                        <rect id="Rectangle-Copy-2" fill="#E2D4FF" x="16.3333333" y="13.3333333" width="13.3333333" height="4.66666667" rx="1"></rect>
+                        <rect id="Rectangle-Copy-2" fill="#E2D4FF" x="16.3333333" y="8.66666667" width="13.3333333" height="3.33333333" rx="1"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

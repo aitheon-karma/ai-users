@@ -1,0 +1,33 @@
+<div class="row mx-0 mb-4">
+  <div class="col-12">
+    <div class="row" *ngIf="!loading">
+      <div class="col-3 roles" *ngIf="activeTab === questionTarget.USER">
+        <ul class="roles__nav">
+          <li class="roles__item" *ngFor="let role of userTypes" (click)="selectRole(role)" [class.roles__item--active]="role===currentRole">
+            {{ role.displayText }}
+          </li>
+        </ul>
+      </div>
+      <div class="col-9 questions" [ngClass]="{'col-12': activeTab === questionTarget.ORGANIZATION}">
+        <!-- <div class="questions__empty" *ngIf="questions && !questions.length && currentRole">No questions yet</div> -->
+        <ul class="questions__list" *ngIf="questions && questions.length" cdkDropList (cdkDropListDropped)="drop($event)">
+          <li (click)="optionsShown" *ngFor="let question of questions">
+            <div class="questions__item row m-0 mb-2" (click)="toggleShown(question)" cdkDrag>
+              <div class="col-1 questions__number">{{question.number}}</div>
+              <div class="col-9 questions__title pl-4">{{question.questionText}}</div>
+              <div class="col-2 questions__buttons">
+                <span (click)="goToEdit(question, $event)" class="questions__card-edit"></span>
+                <span (click)="goToDelete(question, $event)" class="questions__card-delete"></span>
+              </div>
+            </div>
+            <ul *ngIf="question['showOptions']" class="questions__options-list" >
+              <li class="questions__options-item" [routerLink] [queryParams] ="{parentOption: option._id, activeTab: activeTab}"  *ngFor="let option of question.options">{{ option.optionText  }} </li>
+            </ul>
+          </li>
+        </ul>
+        <h2 *ngIf="!questions || !questions.length" class="questions__not-found">No Questions found</h2>
+      </div>
+    </div>
+    <ai-loading *ngIf="loading"></ai-loading>
+  </div>
+</div>

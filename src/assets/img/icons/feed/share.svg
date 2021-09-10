@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="14px" viewBox="0 0 18 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>icons / share</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Profiles" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01-Profiles-/-02-PersonalProfile-/-01_01_PersonalProfile" transform="translate(-392.000000, -1115.000000)">
+            <g id="icons-/-share" transform="translate(389.000000, 1110.000000)">
+                <rect id="Rectangle" opacity="0.109626118" x="0" y="0" width="24" height="24"></rect>
+                <path d="M4,11.2366418 C4,11.9887272 10.3387481,17.0563047 10.3387481,16.6165762 C10.3387481,16.1768477 10.3387481,14.4628644 10.3387481,13.5066597 C14.49506,13.5066597 17.6973852,15.7973724 20,17.831421 C19.5599686,14.7528931 18.3227138,12.6050088 16.6774962,11.1958056 C14.7031189,9.67839288 12.8611078,8.43265342 10.3387481,8.43265342 C10.3387481,7.47660029 10.3387481,6.37637976 10.3387481,5.86693894 C10.3387481,5.35749811 4,10.4845564 4,11.2366418 Z" id="Path" stroke="#8C8C8C" fill-rule="nonzero" transform="translate(12.000000, 11.831421) scale(-1, 1) translate(-12.000000, -11.831421) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

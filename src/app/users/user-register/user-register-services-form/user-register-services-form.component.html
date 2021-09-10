@@ -1,0 +1,68 @@
+<div class="row flex-nowrap">
+  <div class="col-5 fix-width">
+  <form class="user-services card col-6" *ngIf="servicesForm" [formGroup]="servicesForm" (ngSubmit)="onSubmit()">
+    <div class="user-services__boxes card-body">
+      <div *ngFor="let service of services.controls; let i = index;" class="user-services__box mb-2 row"
+        [class.user-services__box--active] = "selectedService?._id === service.get('_id').value"
+        [formGroup]="service" (click)="selectService(service.get('_id').value)">
+        <div class="user-services__box-left col-8 d-flex align-items-center ml-0 pl-0">
+          <!-- <img [src]="service.get('image').value || 'assets/img/services/device-manager.png'" [alt]="service.get('value').value " class="user-services__img"> -->
+          <i class="{{ 'service-icon ' + (service.get('_id').value | slug )}} user-services__img"></i>
+          <h5 class="user-services__box-text">
+            {{ service.get('value').value }}
+          </h5>
+        </div>
+
+        <div class="user-services__checkbox d-flex pr-4 col-4 align-items-center">
+          <!-- <input class="ml-auto" type="checkbox" formControlName="checked"> -->
+          <div class="switch-container ml-auto my-auto" *ngIf="!service.get('core').value; else coreService">
+            <label class="switch">
+              <input [id]="service.get('value').value" type="checkbox" formControlName="checked">
+              <span class="slider round"></span>
+            </label>
+            <label [for]="service.get('value').value"></label>
+          </div>
+        </div>
+        <div *ngIf="service.get('dependencies').value.length" class="user-services__dependencies col-12 pl-0">
+          <hr>
+          <div class="user-services__dependency-data d-flex align-items-center">
+            <span class="user-services__dependency-heading">Dependencies:</span>
+            <div class="user-services__dependency ml-2">
+              <span class="user-services__dependency-item"
+                *ngFor="let dependency of getDependencyNames(service.get('dependencies').value)">
+                {{ dependency }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="user-services__footer">
+      <p class="user-services__footer-text">You can edit your profile information later</p>
+      <button type="submit" class="btn btn-primary user-services__footer-submit">
+       Save
+      </button>
+    </div>
+  </form>
+</div>
+
+  <div class="col-4 ml-4" *ngIf="selectedService">
+    <div class="service-description" >
+      <i class="{{ 'service-icon ' + (selectedService._id | slug )}} service-description__img"></i>
+      <h6 class="service-description__name">{{ selectedService.name }}</h6>
+      <p class="service-description__text">
+       {{selectedService.description || 'We believe that people create businesses to share their passions with the world. Unfortunately, today’s business model is laden with back-end processes that are time consuming, complicated and require multiple systems; each to complete a different task. Passion is quickly displaced by the demands of daily operations.'}}
+      </p>
+    </div>
+
+</div>
+
+</div>
+
+<ng-template #coreService>
+  <div class="user-services__enabled-default">
+    Enabled by default
+  </div>
+</ng-template>

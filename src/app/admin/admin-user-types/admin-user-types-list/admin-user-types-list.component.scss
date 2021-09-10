@@ -1,0 +1,59 @@
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    height: 50px;
+    width: auto;
+    max-width: 50px;
+}
+
+.user-types {
+
+    &__item {
+        background-color: #2b2b2b;
+        margin-bottom: 10px;
+        padding: 15px;
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 2px;
+    }
+
+    &__description {
+        padding-right: 35px;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__item-edit,
+    &__item-delete {
+        position: relative;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+    }
+
+    &__item-edit {
+        background: url('assets/img/icons/edit.svg') center center no-repeat;
+        background-size: contain;
+    }
+
+    &__item-delete {
+        background: url('assets/img/icons/delete.svg') center center no-repeat;
+        background-size: contain;
+        margin-left: 1.5rem;
+    }
+
+
+}
+
+.switch-container {
+    margin-bottom: 0;
+}

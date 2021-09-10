@@ -1,0 +1,245 @@
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 705px !important;
+  height: 705px !important;
+}
+
+.member-form {
+
+  &__info {
+    display: flex;
+  }
+
+  &__container {
+    height: 645px;
+    padding: 1.5rem;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      background-color: transparent !important;
+      width: 2px !important;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #454545 !important;
+        border-radius: 2px !important;
+    }
+  }
+
+  &__profile-container {
+    width: 100%;
+    background-color: #363636;
+    display: flex;
+    justify-content: flex-start;
+    padding: 8px 16px;
+    margin: 0 auto 24px;
+    align-items: center;
+  }
+
+  &__profile-image {
+    margin-right: 24px;
+  }
+
+  &__profile-name {
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 0.2px;
+    line-height: 20px;
+  }
+
+  &__profile-email {
+    color: rgb(126, 126, 126);
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 0.3px;
+    line-height: 20px;
+  }
+
+  &__role-container,
+  &__teams-container {
+    display: flex;
+  }
+
+  &__role,
+  &__teams {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .form-group {
+    .input-wrap:disabled {
+      opacity: 0.6;
+    }
+  }
+}
+
+.services {
+  &__services-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__service {
+    width: 100%;
+    margin-bottom: 8px;
+    background-color: #1a1a1a;
+    border-radius: 2px;
+    padding: 16px;
+  }
+
+  &__name {
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 0.2px;
+    line-height: 20px;
+    margin-right: 8px;
+    margin-bottom: 0;
+  }
+
+  &__info-icon {
+    width: 24px;
+    height: 24px;
+    margin-top: -4px;
+    background: url("/assets/img/icons/question-icon.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    left: 10px;
+  }
+}
+
+.lignt-gray-text {
+  font-size: 0.75rem;
+  color: #8c8c8c;
+  letter-spacing: 0.2px;
+}
+
+hr {
+  width: 100%;
+  color: #282828;
+}
+
+.action-footer {
+  padding: 1rem;
+  height: 60px;
+  margin-top: auto;
+  background-color: #2b2b2b;
+  border-top: 1px solid #454545;
+  z-index: 2;
+  bottom: 2rem;
+
+  &__action {
+    height: 35px;
+  }
+
+  button:disabled:hover {
+    background-color: #dcbc65;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #454545;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+
+.btn {
+  font-size: 12px;
+}
+
+.checkcontainer {
+  // display: block;
+  position: relative;
+  cursor: pointer;
+  height: 8px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-left: 25px;
+  margin-left: 5px;
+}
+/* Hide the browser's default checkbox */
+.checkcontainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: transparent;
+  border-radius: 2px;
+  border: 1px solid #7e7e7e;
+}
+/* On mouse-over, add a grey background color */
+.checkcontainer:hover input ~ .checkmark {
+  background-color: #121212;
+}
+/* When the checkbox is checked, add a blue background */
+.checkcontainer input:checked ~ .checkmark {
+  background-color: #dcbc65;
+  border: 1px solid #dcbc65;
+}
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+/* Show the checkmark when checked */
+.checkcontainer input:checked ~ .checkmark:after {
+  display: block;
+}
+/* Style the checkmark/indicator */
+.checkcontainer .checkmark:after {
+  left: 4px;
+  top: 1px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 1px 1px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.input {
+  margin: 0 !important;
+}
+
+label {
+  margin-bottom: 4px;
+}
+
+.service-icon.no-service-icon:before {
+  background-image: url('~assets/img/upload-avatar.svg');
+}
+
+.service-icon {
+  cursor: default;
+  margin-right: 16px;
+  width: 24px;
+  height: 24px;
+}

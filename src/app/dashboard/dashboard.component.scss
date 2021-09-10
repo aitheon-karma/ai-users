@@ -1,0 +1,96 @@
+.dashboard {
+  padding: 0;
+
+  &__header {
+    justify-content: space-between;
+    align-items: center;
+    margin: 3rem 0 1rem 0;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 24px;
+    color: #fff;
+    letter-spacing: 0;
+    cursor: default;
+  }
+
+  &__edit {
+    background: none;
+    border: none;
+    outline: none !important;
+    cursor: pointer;
+  }
+
+  &__edit-icon {
+    display: block;
+    height: 18px;
+    width: 18px;
+    background: url('~/assets/img/icons/widget.svg') center center no-repeat;
+    background-size: contain;
+  }
+
+  &__edit-buttons {
+    margin: 0;
+  }
+}
+
+.widget {
+  height: 100%;
+
+  &__remove {
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 8px;
+    z-index: 2;
+    content: "";
+    right: 10px;
+    background: url('~/assets/img/icons/close-remove.svg') center center no-repeat;
+    background-size: contain;
+    cursor: pointer;
+  }
+}
+
+video {
+  outline: none !important;
+}
+
+.modal-widget {
+  align-items: center;
+  margin: 0;
+  margin-bottom: 2rem;
+  flex-wrap: nowrap;
+
+  &__image-container {
+    width: 200px;
+    height: 136px;
+    border: 1px solid #454545;
+    display: flex;
+    align-items: center;
+    margin-right: 1.5rem;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 200px;
+  }
+
+  &__info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+  }
+
+  &__title {
+    font-size: 16px;
+    color: #fff;
+  }
+
+  &__description {
+    font-size: 12px;
+    color: #7e7e7e;
+  }
+}

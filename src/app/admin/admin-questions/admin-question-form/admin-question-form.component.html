@@ -1,0 +1,180 @@
+<div class="questions-container d-flex">
+  <div class="form-container w-100">
+    <div class="row m-0 px-4 pt-0 question-form">
+      <div *ngIf="questionsForm" class="col-12 question-form__wrap px-0">
+        <form [formGroup]="questionsForm">
+          <div class="question-form__section">
+          <label  for="question"
+                  [hidden]="submitted && questionsForm.get('questionText').invalid">
+            Question text
+          </label>
+          <label  class="text-danger"
+                  *ngIf="submitted && questionsForm.get('questionText').hasError('required')">
+            Question text is required
+          </label>
+          <div class="question-form__sub-section">
+            <div  class="input-wrap input-wrap--contained input-wrap--small"
+                  [class.input-wrap--error]="submitted && questionsForm.get('questionText').invalid">
+              <input  id="question"
+                      type="text"
+                      name="question"
+                      formControlName="questionText"
+                      class="input-wrap__input">
+            </div>
+            <div class="question-form__image-section" *ngIf="selectedType === questionType.SINGLE_IMAGE">
+              <ai-file-upload formControlName="imageUrl"></ai-file-upload>
+            </div>
+          </div>
+          </div>
+          <div class="question-form__section">
+            <label  for="number">
+              Question number
+            </label>
+            <div class="input-wrap input-wrap--contained input-wrap--small">
+              <input  id="number"
+                      type="number"
+                      name="number"
+                      formControlName="number"
+                      class="input-wrap__input"
+                      readonly>
+            </div>
+          </div>
+          <div class="question-form__section">
+            <ng-select  class="dropdown dropdown--contained"
+                        [items]="questionTypeArray"
+                        [clearable]="false"
+                        [searchable]="false"
+                        bindLabel="name"
+                        bindValue="value"
+                        formControlName="questionType"
+                        placeholder="Choose question type"
+                        (ngModelChange)="changedType($event)">
+              <ng-option  *ngFor="let qType of questionTypeArray"
+                          [value]="qType.value">
+                {{ qType.value }}
+              </ng-option>
+            </ng-select>
+            <small  class="text-danger"
+                    *ngIf="submitted && questionsForm.get('questionType').hasError('required')">
+                Question type is required
+            </small>
+          </div>
+
+          <div class="switch-container">
+            <label>Ask Again</label>
+            <label class="switch">
+              <input formControlName="askAgain" id="isProduction" name="isProduction" type="checkbox">
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div  formArrayName="options"
+                *ngFor="let option of questionsForm.get('options')['controls']; let i = index;">
+            <div  class="option"
+                  [formGroupName]="i">
+              <span (click)="removeOption(i)" class="question-form__close-btn">×</span>
+              <div class="question-form__section">
+                <label  for="question"
+                        [hidden]="submitted && getValidity(i).get('optionText').invalid">
+                  Option {{i + 1}}
+                </label>
+                <label  class="text-danger"
+                        *ngIf="submitted && getValidity(i).get('optionText').invalid">
+                  Option is required
+                </label>
+                <div class="question-form__sub-section">
+                  <div  class="input-wrap input-wrap--contained input-wrap--small"
+                        [class.input-wrap--error]="submitted && getValidity(i).get('optionText').invalid">
+                    <input  type="text"
+                            name="optionText"
+                            formControlName="optionText"
+                            class="input-wrap__input">
+                  </div>
+                  <div class="question-form__image-section" *ngIf="selectedType === questionType.MULTIPLE_IMAGE">
+                    <ai-file-upload formControlName="imageUrl"></ai-file-upload>
+                  </div>
+                </div>
+              </div>
+              <div class="question-form__section">
+                <label for="question">Tooltip</label>
+                <div  class="input-wrap input-wrap--contained input-wrap--small">
+                  <input  type="text"
+                          name="optionText"
+                          formControlName="tooltip"
+                          class="input-wrap__input">
+                </div>
+              </div>
+              <div  class="question-form__section">
+                <ng-select  [items]="services"
+                            bindLabel="name"
+                            bindValue="_id"
+                            [formControl]="serviceSelectControl(option)"
+                            [multiple]="true"
+                            [searchable]="false"
+                            (change)="enabledServiceChanged(option, $event)"
+                            placeholder="Choose services"
+                            class="dropdown dropdown--contained">
+                  <ng-option *ngFor="let service of services" class="my-option">{{ service.name | titlecase }}</ng-option>
+                </ng-select>
+              </div>
+              <label>Services configs</label>
+              <div class="question-form__section" *ngFor="let enabledService of option.get('enabledServices').value; let i = index">
+                <div class="question-form__sub-section question-form__sub-section--hover">
+                  <div class="question-form__service-name">{{ enabledService.service | titlecase }}</div>
+                  <button class="button button--medium button--ghost ml-auto mr-2"
+                          (click)="openConfigs(option.get('enabledServices').controls[i])">Set config</button>
+                  <!-- <span class="icon icon--delete icon--size-16px"
+                        (click)="onRemove(option.get('enabledServices'), i)"></span> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-12 question-form__add-option">
+        <button class="button button--medium button--ghost btn--add-item question-form__btn"
+                (click)="addOption()">
+          Add option
+        </button>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button id="back"
+              class="button button--medium button--ghost mr-2 my-0"
+              (click)="onCloseEditModal()">
+        Cancel
+      </button>
+      <ai-loading class="xs inline tab-loading" *ngIf="loading"></ai-loading>
+      <button id="create"
+              *ngIf="!loading"
+              class="button button--medium button--contained my-0"
+              value="1"
+              type="submit"
+              (click)="saveChanges()">
+        Save
+      </button>
+    </div>
+  </div>
+  <div class="configs" *ngIf="isConfigOpen">
+    <div class="configs__container">
+      <h2 class="configs__title">{{ selectedServiceGroup.get('service').value | titlecase }} config's</h2>
+      <label class="configs__label">.json config</label>
+      <div class="textarea-wrap textarea-wrap--contained configs__textarea-container">
+        <textarea [value] = "selectedServiceGroup.get('config').value" #jsonTextArea class="textarea-wrap__textarea configs__textarea"
+                  placeholder="Some text"
+                  rows="24"></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="button button--medium button--ghost mr-2 my-0"
+              (click)="closeConfigs()">
+        Cancel
+      </button>
+      <button class="button button--medium button--contained my-0"
+              value="1"
+              type="submit"
+              (click)="saveConfigs(jsonTextArea)">
+        Save Config
+      </button>
+    </div>
+  </div>
+</div>

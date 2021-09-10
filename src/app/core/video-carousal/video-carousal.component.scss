@@ -1,0 +1,65 @@
+
+.carousel{
+    position: relative;
+}
+
+::ng-deep .carousel-item.active, .carousel-item-next, .carousel-item-prev {
+    display: block;
+    top: 0px;
+    height: 480px;
+    width: auto;
+    transition: -webkit-transform 0.6s ease;
+    transition: transform 0.6s ease;
+    transition: transform 0.6s ease, -webkit-transform 0.6s ease;
+}
+
+.carousel-control-next {
+    right: -20%;
+}
+
+.carousel-control-prev {
+    left: -20%;
+}
+
+.carousel-control-prev-icon,.carousel-control-next-icon {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+}
+
+::ng-deep .modal-dialog {
+    max-width: 700px;
+    margin: 5.75rem auto;
+}
+.carousel-control-next-icon {
+    background: #000;
+    border-radius: 50px;
+}
+.carousel-control-prev-icon {
+    background: #000;
+    border-radius: 50px;
+}
+.carousel-control-next-icon::after {
+    font-family: FontAwesome;
+    content: "\f054";
+    position: absolute;
+    color: #fff;
+    top: 9px;
+    left: 16px;
+    font-size: 15px;
+}
+.carousel-control-prev-icon::after {
+    font-family: FontAwesome;
+    content: "\f053";
+    position: absolute;
+    color: #fff;
+    top: 9px;
+    left: 14px;
+    font-size: 15px;
+}
+
+::ng-deep .carousel-caption {
+    position: absolute;
+    top: 500px;
+}
+

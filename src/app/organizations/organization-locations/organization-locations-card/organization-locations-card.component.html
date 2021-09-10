@@ -1,0 +1,37 @@
+<div class="location-card" [class.location-card--dashboard-view]="dashboardView">
+  <div class="location-card__image"
+       [class.location-card__image--empty]="!location?.logo?.signedUrl">
+    <img [src]="location?.logo?.signedUrl || 'assets/img/upload-avatar.svg'" />
+  </div>
+  <div class="location-card__description">
+    <div class="d-flex justify-content-between align-items-center mb--8">
+      <span class="location-card__description__title">
+        {{ location.name }}
+      </span>
+      <span class="location-card__description__type" *ngIf="location.type">
+        {{ location.type | titlecase }}
+      </span>
+    </div>
+    <span class="location-card__description__location mb--auto">
+        {{ location.address.country }}, {{ location.address.city }}, {{ location.address.regionState }}, {{ location.address.code }}, {{ location.address.addressLine1 }}
+      </span>
+    <hr class="mt--16 mb--16">
+    <div class="d-flex justify-content-start align-items-center mb--8">
+      <span class="location-card__description__label">
+        Phone number
+      </span>
+      <span *ngIf="location?.phoneNumbers[0]?.number">
+        +{{ location?.phoneNumbers[0]?.number }}
+      </span>
+    </div>
+    <div class="d-flex justify-content-start align-items-center">
+      <span class="location-card__description__label">
+        Email ID
+      </span>
+      <span class="text-crop ellipsis" tooltip="{{ location?.emails[0]?.email }}"
+            placement="auto" container="body">
+        {{ location?.emails[0]?.email }}
+      </span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,98 @@
+.org-setup {
+
+  &__progress {
+    height: 104%;
+  }
+
+  &__heading {
+    margin-top: 1.875rem;
+    color: #ffff;
+    font-size: 1.125rem;
+    line-height: normal;
+  }
+
+  &__container {
+    min-width: 470px;
+  }
+
+
+  &__line {
+    width: 1px;
+    background-color: #424242;
+    height: 20px;
+    margin-left: 1.2rem;
+
+  }
+
+  &__step-number {
+    font-family: ProximaNova;
+    font-size: 0.875rem
+  }
+
+  &__step-done {
+    color: #dcbc65;
+    font-family: ProximaNova;
+    font-size: 0.875rem;
+    transform: rotate(12deg);
+    margin-top: 3px;
+    margin-left: .8px;
+  }
+
+  &__sub-heading {
+    letter-spacing: 0.3px;
+    font-size: 0.875rem;
+    margin-top: 0.7rem;
+    color: #8c8c8c;
+    font-family: ProximaNova;
+
+    &--active {
+      color: #ffff;
+    }
+
+  }
+
+  &__progress-circle {
+    border-radius: 100%;
+    width: 38px;
+    height: 38px;
+    background-color: #282828;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-shrink: 0;
+
+    &--active {
+      &::after {
+        background-color: transparent;
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        content: "";
+        border: 1px solid #dcbc65;
+        border-radius: 100%;
+
+      }
+    }
+
+  }
+
+  &__services-heading {
+    font-size: 1.5rem;
+    color: #ffff;
+    line-height: normal;
+  }
+
+  &__services-sub-heading {
+    font-size: 0.75rem;
+    color: #8c8c8c;
+    margin-bottom: 1.875rem;
+    margin-top: 1rem;
+
+
+  }
+}
+
+.address {
+  max-width: 470px;
+}

@@ -1,0 +1,70 @@
+<div class="payments-container">
+  <div class="payments">
+    <h2 class="payments__title  ">
+      My payments
+    </h2>
+  </div>
+
+  <div class="payments-empty">
+    <div class="payments-empty__image"></div>
+    <div class="payments-empty__text">
+      Soon you will have info about your Personal Payments on this tab.<br> Stay tuned for more updates!
+    </div>
+  </div>
+</div>
+
+  <!-- <div class="card mb-3" >
+    <div class="card-body" >
+      <div class="table-responsive" *ngIf="!loading">
+        <span *ngIf="payments?.length === 0">No payments</span>
+        <table class="table table-sm  mt-3 table-hover">
+        <thead>
+            <tr>
+              <th>Date</th>
+              <th>Amount</th>
+              <th>Coin</th>
+              <th>Tokens</th>
+              <th>Status</th>
+            </tr>
+        </thead>
+          <tr (click)="paymentDetail.show(payment)" *ngFor="let payment of payments">
+            <td>
+              {{ payment.createdAt | momentFormat: 'MM/DD/YYYY hh:mm a' }}
+            </td>
+            <td>
+              {{ payment.amount.usd | currency }}
+            </td>
+            <td>
+              {{ payment.sentCurrency }}
+            </td>
+            <td>
+              {{ payment.tokens?.amount  ? payment.tokens?.amount : ' - ' }}
+            </td>
+            <td>
+              <span *ngIf="payment.status === 'PENDING'">
+                Pending
+              </span>
+              <span *ngIf="payment.status === 'PAID'" class="text-primary">
+                Processing
+              </span>
+              <span *ngIf="payment.status === 'DONE'" class="text-success">
+                Completed
+              </span>
+              <span *ngIf="payment.status === 'ERROR'" class="text-danger">
+                Error
+              </span>
+              <span *ngIf="payment.status === 'TIMEOUT'" >
+                Timeout
+              </span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div> -->
+
+<!-- <fl-payment-detail #paymentDetail></fl-payment-detail> -->
+
+<!-- <ng-template #loadingView [ngIf]="loading">
+  <ai-loading class="loading-container"></ai-loading>
+</ng-template> -->

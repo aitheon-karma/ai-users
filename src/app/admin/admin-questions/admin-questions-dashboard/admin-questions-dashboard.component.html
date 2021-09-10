@@ -1,0 +1,51 @@
+<div class="container questions">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb questions__breadcrumb">
+      <li class="breadcrumb-item questions__breadcrumb-item">Onboarding Questions</li>
+    </ol>
+  </nav>
+  <h1>{{ activeTab === questionTarget.USER ? 'User' : 'Oranization' }} Questions</h1>
+  <div class="row m-0 mt-4">
+    <div class="col-2" *ngIf="activeTab === questionTarget.ORGANIZATION">
+      <ai-all-service-list (serviceSelected)='onSelectService($event)'></ai-all-service-list>
+    </div>
+    <div class="row m-0 questions col-10" *ngIf="activeTab === questionTarget.USER || (questionTarget.ORGANIZATION && selectedService)">
+      <div class="col p-0 questions__container">
+        <div class="row m-0 questions__list-top">
+          <div class="col-3 pl-0" *ngIf="activeTab === questionTarget.USER">
+            <span>User Types</span>
+          </div>
+          <div class="col-1" [ngClass]="{ 'pl-2': activeTab === questionTarget.ORGANIZATION }">
+            <span>Number</span>
+          </div>
+          <div class="col-6" [ngClass]="{ 'col-9 pl-4': activeTab === questionTarget.ORGANIZATION }">
+            <span>Questions</span>
+          </div>
+          <div class="col-2 d-flex justify-content-end pr-0">
+            <button class="btn btn-outline btn--add-item questions__add-question" (click)="openModal(createQuestion)" *ngIf="!((activeTab === questionTarget.USER) && !selectedUserType) && !((activeTab === questionTarget.ORGANIZATION) && !selectedService)">Add question</button>
+          </div>
+        </div>
+        <fl-admin-questions-list class="w-100" #adminQuestionsListComponent [activeTab]="activeTab" [selectedService]='selectedService' (onSelectQuestion)="openModal(createQuestion, $event)" (onSelectType)="onSelectType($event)"></fl-admin-questions-list>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<ng-template #createQuestion>
+  <div class="modal-header">
+    <h3 class="modal-title">{{editQuestionId ? 'Edit' : 'Create'}} question</h3>
+    <button type="button" class="close" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body p-0">
+    <ai-admin-question-form [editQuestionId]="editQuestionId"
+                            [selectedService]='selectedService'
+                            [activeTab]="activeTab"
+                            [selectedUserType]="selectedUserType"
+                            [questionNumber] = "adminQuestionsListComponent.allQuestions.length + 1"
+                            (closeModal)='closeModal()'
+                            (modalSaved)='modalSaved($event)'></ai-admin-question-form>
+  </div>
+</ng-template>

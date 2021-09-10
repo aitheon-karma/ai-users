@@ -1,0 +1,50 @@
+<div *ngFor="let item of orgServices; let i=index;" class="service">
+    <div class="service__info-section">
+      <span class="service-icon" [ngClass]="item.service._id | serviceIcon"></span>
+      <span class="service__name">
+        {{ item.service.name === 'ai-job-site' ? 'Job Site' : item.service.name | titlecase }}
+      </span>
+      <span class="icon icon--info icon--size-16px" tooltip="{{ item.service.description }}"></span>
+      <div class="ml-auto d-flex align-items-center">
+        <label class="switch mb--0" (click)="onEnableChange(item, $event)">
+          <input class="switch__input"
+                 [id]="cbPrefix + 'cmn-toggle-' + i"
+                 [ngModel]="item.enabled"
+                 type="checkbox">
+          <span class="switch__toggle"></span>
+        </label>
+        <label class="mb--0" [for]="cbPrefix + 'cmn-toggle-' + i"></label>
+      </div>
+    </div>
+  <div *ngIf="rolebased">
+    <div *ngIf="item.enabled">
+      <div class="service__role-selection">
+
+
+<!--        <ng-select [(ngModel)]="item.role" (change)="roleChange(item)" [searchable]="false" [clearable]="false" placeholder="Choose role">-->
+<!--          <ng-option *ngFor="let role of roles" [value]="role">{{ role }}</ng-option>-->
+<!--        </ng-select>-->
+
+        <ng-select class="dropdown dropdown--contained"
+                   [(ngModel)]="item.role"
+                   (change)="roleChange(item)"
+                   [searchable]="false"
+                   [clearable]="false"
+                   placeholder="Choose role">
+          <ng-option *ngFor="let role of roles" [value]="role">{{ role }}</ng-option>
+        </ng-select>
+
+      </div>
+    </div>
+    <div class="service__dependencies-container" *ngIf="!item.service.dependencies.length == 0">
+      <div class="service__dependencies">
+          <p class="service__dependencies-title">Dependencies:
+            <span *ngFor="let serviceId of item.service.dependencies">
+              <span [services]="services" flServiceName="{{ serviceId }}"></span>
+            </span>
+          </p>
+        </div>
+    </div>
+  </div>
+</div>
+<swal #dialog></swal>

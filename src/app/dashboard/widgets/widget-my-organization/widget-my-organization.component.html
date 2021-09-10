@@ -1,0 +1,71 @@
+<div class="container my-organization">
+    <div class="row my-organization__header">My organization</div>
+    <div class="card my-organization__card">
+      <div *ngIf="organizationId" class="my-organization__container">
+        <div class="button button--contained my-organization__choose-section"
+              routerLink="../organizations/organization-detail/teams">
+          <span class="my-organization__choose-icon my-organization__choose-icon--team"></span>
+          <button class="button button--contained button--medium my-organization__choose-button"
+                  routerLink="../organizations/organization-detail/teams">
+            + Create team
+          </button>
+        </div>
+        <div class="my-organization__choose-section"
+                routerLink="../organizations/organization-detail/members">
+          <span class="my-organization__choose-icon my-organization__choose-icon--member"></span>
+          <button class="button button--contained button--medium my-organization__choose-button"
+                  routerLink="../organizations/organization-detail/members">
+            + Add member
+          </button>
+        </div>
+        <!-- <div  class="my-organization__top-section">
+          <div class="my-organization__titles">
+              <div class="my-organization__title my-organization__title--blue">Expenses</div>
+              <div class="my-organization__title my-organization__title--yellow">Profit</div>
+              <div class="my-organization__title my-organization__title--organge">Revenue</div>
+          </div>
+        <form [formGroup]="dateForm">
+          <div class="input-wrap input-wrap--date-contained my-organization__date-range"
+               [class.input-wrap--date-filled]="dateForm.get('dateRange').valid">
+            <input type="text" placeholder="From     -     To"
+                   class="input-wrap__input"
+                   readonly
+                   placement="top"
+                   [maxDate]="maxDate"
+                   formControlName="dateRange"
+                   bsDaterangepicker
+                   [bsConfig]="{ showWeekNumbers: false, rangeInputFormat: 'MMM D, YYYY'}"
+                   [bsValue]="bsRangeValue">
+            <div class="input-wrap--date-clear icon icon--close icon--dynamic icon--size-16px"
+                 (click)="clearDate($event)">
+            </div>
+          </div>
+        </form>
+        </div> -->
+        <!-- <ng-template #placeholder>
+          <div class="h-100 d-flex justify-content-center align-items-center">
+            <ai-loading></ai-loading>
+          </div>
+        </ng-template>
+        <div *ngIf="!loading; else placeholder" class="my-organization__bottom-section">
+          <div class="my-organization__graph">
+            <ngx-charts-line-chart [view]="view"
+                                   [curve]="curve"
+                                   [scheme]="colorScheme"
+                                   [results]="single"
+                                   [gradient]="gradient"
+                                   [xAxis]="showXAxis"
+                                   [yAxis]="showYAxis"
+                                   [legend]="showLegend"
+                                   [rangeFillOpacity]="0"
+                                   [showXAxisLabel]="showXAxisLabel"
+                                   [showYAxisLabel]="showYAxisLabel"
+                                   [autoScale]="true">
+            </ngx-charts-line-chart>
+          </div>
+        </div> -->
+      </div>
+      <!-- <div class="my-organization__empty" *ngIf="!organizationId">No organization selected</div>
+      <div class="my-organization__empty" *ngIf="noAccess">You have to be organization owner to view this chart</div> -->
+    </div>
+  </div>

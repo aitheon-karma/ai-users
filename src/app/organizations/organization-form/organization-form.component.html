@@ -1,0 +1,82 @@
+<!-- Organization Edit-->
+<form novalidate [formGroup]="organizationForm"
+      (ngSubmit)="onSubmit(organizationForm)">
+  <div class="row m-0">
+    <div class="col-sm-12 p-0">
+      <label [hidden]="isNameError()">
+        Organization name
+      </label>
+      <label class="text-error"
+             *ngIf="isNameError()">
+        {{ getNameError() }}
+      </label>
+      <div class="input-wrap input-wrap--contained input-wrap--small mb-2"
+           [class.input-wrap--error]="isNameError()">
+        <input type="text"
+               autocomplete="off"
+               formControlName="name"
+               class="input-wrap__input"
+               maxlength="30"
+               #nameInput
+               (keypress)="isCorrectInput($event)"
+               (ngModelChange)="onChange($event)">
+        <span class="input-wrap__counter">
+          {{ organizationForm.get('name')?.value?.length }}/30
+        </span>
+      </div>
+
+      <label [hidden]="isDomainError()">
+        Domain
+      </label>
+      <label class="text-error"
+             *ngIf="isDomainError()">
+        {{ getDomainError() }}
+      </label>
+      <div class="organization_setup__domain-section mb-2">
+        <div class="input-wrap input-wrap--contained input-wrap--unclicable input-wrap--small w-100 mr-2"
+             [class.input-wrap--error]="submitted && organizationForm.get('domain').invalid">
+          <input formControlName="domain"
+                 type="text"
+                 class="input-wrap__input"
+                 autocomplete="off"
+                 formControlName="domain"
+                 disabled
+                 #nameInput>
+        </div>
+        <div class="organization_setup__domain">.aitheon.com</div>
+      </div>
+
+<!--      <div class="row m-0" *ngIf="error">-->
+<!--        <div class="col offset-md-3">-->
+<!--          <div class="alert alert-danger">{{ error }}</div>-->
+<!--        </div>-->
+<!--      </div>-->
+      <!-- End Error -->
+    </div>
+  </div>
+
+  <div class="row organization_setup__footer mt-4" [class.organization_setup__footer--edit-mode]="!isNew">
+    <!-- <button type="button" class="button button--ghost button--medium" (click)="addLocation()" *ngIf="isNew">
+      <span class="button__icon icon icon--plus icon--size-16px"></span>
+      Add location
+    </button> -->
+    <!-- CANCEL BUTTON -->
+    <!-- <button type="button"
+            class="button button--ghost button--medium"
+            (click)="cancel()">
+      Cancel
+    </button> -->
+    <button type="submit"
+            [hidden]="isExternal"
+            class="btn btn-medium organization_setup__create_button ml-auto">
+      {{ submitButtonText }}
+    </button>
+    <button *ngIf="isExternal"
+            type="submit"
+            class="btn btn-medium organization_setup__create_button ml-auto">
+      Create
+    </button>
+  </div>
+</form>
+
+<!--End Organization-->

@@ -1,0 +1,28 @@
+<div class="service-modal-background">
+  <div class="service-modal-container">
+    <div class="service-modal">
+      <div class="service-modal__close-icon" (click)="onCloseServiceModal()">
+        <span class="icon icon--close icon--white icon--size-16px"></span>
+      </div>
+      <div class="service-modal__icon-container">
+        <div class="service-modal__icon"></div>
+      </div>
+
+      <div class="service-modal__title">
+        Project Management
+      </div>
+      <div class="service-modal__description">
+        With a free trial you receive access to the all services<br>
+        including “Project Management”
+      </div>
+      <div class="service-modal__success-button button button--contained button--medium"
+            (click)="goToService('PROJECT_MANAGER')">
+        Go to Service
+      </div>
+      <div  class="service-modal__cancel-button button button--ghost button--medium"
+            (click)="onCloseServiceModal()">
+        Continue to Dashboard
+      </div>
+    </div>
+  </div>
+</div>

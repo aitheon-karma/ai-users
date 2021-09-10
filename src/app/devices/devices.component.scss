@@ -1,0 +1,16 @@
+
+.table td{
+    border-top: none;
+}
+
+.user-pic {
+    background: rgba(0, 0, 0, 0.1);
+    max-height: 26px;
+    width: 26px;
+    height: 26px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: inline-block;
+    border-radius: 50%;
+}

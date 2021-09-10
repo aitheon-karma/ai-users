@@ -1,0 +1,38 @@
+.org-nav {
+    height: 48px;
+    background-color: #2b2b2b;
+
+    margin: 0 -1rem;
+
+    &__items {
+        display: flex;
+        list-style: none;
+        list-style-type: none;
+        align-items: center;
+        height: 100%;
+    }
+
+    &__item {
+        &:not(:first-child) {
+            margin-left: 1.875rem;
+        }
+    }
+
+    &__link {
+      color: rgb(126, 126, 126);
+      font-size: 14px;
+      font-weight: normal;
+      letter-spacing: 0.2px;
+      line-height: 20px;
+
+      &:hover {
+          color: #dcbc65;
+          text-decoration: none;
+      }
+
+      &--active {
+          color: #dcbc65;
+          text-decoration: none;
+      }
+    }
+}

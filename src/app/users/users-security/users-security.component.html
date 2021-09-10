@@ -1,0 +1,19 @@
+<div class="security">
+  <h2 class="security__title">
+    Security
+  </h2>
+  <div class="security__section">
+    <span class="security__label">Login two-factor authentication (2FA)</span>
+    <div class="security__switch switch-container">
+      <label class="switch" (click)="twoFactorClick()">
+        <input id="login" [disabled]="!emailVerified" type="checkbox" [(ngModel)]="isEnabledLoginSecondFactorAuth" (ngModelChange)="onEnableChange($event)">
+        <span class="slider round"></span>
+      </label>
+      <label for="login"></label>
+    </div>
+  </div>
+</div>
+
+<ng-template #loadingView>
+  <ai-loading class="loading-container"></ai-loading>
+</ng-template>

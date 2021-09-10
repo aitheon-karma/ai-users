@@ -1,0 +1,98 @@
+<div class="list">
+  <ai-loading *ngIf="loading; else list"></ai-loading>
+
+  <ng-template #list>
+    <div class="row">
+      <div class="col-8">
+        <div class="document-item pb-3">
+          <div>
+            <i class="fa fa-check-circle pr-2 " [class.action-require]="!photoHoldingID"
+              [class.text-danger]="photoHoldingID?.status === 'REJECTED'"
+              [class.text-success]="photoHoldingID?.status === 'UPLOADED'"></i>
+            1. Selfie holding ID (Passport, DL, or National ID) with a sticky note of verification number
+            <strong style="font-size: 20px;" *ngIf="showCode">{{ verificationCode }}</strong> -
+            <span [class.text-danger]="photoHoldingID?.status === 'REJECTED'"
+              [class.text-success]="photoHoldingID?.status === 'UPLOADED'">{{ photoHoldingID ? (photoHoldingID.status | kycDocumentStatus ) : 'Waiting for upload' }}</span>
+            <button type="button" (click)="resend('showPhotoHoldingIDUploader')"
+              *ngIf="photoHoldingID && (photoHoldingID.status == 'REJECTED' || photoHoldingID.status == 'CREATED')"
+              class="btn btn-link btn-sm resend">Resend</button>
+          </div>
+          <fl-kyc-document-uploader class="photo-holding-id" *ngIf="showPhotoHoldingIDUploader" [verificationCode]="verificationCode"
+            [docType]="'PHOTO_HOLDING_ID'" (success)="onUploadSuccess($event)"></fl-kyc-document-uploader>
+        </div>
+      </div>
+      <div class="col-4 text-center" *ngIf="showPhotoHoldingIDUploader">
+        <!-- Help -->
+        <img src="assets/img/kyc-step-1.jpg" class="help-image" alt="">
+      </div>
+    </div>
+    <hr class="mt-0">
+    <div class="row">
+      <div class="col-8">
+        <div class="document-item pb-3">
+          <div>
+            <i class="fa fa-check-circle pr-2" [class.action-require]="!photoID || !photoID?.status"
+              [class.text-danger]="photoID?.status === 'REJECTED'"
+              [class.text-success]="photoID?.status === 'UPLOADED'"></i>
+            2. Government ID <small>(Clear photo of the ID above)</small> -
+            <span [class.text-danger]="photoID?.status === 'REJECTED'"
+              [class.text-success]="photoID?.status === 'UPLOADED'">
+              {{ photoID ? (photoID.status | kycDocumentStatus) : 'Waiting for upload' }}
+            </span>
+            <button type="button" (click)="resend('showPhotoIDUploader')"
+              *ngIf="photoID && (photoID.status == 'REJECTED' || photoID.status == 'CREATED')" class="btn btn-link btn-sm resend">Resend</button>
+          </div>
+          <fl-kyc-document-uploader class="photo-id" *ngIf="showPhotoIDUploader" [docType]="'PHOTO_ID'"
+            (success)="onUploadSuccess($event)">
+          </fl-kyc-document-uploader>
+        </div>
+      </div>
+      <div class="col-4 text-center" *ngIf="showPhotoIDUploader">
+        <!-- Help -->
+        <img src="assets/img/kyc-step-2.jpg" class="help-image" alt="">
+      </div>
+    </div>
+    <hr class="mt-0">
+    <div class="row">
+      <div class="col-8">
+        <div class="document-item">
+          <i class="fa fa-check-circle pr-2" [class.action-require]="!photoIDNumber"
+            [class.text-success]="photoIDNumber"></i>
+          3. Enter your Government ID from step 2 <span *ngIf="photoIDNumber"> - <span
+              class="text-success">Done</span></span>
+          <button type="button" (click)="resend('showIDForm')" *ngIf="photoIDNumber"
+            class="btn btn-link btn-sm resend">Resend</button>
+          <div *ngIf="showIDForm && photoIDForm">
+            <form novalidate class="mb-3 mt-2 d-flex w-100" [formGroup]="photoIDForm" novalidate (ngSubmit)="onPhotoIDFormSubmit()">
+              <div class="input-wrap input-wrap--contained input-wrap--small w-100">
+                <input type="text" class="input-wrap__input" placeholder="Enter ID number" formControlName="photoIDNumber"
+                  aria-label="Enter ID number">
+                <small *ngIf="photoIDForm.get('photoIDNumber').hasError('verificationMatch')" class="text-danger">
+                  Please enter your <strong>Government ID</strong>, not verification code.
+                </small>
+              </div>
+              <button class="button button--contained button--medium ml-2 button--save"
+                      type="submit"
+                      [disabled]="photoIDForm.get('photoIDNumber').invalid">Save</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-4">
+        <!-- Help -->
+        <a  class="button button--ghost button--medium mb-2"
+            href="assets/identity-verification-guide.pdf"
+            target="_blank">
+          verification guide
+        </a>
+        <button class="button button--contained button--medium"
+                (click)="openWebClient()">
+          Get Live Help
+        </button>
+      </div>
+    </div>
+  </ng-template>
+
+
+</div>

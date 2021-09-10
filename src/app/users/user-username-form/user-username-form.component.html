@@ -1,0 +1,20 @@
+<div class="username-form">
+
+  <div class="input-wrap input-wrap--contained input-wrap--small"
+    [class.input-wrap--error]="userNameControl.invalid && isSubmitted">
+    <input type="text" class="input-wrap__input pr-5" [formControl]="userNameControl" placeholder="Enter Epic Name"
+      autocomplete="off" maxlength="20" />
+  </div>
+
+  <div class="mt-2">
+    <small *ngIf="!checking && userNameControl.value">{{ userNameControl.value }}
+      {{ available ? 'Available': 'Unavailable' }} </small>
+    <small *ngIf="checking">Checking, please wait... </small>
+  </div>
+
+
+  <div class="d-flex justify-content-end p-2">
+    <button class="button button--ghost mr--8 button--medium" (click)="canceled.emit()"> Cancel </button>
+    <button [disabled]="!available" (click)="submit()" class="button button--contained button--medium"> Save </button>
+  </div>
+</div>

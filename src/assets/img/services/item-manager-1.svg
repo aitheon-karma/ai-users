@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 60 60">
+    <defs>
+        <linearGradient id="b" x1="12.227%" x2="83.257%" y1="-31.593%" y2="132.324%">
+            <stop offset="0%" stop-color="#EF33F2"/>
+            <stop offset="100%" stop-color="#3544DC"/>
+        </linearGradient>
+        <path id="a" d="M10 0h40c5.523 0 10 4.477 10 10v40c0 5.523-4.477 10-10 10H10C4.477 60 0 55.523 0 50V10C0 4.477 4.477 0 10 0z"/>
+        <rect id="d" width="43" height="30" x="10.5" y="13.5" rx="2"/>
+        <filter id="c" width="132.6%" height="146.7%" x="-16.3%" y="-16.7%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+        </filter>
+        <rect id="f" width="43" height="31" x="8" y="16" rx="2"/>
+        <filter id="e" width="127.9%" height="138.7%" x="-14%" y="-19.4%" filterUnits="objectBoundingBox">
+            <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+        </filter>
+        <circle id="h" cx="21.5" cy="22.5" r="3.5"/>
+        <filter id="g" width="271.4%" height="271.4%" x="-85.7%" y="-85.7%" filterUnits="objectBoundingBox">
+            <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+        </filter>
+        <linearGradient id="i" x1="12.227%" x2="83.257%" y1="46.253%" y2="53.78%">
+            <stop offset="0%" stop-color="#EF33F2"/>
+            <stop offset="100%" stop-color="#3544DC"/>
+        </linearGradient>
+        <linearGradient id="j" x1="12.227%" x2="83.257%" y1="48.725%" y2="51.286%">
+            <stop offset="0%" stop-color="#EF33F2"/>
+            <stop offset="100%" stop-color="#3544DC"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <use fill="url(#b)" xlink:href="#a"/>
+        <g opacity=".5" transform="rotate(90 32 28.5)">
+            <use fill="#000" filter="url(#c)" xlink:href="#d"/>
+            <use fill="#FFF" xlink:href="#d"/>
+        </g>
+        <g transform="rotate(90 29.5 31.5)">
+            <use fill="#000" filter="url(#e)" xlink:href="#f"/>
+            <use fill="#FFF" xlink:href="#f"/>
+        </g>
+        <use fill="#000" filter="url(#g)" xlink:href="#h"/>
+        <use fill="url(#b)" xlink:href="#h"/>
+        <rect width="14" height="3" x="28" y="21" fill="url(#i)" rx="1.5"/>
+        <rect width="24" height="3" x="18" y="30" fill="url(#j)" rx="1.5"/>
+        <rect width="24" height="3" x="18" y="39" fill="url(#j)" rx="1.5"/>
+    </g>
+</svg>

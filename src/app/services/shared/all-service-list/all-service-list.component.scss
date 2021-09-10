@@ -1,0 +1,28 @@
+.service-list {
+
+  height: auto;
+  overflow-y: auto;
+
+  &__item {
+    margin-bottom: 1rem;
+    background-color: #1f1f1f;
+    padding: 1rem;
+    border-radius: 2px;
+    
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--selected {
+      background-color: #2a2a2a;
+
+      .service-list__name {
+        color: #dcbc65;
+      }
+    }
+  }
+
+  &__name {
+    color: #7e7e7e;
+  }
+}
